@@ -1,0 +1,2 @@
+" Use ctrl-c as an ide shortcut in normal and visual modes
+sethandler <C-C> n-v:ide i:vim

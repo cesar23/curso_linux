@@ -1,0 +1,5 @@
+cp -r "/home/kpopilrp/inversionesletich.com/wp-content/plugins/all-in-one-wp-security-and-firewall" "/home/kpopilrp/demo.solucionessystem.com/wp-content/plugins/all-in-one-wp-security-and-firewal"
+cp -r "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-rocket" "/home/kpopilrp/demo.solucionessystem.com/wp-content/plugins"
+cp -r  "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-smush-pro" "/home/kpopilrp/demo.solucionessystem.com/wp-content/plugins"
+cp -r "/home/kpopilrp/inversionesletich.com/wp-content/plugins/imsanity" "/home/kpopilrp/demo.solucionessystem.com/wp-content/plugins"
+cp -r "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-mail-smtp-pro" "/home/kpopilrp/demo.solucionessystem.com/wp-content/plugins"

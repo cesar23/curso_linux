@@ -1,0 +1,14 @@
+# fuebnte: http://csuca.org/manual/es/howto/htaccess.html
+# Cuando use RewriteRule en ficheros .htaccess, tenga en cuenta que el contexto 
+# directorio cambia las cosas un poco. En concreto, las reglas son relativas al 
+# directorio actual, en lugar de serlo de la petición de URI solicitada originalmente. 
+# Considere los siguientes ejemplos:
+
+# En apache2.conf
+RewriteRule "^/images/(.+)\.jpg" "/images/$1.png"
+
+# En .htaccess en el directorio raíz
+RewriteRule "^images/(.+)\.jpg" "images/$1.png"
+
+# En .htaccess en images/
+RewriteRule "^(.+)\.jpg" "$1.png"

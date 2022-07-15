@@ -1,0 +1,18 @@
+Jefe:
+	cesar
+Ventas:
+	juan
+	pedro
+	deysi
+	camila
+	Camilo
+	Angela
+Contable:
+	zorrilla
+	yaceli
+	sheyla
+	Andi
+Recepcionistas:
+	americo
+	jesus
+	anita

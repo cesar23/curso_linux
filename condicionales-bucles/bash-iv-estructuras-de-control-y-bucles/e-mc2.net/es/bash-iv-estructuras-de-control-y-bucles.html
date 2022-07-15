@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head> 
+    <meta charset="utf-8" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="robots" content="index, follow" />
+<meta name="twitter:description" content="En nuestra cuarta entrega sobre la introduccion a el interprete de comandos Bash, vamos a ver una pequeña introduccion a las estructuras de control y bucles en Bash. Estas construcciones nos ayudan a controlar la ejecucion de un script y a obtener diversos resultados dependiendo de las condiciones que se cumplan o no cuando ejecutamos el script.
+En Bash existen estas construcciones para controlar el flujo de ejecucion de un script:" />
+<meta name="twitter:title" content="Emc2Net - Bash (IV) - Estructuras de control y bucles" />
+<meta name="twitter:site" content="@rafaelma_" />
+<meta name="description" content="En nuestra cuarta entrega sobre la introduccion a el interprete de comandos Bash, vamos a ver una pequeña introduccion a las estructuras de control y bucles en Bash. Estas construcciones nos ayudan a controlar la ejecucion de un script y a obtener diversos resultados dependiendo de las condiciones que se cumplan o no cuando ejecutamos el script.
+En Bash existen estas construcciones para controlar el flujo de ejecucion de un script:" />
+<meta name="news_keywords" content="sysadmin, monitoring, linux, postgresql, zabbix-cli, pgbackman, trending, zabbix, elasticsearch, grafana" />
+<meta name="abstract" content="Emc2Net, articles about sysadmin, monitoring, trending, automation, linux, postgresql, zabbix, grafana, elasticsearch, ansible and home for the open source projects Zabbix-CLI and PgBackMan. Archives from the PostgreSQL-ES and Linux-ES projects." />
+<link rel="image_src" href="https://e-mc2.net/sites/default/files/styles/small/public/articles/bash_2.png?itok=588r1r2q" />
+<meta name="twitter:creator" content="@rafaelma_" />
+<meta name="keywords" content="sysadmin, monitoring, linux, postgresql, zabbix-cli, pgbackman, trending, zabbix, elasticsearch, grafana" />
+<meta name="twitter:url" content="https://e-mc2.net/es/bash-iv-estructuras-de-control-y-bucles" />
+<meta name="twitter:image:alt" content="bash" />
+<meta name="twitter:image" content="https://e-mc2.net/sites/default/files/styles/small/public/articles/bash_2.png?itok=588r1r2q" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="../../www.google.com/recaptcha/api.js%3Fhl=es" async defer></script>
+<link rel="shortcut icon" href="https://e-mc2.net/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="es" href="bash-iv-estructuras-de-control-y-bucles.html" />
+<link rel="canonical" href="bash-iv-estructuras-de-control-y-bucles.html" />
+<link rel="shortlink" href="https://e-mc2.net/es/node/84" />
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+
+    <title>Bash (IV) - Estructuras de control y bucles | Emc2Net</title>
+    <link rel="stylesheet" media="all" href="../sites/default/files/css/css_9m8-tA3IQf8ThlLQYTTZUyEweCvyR908Tg0XCbKYOfY.css%3Fq4g72b.css" />
+<link rel="stylesheet" media="all" href="../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" media="all" href="../sites/default/files/css/css_jE5r0sOKbZqdLES9jDZjiPHZ7ha9AH8XT71kCG-z-T0.css%3Fq4g72b.css" />
+<link rel="stylesheet" media="all" href="../../fonts.googleapis.com/css%3Ffamily=Raleway:400,600,700,800,900.css" />
+<link rel="stylesheet" media="all" href="../../fonts.googleapis.com/css%3Ffamily=Open+Sans:400,600,700,800.css" />
+<link rel="stylesheet" media="all" href="../sites/default/files/css/css_g4IYdAV3jq1Hpo2wsePDf1mAm-9Xl-jv0gmwZSrwJUY.css%3Fq4g72b.css" />
+
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"es\/","currentPath":"node\/84","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","statistics":{"data":{"nid":"84"},"url":"\/core\/modules\/statistics\/statistics.php"},"ajaxTrustedUrl":{"\/index.php\/es\/search\/node":true,"\/es\/comment\/reply\/node\/84\/comment":true},"user":{"uid":0,"permissionsHash":"22a1c5a2682bfd09fbcec1512472243a3ff464c7f32fb5226eb4d22f221fcb0d"}}</script>
+
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="../sites/default/files/js/js_RrFArqktRPESsmKzz7jP1c0WOWIW_NHAdw4iCHU6R48.js"></script>
+
+
+    <link rel="stylesheet" href="../themes/gavias_tico/css/custom.css" media="screen" />
+    <link rel="stylesheet" href="../themes/gavias_tico/css/update.css" media="screen" />
+
+    
+
+          <style type="text/css">
+        .topbar a{background:#333333;color:#ffffff;}.topbar a:hover{background:#333333;color:#7383be;}a:not(.btn-theme){color:#7383be;}a:not(.btn-theme):hover{color:#7383be;}.block-content{padding-bottom:15px;}.node__content h3{color:#7383be;margin-top:10px;border-bottom:1px solid #7383be;}.text-medium {font-size: 18px;line-height: 23px;}
+      </style>
+    
+          <style class="customize"> </style>
+    
+  </head>
+
+  
+  <body class="layout-no-sidebars page-node-84 page-node_84 node_84 js-preloader path-node node--type-article">
+
+    <a href="bash-iv-estructuras-de-control-y-bucles.html#main-content" class="visually-hidden focusable">
+      Pasar al contenido principal
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="body-page">
+	    <div id="jpreContent">
+        <div id="jprecontent-inner">
+           <div class="preloader-wrapper hidden active">
+              <img src="../../themes/gavias_tico/images/preloader/preloader-7.gif" alt="" />
+           </div>  
+        </div>
+      </div>
+      <header id="header" class="header-v1">
+  
+      <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <div class="content">  <div>
+    <div class="language-switcher-language-url block block-language block-language-blocklanguage-content no-title" id="block-languageswitchercontent" role="navigation">
+  
+    
+      <div class="content block-content">
+      <ul class="links"><li hreflang="en" data-drupal-link-system-path="node/84" class="en"><a href="https://e-mc2.net/node/84" class="language-link" hreflang="en" data-drupal-link-system-path="node/84">English</a></li><li hreflang="es" data-drupal-link-system-path="node/84" class="es is-active"><a href="bash-iv-estructuras-de-control-y-bucles.html" class="language-link is-active" hreflang="es" data-drupal-link-system-path="node/84">Español</a></li></ul>
+    </div>
+  </div>
+
+  </div>
+</div> 
+        </div>
+      </div>
+    </div>
+  
+            
+
+   <div class="header-main gv-sticky-menu">
+      <div class="container header-content-layout">
+         <div class="header-main-inner p-relative">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-8 branding">
+                                    <div>
+    
+      <a href="https://e-mc2.net/index.php/es" title="Inicio" rel="home" class="site-branding-logo">
+        
+        <img src="../sites/default/files/emc2net_logo5.jpg" alt="Inicio" />
+        
+    </a>
+    
+  </div>
+
+                              </div>
+
+              <div class="col-md-9 col-sm-6 col-xs-4 p-static">
+                <div class="header-inner clearfix">
+                  <div class="main-menu">
+                    <div class="area-main-menu">
+                      <div class="area-inner">
+                          <div class="gva-offcanvas-mobile">
+                            <div class="close-offcanvas hidden"><i class="gv-icon-8"></i></div>
+                                                            <div>
+    <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
+          
+  
+  <h2  class="visually-hidden block-title" id="block-mainnavigation-menu"><span>Main navigation</span></h2>
+  
+  <div class="block-content">
+                 
+<div class="gva-navigation">
+
+              <ul  class="clearfix gva_menu gva_menu_main">
+      
+                              
+            <li  class="menu-item ">
+        <a href="https://e-mc2.net/es">
+                    Inicio
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item menu-item--expanded ">
+        <a href="https://e-mc2.net/es/proyectos">
+                    Proyectos
+                      <span class="icaret nav-plus fa fa-angle-down"></span>
+            
+        </a>
+          
+                                <ul class="menu sub-menu">
+                              
+            <li  class="menu-item">
+        <a href="https://e-mc2.net/es/pgbackman">
+                    Pgbackman
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item">
+        <a href="https://e-mc2.net/es/zabbix-cli">
+                    Zabbix CLI
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item">
+        <a href="https://e-mc2.net/es/linux-es">
+                    Linux-ES
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item">
+        <a href="https://e-mc2.net/es/postgresql-es">
+                    PostgreSQL-ES
+            
+        </a>
+          
+              </li>
+        </ul>
+  
+              </li>
+                          
+            <li  class="menu-item ">
+        <a href="https://e-mc2.net/es/blogs-masonry">
+                    Blog
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item ">
+        <a href="https://e-mc2.net/es/presentaciones">
+                    Presentaciones
+            
+        </a>
+          
+              </li>
+                          
+            <li  class="menu-item ">
+        <a href="https://e-mc2.net/es/acerca-de">
+                    Acerca de
+            
+        </a>
+          
+              </li>
+        </ul>
+  
+
+</div>
+
+
+        </div>  
+</nav>
+
+  </div>
+
+                            
+                              
+                                                          <div class="after-offcanvas hidden">
+                                  <div>
+    <div class="language-switcher-language-url block block-language block-language-blocklanguage-content" id="block-languageswitchercontent-2" role="navigation">
+  
+      <h2 class="block-title" ><span>Language switcher (Content)</span></h2>
+    
+      <div class="content block-content">
+      <ul class="links"><li hreflang="en" data-drupal-link-system-path="node/84" class="en"><a href="https://e-mc2.net/node/84" class="language-link" hreflang="en" data-drupal-link-system-path="node/84">English</a></li><li hreflang="es" data-drupal-link-system-path="node/84" class="es is-active"><a href="bash-iv-estructuras-de-control-y-bucles.html" class="language-link is-active" hreflang="es" data-drupal-link-system-path="node/84">Español</a></li></ul>
+    </div>
+  </div>
+<div class="search-block-form block block-search container-inline" data-drupal-selector="search-block-form" id="block-searchform-2" role="search">
+  
+      <h2>Search form</h2>
+    
+      <form action="https://e-mc2.net/index.php/es/search/node" method="get" id="search-block-form" accept-charset="UTF-8" class="search-form search-block-form">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys" class="visually-hidden">Buscar</label>
+        <input title="Escriba lo que quiere buscar." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input class="search-form__submit button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Buscar" />
+</div>
+
+</form>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-useraccountmenu-menu" id="block-useraccountmenu" class="block block-menu navigation menu--account">
+    
+  
+  <h2  id="block-useraccountmenu-menu"><span>User account menu</span></h2>
+  
+  <div class="block-content">
+                 
+              <ul class="gva_menu">
+        
+            <li  class="menu-item">
+        <a href="https://e-mc2.net/index.php/es/user/login" data-drupal-link-system-path="user/login">Iniciar sesión</a>
+        
+      </li>
+        </ul>
+  
+
+
+        </div>  
+</nav>
+
+  </div>
+
+                              </div>
+                                                      
+                          </div>
+                          
+                          <div id="menu-bar" class="menu-bar hidden-lg hidden-md">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                          </div>
+                        
+                                                  <div class="gva-search-region search-region">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <div class="search-content">  
+                                <div>
+    <div class="search-block-form block block-search container-inline" data-drupal-selector="search-block-form-2" id="block-searchform" role="search">
+  
+      <h2>Search form</h2>
+    
+      <form action="https://e-mc2.net/index.php/es/search/node" method="get" id="search-block-form--2" accept-charset="UTF-8" class="search-form search-block-form">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys--2" class="visually-hidden">Buscar</label>
+        <input title="Escriba lo que quiere buscar." data-drupal-selector="edit-keys" type="search" id="edit-keys--2" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input class="search-form__submit button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" value="Buscar" />
+</div>
+
+</form>
+
+  </div>
+
+  </div>
+
+                            </div>  
+                          </div>
+                                              </div>
+                    </div>
+                  </div>  
+                </div> 
+              </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+</header>
+	
+   	
+	<div role="main" class="main main-page">
+	
+		<div class="clearfix"></div>
+			
+
+					<div class="help show">
+				<div class="container">
+					<div class="control-panel"><i class="fa fa-cogs"></i></div>
+					<div class="content-inner">
+						
+					</div>
+				</div>
+			</div>
+		
+				
+		<div class="clearfix"></div>
+				
+		<div class="clearfix"></div>
+		
+		<div id="content" class="content content-full">
+			<div class="container">
+				<div class="content-main-inner">
+	<div class="row">
+		
+					
+						 				 		
+							
+       
+
+		<div id="page-main-content" class="main-content col-xs-12 col-md-9 sb-r ">
+
+			<div class="main-content-inner">
+				
+				
+									<div class="content-main">
+						  <div>
+    <div id="block-gavias-tico-content" class="block block-system block-system-main-block no-title">
+  
+    
+      <div class="content block-content">
+      
+<!-- Start Display article for teaser page -->
+<!-- Start Display article for detail page -->
+
+<article data-history-node-id="84" role="article" about="/es/bash-iv-estructuras-de-control-y-bucles" typeof="schema:Article" class="node node-detail node--type-article node--promoted node--view-mode-full clearfix">
+  <div class="post-block">
+      
+    <div class="post-thumbnail post-standard">
+              
+            <div class="field field--name-field-image field--type-image field--label-hidden field__item">  <a href="bash-iv-estructuras-de-control-y-bucles.html" hreflang="es"><img property="schema:image" alt="bash" typeof="foaf:Image" data-src="/sites/default/files/styles/small/public/articles/bash_2.png?itok=588r1r2q" class="unveil-image" />
+
+</a>
+</div>
+      
+        
+    </div>
+
+    <div class="post-content">
+      <span class="post-categories">
+  <div class="field field--name-field-post-category field--type-entity-reference field--label-above">
+    <div class="field__label">Post Category</div>
+          <div class="field__items">
+              <div class="field__item">linux-es</div>
+          <div class="field__item">old_article</div>
+              </div>
+      </div>
+</span>
+      
+         <h1 class="post-title"><span property="schema:name">Bash (IV) - Estructuras de control y bucles</span>
+</h1>
+        <span property="schema:name" content="Bash (IV) - Estructuras de control y bucles" class="hidden"></span>
+  <span property="schema:interactionCount" content="UserComments:5" class="hidden"></span>
+         
+      <div class="post-meta">
+        <span class="post-created"> 1 October 2006 </span> /
+        <span class="post-comment"> 
+          <a href="https://e-mc2.net/es/bash-iv-estructuras-de-control-y-bucles/#comments">5 Comments</a>
+        </span>
+      </div>
+      
+              <div class="node__meta hidden">
+          <article typeof="schema:Person" about="/user/1">
+  
+            <div class="field field--name-user-picture field--type-image field--label-hidden field__item">  <a href="https://e-mc2.net/user/1" hreflang="en"><img alt="Profile picture for user rafaelma" typeof="foaf:Image" data-src="/sites/default/files/styles/thumbnail/public/pictures/2017-06/rafael.jpg?itok=NKd0HvFP" class="unveil-image" />
+
+</a>
+</div>
+      </article>
+
+          <span>
+            Enviado por <span rel="schema:author"><span lang="" about="/es/user/1" typeof="schema:Person" property="schema:name" datatype="">rafaelma</span></span>
+ el 1 October 2006          </span>
+            <span property="schema:dateCreated" content="2006-10-01T18:47:34+00:00" class="hidden"></span>
+
+        </div>
+      
+      <div class="node__content clearfix">
+        
+            <div property="schema:text" class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>En nuestra cuarta entrega sobre la introduccion a el interprete de comandos Bash, vamos a ver una pequeña introduccion a las estructuras de control y bucles en Bash. Estas construcciones nos ayudan a controlar la ejecucion de un script y a obtener diversos resultados dependiendo de las condiciones que se cumplan o no cuando ejecutamos el script.</p>
+<p>En Bash existen estas construcciones para controlar el flujo de ejecucion de un script:</p>
+<ul>
+<li><b>if/else</b>: Ejecuta una serie de comandos dependiendo si una cierta condicion se cumple o no.</li>
+<li><b>for</b>: Ejecuta una serie de comandos un numero determinado de veces.</li>
+<li><b>while</b>: Ejecuta una seria de comandos mientras que una determinada condicion sea cumpla.</li>
+<li><b>until</b>: Ejecuta una serie de comandos hasta que una determinada condicion se cumpla.</li>
+<li><b>case</b>: Ejecuta una o varias listas de comandos dependiendo del valor de una variable.</li>
+<li><b>select</b>: Permite seleccionar al usuario una opcion de una lista de opciones en un menu.</li>
+</ul>
+<p>La mayoria de condiciones utilizadas con estas construcciones son comparaciones de cadenas alfanumericas o numericas, valores de terminacion de comandos y comprobaciones de atributos de ficheros. Antes de seguir viendo como estas construcciones se pueden utilizar, vamos a ver como las condiciones se pueden definir.</p>
+<h4>Comparaciones de cadenas alfanumericas</h4>
+<pre>
+Operador		Verdad (TRUE) si:
+------------------------------------------
+cadena1 = cadena2	cadena1 es igual a cadena2
+cadena1 != cadena2	cadena1 no es igual a cadena2
+cadena1 &lt; cadena2	cadena1 es menor que cadena2
+cadena1 &gt; cadena 2	cadena1 es mayor que cadena 2
+-n cadena1		cadena1 no es igual al valor nulo (longitud mayorque 0)
+-z cadena1		cadena1 tiene un valor nulo (longitud 0)
+</pre><h4>Comparacion de valores numericos</h4>
+<pre>
+Operador		Verdad (TRUE) si:
+------------------------------------------
+x -lt y			x menor que y
+x -le y			x menor o igual que y
+x -eq y			x igual que y
+x -ge y			x mayor o igual que y
+x -gt y			x mayor que y
+x -ne y			x no igual que y
+</pre><h4>Comprobacion de atributos de fichero</h4>
+<pre>
+Operador		Verdad (TRUE) si:
+------------------------------------------
+-d fichero		fichero existe y es un directorio
+-e fichero		fichero existe
+-f fichero		fichero existe y es un fichero regular (no un
+			directorio, u otro tipo de fichero especial)
+
+-r fichero		Tienes permiso de lectura en fichero
+-s fichero		fichero existe y no esta vacio
+-w fichero		Tienes permiso de escritura en fichero
+-x fichero		Tienes permiso de ejecucion en fichero (o de busqueda
+			si es un directorio)
+
+-O fichero		Eres el dueño del fichero
+-G fichero		El grupo del fichero es igual al tuyo.
+
+fichero1 -nt fichero2	fichero1 es mas reciente que fichero2
+fichero1 -ot fichero2	fichero1 es mas antiguo que fichero2
+</pre><p>Podemos combinar varias condiciones con los simbolos '&amp;&amp;' (AND) y '||' (OR), y negar una condicion con '!'. Unos ejemplos mas adelante aclararan como utilizarlos.</p>
+<h4>if/else</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+if "condicion"
+then
+  "comandos"
+[elif "condicion"
+then
+  "comandos"]
+[else
+  "comandos"]
+fi
+</pre><p>Como ya hemos dicho, podemos comprobar los valores de terminacion de un comando, y comparar cadenas alfanumericas/numericas y atributos de ficheros. Nada mejor que unos ejemplos para aclararnos las ideas.</p>
+<pre>
+#!/bin/bash
+#
+# Comprobando terminacion de un comando
+#
+
+DIRECTORIO="/tmp/test"
+
+COMANDO="/bin/mkdir $DIRECTORIO"
+
+if $COMANDO
+    then
+    echo "$DIRECTORIO ha sido creado"
+else
+    echo "$DIRECTORIO no pudo ser creado"
+fi
+</pre><pre>
+#!/bin/bash
+#
+# Comparacion de cadenas alfanumericas
+#
+
+CADENA1="uno"
+CADENA2="dos"
+CADENA3=""
+
+if [ $CADENA1 = $CADENA2 ]; then
+    echo "\$CADENA1 es igual a \$CADENA2"
+
+elif [ $CADENA1 != $CADENA2 ]; then
+    echo "\$CADENA1 no es igual a \$CADENA2"
+
+fi
+
+if [ -z $CADENA3 ]; then
+    echo "\$CADENA3 esta vacia"
+fi
+
+</pre><pre>
+#!/bin/bash
+#
+# Comparacion de valores numericos
+#
+
+let NUM1=1
+let NUM2=2
+let NUM3=3
+
+if [ $NUM1 -ne $NUM2 ] &amp;&amp; [ $NUM1 -ne $NUM3 ]; then
+    echo "\$NUM1 es diferente a \$NUM2 y \$NUM3"
+fi
+
+if [ $NUM1 -lt $NUM3 ]; then
+    echo "\$NUM1 es menor que \$NUM3"
+fi
+</pre><h4>for</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+for nombre [in lista]
+do
+   comandos que pueden utilizar $nombre
+done
+</pre><p>Un ejemplo nos aclarara las cosas. Vamos a listar informacion en el DNS de una lista de direcciones web:</p>
+<pre>
+#!/bin/bash
+
+for HOST in <a href="http://www.google.com" title="www.google.com">www.google.com</a> <a href="http://www.altavista.com" title="www.altavista.com">www.altavista.com</a> <a href="http://www.yahoo.com" title="www.yahoo.com">www.yahoo.com</a>
+do
+  echo "-----------------------"
+  echo $HOST
+  echo "-----------------------"
+  
+  /usr/bin/host $HOST
+  echo "-----------------------"
+
+done
+</pre><h4>while</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+while condicion
+do
+  comandos
+done
+</pre><p>Un ejemplo simple con while en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:</p>
+<pre>
+#!/bin/bash
+
+NUM=0
+
+while [ $NUM -le 10 ]; do
+    echo "\$NUM: $NUM"
+    let NUM=$NUM+1
+done
+</pre><h4>until</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+until condicion; do
+   comandos
+done
+</pre><p>Un ejemplo simple con until en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:</p>
+<pre>
+#!/bin/bash
+
+NUM=0
+
+until [ $NUM -gt 10 ]; do
+    echo "\$NUM: $NUM"
+    let NUM=$NUM+1
+done
+</pre><h4>case</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+case expresion in
+     caso_1 )
+        comandos;;
+     caso_2 ) 
+	comandos;;
+     ......
+esac  
+</pre><p>Un ejemplo simple con case para aclarar las cosas:</p>
+<pre>
+#!/bin/bash
+
+for NUM in 0 1 2 3
+do
+  case $NUM in
+      0)
+	  echo "\$NUM es igual a cero";;
+      1)
+	  echo "\$NUM es igual a uno";;
+      2)
+	  echo "\$NUM es igual a dos";;
+      3)
+	  echo "\$NUM es igual a tres";;
+  esac
+done
+</pre><h4>select</h4>
+<p>La sintaxis de esta construccion es la siguiente:</p>
+<pre>
+select nombre [in lista]
+do
+  comandos que pueden utilizar $nombre
+done
+</pre><p>Un ejemplo simple para aclarar las cosas.</p>
+<pre>
+#!/bin/bash
+
+select OPCION in opcion_1 opcion_2 opcion_3
+  do
+  if [ $OPCION ]; then
+      echo "Opcion elegida: $OPCION"
+      break
+  else
+      echo "Opcion no valida"
+  fi
+done
+</pre><p>Bueno esto es todo por hoy en nuestra introduccion a Bash. En el proximo articulo de esta serie veremos diferentes aspectos de la entrada y salida de datos en un script Bash.</p>
+</div>
+      <ul class="links inline"><li class="comment-add"><a href="bash-iv-estructuras-de-control-y-bucles.html#comment-form" title="Comparte tus ideas y opiniones." hreflang="es">Añadir nuevo comentario</a></li></ul>
+      </div>
+      <div id="node-single-comment">
+        <section rel="schema:comment">
+      
+    <h2>Comentarios</h2>
+    
+  
+    
+<article role="article" data-comment-user-id="0" id="comment-500" about="/es/comment/500" typeof="schema:Comment" class="comment-wrapper comment js-comment by-anonymous clearfix">
+    <span class="hidden" data-comment-timestamp="1551401078"></span>
+
+  <footer class="comment__meta">
+    <article typeof="schema:Person" about="/user/0">
+  </article>
+
+    <p class="comment__author"><span rel="schema:author"><span lang="" typeof="schema:Person" property="schema:name" datatype="">Soldado Anónimo (no verificado)</span></span>
+</p>
+    <p class="comment__time">Sáb, 09/29/2018 - 00:14  <span property="schema:dateCreated" content="2018-09-28T22:14:34+00:00" class="hidden"></span>
+</p>
+    <p class="comment__permalink"><a href="https://e-mc2.net/es/comment/500#comment-500" hreflang="es">Enlace permanente</a></p>
+          </footer>
+
+  <div class="comment__content">
+          
+      <h3 property="schema:name" datatype=""><a href="https://e-mc2.net/es/comment/500#comment-500" class="permalink" rel="bookmark" hreflang="es">Comentario</a></h3>
+      
+        
+            <div property="schema:text" class="field field--name-comment-body field--type-text-long field--label-hidden field__item"><p>Gracias por la info!! esta muy bien explicada, ya que la entendí a la primera.<br />
+Aunque si me pudieras responder una duda:<br />
+    &gt; ¿Cuál es la diferencia entre el case y el select?</p>
+</div>
+      
+          <nav><ul class="links inline"><li class="comment-reply"><a href="https://e-mc2.net/es/comment/reply/node/84/comment/500">Responder</a></li></ul></nav>
+      </div>
+</article>
+  
+<article role="article" data-comment-user-id="0" id="comment-692" about="/es/comment/692" typeof="schema:Comment" class="comment-wrapper comment js-comment by-anonymous clearfix">
+    <span class="hidden" data-comment-timestamp="1559910316"></span>
+
+  <footer class="comment__meta">
+    <article typeof="schema:Person" about="/user/0">
+  </article>
+
+    <p class="comment__author"><span rel="schema:author"><span lang="" typeof="schema:Person" property="schema:name" datatype="">Jorge Marquez (no verificado)</span></span>
+</p>
+    <p class="comment__time">Dom, 05/12/2019 - 06:04  <span property="schema:dateCreated" content="2019-05-12T04:04:31+00:00" class="hidden"></span>
+</p>
+    <p class="comment__permalink"><a href="https://e-mc2.net/es/comment/692#comment-692" hreflang="es">Enlace permanente</a></p>
+          </footer>
+
+  <div class="comment__content">
+          
+      <h3 property="schema:name" datatype=""><a href="https://e-mc2.net/es/comment/692#comment-692" class="permalink" rel="bookmark" hreflang="es">Pregunta</a></h3>
+      
+        
+            <div property="schema:text" class="field field--name-comment-body field--type-text-long field--label-hidden field__item"><p>Tengo el siguiente if donde me encontré este operador &quot;=~&quot;, quisiera saber que función cumple<br />
+if [[ $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]];</p>
+</div>
+      
+          <nav><ul class="links inline"><li class="comment-reply"><a href="https://e-mc2.net/es/comment/reply/node/84/comment/692">Responder</a></li></ul></nav>
+      </div>
+</article>
+
+<div class="indented">  
+<article role="article" data-comment-user-id="0" id="comment-719" about="/es/comment/719" typeof="schema:Comment" class="comment-wrapper comment js-comment by-anonymous clearfix">
+    <span class="hidden" data-comment-timestamp="1560176438"></span>
+
+  <footer class="comment__meta">
+    <article typeof="schema:Person" about="/user/0">
+  </article>
+
+    <p class="comment__author"><span rel="schema:author"><span lang="" typeof="schema:Person" property="schema:name" datatype="">artxta (no verificado)</span></span>
+</p>
+    <p class="comment__time">Sáb, 06/08/2019 - 23:00  <span property="schema:dateCreated" content="2019-06-08T21:00:43+00:00" class="hidden"></span>
+</p>
+    <p class="comment__permalink"><a href="https://e-mc2.net/es/comment/719#comment-719" hreflang="es">Enlace permanente</a></p>
+              <p class="visually-hidden">En respuesta a <a href="https://e-mc2.net/es/comment/692#comment-692" class="permalink" rel="bookmark" hreflang="es">Pregunta</a> por <span lang="" typeof="schema:Person" property="schema:name" datatype="">Jorge Marquez (no verificado)</span></p>
+      </footer>
+
+  <div class="comment__content">
+          
+      <h3 property="schema:name" datatype=""><a href="https://e-mc2.net/es/comment/719#comment-719" class="permalink" rel="bookmark" hreflang="es">Un operador binario…</a></h3>
+      
+        
+            <div property="schema:text" class="field field--name-comment-body field--type-text-long field--label-hidden field__item"><p>Un operador binario adicional, = ~, está disponible, con la misma prioridad que == y! =. Cuando se usa, la cadena a la derecha del operador se considera una expresión regular extendida y se empareja en consecuencia (como en regex (3)).</p>
+</div>
+      
+          <nav><ul class="links inline"><li class="comment-reply"><a href="https://e-mc2.net/es/comment/reply/node/84/comment/719">Responder</a></li></ul></nav>
+      </div>
+</article>
+  
+<article role="article" data-comment-user-id="0" id="comment-789" about="/es/comment/789" typeof="schema:Comment" class="comment-wrapper comment js-comment by-anonymous clearfix">
+    <span class="hidden" data-comment-timestamp="1574300281"></span>
+
+  <footer class="comment__meta">
+    <article typeof="schema:Person" about="/user/0">
+  </article>
+
+    <p class="comment__author"><span rel="schema:author"><span lang="" typeof="schema:Person" property="schema:name" datatype="">Jose Diaz (no verificado)</span></span>
+</p>
+    <p class="comment__time">Mar, 09/03/2019 - 10:03  <span property="schema:dateCreated" content="2019-09-03T08:03:32+00:00" class="hidden"></span>
+</p>
+    <p class="comment__permalink"><a href="https://e-mc2.net/es/comment/789#comment-789" hreflang="es">Enlace permanente</a></p>
+              <p class="visually-hidden">En respuesta a <a href="https://e-mc2.net/es/comment/692#comment-692" class="permalink" rel="bookmark" hreflang="es">Pregunta</a> por <span lang="" typeof="schema:Person" property="schema:name" datatype="">Jorge Marquez (no verificado)</span></p>
+      </footer>
+
+  <div class="comment__content">
+          
+      <h3 property="schema:name" datatype=""><a href="https://e-mc2.net/es/comment/789#comment-789" class="permalink" rel="bookmark" hreflang="es">Operador =~</a></h3>
+      
+        
+            <div property="schema:text" class="field field--name-comment-body field--type-text-long field--label-hidden field__item"><p>Lo usna para Regex. Para comprobar que una variable cumpla un patrón.</p>
+</div>
+      
+          <nav><ul class="links inline"><li class="comment-reply"><a href="https://e-mc2.net/es/comment/reply/node/84/comment/789">Responder</a></li></ul></nav>
+      </div>
+</article>
+</div>  
+<article role="article" data-comment-user-id="0" id="comment-812" about="/es/comment/812" typeof="schema:Comment" class="comment-wrapper comment js-comment by-anonymous clearfix">
+    <span class="hidden" data-comment-timestamp="1574300281"></span>
+
+  <footer class="comment__meta">
+    <article typeof="schema:Person" about="/user/0">
+  </article>
+
+    <p class="comment__author"><span rel="schema:author"><span lang="" typeof="schema:Person" property="schema:name" datatype="">dario pumarejo (no verificado)</span></span>
+</p>
+    <p class="comment__time">Mié, 10/09/2019 - 14:52  <span property="schema:dateCreated" content="2019-10-09T12:52:30+00:00" class="hidden"></span>
+</p>
+    <p class="comment__permalink"><a href="https://e-mc2.net/es/comment/812#comment-812" hreflang="es">Enlace permanente</a></p>
+          </footer>
+
+  <div class="comment__content">
+          
+      <h3 property="schema:name" datatype=""><a href="https://e-mc2.net/es/comment/812#comment-812" class="permalink" rel="bookmark" hreflang="es">ayuda</a></h3>
+      
+        
+            <div property="schema:text" class="field field--name-comment-body field--type-text-long field--label-hidden field__item"><p>solicito atentamente un script que permita pedir una cadena y que evalue si es un archivo o directorio en una ruta determinada, generando mensajes de &quot;es archivo o directorio&quot;, ademas de que &quot;si existe o no&quot;.</p>
+<p>Gracias</p>
+</div>
+      
+          <nav><ul class="links inline"><li class="comment-reply"><a href="https://e-mc2.net/es/comment/reply/node/84/comment/812">Responder</a></li></ul></nav>
+      </div>
+</article>
+
+
+      <h2>Añadir nuevo comentario</h2>
+    <form class="comment-comment-form comment-form" data-drupal-selector="comment-form" action="https://e-mc2.net/es/comment/reply/node/84/comment" method="post" id="comment-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+      <label for="edit-name">Su nombre</label>
+        <input data-drupal-default-value="Anónimo" data-drupal-selector="edit-name" type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-d5tikb2dyuf1wshglj3lncxjuaxdmyaoxitvevzdioo" type="hidden" name="form_build_id" value="form-D5TIkb2DyuF1WshGLJ3LnCXJuaXDMYaOXItVeVZdIoo" />
+<input data-drupal-selector="edit-comment-comment-form" type="hidden" name="form_id" value="comment_comment_form" />
+<div class="field--type-language field--name-langcode field--widget-language-select js-form-wrapper form-wrapper" data-drupal-selector="edit-langcode-wrapper" id="edit-langcode-wrapper">
+      <div class="js-form-item form-item js-form-type-language-select form-item-langcode-0-value js-form-item-langcode-0-value">
+      <label for="edit-langcode-0-value">Idioma</label>
+        <select data-drupal-selector="edit-langcode-0-value" aria-describedby="edit-langcode-0-value--description" id="edit-langcode-0-value" name="langcode[0][value]" class="form-select"><option value="en">Inglés</option><option value="es" selected="selected">Español</option><option value="und">- Sin especificar -</option><option value="zxx">- No aplicable -</option></select>
+            <div id="edit-langcode-0-value--description" class="description">
+      Código de idioma del comentario.
+    </div>
+  </div>
+
+  </div>
+<div class="field--type-string field--name-subject field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-subject-wrapper" id="edit-subject-wrapper">
+      <div class="js-form-item form-item js-form-type-textfield form-item-subject-0-value js-form-item-subject-0-value">
+      <label for="edit-subject-0-value">Subject</label>
+        <input class="js-text-full text-full form-text" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="subject[0][value]" value="" size="60" maxlength="64" placeholder="" />
+
+        </div>
+
+  </div>
+<div class="field--type-text-long field--name-comment-body field--widget-text-textarea js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-wrapper" id="edit-comment-body-wrapper">
+      <div class="js-text-format-wrapper js-form-item form-item">
+  <div class="js-form-item form-item js-form-type-textarea form-item-comment-body-0-value js-form-item-comment-body-0-value">
+      <label for="edit-comment-body-0-value" class="js-form-required form-required">Comentario</label>
+        <div>
+  <textarea class="js-text-full text-full form-textarea required" data-drupal-selector="edit-comment-body-0-value" id="edit-comment-body-0-value" name="comment_body[0][value]" rows="5" cols="60" placeholder="" required="required" aria-required="true"></textarea>
+</div>
+
+        </div>
+<div class="filter-wrapper js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format" id="edit-comment-body-0-format"><div class="filter-help js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format-help" id="edit-comment-body-0-format-help"><a href="https://e-mc2.net/es/filter/tips" target="_blank" data-drupal-selector="edit-comment-body-0-format-help-about" id="edit-comment-body-0-format-help-about">Acerca de formatos de texto</a></div>
+<div class="filter-guidelines js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format-guidelines" id="edit-comment-body-0-format-guidelines"><div>
+  <h4>Texto sin formato</h4>
+  
+  
+    
+          <ul>
+              <li>No se permiten etiquetas HTML.</li>
+              <li>Saltos automáticos de líneas y de párrafos.</li>
+              <li>Las direcciones de correos electrónicos y páginas web se convierten en enlaces automáticamente.</li>
+            </ul>
+    
+    
+  
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+    <div class="captcha"><input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="138090" />
+<input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="c52808bac63569262996ccd8a73a452f" />
+<input data-drupal-selector="edit-captcha-response" type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6Ldn5yMUAAAAADNj_GWmrljBc8m6obmXW6rGT-5u" data-theme="light" data-type="image"></div>
+<noscript>
+  <div style="width: 302px; height: 352px;">
+    <div style="width: 302px; height: 352px; position: relative;">
+      <div style="width: 302px; height: 352px; position: absolute;">
+        <iframe src="../../www.google.com/recaptcha/api/fallback%3Fk=6Ldn5yMUAAAAADNj_GWmrljBc8m6obmXW6rGT-5u&amp;hl=es.html" frameborder="0" scrolling="no" style="width: 302px; height:352px; border-style: none;"></iframe>
+      </div>
+      <div style="width: 250px; height: 80px; position: absolute; border-style: none; bottom: 21px; left: 25px; margin: 0px; padding: 0px; right: 25px;">
+        <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 80px; border: 1px solid #c1c1c1; margin: 0px; padding: 0px; resize: none;" value=""></textarea>
+      </div>
+    </div>
+  </div>
+</noscript>
+<input data-drupal-selector="edit-captcha-cacheable" type="hidden" name="captcha_cacheable" value="1" />
+</div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Guardar" class="button button--primary js-form-submit form-submit" />
+<input data-drupal-selector="edit-preview" type="submit" id="edit-preview" name="op" value="Previsualizar" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+  
+</section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- End Display article for detail page -->
+
+    </div>
+  </div>
+
+  </div>
+
+					</div>
+				
+							</div>
+
+		</div>
+
+		<!-- Sidebar Left -->
+				<!-- End Sidebar Left -->
+
+		<!-- Sidebar Right -->
+					
+							 
+
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar sidebar-right theiaStickySidebar">
+				<div class="sidebar-inner">
+					  <div>
+    <div id="block-addtoanybuttons" class="block block-addtoany block-addtoany-block">
+  
+      <h2 class="block-title" ><span>Share on</span></h2>
+    
+      <div class="content block-content">
+      <span class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://e-mc2.net/es/bash-iv-estructuras-de-control-y-bucles" data-a2a-title="Bash (IV) - Estructuras de control y bucles"><a class="a2a_button_twitter"></a><a class="a2a_button_reddit"></a><a class="a2a_button_hacker_news"></a><a class="a2a_button_facebook"></a><a class="a2a_button_google_plus"></a><a class="a2a_dd addtoany_share" href="https://www.addtoany.com/share#url=https%3A%2F%2Fe-mc2.net%2Fes%2Fbash-iv-estructuras-de-control-y-bucles&amp;title=Bash%20%28IV%29%20-%20Estructuras%20de%20control%20y%20bucles"></a></span>
+    </div>
+  </div>
+<div id="block-googleadd1" class="block block-block-content block-block-contentc31577e8-8bcf-42dd-93c2-52902ac642f9 no-title">
+  
+    
+      <div class="content block-content">
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><script async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- right column -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4837658472131626"
+     data-ad-slot="8692337110"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+				</div>
+			</div>
+				<!-- End Sidebar Right -->
+		
+	</div>
+</div>
+			</div>
+		</div>
+
+					<div class="highlighted area">
+				<div class="container">
+					  <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+				</div>
+			</div>
+		
+				
+		
+	</div>
+
+	<footer id="footer" class="footer">
+  
+     
+   <div class="footer-center">
+      <div class="container">      
+         <div class="row">
+                          <div class="footer-first col-lg-4 col-md-4 col-sm-12 col-xs-12 column">
+                  <div>
+    <div id="block-socialmedialinks" class="block-social-media-links block block-social-media-links-block">
+  
+      <h2 class="block-title" ><span>Follow</span></h2>
+    
+      <div class="content block-content">
+      
+
+<ul class="social-media-links--platforms platforms vertical">
+      <li>
+      <a href="https://e-mc2.net/index.php/es/rss.xml"  >
+        <span class='fa fa-rss fa-2x'></span>
+      </a>
+
+              
+        <span><a href="https://e-mc2.net/index.php/es/rss.xml" >RSS</a></span>
+          </li>
+      <li>
+      <a href="https://www.twitter.com/rafaelma_"  >
+        <span class='fa fa-twitter fa-2x'></span>
+      </a>
+
+              
+        <span><a href="https://www.twitter.com/rafaelma_" >Twitter</a></span>
+          </li>
+      <li>
+      <a href="https://github.com/rafaelma"  >
+        <span class='fa fa-github fa-2x'></span>
+      </a>
+
+              
+        <span><a href="https://github.com/rafaelma" >GitHub</a></span>
+          </li>
+      <li>
+      <a href="https://www.flickr.com/photos/rafaelma"  >
+        <span class='fa fa-flickr fa-2x'></span>
+      </a>
+
+              
+        <span><a href="https://www.flickr.com/photos/rafaelma" >Flickr</a></span>
+          </li>
+  </ul>
+
+    </div>
+  </div>
+
+  </div>
+
+              </div> 
+            
+                         <div class="footer-second col-lg-2 col-md-2 col-sm-12 col-xs-12 column">
+                  <div>
+    <div id="block-contactinfo" class="block block-block-content block-block-contenta9dde446-3bbc-4714-b3ac-5323773c85eb">
+  
+      <h2 class="block-title" ><span>Contacto</span></h2>
+    
+      <div class="content block-content">
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="contact-info">
+	<ul class="contact-info">
+		<li><span><i class="fa fa-mobile-phone"></i> (+47) 99 25 69 07</span></li>
+		<li><a href="mailto:rafael@e-mc2.net"><i class="fa fa-envelope-o"></i> rafael@e-mc2.net</a> </li>
+		<li><a href="https://github.com/rafaelma"><i class="fa fa-github"></i>GitHub: rafaelma</a> </li>
+                <li><a href="https://twitter.com/rafaelma_"><i class="fa fa-twitter"></i>Twitter: rafaelma_</a> </li>
+                <li><a href="https://www.flickr.com/photos/rafaelma/"><i class="fa fa-flickr"></i>Flickr: rafaelma</a> </li>
+                <li><a href="https://no.linkedin.com/in/rmguerrero"><i class="fa fa-linkedin"></i>Linkedin: rmguerrero</a> </li>
+	</ul>
+</div></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+              </div> 
+            
+            
+                     </div>   
+      </div>
+  </div>   
+
+  
+      <div class="copyright">
+      <div class="container">
+        <div class="copyright-inner">
+              <div>
+    <div id="block-copyright" class="block block-block-content block-block-contentc3fbd5b6-862c-4353-af48-50146d6a7061 no-title">
+  
+    
+      <div class="content block-content">
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="text-center">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="../../i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional</a>.<br/>
+© Copyright 2016-2019 Emc2Net - Rafael Martinez Guerrero.
+</div></div>
+      
+    </div>
+  </div>
+
+  </div>
+
+        </div>   
+      </div>   
+    </div>
+  
+</footer>
+
+</div>
+
+
+  </div>
+
+    
+    <script src="../sites/default/files/js/js_QssuvkBrx8hV2zn_PWuNjJuiZMC0FrEO1oFG9MbdWf0.js"></script>
+<script src="../../static.addtoany.com/menu/page.js" async></script>
+<script src="../sites/default/files/js/js_6v9cQ4MV_bb0ORUcfKyfOzD9uQ_XG8yUhDnlLA6ZhBQ.js"></script>
+
+    
+      
+  </body>
+</html>

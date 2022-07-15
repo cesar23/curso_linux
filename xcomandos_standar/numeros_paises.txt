@@ -1,0 +1,46 @@
+1	Antillas Netherlands
+2	Argentina
+3	Armenia
+4	Aruba
+5	Australia
+6	Austria
+7	Bahamas
+8	Belgica
+9	Bermudas
+10	Bolivia
+11	Brasil
+12	Bulgaria
+13	Burundi
+14	Canada
+15	Alemania
+16	Andorra
+17	Colombia
+18	Corea
+19	Costa Rica
+20	Croatia
+21	Cuba
+22	Chile
+23	China
+24	Dinamarca
+25	Ecuador
+26	El Salvador
+27	España
+28	Estados Unidos
+29	Estonia
+30	Malaysia
+31	Mexico
+32	Netherlands
+33	Nicaragua
+34	Norfolk Island
+35	Perú
+36	Polonia
+37	Portugal
+38	Rumania
+39	Rusia
+40	Rwanda
+41	Singapur
+42	Slovakia
+43	Sri Lanka
+44	Sur Africa
+45	Yugoslavia
+46	Zaire

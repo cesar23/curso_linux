@@ -1,0 +1,13 @@
+/*ocultar opciones de escritorio y ayuda wp */
+#screen-meta-links{
+     display:none;
+}
+/*---- ocultar el contenido y con el js mostralo denuvo------*/
+#adminmenuwrap{
+     display:none;
+}
+
+
+#product_cat-all{
+    font-size: 0.9em !important;
+}

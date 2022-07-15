@@ -1,0 +1,40 @@
+.header-nav.header-nav-main.nav li a{
+	/* background-color: red; */
+	 color: #000 !important; 
+	font-weight: bold !important;
+}
+
+
+.header-nav.header-nav-main.nav .menu-item-has-children.active>a{
+	/*background-color: red; */
+	color: #0a70e4 !important;
+	font-weight: bold !important;
+}
+
+.header-nav.header-nav-main.nav .page_item.active  a{
+	/*background-color: red; */
+	color: #0a70e4 !important;
+	font-weight: bold !important;
+}
+
+.ocultarElemento{
+    
+    display:none !important;
+}
+
+/* -- para el boton de musica de pagina --*/
+.nav-small>li>a>i {
+    font-size: 2em !important;
+}
+
+/* -- para agrandar el formulario de busqueda --*/
+#woocommerce-product-search-field-2 {
+    width: 500px !important;
+}
+
+
+/* --  para dar un pading al navegador de busqueda --*/	
+.header-bottom.wide-nav{
+	    padding-bottom: 14px;
+    background-color: #ffffff;
+}

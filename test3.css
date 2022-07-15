@@ -1,0 +1,90 @@
+div.wpforms-container-full .wpforms-form .wpforms-one-half{
+    float: left !important;
+    margin-left: 4% !important;
+    clear: none !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+    padding: 10px 0 !important;
+
+}
+
+div.wpforms-container-full, div.wpforms-container-full .wpforms-form * {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+
+
+
+}
+
+
+.wpforms-field-container .wpforms-field-large{
+
+    width: 100% !important;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-first {
+    clear: both !important;
+    margin-left: 0!important;
+}
+div.wpforms-container-full .wpforms-form .wpforms-one-half, div.wpforms-container-full .wpforms-form .wpforms-three-sixths, div.wpforms-container-full .wpforms-form .wpforms-two-fourths {
+    /*width: 48% !important;*/
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field {
+    padding: 10px 0  !important;;
+
+}
+
+/* agregados*/
+
+div.wpforms-container-full .wpforms-form input[type=text], .wpforms-form input[type=email] {
+    border: 1px solid #bbb !important;
+    background-color: #fff !important;
+    box-sizing: border-box !important;
+    border-radius: 2px !important;
+    color: #333 !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    display: block !important;
+    float: none !important;
+    font-size: 16px !important;
+    border: 1px solid #ccc !important;
+    padding: 6px 10px !important;
+    height: 38px !important;
+    width: 100% !important;
+    line-height: 1.3 !important;
+}
+
+
+.wpforms-form textarea{
+    border: 1px solid #bbb !important;
+    background-color: #fff !important;
+    box-sizing: border-box !important;
+    border-radius: 2px !important;
+    color: #333 !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    display: block !important;
+    float: none !important;
+    font-size: 16px !important;
+
+    padding: 6px 10px !important;
+
+    width: 100% !important;
+    line-height: 1.3 !important;
+}
+
+
+div.wpforms-container-full .wpforms-form label.wpforms-error {
+    color: #ef3e46 !important;
+}
+
+.percent-value{
+    color:#fff !important;
+}
+.ocultarElemento{
+
+    display:none !important;
+}

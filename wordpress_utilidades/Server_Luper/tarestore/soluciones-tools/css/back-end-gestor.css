@@ -1,0 +1,58 @@
+/*ocultar opciones de escritorio y ayuda wp */
+#screen-meta-links{
+    display:none;
+}
+/*---- ocultar el contenido y con el js mostralo denuvo------*/
+#adminmenuwrap{
+    display:none;
+}
+
+
+#product_cat-all{
+    font-size: 0.8em !important;
+}
+
+/*---- Ocultar Paneles de Flatsone ------*/
+#wpadminbar #wp-admin-bar-flatsome_panel,#wp-admin-bar-flatsome-activate{
+    display:none;
+}
+
+/*---- Ocultar Paneles de Yoast ------*/
+#wpadminbar #wp-admin-bar-wpseo-menu{
+    display:none;
+}
+
+/*---- Ocultar Paneles de Graviti forms ------*/
+#wpadminbar #wp-admin-bar-gform-forms{
+    display:none;
+}
+
+/*--------------------------------------------------------------------------*/
+/*---- Solamente habilitamos [apariencia->personalizar] en la seccion ------*/
+/*--------------------------------------------------------------------------*/
+/*
+#menu-appearance li{
+    display:none;
+
+}
+#menu-appearance li.hide-if-no-customize{
+    display:block;
+
+}
+*/
+
+
+#menu-dashboard > ul > li{
+      display:none;
+}
+
+/*--------------------------------------------------------------------------*/
+/*---- Solamente adminbar ------*/
+/*--------------------------------------------------------------------------*/
+#wp-admin-bar-root-default li {
+     display:none;
+}
+
+#wp-admin-bar-edit-profile {
+    display:none;
+}

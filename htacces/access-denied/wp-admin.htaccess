@@ -1,0 +1,24 @@
+# ideally, only allow access to those ip address/ranges that should have access
+<FilesMatch ".*">
+    <IfModule !mod_authz_core.c>
+         deny from all
+         allow from 128.206.
+         allow from 161.130.
+         allow from 10.7.
+    </IfModule>
+    <IfModule mod_authz_core.c>
+        Require ip 128.206.0.0/16
+        Require ip 161.130.0.0/16
+        Require ip 10.7.0.0/16
+    </IfModule>
+</FilesMatch>
+
+#except for admin-ajax which needs to be accessible publicly
+<Files admin-ajax.php>
+    <IfModule !mod_authz_core.c>
+         allow from all
+    </IfModule>
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+</Files>

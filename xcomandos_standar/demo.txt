@@ -1,0 +1,80 @@
+Como comentaba antes, Vi tiene tres modos básicos de trabajo que detallo a continuación:
+
+El ‘ Modo Comando ’ permite al usuario navegar por el documento así como introducir comandos a ejecutar dentro del propio archivo (buscar, reemplazar, guardar…), ya que en este modo el programa no interpreta las teclas del teclado por los caracteres que representan, si no por las funciones preestablecidas o comandos asignados a cada tecla.
+
+Estos escuetos comandos son combinaciones de letras sensibles a mayúsculas (que corresponden a diferentes órdenes). A algunos de estos comandos podemos introducir un número delante que indicará el número de veces que queremos repetir la acción a ejecutar.
+
+Por poner un ejemplo, si el comando yy (o Y ) copia la línea donde se encuentra el cursor, el comando 
+
+
+
+
+
+
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+
+1111111111111111
+22222222222222222222
+3333333333333333333333
+4444444444444444444444444
+555555555555555555555555555
+666666666666666666666666666
+77777777777777777777777777777
+88888888888888888888888888888888
+9999999999999999999999999999999999
+Como comentaba antes, Vi tiene tres modos básicos de trabajo que detallo a continuación:
+
+El ‘ Modo Comando ’ permite al usuario navegar por el documento así como introducir comandos a ejecutar dentro del propio archivo (buscar, reemplazar, guardar…), ya que en este modo el programa no interpreta las teclas del teclado por los caracteres que representan, si no por las funciones preestablecidas o comandos asignados a cada tecla.
+
+Estos escuetos comandos son combinaciones de letras sensibles a mayúsculas (que corresponden a diferentes órdenes). A algunos de estos comandos podemos introducir un número delante que indicará el número de veces que queremos repetir la acción a ejecutar.
+
+Por poner un ejemplo, si el comando yy (o Y ) copia la línea donde se encuentra el cursor, el comando 
+
+
+
+
+
+
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+
+1111111111111111
+22222222222222222222
+3333333333333333333333
+4444444444444444444444444
+555555555555555555555555555
+666666666666666666666666666
+77777777777777777777777777777
+88888888888888888888888888888888
+9999999999999999999999999999999999
+
+Como comentaba antes, Vi tiene tres modos básicos de trabajo que detallo a continuación:
+
+El ‘ Modo Comando ’ permite al usuario navegar por el documento así como introducir comandos a ejecutar dentro del propio archivo (buscar, reemplazar, guardar…), ya que en este modo el programa no interpreta las teclas del teclado por los caracteres que representan, si no por las funciones preestablecidas o comandos asignados a cada tecla.
+
+Estos escuetos comandos son combinaciones de letras sensibles a mayúsculas (que corresponden a diferentes órdenes). A algunos de estos comandos podemos introducir un número delante que indicará el número de veces que queremos repetir la acción a ejecutar.
+
+Por poner un ejemplo, si el comando yy (o Y ) copia la línea donde se encuentra el cursor, el comando 
+
+
+
+
+
+
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+Existen otros modos para Vi / Vim como ‘visual’, ‘selección’, etc… pero estos tres son por los que más pasaremos.
+
+1111111111111111
+22222222222222222222
+3333333333333333333333
+4444444444444444444444444
+555555555555555555555555555
+666666666666666666666666666
+77777777777777777777777777777
+88888888888888888888888888888888
+9999999999999999999999999999999999
+

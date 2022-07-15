@@ -1,0 +1,309 @@
+@echo off
+SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
+
+
+
+rem cogemos el parametro pasado
+rem set RUTA_CARPETA_COMPRIMIR=%1
+
+rem declaramos variables
+
+:: bacup_cesar
+set CURRENT_NAME=%~n0
+set CURRENT_DIR=%~dp0
+
+set NOMBRE_ARCHIVO=%~dp0
+:: C:\Users\Cesar\cesar\bacup_cesar2.bat
+set PATH_DEL_ARCHIVO=%~dpnx0
+set ARCHIVO_CONTADOR=bacup_cesar.contador.txt
+set PATH_DEL_ARCHIVO_CONTADOR=!%CURRENT_DIR%%ARCHIVO_CONTADOR%!
+
+
+
+
+set anio=%date:~6,4%
+set mes=%date:~3,2%
+set dia=%date:~0,2%
+
+set hora=%time:~0,2%
+set hora=%hora: =0%
+set minuto=%time:~3,2%
+set segundo=%time:~6,2%
+
+set FECHA=%anio%-%mes%-%dia%__%hora%:%minuto%:%segundo%
+echo %FECHA%
+ping 127.0.0.1 -n 10 > nul
+exit
+
+
+cd "C:\laragon\www\gspmarinov1"
+cls
+echo guardando cambios en - gspmarinov1 ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+REM cls
+REM echo guardando cambios en - gsptrackv1 ....
+REM echo.
+REM cd "C:\laragon\www\gsptrackv1"
+REM git pull 
+rem git add -A 
+REM git commit -am"actualidado %FECHA%"
+REM git push origin master
+REM ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cls
+echo guardando cambios en - curso_nodeJs_mongo ....
+echo.
+cd "C:\laragon\www\curso_nodeJs_mongo"
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "C:\laragon\www\test_trabajos-master"
+cls
+echo guardando cambios en - test_trabajos-master ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_postgreSql"
+cls
+echo guardando cambios en - curso_postgreSql ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_mongodb"
+cls
+echo guardando cambios en - curso_mongodb ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso-linux"
+cls
+echo guardando cambios en - curso_linux ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_ReacJs"
+cls
+echo guardando cambios en - curso_ReacJs ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "C:\laragon\www\linkancds"
+cls
+echo guardando cambios en - linkancds ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "C:\laragon\www\curso-electron"
+cls
+echo guardando cambios en - curso-electron ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_tamprerMonkey"
+cls
+echo guardando cambios en - curso_tamprerMonkey ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_dos_batch"
+cls
+echo guardando cambios en - curso_dos_batch ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_css3"
+cls
+echo guardando cambios en - curso_css3 ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_powershell"
+cls
+echo guardando cambios en -curso_powershell ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_vbscript"
+cls
+echo guardando cambios en -curso_vbscript ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso-javascript-moderno"
+cls
+echo guardando cambios en - curso-javascript-moderno ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_webpack"
+cls
+echo guardando cambios en - curso_webpack ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ---------------------------------------------
+cd "D:\cesar\curso_chromeExtension"
+cls
+echo guardando cambios en - curso_chromeExtension ....
+echo.
+git pull 
+git add -A 
+git commit -am"actualidado %FECHA%"
+git push origin master
+ping 127.0.0.1 -n 6 > nul
+
+rem ----------------------------------------------------------------------------------------------------
+rem 		------------------------- SI ES EL DIA 17 REALIZARA UN TAG POR LOS REPOSITORIOS --------------
+rem ----------------------------------------------------------------------------------------------------
+
+IF /i "%dia%"=="17" goto goto_crear_tag
+
+goto goto_Exit
+
+rem --------------------------------- start goto_crear_tag
+:goto_crear_tag
+set numero=0;
+::leemos lo que tiene  el archiv que  seria  un numero 1
+for /f "tokens=*" %%h in (%PATH_DEL_ARCHIVO_CONTADOR%) do (
+	set /a numero=%%h
+)
+::ahora le aumentamos uno
+set /a numero=!numero!+1
+echo !numero!>%PATH_DEL_ARCHIVO_CONTADOR%
+
+echo se creo tag el dia :%dia%
+
+
+
+rem -------------   CREANDO LOS TAGS  -------------
+
+rem -----------------------------
+cd "C:\laragon\www\gspmarinov1"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "C:\laragon\www\curso_nodeJs_mongo"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "C:\laragon\www\test_trabajos-master"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "D:\cesar\curso_postgreSql"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "D:\cesar\curso_mongodb"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "D:\cesar\curso_ReacJs"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "C:\laragon\www\linkancds"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "C:\laragon\www\curso-electron"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+rem -----------------------------
+cd "C:\laragon\www\curso-electron"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+
+rem -----------------------------
+cd "D:\cesar\curso-linux"
+git tag -a v1.0.!numero! -m "Version 1.0.!numero! - Fecha:%anio%-%mes%-%dia% "
+git push origin --tags
+
+
+rem --------------------------------- end goto_crear_tag
+
+
+
+
+:goto_Exit

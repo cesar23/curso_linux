@@ -1,0 +1,48 @@
+
+/*------ 1. borrar elementos de navbar -- */
+
+/*
+#wp-admin-bar-root-default >li{
+    display:none;
+}
+
+#wp-admin-bar-root-default #wp-admin-bar-site-name{
+    display:block;
+}
+
+
+#wp-admin-bar-my-account li{
+    display:none;
+}
+
+#wp-admin-bar-my-account #wp-admin-bar-logout{
+    display:block;
+}
+
+/*------ 2. Ocultar menus del Sidebar Admin -- */
+/*
+#adminmenu li{
+    
+	display:none;
+}
+
+*/
+
+
+/*------ 3. borrar anuncios de actualizacion y errores -- */
+.notice,
+.updated,
+.update-nag,
+.bsf-update-nag,
+#welcome-panel,
+#footer-upgrade{
+display:none;
+}
+
+/*------ 4. ocultar anuncios de SmartSlider(plugin) -- */
+.n2_getting_started__video, 
+.n2_dashboard_manager,
+.n2_dashboard_info,
+.n2_help_center{
+display:none;
+}

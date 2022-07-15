@@ -1,0 +1,87 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Python",
+      "type": "process",
+      "windows": {
+        "command": "${env:env_python}/python.exe",
+        "args": [
+          "${file}"
+        ]
+      },
+      "linux": {
+        "command": "/usr/bin/node"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Node",
+      "type": "process",
+      "windows": {
+        "command": "C:\\Program Files\\nodejs\\node.exe",
+        "args": [
+          "${file}"
+        ]
+      },
+      "linux": {
+        "command": "/usr/bin/node"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Linux",
+      "type": "shell",
+      "windows": {
+        "command": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "args": [
+          "${file}"
+        ]
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run PHP",
+      "type": "shell",
+      "windows": {
+        "command": "php",
+        "args": [
+          "${file}"
+        ]
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Notas",
+      "type": "shell",
+      "windows": {
+        "command": "${workspaceFolder}\\NOTAS.sh",
+        "args": [
+          "${file}"
+        ]
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
