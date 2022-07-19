@@ -12,10 +12,10 @@ function upgit() {
 }
 
 function gitup() {
-    git pull
+    # git pull
 	  git add -A
     git commit -m "${MY_INFO} se actualizo :${DATE_HOUR_GIT}"
-    git push -u origin master
+    git push origin master && git push origin2 master
 }
 
 function gitup2() {

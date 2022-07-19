@@ -125,3 +125,7 @@ curl -i \
 
 #--ocultar  carga de consola
 curl -silent http://google.com > temp.html
+
+
+# descargar archivos con curl
+curl -C - --output ubuntu-22.04-desktop-amd64.iso https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso
