@@ -8,7 +8,8 @@ sudo apt install openssh-server -y
 ### Ahora vamos a generar unas nuevas claves usando el comando 
 
 ```shell
-ssh-keygen -t rsa y ssh-keygen -t dsa
+ssh-keygen -t rsa
+ssh-keygen -t dsa
 ```
 
 Ahora vamos a ver el fichero de configuración de nuestro servidor SSH con
