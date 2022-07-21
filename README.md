@@ -9,7 +9,8 @@ git clone git@gitlab.com:perucaos/curso_linux.git
 cd curso_linux 
 # 2. agregamos el repositorio de github
 git remote add origin2 git@gitlab.com:perucaos/curso_linux.git
-
+# 3. descargar si ahy algun cambio
+git pull origin master
 ```
 
 ### para actualizar repos con los cambios correr
