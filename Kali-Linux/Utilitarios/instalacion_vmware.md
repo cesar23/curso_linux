@@ -8,6 +8,7 @@ instalar paquetes de vmware drivers en linux para debian kali linux
 
 ```shell
 apt update
+apt dist-upgrade
 apt install open-vm-tools-desktop
 
 #luego reiniciar
