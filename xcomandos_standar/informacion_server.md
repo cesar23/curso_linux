@@ -6,6 +6,7 @@
 
 ```shell
 sudo apt-get install usbutils
+apt-get install util-linux
 lsudb
 ```
 
@@ -13,6 +14,10 @@ lsudb
 
 ```shell
 lspci
+# >>>>>>> mas informacion
+# lspci -v
+# y mas detalle del detalle
+# lspci -vv
 ```
 
 ### mostrar informacion cpu - procesador
@@ -24,6 +29,7 @@ lscpu
 
 ```shell
 lsmen
+free -h
 ```
 
-apt-get install util-linux
+

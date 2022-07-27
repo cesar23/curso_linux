@@ -1,3 +1,7 @@
+fuentes
+- https://muylinux.xyz/l3mon-acceso-remoto-a-dispositivos-android/
+- 
+
 ### Comandos de instalación de java:
 
 1 – Descargar Java del material del curso para poder instalarlo.
@@ -37,13 +41,26 @@ sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 sudo apt-get install nodejs
 
 sudo npm install pm2 -g
-```
+# comandos para iniciar L3MON pm2: 
+pm2 start index.js
+sudo pm2 startup
 
-2 - Descargar L3MON
-3 - Posicionarse en el directorio de L3MON
-4 - npm install
-5 - comandos para iniciar L3MON pm2: (pm2 start index.js, pm2 startup)
-6 - detener L3MON para configurar el usuario y contraseña: (pm2 stop index)
-7 - configurar usuario y contraseña:(nano maindb.json)
-8 - iniciar demonio de L3MON(pm2 restart all)
-9 - entrar en la ip local de la maquina:( http://<SERVER IP>:22533)
+# detener L3MON para configurar el usuario y contraseña:
+pm2 stop index
+
+# configurar usuario y contraseña:
+nano maindb.json
+
+# generamos la contraseña de md5 en : http://www.md5.cz/
+echo -n "cesar203" | md5sum | cut -d" " -f 1
+
+#   06f0b51dfdee832cd7c65921583ec60a  => cesar203
+
+
+# ahora iniciamos denuevo la aplicacion
+pm2 restart all
+
+#ahora entramos al panel
+entrar en la ip local de la maquina:( http://<SERVER IP>:22533)
+
+```
