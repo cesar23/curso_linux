@@ -1,3 +1,8 @@
+fuentes:
+- https://www.digitalocean.com/community/tutorials/how-to-set-up-vsftpd-for-a-user-s-directory-on-ubuntu-20-04
+- 
+
+
 # instalacion de servidor ftp ubutnu
 
 Step 1 — Installing vsftpd
@@ -121,3 +126,14 @@ sudo systemctl restart vsftpd
 ```
 
 
+## Abrir mas de un puerto
+```shell
+# sudo vim /etc/vsftpd.conf
+listen_port=2020
+#ftp_data_port=2121
+```
+
+### Ver log
+```shell
+tail -f /var/log/vsftpd.log
+```
