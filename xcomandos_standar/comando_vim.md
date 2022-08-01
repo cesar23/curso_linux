@@ -221,7 +221,7 @@ vim .
 
 
 - para abrir ficheros en otra pestana  `<Esc>:vs ./packege.json` 
-![](https://i.imgur.com/ZfKDg9F.png) 
+![](https://i.imgur.com/ZfKDg9F.gitpng) 
 
 
 ---

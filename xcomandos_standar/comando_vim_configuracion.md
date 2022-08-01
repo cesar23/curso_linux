@@ -5,8 +5,9 @@ fuente: https://codingpotions.com/vim-configuracion
 
 
 ##### para windows:
-- en caso de windows **VIM** `~/_vimrc`
-- en caso de windows **NEOVIM** `%userprofile%\AppData\Local\nvim\init.vim`
+- **VIM** config      :`~/_vimrc`
+- **NEOVIM** config   :`%userprofile%\AppData\Local\nvim\init.vim`
+- **NEOVIM** plugin   :`%userprofile%\AppData\Local\nvim-data\site\autoload\plug.vim`
 
 ##### para linux:
 - ubicado en `~/.vimrc` en neovim `~/.config/nvim/init.vim`

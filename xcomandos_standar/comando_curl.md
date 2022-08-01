@@ -75,6 +75,16 @@ curl -A 'Mozilla/3.0 (Win95; I)' -L -o "./vmware.bin"  "https://www.vmware.com/g
 curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/Downloads/vmware.bin"  "https://www.vmware.com/go/getworkstation-linux"
 ```
 
+FTP: Descargas
+```shell
+# listar directorio
+curl -u cesar:cesar203 ftp://66.155.33.238/
+
+# descargar arhcivo
+curl -u cesar:cesar203 -L -C - -o "${HOME}/Downloads/Sandy.7z"  ftp://66.155.33.238/Sandy.7z
+curl -u cesar:cesar203 -L -C - -o "${HOME}/Downloads/filess.7z"  ftp://66.155.33.238/filess.7z
+curl -u cesar:cesar203 ftp://ftp.linoxide.com/file.tar.gz
+```
 
 ## ✅ Subida de ficheros
 
