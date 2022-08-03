@@ -8,6 +8,7 @@
 
 ## Tabla de contenido
 
+- <a href="#instalar-vim">0. Instalacion 📀</a>
 - <a href="#copiar-linaea">1. Copiar una Linea 📀</a>
 - <a href="#cortar-linea">2. Cortar Linea 📦</a>
 - <a href="#eliminar-linea">3. Eliminar Linea 📦</a>
@@ -28,6 +29,32 @@
 - <a href="#xxxxxxxx">xxxxxxxxxxxx 📦</a>
 - <a href="#xxxxxxxx">xxxxxxxxxxxx 📦</a>
 - <a href="#xxxxxxxx">xxxxxxxxxxxx 📦</a>
+
+
+
+---
+[//]: # (0------------------)
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+<h2  id="instalar-vim">Instalar VIM, NVIM</h2>
+
+### Instalar Debian NVIM
+
+```shell
+sudo apt-get install vim neovim
+sudo apt-get install python3-neovim
+
+
+```
+
+
+### Instalar Windows NVIM
+
+```shell
+choco install neovim
+```
+
+
+
 
 
 ---

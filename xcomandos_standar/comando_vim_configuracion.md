@@ -4,113 +4,34 @@ fuente: https://codingpotions.com/vim-configuracion
 
 
 
-##### para windows:
+---
+#### para Windows:
 - **VIM** config      :`~/_vimrc`
 - **NEOVIM** config   :`%userprofile%\AppData\Local\nvim\init.vim`
 - **NEOVIM** plugin   :`%userprofile%\AppData\Local\nvim-data\site\autoload\plug.vim`
 
-##### para linux:
-- ubicado en `~/.vimrc` en neovim `~/.config/nvim/init.vim`
-
-
-
-```textmate
-" TABLE OF CONTENTS:
-
-" 1. Generic settings
-" 2. File settings
-" 3. UI
-" 4. Maps and functions
-
-"-----------------------------------------
-" 1. GENERIC SETTINGS
-"-----------------------------------------
-
-set nocompatible           " Anular compatibilidad con Vi, el editor antiguo
-set history=1000           " cosas que guarda Vim. en neovim no es necesario
-    
-    
-let &t_ut=''               " terminal dibuje mejor el color de fondo
-
-"-----------------------------------------
-" 2. FILE SETTINGS
-"-----------------------------------------
-" Para desactivar los ficheros swap . en neovim no es  necesario
-set nobackup
-set nowritebackup
-set noswapfile
-
-" usar el backspace del teclado en modo insert en cualquier sitio        
-set backspace=indent,eol,start
-
-"El autoident sirve a la hora de crear nuevas líenas en el fichero,
-"que dependiendo de donde la crees te meta indentado de forma automática.
-set autoindent " autoindent always ON.
-
-" Con expandtab lo que hago es transformar los tabs del identado en espacios
-set expandtab " expand tabs
-set shiftwidth=2 " espacios de identacion
-set softtabstop=2 " remove a full pseudo-TAB when i press <BS>
-
-" Modify some other settings about files . solo en neovim
-set encoding=utf-8 " siempre guardar en formato utf8
-set hidden
-set ignorecase
-
-" scroll suave. no es necesario en neovim
-set scrolloff=8 " Keep at least 8 lines below cursor
-set foldmethod=manual " To avoid performance issues, I never fold anything so...
-
-
-
-
-"-----------------------------------------
-" 3. UI
-"-----------------------------------------
-set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.
-" Sauce on this: http://stackoverflow.com/a/9001540
-set wildmenu " enable visual wildmenu
-set number " show line numbers
-set showmatch " resaltar paréntesis y corchetes coincidentes
-set nohlsearch
-set lazyredraw
-set ttyfast
-set hidden
-
-
-  
-"-----------------------------------------
-" 4. MAPS AND FUNCTIONS
-"-----------------------------------------
-let mapleader=","
-" Fragmento de console.log
-nmap <leader><leader>c oconsole.log({});<Esc>==f{a
-" To avoid undo points when using arrow keys
-inoremap <Left> <c-g>U<Left>
-inoremap <Right> <c-g>U<Right>
-" Whit leader p you can delete things without saving to register so you can
-" paste what you have before
-vnoremap <leader>p "_d
-" Make window navigation less painful.
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-" Working with buffers is cool.
-map <C-d> :bnext<CR>
-map <C-a> :bprev<CR>
-imap <C-D> <Esc>:bnext<CR>a
-imap <C-A> <Esc>:bprev<CR>a
-" Capital Y to copy to the end of the line like C or D
-nnoremap Y y$
-" To move in the search list but keeping the cursor in the middle of screen
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap * *zzzv
-" To close buffers without closing splits
-nnoremap <silent> <C-q> :lclose<bar>b#<bar>bd #<CR>
+editar archivo `init.vim` ya que la configuracion la  haremos en: `~/_vimrc`
+```shell
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/_vimrc 
 
 ```
+---
+#### para Linux:
+
+En este caso solo usaremos Nvim
+
+
+```shell
+# para la configuracion
+mkdir ~/.config/nvim && touch ~/.config/nvim/init.vim
+
+# configuracion plugin
+mkdir -P ~/.vim/plugged
+mkdir ~/.config/nvim/autoload && touch ~/.config/nvim/autoload/plug.vim
+```
+
 
 ## Instalar Plugins
 
@@ -284,7 +205,6 @@ let mapleader =" "
 
 if has('nvim')
 	
-	
 	" :::: Puede especificar un directorio de complemento personalizado pasándolo como argumento
 	call plug#begin('~/.vim/plugged') " donde se guardaran los plugins
 
@@ -310,9 +230,12 @@ if has('nvim')
 	nmap <Leader>s <Plug>(easymotion-s2)
 else
 
+
 	set background=dark
 
 end
+
+	
 
 
 
@@ -324,6 +247,5 @@ nmap <leader>w :w <CR>
 "# Panel Navegador de Archivos (LEX)
 nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
 inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
-
 
 ```
