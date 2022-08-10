@@ -11,6 +11,7 @@
 - <a href="#instalar-vim">0. Instalacion 📀</a>
 - <a href="#copiar-linaea">1. Copiar una Linea 📀</a>
 - <a href="#cortar-linea">2. Cortar Linea 📦</a>
+- <a href="#cortar-palabra">2.2 Cortar Palabra 📦</a>
 - <a href="#eliminar-linea">3. Eliminar Linea 📦</a>
 - <a href="#eliminar-texto">4. Eliminar texto 📦</a>
 - <a href="#deshacer-cambios">5. Deshacer cambios 📦</a>
@@ -50,7 +51,14 @@ sudo apt-get install python3-neovim
 ### Instalar Windows NVIM
 
 ```shell
-choco install neovim
+# desde power shell
+
+# ::: install chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# ::: install neovim
+choco install git -y
+choco install neovim -y
 ```
 
 
@@ -68,7 +76,9 @@ choco install neovim
 
 2. y ahora  si  queremos  COPIAR   presionamos la  letra `y` para  Copiar
 
-3. Ahora para PEGAR  , nos  posicionamos donde  pegaremos  y presionamos  la letra `p`
+3. Ahora para PEGAR  `p` copiara debajo del cursor `<Shift>+p` pegara arriba del cursor
+
+
 
 
 ---
@@ -77,6 +87,14 @@ choco install neovim
 <h2  id="cortar-linea">2. Cortar Linea</h2>
 
 - Presionamos teclas `d+d`
+- para pegar presionamos `p`
+
+---
+[//]: # (2.1------------------)
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+<h2  id="cortar-palabra">2.1 Cortar palabra</h2>
+
+- Al principio de la palabra presionamos teclas `c+w`
 - para pegar presionamos `p`
 
 

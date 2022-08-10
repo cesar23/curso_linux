@@ -1,3 +1,7 @@
+scriptPathDir=$(dirname $0)
+scriptPathFile=$(realpath $0)
+scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+
 fun_show_message_python() {
 PARAM_1=$1
   PYCMD=$(cat <<EOF

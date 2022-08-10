@@ -32,4 +32,15 @@ lsmen
 free -h
 ```
 
+### mostrar USB conectados
+
+```shell
+lsusb
+```
+
+### mostrar version de ubuntu
+```shell
+lsb_release -a
+```
+
 

@@ -1,5 +1,7 @@
-scriptPath=$(dirname $0)
-scriptPath2=${0%/*}
-echo "scriptPath: $scriptPath"
-echo "scriptPath2: $scriptPath2"
-echo $PWD
+scriptPathDir=$(dirname $0)
+scriptPathFile=$(realpath $0)
+scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+echo "scriptPathDir: $scriptPathDir"
+echo "scriptPathFile: $scriptPathFile"
+echo "scriptPathFileName: $scriptPathFileName"
+
