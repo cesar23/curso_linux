@@ -1,5 +1,8 @@
 # Instalacion de paquetes linux a windows CYGWIN
 
+
+descargar binarios aqui
+- http://gnuwin32.sourceforge.net/packages/zip.htm
 ### instalar Cygwin
 
 ![](https://i.imgur.com/6pT9zfp.png) 
@@ -13,6 +16,7 @@ ubicacion de los paquetes a descargar
 ![](https://i.imgur.com/KKiYYV2.png) 
 
 no proxy
+
 ![](https://i.imgur.com/GZNVo41.png) 
 
 ![](https://i.imgur.com/10b78Lu.png) 

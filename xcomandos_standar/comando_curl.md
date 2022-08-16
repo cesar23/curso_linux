@@ -93,6 +93,13 @@ curl -u cesar:cesar203 ftp://ftp.linoxide.com/file.tar.gz
 Cargue datos de un archivo específico, inicie sesión con usuario y contraseña:
 ```shell
 curl -T uploadfile -u user:passwd ftp://ftp.upload.com/myfile
+
+# ejemplo 1
+curl -T "${HOME}/Downloads/info.txt" -u "cesar@solucionessystem.com:cesar203" ftp://198.54.116.139:21/info3.txt
+
+# ejemplo 2
+  # --ftp-create-dirs => creara ruta en el ftp si no exista
+curl -p - --insecure  "ftp://198.54.116.139:21/" --user "cesar@solucionessystem.com:cesar203" -T "c:\Users\cesar\Download\info.txt" --ftp-create-dirs
 ```
 
 Cargue un archivo local en el sitio remoto y utilice también el nombre del archivo local en el sitio remoto:

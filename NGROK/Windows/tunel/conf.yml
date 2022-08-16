@@ -1,4 +1,7 @@
-authtoken: 1SUMV0bQWCU8lTXuKvpyF6eIEyO_4g3xTatHJ122Xk4BETrSa
+# token :perucaos
+#authtoken: 1SUMV0bQWCU8lTXuKvpyF6eIEyO_4g3xTatHJ122Xk4BETrSa
+# token codetips
+authtoken: 223rFTunHUYWrDPkor5N9PM6tVm_7CL5d6rhdZqYzuuSDv6hz
 console_ui: true
 region: sa # (us=United States, eu=Europa, sa=America Latina, ap=Asia)
 # web de interface para ver los  log de manera local
@@ -6,17 +9,13 @@ web_addr: localhost:4046
 log_level: info # (crit,warn,error,info,debug)
 log_format: logfmt #tipos de log (logfmt,json,term)
 log: ngrok.log
+version: 2
 
 
 
 
 
-
-
-
-
-
-#-------------------------------------------------------------------------------------TUNELES ------
+#----------------------------------------------------------------------------
 tunnels:
   #---------------------- exponer una web
   web:
@@ -25,25 +24,11 @@ tunnels:
 
     addr: 80 # puerto expuesto para que se conecten
 
-    # >>> si queremos exponer un host local
-    #host_header: "cesar.test"
 
-    # >>>
-    bind_tls: false # https (true, false, or both)
 
-    #auth: "demo:secret" # para que se logee
-
-    #hostname: ljnexmo.eu.ngrok.io  -- solo pago
-
-  #---------------------- exponer una web
-  webTLS:
-    proto: http
-    bind_tls: true
-    addr: 80
-    host_header: "cesar.test"
 
   #---------------------- exponer para escritorio remoto
-  remoto:
+  ssh:
     proto: tcp
-    addr: 3389
-    #subdomain: f85c1a3f  -- solo pago
+    addr: 22
+  #----------------
