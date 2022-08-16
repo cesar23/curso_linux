@@ -51,6 +51,10 @@ declare -a RUTAS_TAG=(
 "D:\repos\curso_firebase"
 )
 
+declare -a RUTAS_REPOS_GITHUB=(
+ ["D:\repos\curso_linux"]="master"
+)
+
 declare -A RUTAS_REPOS=(
   ["D:\www\curso_plugin_theme_wordpress"]="master"
   ["D:\www\test_trabajos"]="master"
@@ -96,8 +100,6 @@ declare -A RUTAS_REPOS=(
   ["D:\repos\curso_asp_net_mvc"]="master"
   ["D:\repos\editor.md-master"]="master"
   ["D:\repos\curso_foxPro"]="master"
-
-
   ["D:\repos\curso_node_mysql_typescript"]="master"
   ["D:\repos\pcbyte_software_sincronizador"]="master"
 )

@@ -54,6 +54,14 @@ Fun_gitUp_v2() {
   STD_OUT=""
   STD_ERR=""
   STD_RC=""
+  #--------------------------------------------------------------------------------
+  #---------------------- 1 Para origin : que es para gitlab-------------------------
+  #--------------------------------------------------------------------------------
+    echo "::::::::::::::::::::::::::::::::::::::::"
+    echo ":::::::::: Repo - GITLAB :::::::::::::::"
+    echo "::::::::::::::::::::::::::::::::::::::::"
+    echo ""
+
 #  git pull origin ${RAMA} >null
 #ERROR=$(cat file1.txt nofile.txt 2>&1 > /dev/null)
   if result=$(git pull origin ${RAMA} 2>&1); then
@@ -69,10 +77,18 @@ Fun_gitUp_v2() {
 
 
 
-  git add -A >null
-  git commit -am "actualidador diario ${FECHA_HORA} | ${INFO_PC}" >null
-  git push origin ${RAMA} >nulll
+    git add -A >null
+    git commit -am "actualidador diario ${FECHA_HORA} | ${INFO_PC}" >null
+    git push origin ${RAMA} >null
 
+    #--------------------------------------------------------------------------------
+    #---------------------- 2 Para origin2 : que es para gitHub-------------------------
+    #--------------------------------------------------------------------------------
+    echo "::::::::::::::::::::::::::::::::::::::::"
+    echo ":::::::::: Repo - GITHUB :::::::::::::::"
+    echo "::::::::::::::::::::::::::::::::::::::::"
+    echo ""
+    git push origin2 ${RAMA}
 }
 
 Fun_gitTag() {

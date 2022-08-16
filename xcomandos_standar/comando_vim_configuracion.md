@@ -15,24 +15,37 @@ fuente:
 
 Instalar Plugin
 ```shell
-# desde powerShell
-iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
-    
-# crear archivo
-echo "" > ~/_vimrc
+# :::::::::::::::::: (PowerShell como user) ::::::::::::::::::::
+
+# 1. Creamos una carpeta para almacenar la configuracion y plugins y descargamos del repositorio de github
+md ~\AppData\Local\nvim\autoload
+
+# 2. Desccargamos el plug.vim
+$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+(New-Object Net.WebClient).DownloadFile(
+    $uri,
+    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\AppData\Local\nvim\autoload\plug.vim")
+)
 
 
-# Hacer que el enlace se rediriga a  ( AppData/Local/nvim/init.vim > ~/_vimrc )
+# -------------------------------------------------------
+
+
+# 3. Hacer que el enlace se rediriga a  ( AppData/Local/nvim/init.vim > ~/_vimrc )
 $init = @"
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/_vimrc 
 "@
 
-Write-Host $init > "$HOME/AppData/Local/nvim/init.vim"
+echo $init > "$env:userprofile/AppData/Local/nvim/init.vim"
+
+# 4. este  sera el archivo de configuracion
+echo "" > "$env:userprofile/_vimrc"
 
 ``` 
+
+
 - **VIM** config      :`~/_vimrc`
 
 - **NEOVIM** config   :`%userprofile%\AppData\Local\nvim\init.vim`
