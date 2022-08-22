@@ -460,6 +460,7 @@ inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
 fuente: https://www.nerdfonts.com/
 
 ```shell
+# :::::::::::::::::::::::::::::::: Shell CMDER :::::::::::::::::::::
 
 #mkdir -p "${HOME}/Downloads"
 # Linux or Windows
@@ -476,6 +477,25 @@ mkdir "${DIR_DOWNLOAD}/fonts_droid"
 
 # 3. Descomprimir fuentes 
 unzip "${DIR_DOWNLOAD}/fonts_droid.zip" -d "${DIR_DOWNLOAD}/fonts_droid" 
+
+# ::::::: OJO Aqui pueda que  nbecesitamos instalar las fuentes manualmente 
+$DIR_DOWNLOAD="$env:userprofile/Downloads"
+
+# 1. Descargar fuentes (el zip es de mi repo github)
+(New-Object Net.WebClient).DownloadFile(
+    "https://github.com/cesar23/utils_dev/raw/master/vim/fonts/fonts_droid.zip",
+    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("${DIR_DOWNLOAD}/fonts_droid.zip")
+)
+# 2. crear directorio descarga
+mkdir "${DIR_DOWNLOAD}/fonts_droid"
+
+# 3. Descomprimir fuentes 
+Expand-Archive -Path "${DIR_DOWNLOAD}/fonts_droid.zip" -DestinationPath "${DIR_DOWNLOAD}/fonts_droid"
+
+
+Copy-Item -Path "${DIR_DOWNLOAD}/fonts_droid/*" -Destination "C:\Windows\Fonts" -Recurse
+
+
 
 # 4. ahora pasamos solo las fuentes ttf a nuestras fuentes
 # ::::::: para Windows

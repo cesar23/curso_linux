@@ -7,7 +7,7 @@
 ```shell
 sudo apt-get install usbutils
 apt-get install util-linux
-lsudb
+lsusb
 ```
 
 ### mostrar lo conectado por pci

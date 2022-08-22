@@ -35,10 +35,13 @@
 
 ---
 [//]: # (0------------------)
-<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
-<h2  id="instalar-vim">Instalar VIM, NVIM</h2>
 
-### Instalar Debian NVIM
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+<h2  id="instalar-vim">Instalar VIM, NVIM</h2>
+<img width="30" src="https://seeklogo.com/images/L/Linux_Tux-logo-DA252F3C21-seeklogo.com.png" alt="My cool logo"/>
+### Instalar Debian NVIM 
 
 ```shell
 sudo apt-get install vim neovim
@@ -47,6 +50,7 @@ sudo apt-get install python3-neovim
 
 ```
 
+## <img width="30" src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg" alt="My cool logo"/>
 
 ### Instalar Windows NVIM
 
