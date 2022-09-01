@@ -130,3 +130,7 @@ findstr /C:"Cesar" empresas.txt
 #-- buscar tezto en listado
 tasklist |findstr /C:"chrome"
 
+# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# ::::::::::::::::::::::::::: Equibalencia powershell:::::::::::::::::::::::::
+# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+netstat -ano | Select-String ":80"
