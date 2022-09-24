@@ -1,8 +1,0 @@
-# nginx configuration
-location ~* (?:wp-tinymce|ms-files)\.php$ {
-}
-location / {
-if ($request_uri ~ "\.php$"){
-return 403;
-}
-}

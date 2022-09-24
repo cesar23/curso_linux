@@ -1,3 +1,0 @@
-location / {
-    allow 128.206.
-}
