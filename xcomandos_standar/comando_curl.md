@@ -86,6 +86,15 @@ curl -u cesar:cesar203 -L -C - -o "${HOME}/Downloads/filess.7z"  ftp://66.155.33
 curl -u cesar:cesar203 ftp://ftp.linoxide.com/file.tar.gz
 ```
 
+## ✅ Descargar y Ejecutar sh
+```shell
+#setup task, for running Taskfiles
+RUN curl -sL https://taskfile.dev/install.sh | BINDIR=/usr/local/bin sh
+
+```
+
+
+
 ## ✅ Subida de ficheros
 
 #### FTP / FTPS / SFTP / SCP

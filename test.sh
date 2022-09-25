@@ -1,11 +1,6 @@
-`
-    -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$pwd" `
-    -e "MSSQL_DATA_DIR=/home/data" `
-    -e "MSSQL_LOG_DIR=/home/log" `
-    -e "MSSQL_BACKUP_DIR=/home/backup" `
-    --mount source=sql2019sysdatavol,target=/var/opt/mssql `
-    --mount type=bind,source="E:\SQL2019\Data",target=/home/data `
-    --mount type=bind,source="E:\SQL2019\Log",target=/home/log `
-    --mount type=bind,source="E:\SQL2019\Backup",target=/home/backup `
-    --name sql2019 --hostname sql2019 `
-    -p 1433:1433 `
+
+ PATH_REPO="/drives/c/repos/curso_docker/cesar/ff"
+ result=$(echo "${PATH_REPO}" | sed -r -e 's/^\/drives\/([a-zA-Z])+\/(.*)/\/\1\/\2/' )
+ result=$(echo "${result}" | sed "s/\//\\\\/g")
+ result=$(echo "${result}" | sed -r -e 's/^\\([a-zA-Z])+\\(.*)$/\1:\\\2/' )
+echo $result
