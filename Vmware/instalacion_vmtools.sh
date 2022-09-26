@@ -1,3 +1,4 @@
+# instalacion de vmware tools
 apt update
 apt install open-vm-tools-desktop
 

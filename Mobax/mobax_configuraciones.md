@@ -1,14 +1,56 @@
 # mobax configuraciones
 
 ### configuracion de mobax
+-- ------
+1. descargar configuracion ejeuctar archivo `moxbax.sh`
+```shell
+# :::::::::: crear carpetas
+mkdir -p "/C/Users/${USERNAME}/mobax/home"
+mkdir -p "/C/Users/${USERNAME}/mobax/disco"
 
-<img width="50%" src="https://i.imgur.com/ZAUUHeq.png" alt="My cool logo"/>
+```
+
+2. configurar mobax
+
+<img width="90%" src="https://i.imgur.com/ZAUUHeq.png" alt="My cool logo"/>
+
+3. ahora decargar backup del home
+
+```shell
+
+# ::::::::: entramos al home
+cd "/C/Users/${USERNAME}/mobax/home"
+# descargar backup configuracion
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "/C/Users/${USERNAME}/mobax/home/home.tar.gz"  "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/home.tar.gz?inline=false"
+# curl -A 'Mozilla/3.0 (Win95; I)' -L -o "/C/Users/${USERNAME}/mobax/home/mobax.mobaconf"  "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/MobaXterm%20configuration%20(2022-09-25%2017.28.08).mobaconf?inline=false"
+
+# :::::::: descomprimir backup
+tar -xzvf home.tar.gz
+
+# :::::::::: sacar backup
+# tar -czvf home.tar.gz "libs" ".bash_profile"
+
+```
+Luego hacer una  limpieza la configuracion anterior
+```shell
+rm -rf "C:\Users\${USERNAME}\Documents\MobaXterm"
+```
 
 
 ### Creacion de profile
 crear un archivo con el nombre `.bash_profile` en el home
 
+
+Descargar files de cnfiguracion
+
+```shell
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/home.7z"  "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/home.7z"
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/mobax.mobaconf"  "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/MobaXterm%20configuration%20(2022-09-25%2017.28.08).mobaconf?inline=false"
+
+```
+
 <img width="50%" src="https://i.imgur.com/lSUwtsU.png" alt="My cool logo"/>
+
 
 ```shell
 DATE_HOUR="`date +%d`/`date +%m`/`date +%Y` - `date +%H`:`date +%M`:`date +%S`"
@@ -38,6 +80,9 @@ function reload_config(){
   source "${CMDER_ROOT}/libs/conf_funciones_ides.sh"
   source "${CMDER_ROOT}/libs/conf_extras.sh"
   source "${CMDER_ROOT}/libs/conf_menu.sh"
+  source "${CMDER_ROOT}/libs/conf_alias_docker.sh"
+  source "${CMDER_ROOT}/libs/mobax.sh"
+
 }
 #--------cargar funciones
 reload_config
@@ -127,17 +172,5 @@ echo -en "${Cyan}██${BCyan}██${ICyan}██${BICyan}██ \n"
 #--------------------------------------------------------------------
 #---------------------------- Start Menu personalizado-------------
 menu
-# PS1=$'\[\e]0;$PWD\007\]$(_gp 1)
-#\[\e[44m\e[30m\] \[\xEE\]\x83\xA8 \D{%d/%m/%Y} \[\e[42m\e[34m\]\[\xEE\x82\]\xB0\[\e[30m\] \[\xEE\]\x83\xA9 \D{%H:%M.%S} \[\e[0m\e[32m\]$(_gp 2)\[\xEE\x82\]\xB0\[\e[0m\] '
-function ps_cesar (){
-PS1=$'\[\e]0;$PWD\007\]$(_gp 1)
-\[\e[44m\e[30m\] \[\xEE\]\x83\xA8 \D{%d/%m/%Y} \[\e[0m\e[32m\]$(_gp 2)\[\xEE\x82\]\xB0\[\e[0m\] \n
-\[\e[42m\e[30m\]\[\xEE\x82\]\xB0\[\e[30m\] \[\xEE\]\x83\xA9 \D{%H:%M.%S} \[\e[0m\e[32m\]\[\xEE\x82\]\xB0\[\e[0m\] '
-}
-function ps_reset (){
-PS1=$'\[\e]0;$PWD\007\]$(_gp 1)
-\[\e[44m\e[30m\] \[\xEE\]\x83\xA8 \D{%d/%m/%Y} \[\e[42m\e[34m\]\[\xEE\x82\]\xB0\[\e[30m\] \[\xEE\]\x83\xA9 \D{%H:%M.%S} \[\e[0m\e[32m\]$(_gp 2)\[\xEE\x82\]\xB0\[\e[0m\] '
-}
-ps_cesar
-# ZSH_THEME="robbyrussell"
+
 ```

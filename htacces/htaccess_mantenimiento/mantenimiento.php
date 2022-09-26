@@ -1,58 +1,23 @@
 <?php
 header("HTTP/1.1 503 Service Unavailable");
 $ip_server = $_SERVER['SERVER_ADDR'];
+$ip = isset($_SERVER['HTTP_CLIENT_IP'])
+    ? $_SERVER['HTTP_CLIENT_IP']
+    : (isset($_SERVER['HTTP_X_FORWARDED_FOR'])
+        ? $_SERVER['HTTP_X_FORWARDED_FOR']
+        : $_SERVER['REMOTE_ADDR']);
 ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<title>Site Maintenance</title>
 <head>
-    <title>Página web en mantenimiento</title>
-    <meta charset="utf-8"/>
-    <meta name="description" content="Ejemplo práctico de aplicación del posicionamiento fijo"/>
-    <meta name="author" content="francesc ricart"/>
+
     <style>
-        /*TIPOGRAFÍAS*/
-        @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-        /*INICIALIZACIÓN DE ESTILOS*/
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{background-color:#f6f6f6;}
-
-        /*PERSONALIZACIÓN DE P.MANTENIMIENTO*/
-        .mantenimiento{
-            width:600px;
-            height:400px;
-            padding:32px;
-            border:1px solid #000;
-            border-radius:10px;
-            margin-top:-200px;
-            margin-left:-300px;
-            background-color:#fff;
-            position:fixed;
-            top:50%;
-            left:50%;
-        }
-        .mantenimiento h1, .mantenimiento h2, .mantenimiento p{
-            font-family:"noto sans", sans-serif;
-        }
-
-        .mantenimiento h1{
-            font-size:3em;
-            text-align:center;
-            padding:16px;
-        }
-        .mantenimiento h2{
-            font-size:2em;
-            font-style:italic;
-        }
-        .mantenimiento p{
-            margin:16px 0;
-            line-height:1.5em;
-        }
-
+        body { text-align: center; padding: 150px; }
+        h1 { font-size: 50px; }
+        body { font: 20px Helvetica, sans-serif; color: #333; }
+        article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+        a { color: #dc8100; text-decoration: none; }
+        a:hover { color: #333; text-decoration: none; }
     </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -67,11 +32,11 @@ $ip_server = $_SERVER['SERVER_ADDR'];
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8STJMR"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="mantenimiento">
-    <h1>Página web en construcción <?php echo $ip_server;?></h1>
-    <p>Lo sentimos, no hemos encontrado un mensaje más original para decirte que estamos trabajando en ello.</p>
-    <h2>Web disponible en:</h2>
-    <p class="casio" id="reloj">00:00:00</p>
-</div>
+<article>
+    <h2>page suspended due to non-payment (<?php echo $ip_server;?>) - (<?php echo $ip;?>)</h2>
+    <span>página suspendida por falta de pago</span>
+
+</article>
+
+
 </body>
-</html>

@@ -5,13 +5,31 @@ modo mantenimeitno `.htaccess`
 ```shell
 RewriteEngine On
 RewriteBase /
-# :::: ips permitida
-RewriteCond %{REMOTE_ADDR} !^132\.184\.131\.202
-RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
-# :::: end permitida
-RewriteCond %{REQUEST_URI} !^/mantenimiento\.php$
-RewriteRule ^(.*)$ /mantenimiento.php [R=307,L]
-# RewriteRule ^(.*)$ http://domain.com/maintenance.html [R=307,L]
+
+# Add all the IP addresses of people that are helping in development
+# and need to be able to get past the maintenance mode.
+# One might call this the 'allow people 
+# 2800:200:f828:80a1:952a:f2e2:72f7:32d2,172.70.182.15
+RewriteCond %{REMOTE_HOST} !^132\.184\.131\.202
+RewriteCond %{REMOTE_HOST} !^190\.213\.189\.555
+RewriteCond %{REMOTE_HOST} !^2800:200:f828:80a1:952a:f2e2:72f7:32d2
+RewriteCond %{REMOTE_HOST} !^172\.70\.182\.15
+
+# This is the 'ignore file list'. It allows access to all
+# files that are needed to display the maintenance mode page.
+# Example: pages, css files, js files, images, anything.
+# IMPORTANT: If you don't do this properly, visitors will end up with
+# endless redirect loops in their browser.
+RewriteCond %{REQUEST_URI} !/mantenimiento\.php$
+RewriteCond %{REQUEST_URI} !/assets\/img\/cariecom-logo\.png$
+RewriteCond %{REQUEST_URI} !/assets\/js\/jquery\.countdown\.min\.js$
+
+# Rewrite whatever request is coming in to the maintenance mode page
+# The R=302 tells browsers (and search engines) that this
+# redirect is only temporarily.
+# L stops any other rules below this from executing whenever somebody is redirected.
+RewriteRule \.*$ /mantenimiento.php [R=302,L]
+
 ```
 v2
 ```shell
