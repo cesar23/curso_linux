@@ -444,7 +444,7 @@ nmap <leader>so :source $HOME\_vimrc<CR>
 nmap <leader>w :w <CR>
 nmap <leader>x :x <CR>
 nmap <leader>q :q <CR>
-"# Panel Navegador de Archivos (LEX)
+"# Panel Navegador de Archivos (LEX) uso: Ctrl+b
 nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
 inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
 " ------------------------------------------------

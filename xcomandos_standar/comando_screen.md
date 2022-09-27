@@ -33,7 +33,9 @@
 
 
 ## 1. Crear Screen 
+
 Para iniciar una sesión de pantalla, simplemente escriba screenen su consola:
+
 ```
 --- para crear cada  ventana usaremos
 > screen

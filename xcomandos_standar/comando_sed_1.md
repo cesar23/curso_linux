@@ -1,12 +1,14 @@
-  # fuente:
-    #  https://geekland.eu/uso-del-comando-sed-en-linux-y-unix-con-ejemplos/
-    # https://www.ionos.es/digitalguide/servidores/configuracion/comando-sed-de-linux/
+fuente:
 
-# trucos: 
-#   https://es.ccm.net/faq/3052-sed-trucos-y-tips
-#   https://linuxhint.com/50_sed_command_examples/
+- https://geekland.eu/uso-del-comando-sed-en-linux-y-unix-con-ejemplos/
+- https://www.ionos.es/digitalguide/servidores/configuracion/comando-sed-de-linux/
+
+trucos: 
+- https://es.ccm.net/faq/3052-sed-trucos-y-tips
+- https://linuxhint.com/50_sed_command_examples/
 
 
+```
 #---------------------------------------------------------------------
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>> PARAMETROS <<<<<<<<<<<<<<<<<<<<<<<<<<<
 #---------------------------------------------------------------------<
@@ -27,8 +29,11 @@
                     # sed 's/texto_a_buscar/texto_a_reemplazar/' <fichero_a_reemplazar >fichero_nuevo
                     # echo "texto" | sed 's/texto_a_buscar/texto_a_reemplazar/'
 
+```
 
+-- --
 
+```
 
 #---------------------------------------------------------------------
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ORDENES <<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -88,69 +93,105 @@
     # >fichero_nuevo : Es un nuevo fichero que se generará con el texto reemplazado.
 
 
+```
 
 
-#-----------------------ejemplo simple:
+### ejemplo simple:
 
+```shell
 echo "Welcome to LikeGeeks page" | sed 's/page/website/'
+```
 
-# reemplazo multiple
+### Reemplazo multiple
+```shell
 echo "Welcome to LikeGeeks aaa 111" | sed -e 's/aaa/bbb/' -e 's/111/222/'
+```
 
-#--------------------- agrupaciones
+# Agrupaciones
+-- ----
 
-#----- ejemplo 1
+### ejemplo 1
+```shell
 echo "foobarbaz" | sed -r 's/^foo(.*)baz$/\1/'
     # poner barras si hay que ponerlas
     # echo "foobarbaz" | sed 's/^foo\(.*\)baz$/\1/'
+```
 
 
-#----- ejemplo 2
+### ejemplo 2
+```shell
 echo "foobarbaz" | sed -r 's/^foo(.*)b(.)z$/\2 \1 \2/'
+```
 
 
-#---este cambia una ruta windows a linux 
-# ejemplo:  C:\Users\Cesar  => /C/Users/Cesar
+### este cambia una ruta windows a linux 
+ejemplo:  C:\Users\Cesar  => /C/Users/Cesar
+```shell
 echo "C:\Users\Cesar"  | sed -r -e 's/^([a-zA-Z])+:\\(.*)$/\/\1\/\2/' | sed -e 's/\\/\//g'
-#--------------------------------------------------------------
-#----1 ejemplo sustitucion -----------------------
-#--------------------------------------------------------------
+# /C/Users/Cesar
+```
 
-#--cambia la primera coincidencia que encuentre
+
+## 1. ejemplo sustitucion
+cambia la primera coincidencia que encuentre
+```shell
 sed 's/1879/2000/' demo2.txt
+```
 
-#--cambia la primera coincidencia que encuentre g global cambiara todo
+### cambia la primera coincidencia que encuentre g global cambiara todo
+```shell
 sed 's/1879/2000/g' demo2.txt
+```
 
+## 2. eliminar coincidencia
 
-#--------------------------------------------------------------
-#----2 eliminar coincidencia -----------------------
-#--------------------------------------------------------------
-
+```shell
 #--Quita el coincidencia con el comodin d (delete)
 sed '/1879/d' demo2.txt
+```
 
 
 
-#--------------------------------------------------------------
-#----3 eliminar coincidencia ya reemplazando el fichero original -----------------------
-#--------------------------------------------------------------
 
+
+### 3 eliminar coincidencia ya reemplazando el fichero original
+```shell
 # -i le dice modifica el fichero
 sed -i 's/1879/2000/g' demo2.txt
+```
 
-# expresion regular tambien se usa
-#aqui le digo qeu elimine todos los espacios en blanco
+### expresion regular tambien se usa
+```shell
+#aqui le digo qeu elimine todos las lineas en blanco espacios
 sed '/^$/d' demo2.txt
+```
 
 
-#-------------cesar (recomendado)
-# IMPORTANTE PARA MANTENER UN BACKUP CREAMOS UNO DIFERENTE
+
+## IMPORTANTE PARA MANTENER UN BACKUP CREAMOS UNO DIFERENTE
+```shell
+# reemplazara el texto 1879=>2000
+# creara un archivo demo2.txt.back antes de modificar
 sed -i.back 's/1879/2000/g' demo2.txt
+```
 
 
- sed -i.back '/º/d' 5646.dat
-  # ls -l
-  # demo2.txt.orig
+### Reemplazar archivo de ssl
+esto sirve para modificar y habilitar el certificado ssl de apache
+file `/etc/apache2/sites-available/default-ssl.conf`
+```shell
 
-  read 
+# reemplazamos :
+# SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+# a
+# SSLCertificateFile /etc/ssl/certs/mycert.crt
+sed -i '/SSLCertificateFile.*snakeoil\.pem/c\SSLCertificateFile \/etc\/ssl\/certs\/mycert.crt' /etc/apache2/sites-available/default-ssl.conf 
+
+# reemplazamos :
+# SSLCertificateFile /etc/ssl/private/ssl-cert-snakeoil.key
+# a
+# SSLCertificateFile /etc/ssl/private/key.crt
+sed -i '/SSLCertificateKeyFile.*snakeoil\.key/cSSLCertificateKeyFile /etc/ssl/private/mycert.key\' /etc/apache2/sites-available/default-ssl.conf
+
+```
+
