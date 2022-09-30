@@ -11,22 +11,18 @@ apt -y install nmap
 apt -y install mlocate
 apt -y install iotop
 
-echo "usuario $USER"> /tmp/cesar.txt
-# ---- isntalr  neovim
-apt-get install -y neovim
-# para la configuracion
-mkdir ~/.config/nvim && touch ~/.config/nvim/init.vim
+# --------------------------------------------------------
+# ---------------------instalaciones adicionales
+# --------------------------------------------------------
+apt -y install postgresql postgresql-contrib
 
-# configuracion plugin
-mkdir -p ~/.vim/plugged
-# Crear carpeta
-mkdir -p ~/.config/nvim/autoload
-# descargar desde el repositorio de github y guardarlo el archivo de condiguracion
-curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+# --------------------------------------------------------
+# ---------------------instalaciones de nvim
+# --------------------------------------------------------
 
-#Editar configuracion
-#nano ~/.config/nvim/init.vim
-cat > ~/.config/nvim/init.vim <<EOF
+
+#cat > ~/.config/nvim/init.vim <<EOF
+cat > /tmp/init.vim <<EOF
 " TABLE OF CONTENTS:
 
 " 1. Generic settings
@@ -127,6 +123,24 @@ inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
 " ------------------------------------------------
 EOF
 
-# -------------------------------------------------
-# -------------------------------------------------
-# -------------------------------------------------
+
+cat > /tmp/cesar.sh <<EOF
+echo "usuario $USER"> /tmp/cesar.txt
+# ---- isntalr  neovim
+apt-get install -y neovim
+# para la configuracion
+mkdir ~/.config/nvim && touch ~/.config/nvim/init.vim
+
+# configuracion plugin
+mkdir -p ~/.vim/plugged
+# Crear carpeta
+mkdir -p ~/.config/nvim/autoload
+# descargar desde el repositorio de github y guardarlo el archivo de condiguracion
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+sleep 10
+
+# copiamos la  configuracion
+cp /tmp/init.vim ~/.config/nvim/init.vim
+
+EOF

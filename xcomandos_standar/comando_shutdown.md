@@ -17,6 +17,14 @@ shutdown -h 10
 shutdown -h 10 "El equipo será apagado, por favor guarde su trabajo0"
 ```
 
+## ✅ Apagar Linux a las 17:30 horas
+```shell
+shutdown -h 17:30
+```
+
+
+
+
 Apagar automaticamente
 ```shell
 shutdown -r 0

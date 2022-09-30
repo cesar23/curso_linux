@@ -1,0 +1,6 @@
+
+t=2022-09-29T22:35:01-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046
+t=2022-09-29T22:35:02-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2022-09-29T22:35:02-0500 lvl=info msg="client session established" obj=csess id=c9455ddc1f2a
+t=2022-09-29T22:35:02-0500 lvl=info msg="started tunnel" obj=tunnels name=ssh addr=//localhost:22 url=tcp://0.tcp.sa.ngrok.io:18568
+t=2022-09-29T22:35:02-0500 lvl=info msg="started tunnel" obj=tunnels name=web addr=http://localhost:80 url=http://549d-2800-200-f828-80a1-dea6-32ff-fe9d-562f.sa.ngrok.io
