@@ -1,0 +1,30 @@
+# Informacion del server Canvas Lms
+
+### version de ubuntu
+```shell
+root@ip-172-31-30-99:~# lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.3 LTS
+Release:        20.04
+Codename:       focal
+
+```
+
+### informacion de ruby
+```shell
+# ruby
+root@ip-172-31-30-99:~# ruby --version
+ruby 2.6.6p146 (2020-03-31 revision 67876) [x86_64-linux-gnu]
+
+# ruby rails
+root@ip-172-31-30-99:/srv/canvas/current# bundle show
+
+```
+
+### realizar un backup del server
+```shell
+cd /srv
+
+tar -czvf canvas_back_001.tar.gz canvas --exclude="canvas/current/log"
+```

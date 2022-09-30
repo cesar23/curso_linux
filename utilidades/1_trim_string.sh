@@ -19,4 +19,17 @@ myVar=`echo $myVar | sed 's/ *$//g'`
 # Print the output after removing the spaces
 echo "I want to learn $myVar from this site"
 
+
+# escribir en un archivo con varias lineas
+#cat > file_2.txt <<EOF
+cat > ~/files_salida.txt <<EOF
+
+info code info
+info code info
+info code info
+info code info
+
+EOF
+
+
 read -p "Presionar:"

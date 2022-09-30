@@ -181,17 +181,66 @@ grub-mkconfig -o /boot/grub/grub.cfg
 <img width="80%" src="https://i.imgur.com/66UkmBU.png" alt="My cool logo"/>
 
 
+
+
+ccdc
+
 ### 6. crear usuario y mas
 
 ```shell
 # password para el root
-passwd
+root@cesar# passwd
   # cesar203
   
 
 # agregar suario
-useradd -m cesar
-passwd cesar
+root@cesar# useradd -m cesar
+root@cesar# passwd cesar
+
+# ----------------------------------------------------
+# ------------- START Asignaciond e usuario ( wheel = sudo )
+# ----------------------------------------------------
+
+# info de SUDO : https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file-es
+
+# 1. entramos como su
+root@cesar$ su
+
+# agregamos al usuario cesar al grupo (sudo = wheel)
+root@cesar# usermod -aG wheel cesar 
+
+# verificamos que  grupo estamos
+root@cesar# groups cesar
+  # wheel cesar
+  
+# Instalaremso el paquete sudo
+root@cesar# pacman -S sudo
+
+# ----------------------------------------- 
+# editamos  el archivo de conf de Usuarios = SUDODERS
+# ----------------------------------------- 
+          
+          # le decimos que editor se usuara para el comando visudo
+root@cesar# EDITOR=nano visudo
+root@cesar# visudo
+    # descomentar
+    # %wheel ALL=(ALL:ALL) ALL
+        # ejemplo : https://i.imgur.com/vH1Qp8p.png
+root@cesar# reboot
+
+
+# OTRA opcion
+
+# root@cesar# nano /etc/sudoers
+  # desomentra
+  # :::: https://i.imgur.com/vH1Qp8p.png
+
+
+
+#
+# ----------------------------------------------------
+# ------------- END Asignaciond e usuario ( wheel = sudo )
+# ----------------------------------------------------
 
 # salimos
 exit
@@ -201,12 +250,36 @@ reboot
 ```
 <img width="50%" src="https://i.imgur.com/n9CZDja.png" alt="My cool logo"/>
 
-### Procesos finales para activar elinternet
+### Procesos finales para activar el internet
 ```shell
 # iniciamos el servicio de interner
 systemctl start NetworkManager.service
 # habilitamos al inicio el servicio
 systemctl enable NetworkManager.service
 
+# verificar targeta de vga
+# i que  controlador necesitamos
+lspci | grep VGA
+
+```
+
+### 6. Instalar entorno grafico
+```shell
+pacman -S xorg xf86-video-qxl spice-vdagent  gdm gnome  gnome-extra firefox
+
+# activar el modulo qxl
+#  ::::::::: si estas usando nvide o otro de video aqui ponerlo
+nano /etc/mkinitcpio.conf
+# editar la linea:
+    # MODULES=(qxl)
+
+#Ahora lo compilaremos
+mkinitcpio -P
+
+
+# habiltamos manejador de sessiones
+systemctl enable gdm.service
+
+y luego reiniciamos
 ```
 

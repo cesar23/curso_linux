@@ -1,5 +1,58 @@
 # Ver servicios en ejecucion y sus puertos
 
+## ✅ Podemos ver los servicios que dependen de systemd, ejecutando
+ ejecutar `systemctl list-units -t service --all`
+```shell
+root@ubuntu:/var/log/apache2# systemctl list-units -t service --all
+  UNIT                                                                                      LOAD      ACTIVE   SUB     DESCRIPTION
+  accounts-daemon.service                                                                   loaded    active   running Accounts Service
+  acpid.service                                                                             loaded    inactive dead    ACPI event daemon
+  apache-htcacheclean.service                                                               loaded    active   running Disk Cache Cleaning Daemon for Apache HTTP Serv
+  apache2.service                                                                           loaded    active   running The Apache HTTP Server
+● apparmor.service                                                                          loaded    failed   failed  AppArmor initialization
+  apport-autoreport.service                                                                 loaded    inactive dead    Process error reports when automatic reporting
+  apport.service                                                                            loaded    active   exited  LSB: automatic crash report generation
+  apt-daily-upgrade.service                                                                 loaded    inactive dead    Daily apt upgrade and clean activities
+  apt-daily.service                                                                         loaded    inactive dead    Daily apt download activities
+  atd.service                                                                               loaded    active   running Deferred execution scheduler
+● auditd.service                                                                            not-found inactive dead    auditd.service
+  blk-availability.service                                                                  loaded    active   exited  Availability of block devices
+  canvas_init.service                                                                       loaded    active   exited  LSB: Start/stop Canvas background jobs
+  certbot.service                                                                           loaded    inactive dead    Certbot
+● cloud-init-local.service                                                                  not-found inactive dead    cloud-init-local.service
+● connman.service                                                                           not-found inactive dead    connman.service
+● console-screen.service                                                                    not-found inactive dead    console-screen.service
+  console-setup.service                                                                     loaded    active   exited  Set console font and keymap
+  cron.service                                                                              loaded    active   running Regular background program processing daemon
+  dbus.service                                                                              loaded    active   running D-Bus System Message Bus
+● display-manager.service                                                                   not-found inactive dead    display-manager.service
+  dm-event.service                                                                          loaded    inactive dead    Device-mapper event daemon
+  ebtables.service                                                                          loaded    active   exited  ebtables ruleset management
+  emergency.service                                                                         loaded    inactive dead    Emergency Shell
+● fcoe.service                                                                              not-found inactive dead    fcoe.service
+  fstrim.service                                                                            loaded    inactive dead    Discard unused blocks
+  getty-static.service                                                                      loaded    inactive dead    getty on tty2-tty6 if dbus and logind are not a
+  getty@tty1.service                                                                        loaded    active   running Getty on tty1
+  grub-common.service                                                                       loaded    active   exited  LSB: Record successful boot for GRUB
+  ifup@ens18.service                                                                        loaded    active   exited  ifup for ens18
+  irqbalance.service                                                                        loaded    active   running irqbalance daemon
+● iscsi-shutdown.service                                                                    not-found inactive dead    iscsi-shutdown.service
+  iscsid.service                                                                            loaded    inactive dead    iSCSI initiator daemon (iscsid)
+● kbd.service                                                                               not-found inactive dead    kbd.service
+  keyboard-setup.service                                                                    loaded    active   exited  Set the console keyboard layout
+  kmod-static-nodes.service                                                                 loaded    active   exited  Create list of required static device nodes for
+● lvm2-activation.service                                                                   not-found inactive dead    lvm2-activation.service
+  lvm2-lvmetad.service                                                                      loaded    active   running LVM2 metadata daemon
+  lvm2-lvmpolld.service                                                                     loaded    inactive dead    LVM2 poll daemon
+  lvm2-monitor.service                                                                      loaded    active   exited  Monitoring of LVM2 mirrors, snapshots etc. usin
+  lvm2-pvscan@8:4.service                                                                   loaded    active   exited  LVM2 PV scan on device 8:4
+  lvm2-pvscan@8:5.service                                                                   loaded    active   exited  LVM2 PV scan on device 8:5
+● lxc.service                                                                               not-found inactive dead    lxc.service
+  lxcfs.service                                                                             loaded    active   running FUSE filesystem for LXC
+  lxd-containers.service                                                                    loaded    active   exited  LXD - container startup/shutdown
+
+```
+
 
 ## ✅ Que puertos estan abiertos en nuestro server
 ```shell
