@@ -1,38 +1,129 @@
-# busca el archivo my-file.txt en el duirectorio actual
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.87);
+  width: 95%;
+  background-color: #572e05;
+}
+
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+
+# Linux find: comando para buscar y encontrar archivos en Linux
+fuentes:
+- https://www.ionos.es/digitalguide/servidores/configuracion/comando-linux-find/#:~:text=Para%20encontrar%20un%20archivo%20en,todas%20las%20distribuciones%20de%20Linux.
+
+
+## 🏆1. General
+sintaxis
+`find <directory_path> <search_parameter>`
+
+
+| **Parámetro de búsqueda** | **Explicación**                 |
+|---------------------------|---------------------------------|
+| -name, -iname             | Filtrar por nombre de archivo   |
+| -type                     | Filtrar por tipo de archivo     |
+| -size, -empty             | Filtrar por tamaño de archivo   |
+| -ctime, -mtime, -atime    | Filtrar por marca de tiempo     |
+| -user, -group             | Filtrar por propietario y grupo |
+| -perm                     | Filtrar por derechos de archivo |
+
+
+## ejemplos basicos
+ busca el archivo my-file.txt en el duirectorio actual
+```shell
 find . -name "my-file.txt"
-# busca el archivo my-file.txt en el duirectorio actual MAYUSCULA Y MINUSCULAS
+# buscar recursoivamente 
+find . -name .gitignore
+```
+
+## 🏆 También se pueden combinar varios parámetros de búsqueda. Aquí se asume implícitamente una operación lógica AND. Esto puede escribirse explícitamente. Además, se puede utilizar un enlace OR o negar una condición:
+
+| **Parámetro de búsqueda** | **Explicación**                                                                 |
+|---------------------------|---------------------------------------------------------------------------------|
+| -and                      | Los resultados de la búsqueda deben cumplir ambas condiciones                   |
+| -or                       | Los resultados de la búsqueda deben cumplir al menos una de las dos condiciones |
+| -not                      | Negar la condición posterior                                                    |
+| -ctime, -mtime, -atime    | Filtrar por marca de tiempo                                                     |
+| -user, -group             | Filtrar por propietario y grupo                                                 |
+| -perm                     | Filtrar por derechos de archivo                                                 |
+
+-- -
+
+
+busca el archivo my-file.txt en el duirectorio actual MAYUSCULA Y MINUSCULAS
+```shell
 find . -iname "my-file.txt"
+# buscar por  comodin cualquier archivo que contenga la  palabra git o log
+find . -iname "*git*"
+find . -iname "*git*" -or -iname "*log*"
+```
 
-# buscar  todos  menos
+buscar  todos  menos
+```shell
 find . -not -name "my-file.txt"
+```
 
-# buscar barios  archivo con extension txt
+buscar barios  archivo con extension txt
+```shell
 find . -name "*.txt"
+```
 
-
-# Finalmente, si deseas buscar un determinado archivo por nombre y eliminarlo, 
-# usa el argumento -delete después del nombre del archivo:
-
+buscar archivos y eliminarlos
+```shell
 find . -name "my-file.txt" -delete
-
-#-----------------------------------------------------------------
-# ------------------ Búsqueda por tipo
-#-----------------------------------------------------------------
-
-# Para la mayoría de los usuarios, basta con saber cómo encontrar archivos por sus nombres. Sin embargo, siempre es útil conocer todas las herramientas que se ofrecen para aprovechar Linux al máximo.
-
-# Aquí es donde entra en juego el argumento -type. Linux ofrece a los usuarios las siguientes opciones para buscar archivos por tipo:
-
-# f – archivo normal
-# d – directorio o carpeta
-# l – enlace simbólico
-# c – dispositivos de caracteres
-# b – dispositivos de bloque
+```
 
 
-# busqueda en la raiz el archivo normal con nombre
+## 🏆 2. Utilizar el comando find de Linux para filtrar por tipo de archivo
+Aquí es donde entra en juego el argumento -type. Linux ofrece a los usuarios las siguientes opciones para buscar archivos por tipo:
+
+| **Tipo de archivo** | **Explicación**            |
+|---------------------|----------------------------|
+| f                   | Archivo                    |
+| d                   | Directorio                 |
+| l                   | Enlace                     |
+| c                   | dispositivos de caracteres |
+| b                   | dispositivos de bloque     |
+
+
+##### busqueda en la raiz el archivo normal con nombre
+```shell
 find / -type f -name "my-file.txt"
+```
 
+Buscar todos los archivos con la extensión jpeg o JPEG:
+```shell
+find . -type f -iname "*.jpeg"
+find . -type f -iname "*.jpeg" -or -iname "*.jpg"
+```
+
+## 🏆 3. Utilizar el comando find de Linux para filtrar por tamaño
+En Linux, el concepto de archivo vincula varias piezas de información. Esto suele incluir al menos lo siguiente:
+
+- Nombre
+- Tipo de archivo
+- Tamaño del archivo
+- Marca de tiempo
+- Propietario y grupo
+- Derechos de acceso
+
+Todos ellos pueden filtrarse utilizando el comando find y los parámetros adecuados. Para filtrar por el tamaño de un archivo, utilizamos el parámetro “-size” seguido de una especificación de tamaño.
+
+El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
+
+```shell
+find . -size +700M
+```
+
+<div class="card">
+  <div class="container">
+    <h4><b> 📢 !OJO</b></h4> 
+    <p>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p> 
+  </div>
+</div>
 
 
 

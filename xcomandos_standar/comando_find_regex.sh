@@ -2,6 +2,7 @@ find . -regex '\./[a-f0-9\-]\{36\}\.jpg'
 
 # busqueda de arhcivos de modo no recursivo solo del primer  nivel
 find '/c/Users/cesar/Pictures/Screenpresso' -maxdepth 1 -iregex '.*\.png.*'
+find "/c/Users/$(whoami)/Pictures/Screenpresso" -maxdepth 1 -iregex '.*\.png.*'
 
 # busqueda y copiar fichero a otro lado
 find '/c/Users/cesar/Pictures/Screenpresso' -maxdepth 1 -iregex '.*\.png.*'  -exec cp {} "/d/images_temp/" \;

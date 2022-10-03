@@ -169,7 +169,7 @@ done
 ##le  sumarara  al contador
 echo "**************"
 for value in "${ARRAY[@]}"
-do
+doz
      echo $value
 done
 echo " ::: termino--------------------"
