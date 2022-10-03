@@ -103,9 +103,6 @@ En Linux, el concepto de archivo vincula varias piezas de información. Esto sue
 Todos ellos `pueden`{.red} filtrarse utilizando el comando find y los parámetros adecuados. Para filtrar por el tamaño de un archivo, utilizamos el parámetro “-size” seguido de una especificación de tamaño.
 
 El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
---
-**📢 !OJO**
-<p>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p> 
 
 
 
@@ -114,7 +111,10 @@ El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700
 [//]: # (background-color: #572e05;)
 [//]: # (})
 
-<mark>cesar</mark>
+
+**📢 !OJO**
+<mark>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p>
+</mark>
 
 #-----------------------------------------------------------------
 # ------------------ Búsqueda por fecha
