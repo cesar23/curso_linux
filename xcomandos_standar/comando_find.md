@@ -1,4 +1,7 @@
 <style>
+.red {color: red}
+</style>
+<style>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.87);
   width: 95%;
@@ -110,7 +113,7 @@ En Linux, el concepto de archivo vincula varias piezas de información. Esto sue
 - Propietario y grupo
 - Derechos de acceso
 
-Todos ellos pueden filtrarse utilizando el comando find y los parámetros adecuados. Para filtrar por el tamaño de un archivo, utilizamos el parámetro “-size” seguido de una especificación de tamaño.
+Todos ellos `pueden`{.red} filtrarse utilizando el comando find y los parámetros adecuados. Para filtrar por el tamaño de un archivo, utilizamos el parámetro “-size” seguido de una especificación de tamaño.
 
 El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
 
@@ -125,7 +128,13 @@ find . -size +700M
   </div>
 </div>
 
+<style>
+mark{
+    color:red;
+}
+</style>
 
+<mark>what is DataBase</mark>
 
 #-----------------------------------------------------------------
 # ------------------ Búsqueda por fecha
