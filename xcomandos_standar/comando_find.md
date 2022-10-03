@@ -1,12 +1,3 @@
-<style>
-.red {color: red}
-</style>
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.87);
-  width: 95%;
-  background-color: #572e05;
-}
 
 
 .container {
@@ -129,6 +120,19 @@ find . -size +700M
 </div>
 
 <style>
+.red {color: red}
+</style>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.87);
+  width: 95%;
+  background-color: #572e05;
+}
+
+<style>
+
+
+
 mark{
     color:red;
 }
