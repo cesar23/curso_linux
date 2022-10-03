@@ -105,12 +105,17 @@ Todos ellos `pueden`{.red} filtrarse utilizando el comando find y los parámetro
 El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
 
 
+[//]: # (<style>)
 
 [//]: # (mark{)
-[//]: # (color:#20d7bc;)
+
+[//]: # (color:#ffffff;)
+
 [//]: # (background-color: #572e05;)
+
 [//]: # (})
 
+[//]: # (</style>)
 
 **📢 !OJO**
 <mark>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p>
