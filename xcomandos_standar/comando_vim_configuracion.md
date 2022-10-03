@@ -1,3 +1,4 @@
+
 🎗️🎖️⛏️⚒️🛠️⚙️🏷️🗂️⏱️🛸⛱️❤️‼️✔️☢️☣️⚠️🗓️🧱🧬🪛🗝️🕹️🎗️✌️👁️ℹ️Ⓜ️☄️🌨️🌩️🌦️🌤️🏚️
 
 fuente: 
@@ -96,7 +97,8 @@ mkdir -p ~/.vim/plugged
 # Crear carpeta
 mkdir -p ~/.config/nvim/autoload 
 # descargar desde el repositorio de github y guardarlo el archivo de condiguracion
-curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+#curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "~/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 ```
 #### Ahora editar el archivo de configuracion
