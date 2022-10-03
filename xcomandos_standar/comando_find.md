@@ -120,9 +120,9 @@ background-color: #572e05;
 **📢 !OJO**
 <mark>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p>
 </mark>
-<gg style="background-color: #0a70e4;">
+<p style="background-color: #0a70e4;">
 El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.
-</gg>
+</p>
 
 
 #-----------------------------------------------------------------
