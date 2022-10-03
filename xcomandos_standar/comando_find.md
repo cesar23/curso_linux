@@ -1,16 +1,12 @@
 
 
-.container {
-  padding: 2px 16px;
-}
-</style>
 
 # Linux find: comando para buscar y encontrar archivos en Linux
 fuentes:
 - https://www.ionos.es/digitalguide/servidores/configuracion/comando-linux-find/#:~:text=Para%20encontrar%20un%20archivo%20en,todas%20las%20distribuciones%20de%20Linux.
 
 
-## 🏆1. General
+## 🏆🚀📜1. General
 sintaxis
 `find <directory_path> <search_parameter>`
 
@@ -107,38 +103,18 @@ En Linux, el concepto de archivo vincula varias piezas de información. Esto sue
 Todos ellos `pueden`{.red} filtrarse utilizando el comando find y los parámetros adecuados. Para filtrar por el tamaño de un archivo, utilizamos el parámetro “-size” seguido de una especificación de tamaño.
 
 El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
-
-```shell
-find . -size +700M
-```
-
-<div class="card">
-  <div class="container">
-    <h4><b> 📢 !OJO</b></h4> 
-    <p>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p> 
-  </div>
-</div>
-
-<style>
-.red {color: red}
-</style>
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.87);
-  width: 95%;
-  background-color: #572e05;
-}
-
-<style>
+--
+**📢 !OJO**
+<p>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p> 
 
 
 
-mark{
-    color:red;
-}
-</style>
+[//]: # (mark{)
+[//]: # (color:#20d7bc;)
+[//]: # (background-color: #572e05;)
+[//]: # (})
 
-<mark>what is DataBase</mark>
+<mark>cesar</mark>
 
 #-----------------------------------------------------------------
 # ------------------ Búsqueda por fecha
