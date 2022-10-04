@@ -105,138 +105,154 @@ Todos ellos `pueden`{.red} filtrarse utilizando el comando find y los parámetro
 El siguiente comando find devuelve archivos que tienen un tamaño mínimo de 700 megabytes:
 
 
-<style>
 
-mark{
-
-color:#ffffff;
-
-background-color: #572e05;
-
-}
-
-</style>
+🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
 
 **📢 !OJO**
-<mark>El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.</p>
-</mark>
-<p style="background-color: #0a70e4;">
-El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario.
-</p>
+_El filtrado por tamaño solo funciona para los archivos. Para los directorios, no se almacena el tamaño en el sistema de datos. En su lugar, el tamaño se puede calcular recursivamente si es necesario._
+
+🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
 
 
-#-----------------------------------------------------------------
-# ------------------ Búsqueda por fecha
-#-----------------------------------------------------------------
+Las especificaciones de tamaño consisten en un número seguido de una unidad. A continuación, presentamos un resumen de las unidades disponibles:
 
-# Tiempo de acceso (-atime) – Fecha más reciente en que el archivo fue leído o escrito.
-# Tiempo de modificación (-mtime) – Fecha más reciente en que se modificó el archivo.
-# Hora de cambio (-ctime) – Fecha más reciente en que se actualizaron los metadatos del archivo.
+| **Unidades** | **Explicación**  |
+|--------------|------------------|
+| c            | Bytes            |
+| k            | Kilobytes        |
+| M            | Megabytes        |
+| G            | Gigabytes        |
+| b            | 512-byte bloques |
 
 
+Paar  aumentar o disminuir
 
-# Esto encontrará todos los archivos a los que se accedió hace un día desde el momento actual. 
-# Esto significa que se listarán todos los archivos que fueron leídos y/o escritos desde el día anterior.
-find / -atime 1
+| **Modificador** | **Explicación**                            |
+|-----------------|--------------------------------------------|
+| +               | El archivo es mayor que el tamaño indicado |
+| -               | El archivo es más pequeño que el tamaño    |
 
-# Esto listará todos los archivos que tienen un tiempo de modificación de más de dos días.
+-- --
+El siguiente comando proporciona archivos de menos de 500 megabytes:
+
+```shell
+# buscar  ficheros de menos de 500MB
+find . -size -500M
+```
+El siguiente comando proporciona archivos cuyo tamaño oscila entre 400 y 500 megabytes.
+
+```shell
+# ficheros entre 400MB y 500MB
+find . -size +400M -and -size -500M
+```
+
+Buscar archivos vacios
+
+```shell
+# solo archivos  vacios
+find . -type f -empty
+```
+Este comando también funciona para los directorios:
+```shell
+# solo para  directorios
+find . -type d -empty
+```
+
+
+## 🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo
+
+marcas de tiempo para la creación, la última modificación y el último acceso a un archivo.
+
+
+| **Parámetro de búsqueda** | **Explicación**                   |
+|---------------------------|-----------------------------------|
+| -ctime, -cmin             | Filtrar por fecha de creación     |
+| -mtime, -mmin             | Filtrar por fecha de modificación |
+| -atime, -amin             | Filtrar por fecha de acceso       |
+
+Para encontrar los archivos que se modificaron hace apenas un día, utilizamos el parámetro de búsqueda `-mtime` seguido del valor `1`:
+
+```shell
+find . -type f -mtime 1
+```
+| **Modificad0r** | **Explicación**                                    |
+|-----------------|----------------------------------------------------|
+| +               | La fecha es de hace más días que la especificada   |
+| -               | La fecha es de hace menos días que la especificada |
+
+
+Para encontrar archivos creados hace más de 100 días utilizamos `-ctime` seguido del valor `+100`:
+
+```shell
+find . -type f -ctime +100
+```
+
+
+Al igual que al filtrar por tamaño de archivo, los parámetros de búsqueda pueden 
+combinarse para cubrir un rango. Para encontrar los archivos a los que se accedió 
+hace entre tres y cinco días, utilizamos el parámetro de búsqueda `-atime` 
+dos veces, cada una con los valores `+2` y `-6`. La combinación explícita mediante el parámetro `-and` es opcional:
+
+
+```shell
+find . -type f -atime +2 -and -atime -6
+```
+
+Para encontrar los archivos cuyos cambios tienen menos de cinco minutos de 
+antigüedad, utilizamos la búsqueda `-mmin` con el valor `-5`:
+
+```shell
+find . -type f -mmin -5
+```
+
+
+Esto listará todos los archivos que tienen un tiempo de modificación de más de dos días.
+```shell
 find / -mtime +2
 #find /home/kpopilrp/ -mtime -2 -exec ls -lha {} \;
+```
 
-# Esto buscará archivos que se modificaron hace menos de un minuto. Además, 
-# el argumento -newer se puede usar para comparar la antigüedad de dos archivos y encontrar el más reciente.
-find / -mmin -1
-
-
-#-mtime +60 significa que está buscando un archivo modificado hace 60 días.
-#-mtime -60 significa menos de 60 días.
-#-mtime 60 Si omite + o - significa exactamente 60 días.
-
-
-#Entonces, para buscar archivos de texto que se modificaron por última vez hace 60 días, use
+Entonces, para buscar archivos de texto que se modificaron por última vez hace 60 días, use
+```shell
 find /home/you -iname "*.txt" -mtime -60 -print
+```
 
-
-
-#Mostrar el contenido del archivo en la pantalla que se modificó por última vez hace 60 días, usar
+Mostrar el contenido del archivo en la pantalla que se modificó por última vez hace 60 días, usar
+```shell
 $ find /home/you -iname "*.txt" -mtime -60 -exec cat {} \;
+```
 
+El siguiente comando imprimirá la lista de todos los archivos pdf
+a los que se accedió en los últimos 60 días:
+```shell
+find /home/you -iname "*.pdf" -atime -60 -type -f
+```
 
-#Cuente el número total de archivos con el comando wc
-$ find /home/you -iname "*.txt" -mtime -60 | wc -l
-
-
-#También puede usar el tiempo de acceso para encontrar archivos pdf.
-#El siguiente comando imprimirá la lista de todos los archivos pdf
-#a los que se accedió en los últimos 60 días:
-$ find /home/you -iname "*.pdf" -atime -60 -type -f
-
-
-#Lista todos los mp3 a los que se accedió exactamente hace 10 días:
-$ find /home/you -iname "*.mp3" -atime 10 -type -f
-
-
-
-
-#También hay una opción llamada -daystart. Mide los tiempos desde
-#el comienzo de hoy en lugar de desde hace 24 horas. Entonces, para enumerar
-#todos los mp3 en su directorio de inicio a los que se accedió ayer, escriba el comando
+También hay una opción llamada `-daystart`. Mide los tiempos desde
+el comienzo de hoy en lugar de desde hace 24 horas. Entonces, para enumerar
+todos los mp3 en su directorio de inicio a los que se accedió ayer, escriba el comando
+```shell
 $ find /home/you -iname "*.mp3" -daystart -type f -mtime 1
-        #Dónde,
-        #  -tipo f : solo busca archivos y no directorios
+#Dónde,
+#  -tipo f : solo busca archivos y no directorios
+```
 
 
-
-
-
-
-# ----------------- opción de día de inicio ---------------
-
-#La opción -daystart se usa para medir el tiempo desde el comienzo del día actual
-# en lugar de hace 24 horas. Descubra todos
-# los archivos perl (* .pl) modificados ayer, ingrese:
-
-find /nas/projects/mgmt/scripts/perl -mtime 1 -daystart -iname "*.pl"
-
-
-
-#También puede enumerar los archivos perl que se modificaron hace 8-10 días, ingrese:
-#Para enumerar todos los archivos en su árbol de directorio de inicio que se modificaron hace dos o cuatro días, escriba:
-
-find /nas/projects/mgmt/scripts/perl -mtime 8 -mtime -10 -daystart -iname "*.pl"
-
-#-nueva opción
-#Para buscar archivos en el árbol de directorios / nas / images que sean más nuevos que el archivo / tmp / foo, ingrese:
-find /etc -newer /tmp/foo
-
-
-
-#Puede usar el comando touch  para establecer la marca de fecha y hora que desea buscar, y luego usar
-#la opción -newer de la siguiente manera
-
-
-touch --date "2010-01-05" /tmp/foo
-# Encuentra archivos más nuevos que 2010 / Jan / 05, en / data / images
-find /data/images -newer /tmp/foo
-
-
-
-# listar por rango modificados
-find . -newermt "2013-01-01 00:00:00" ! -newermt "2013-01-02 00:00:00"
-find ./* -mtime -10 -mtime +4 -ls
-
+listar por rango modificados
+```shell
 
 #----- buscando por rango fecha
 #----- excluyendo path
 #----- executando detalle
-find /c/Users/demo/Desktop -newermt "2020-07-01 00:00:00" ! -newermt "2020-07-14 00:00:00"  -not -path "/c/Users/demo/Desktop/SoftFactura50-2016/*" -exec ls -lah {} \;
-
-
-find /c/ -newermt "2020-07-19 00:00:00" ! -newermt "2020-07-19 23:00:00" \
- -not -path "/c/ProgramData/Microsoft/*" \
+find /c/Users/demo/Desktop \
+ -newermt "2020-07-01 00:00:00" ! -newermt "2020-07-14 00:00:00" \ 
+ -not -path "/c/Users/demo/Desktop/SoftFactura50-2016/*" \
  -exec ls -lah {} \;
+```
 
-#---------- buscar cambios y excluyendo carpetas
+
+buscar cambios y excluyendo carpetas
+```shell
  find /c/ -newermt "2020-08-14 05:18:00" ! -newermt "2020-08-14 08:17:00" \
   ! -path '/c/$Recycle.Bin/*' \
   ! -path "/c/ProgramData/Microsoft/*" \
@@ -244,83 +260,114 @@ find /c/ -newermt "2020-07-19 00:00:00" ! -newermt "2020-07-19 23:00:00" \
   ! -path "/c/Windows/System32/winevt/Logs/*" \
  -exec ls -lah {} \;
 
+```
+
+## 🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso
+En Linux, cada archivo tiene asignado un usuario que actúa como propietario. Además, cada archivo pertenece a un determinado grupo de usuarios. En base a esto, se definen ciertos derechos de acceso (permisos) para cada archivo. En base a toda esta información, podemos utilizar el comando find para filtrar y encontrar archivos en Linux. A continuación, presentamos un resumen de los parámetros de búsqueda utilizados:
+
+| **Parámetro de búsqueda** | **Explicación**                |
+|---------------------------|--------------------------------|
+| -user                     | Filtrar por propietario        |
+| -group                    | Filtrar por grupo              |
+| -perm                     | Filtrar por derechos de acceso |
 
 
 
-#-----------------------------------------------------------------
-# ------------------ Búsqueda por tamaño
-#-----------------------------------------------------------------
+Para buscar los archivos propiedad del usuario raíz, utilizamos el parámetro de búsqueda “-user” seguido del valor “root”:
 
-# Al igual que Linux te brinda la opción de buscar archivos basados ​​en registros de tiempo, también te permite hacer lo mismo con los tamaños. 
-# La sintaxis básica para buscar archivos por tamaño es:
+```shell
+find . -user root
+```
+Para buscar los archivos propiedad del propio usuario, utilizamos el parámetro de búsqueda “-user” seguido de la expresión “$(whoami)”. Esta última se resuelve con el nombre del usuario conectado:
 
-# find <startingdirectory> -size <size-magnitude> <size-unit>
-# Puedes especificar las siguientes unidades de tamaño:
+```shell
+find . -user $(whoami)
+```
+Para buscar más archivos que pertenezcan al grupo admin, utilizamos el parámetro de búsqueda “-group” seguido del valor “admin”:
 
-# c – bytes
-# k – kilobytes
-# M – megabytes
-# G – gigabytes
-# b – trozos de 512 bytes
-
-
-# busca  archivos tengan exactamente 10 megabytes de tamaño.
-find / -size 10M
-
-# El comando anterior listará todos los archivos de tu disco que tengan MAS de 5 Gigabytes de tamaño.
-find / -size +5G
-
-# El comando anterior listará todos los archivos de tu disco que tengan MENOS de 5 Gigabytes de tamaño.
-find / -size -5G
+```shell
+find . -group admin
+```
 
 
+Para encontrar archivos totalmente accesibles para cualquier usuario, utilizamos el parámetro de búsqueda “-perm” seguido del valor “777”:
 
-#-----------------------------------------------------------------
-# ------------------ Búsqueda por propiedad
-#-----------------------------------------------------------------
+```shell
+find . -perm 777
+```
+Para encontrar archivos a los que solo puede acceder el propietario, utilizamos el parámetro de búsqueda “-perm” seguido del valor “700”:
 
-# Esto devolverá una lista de todos los archivos que posee el usuario llamado cesar.
-
-find / -user cesar
-# Esto devolverá una lista de todos los archivos que posee el grupo llamado cesar.
-find / -group cesar
-
-
-
-#-----------------------------------------------------------------
-# ------------------ Búsqueda por permisos
-#-----------------------------------------------------------------
+```shell
+find . -perm 700
+```
 
 
-# En Linux, 644 corresponde a permisos de lectura y escritura. Lo que significa que este comando buscará 
-# todos los archivos que solo tienen permisos de lectura y escritura. Puedes jugar con esta opción un poco más, así:
+## 🏆 6. Limitación de la profundidad de recursión del comando find de Linux
+Normalmente, el comando find de Linux recorre recursivamente todos los subdirectorios.
+Sin embargo, a menudo es útil limitar la profundidad de la recursión. 
+Para ello, utilizamos los parámetros de búsqueda `-maxdepth` y `-mindepth`:
 
-find / -perm 644
-
-# Esto mostrará todos los archivos que tengan al menos el permiso 644.
-find / -perm -644
-
-#Ahora, si deseamos ver los archivos que si tienen los permisos 777 vamos a ejecutar:
-find . -type f -perm 0777 -print
-
-#----------------------cambiar permisos de archivos por lotes
-  # paso 1 buscar archivos  - ARCHIVOS
-  find /home/kpopilrp/ -type f -perm 0777 -exec ls -la {} \;
-  #paso 2 reemplazarlos con ottro permiso
-  find /home/kpopilrp/ -type f -perm 0777 -exec chmod 0644 {} \;
-
-  # paso 1 buscar archivos -  CARPETA
-  find /home/kpopilrp/ -type d -perm 0777
-  #paso 2 reemplazarlos con ottro permiso
-  find /home/kpopilrp/ -type d -perm 0777 -exec chmod 0755 {} \;
-
-#-----------------------------------------------------------------
-# ------------------ Otras opciones útiles
-#-----------------------------------------------------------------
+| **Parámetro de búsqueda** | **Explicación**                 |
+|---------------------------|---------------------------------|
+| -maxdepth                 | Profundidad máxima de recursión |
+| -mindepth                 | Profundidad de recursión mínima |
 
 
-# Por ejemplo, para buscar archivos y carpetas vacíos en tu sistema, usa lo siguiente:
-find /home/kpopilrp/ -empty
+Para encontrar los archivos de más de 50 megabytes, incluyendo solo los directorios que no están a más de dos niveles de profundidad que el directorio actual, utilizamos el siguiente comando:
+
+```shell
+find . -type f -maxdepth 2 -size +50M
+```
+Para encontrar los archivos que son mayores de 50 megabytes, incluyendo solo los directorios que están al menos tres niveles y no más de cinco niveles más profundos que el directorio actual, utilizamos el siguiente comando:
+
+```shell
+find . -type f -mindepth 3 -and -maxdepth 5 -size +50M
+```
+
+## 🏆 7. Utilizar el comando find de Linux para encontrar y procesar archivos
+procesamiento masivo de los archivos encontrados.
+
+Utilizar el comando find de Linux para ajustar el usuario y los grupos
+Para establecer el propietario y el grupo de todos los archivos y directorios 
+al valor `www-data` utilizamos el siguiente comando find con el comando chown:
+
+```shell
+find . -maxdepth 1 -exec chown www-data:www-data {} \;
+```
+
+###### Utilizar el comando find de Linux para ajustar los derechos de archivos
+Para encontrar archivos con derechos `777` y ponerlos en `664` utilizamos el siguiente comando find con el comando chmod:
+
+```shell
+find . -type f -maxdepth 1 -perm 777 -exec chmod 664 {} \;
+```
+
+Para establecer los permisos de todos los directorios a `755`, utilizamos el siguiente comando find con el comando chmod:
+
+```shell
+# solo en el directori actual no recursivo
+find . -type d -maxdepth 1 -exec chmod 755 {} \;
+```
+
+## 🏆 8.Utilizar el comando find de Linux para eliminar directorios y archivos vacíos
+También puedes utilizar el comando find para borrar los archivos y directorios 
+encontrados. Como precaución, mostraremos esto aquí solo para archivos y directorios 
+vacíos. Además, en lugar del parámetro `-exec`, utilizamos el parámetro `-ok` 
+para obligar al usuario a aceptar explícitamente el borrado.
+
+
+
+###### Para eliminar todos los directorios de Linux vacíos utilizamos el siguiente comando find junto con el comando rmdir:
+
+```shell
+find . -type d -maxdepth 1 -empty -ok rmdir {} \;
+```
+
+###### Para borrar todos los archivos vacíos de Linux, utilizamos el siguiente comando find con el comando rm:
+
+```shell
+find . -type f -maxdepth 1 -empty -ok rm {} \;
+```
 
 
 

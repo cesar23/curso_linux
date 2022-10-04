@@ -33,26 +33,32 @@ def eliminar_archivoo_directorio(path_archivo):
 
 
 # ------------------------------------ end Funciones ------------------------
-db_host = "localhost"
-db_username = "admings"
-db_paswword = "cesar203"
-db_name = "dbterrestre_test"
 
-DB_HOST = "database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com"
+
+DB_HOST = "dbdev.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com"
 DB_PORT = "5432"
 DB_USER = "canvas_prod"
 DB_PASSWORD = "Vrn8EDgxBIJJ"
 DB_NAME = "canvas_prod"
 
 
+# os.chdir(os.path.expanduser("~"))
+# print(os.path.expanduser("~"))
+# exit()
+
 os.putenv('PGPASSWORD', DB_PASSWORD)
-os.chdir("/home/ubuntu")
+# os.chdir("/home/ubuntu")
+os.chdir(os.path.expanduser("~"))
+# os.chdir("/home/ubuntu")
 
 
-file_backup_path = '/home/ubuntu/{0}.tar'.format(db_name)
+# file_backup_path = '/home/ubuntu/{0}.tar'.format(db_name)
+file_backup_path = '/d/backups/{0}.tar'.format(DB_NAME)
+
+
 # file_backup_path = 'E:/backup_terrestre/segundas_tablas/{}'.format(i)
 print("-------------------------------------")
-print("backup DB: {}".format(db_name))
+print("backup DB: {}".format(DB_NAME))
 print("-------------------------------------")
 time.sleep(1.4)
 
@@ -76,13 +82,19 @@ time.sleep(1.4)
      # /home/damian/backups/mibase.backup es el nombre para el archivo de salida (con path).
      # mibase es el nombre de la base a backupear.
 
-cmd = '{0}  --host {1} --port 5432 --username {2}  -F t -b --dbname={3} --verbose -f "{4}"  '.format(
-    "pg_dump", DB_HOST, DB_USER, DB_NAME, file_backup_path)
+print("")
+print(":::::::::: Ejecutar en terminal shell ")
 
-print("comando:".format(cmd))
+print("")
+print("export PGPASSWORD={password}".format(password=DB_PASSWORD))
+cmd = '{bin}  --host {dbo_host} --port 5432 --username {db_user}  -F t -b --dbname={db_name} --verbose -f "{path_file_backup}"  '.format(
+    bin="pg_dump", dbo_host=DB_HOST, db_user=DB_USER, db_name=DB_NAME, path_file_backup=file_backup_path)
+
+
+print(cmd)
 # --abrir el archiv binario escritura
-with open(file_backup_path, 'wb') as f:
-    os.system(cmd)
+# with open(file_backup_path, 'wb') as f:
+#     os.system(cmd)
 
 
 
