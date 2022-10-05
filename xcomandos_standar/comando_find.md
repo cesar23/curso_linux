@@ -186,6 +186,12 @@ El siguiente comando proporciona archivos cuyo tamaño oscila entre 400 y 500 me
 ```shell
 # ficheros entre 400MB y 500MB
 find . -size +400M -and -size -500M
+# mostrando el tama;o
+find . -size +400M  -exec ls -lah {} \;
+# excluyendo path
+find . -size +400M  -not -path "./AppData/Local/Docker*" -not -path "./AppData/Local/JetBrains/*"  -exec ls -lah {} \;
+# eliminando
+find . -size +400M  -exec rm -rf {} \;
 ```
 
 Buscar archivos vacios

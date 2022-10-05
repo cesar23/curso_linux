@@ -90,7 +90,7 @@ sudo apt install git curl -y
 Ahora continuemos con la configuracion 🏅
 ```shell
 # para la configuracion
-mkdir ~/.config/nvim && touch ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim && touch ~/.config/nvim/init.vim
 
 # configuracion plugin
 mkdir -p ~/.vim/plugged
@@ -98,7 +98,7 @@ mkdir -p ~/.vim/plugged
 mkdir -p ~/.config/nvim/autoload 
 # descargar desde el repositorio de github y guardarlo el archivo de condiguracion
 #curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-curl -A 'Mozilla/3.0 (Win95; I)' -L -o "~/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o ~/.config/nvim/autoload/plug.vim  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 ```
 #### Ahora editar el archivo de configuracion
@@ -359,111 +359,106 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 # Ultimo config sin plugins
 ```shell
-" TABLE OF CONTENTS:
 
-" 1. Generic settings
-" 2. File settings
-" 3. UI
-" 4. Maps and functions
-
-
-"-----------------------------------------
-" 1. GENERIC SETTINGS
-"-----------------------------------------
-
-set nocompatible " disable vi compatibility mode
-set history=1000 " increase history size
-
-"-----------------------------------------
-" 2. FILE SETTINGS
-"-----------------------------------------
-
-" :::::: Stop creating backup files, please use Git for backups
-set nobackup
-set nowritebackup
-set noswapfile
-set backspace=indent,eol,start
-
-" :::::: Modify indenting settings
-set autoindent " autoindent always ON.
-set expandtab " expand tabs
-set shiftwidth=2 " spaces for autoindenting
-set softtabstop=2 " remove a full pseudo-TAB when i press <BS>
-
-" :::::: Modificar algunas otras configuraciones sobre archivos
-
-set hidden
-set ignorecase
-set scrolloff=8 " Keep at least 8 lines below cursor
-set foldmethod=manual " To avoid performance issues, I never fold anything so...
-
-"-----------------------------------------
-" 3. UI
-"-----------------------------------------
-
-set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.
-
-" - Sauce on this: http://stackoverflow.com/a/9001540
-
-set wildmenu " enable visual wildmenu
-
-
-set nohlsearch
-set lazyredraw
-set ttyfast
-set hidden
-
-
-set showcmd				" mostrar los comandos que se ejecuta en barra (show the comand that are executed in bar)
-set number 				" mostrar numero de lineas (show line numbers)
-syntax enable       	" sintaxis de codigo resaltado de color (color highligth code syntax)
-set clipboard=unnamedplus   " habilitar copiar al movernos con el mouse (enable copy on mouse move)
-set mouse=a     		" poder mover el mouse y arrastrar selecionar (begin able to move the mouse and drag select)
-
-set relativenumber   	" mostrar numeracion arriba y abajo (show top and botton numbering)
-set laststatus=2        " mostrar barrita status  de abajo en vim  (show bar status botton)
-" set noshowmode        " No mostrar barrita de status insert o visual (show bar status insert or visual)
-
-set showmatch 			" resaltar paréntesis y corchetes coincidentes (highligth matching parentheses and brackets)
-
-set hidden              " para ocultar la advertencia al abrir archivos (to hide warning when opening files)
-" set scrolloff=8         " Mantenga al menos 8 líneas debajo del cursor
-set encoding=UTF-8 		" codificacion de archivos siempre al guardar (file encoding always on save)
-set shiftwidth=2    	" Tab por espacios, indentado de 2 espacios (2 space indent)
-" :::::::::::: IU
-let &t_ut=''  			"VIM: Para representar adecuadamente el fondo de la combinación de colores 
-set ruler 				" habilitar en barra linea y posicion (enable in bar line and position)
-
-
-"-----------------------------------------
-" 4. PLUGINS
-"-----------------------------------------
-let mapleader =" "
-
-if has('nvim')
-    set background=dark
-else
-
-
-	set background=dark
-
-end
-
-	
-
-
-
-
-" para  guardar arhcivos
-nmap <leader>so :source $HOME\_vimrc<CR>
-nmap <leader>w :w <CR>
-nmap <leader>x :x <CR>
-nmap <leader>q :q <CR>
-"# Panel Navegador de Archivos (LEX) uso: Ctrl+b
-nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
-inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
-" ------------------------------------------------
-
+echo '' > ~/.config/nvim/init.vim
+echo '" TABLE OF CONTENTS:' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" 1. Generic settings' >> ~/.config/nvim/init.vim
+echo '" 2. File settings' >> ~/.config/nvim/init.vim
+echo '" 3. UI' >> ~/.config/nvim/init.vim
+echo '" 4. Maps and functions' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '" 1. GENERIC SETTINGS' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set nocompatible " disable vi compatibility mode' >> ~/.config/nvim/init.vim
+echo 'set history=1000 " increase history size' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '" 2. FILE SETTINGS' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" :::::: Stop creating backup files, please use Git for backups' >> ~/.config/nvim/init.vim
+echo 'set nobackup' >> ~/.config/nvim/init.vim
+echo 'set nowritebackup' >> ~/.config/nvim/init.vim
+echo 'set noswapfile' >> ~/.config/nvim/init.vim
+echo 'set backspace=indent,eol,start' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" :::::: Modify indenting settings' >> ~/.config/nvim/init.vim
+echo 'set autoindent " autoindent always ON.' >> ~/.config/nvim/init.vim
+echo 'set expandtab " expand tabs' >> ~/.config/nvim/init.vim
+echo 'set shiftwidth=2 " spaces for autoindenting' >> ~/.config/nvim/init.vim
+echo 'set softtabstop=2 " remove a full pseudo-TAB when i press <BS>' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" :::::: Modificar algunas otras configuraciones sobre archivos' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set hidden' >> ~/.config/nvim/init.vim
+echo 'set ignorecase' >> ~/.config/nvim/init.vim
+echo 'set scrolloff=8 " Keep at least 8 lines below cursor' >> ~/.config/nvim/init.vim
+echo 'set foldmethod=manual " To avoid performance issues, I never fold anything so...' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '" 3. UI' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" - Sauce on this: http://stackoverflow.com/a/9001540' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set wildmenu " enable visual wildmenu' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set nohlsearch' >> ~/.config/nvim/init.vim
+echo 'set lazyredraw' >> ~/.config/nvim/init.vim
+echo 'set ttyfast' >> ~/.config/nvim/init.vim
+echo 'set hidden' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set showcmd				" mostrar los comandos que se ejecuta en barra (show the comand that are executed in bar)' >> ~/.config/nvim/init.vim
+echo 'set number 				" mostrar numero de lineas (show line numbers)' >> ~/.config/nvim/init.vim
+echo 'syntax enable       	" sintaxis de codigo resaltado de color (color highligth code syntax)' >> ~/.config/nvim/init.vim
+echo 'set clipboard=unnamedplus   " habilitar copiar al movernos con el mouse (enable copy on mouse move)' >> ~/.config/nvim/init.vim
+echo 'set mouse=a     		" poder mover el mouse y arrastrar selecionar (begin able to move the mouse and drag select)' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set relativenumber   	" mostrar numeracion arriba y abajo (show top and botton numbering)' >> ~/.config/nvim/init.vim
+echo 'set laststatus=2        " mostrar barrita status  de abajo en vim  (show bar status botton)' >> ~/.config/nvim/init.vim
+echo '" set noshowmode        " No mostrar barrita de status insert o visual (show bar status insert or visual)' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set showmatch 			" resaltar paréntesis y corchetes coincidentes (highligth matching parentheses and brackets)' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'set hidden              " para ocultar la advertencia al abrir archivos (to hide warning when opening files)' >> ~/.config/nvim/init.vim
+echo '" set scrolloff=8         " Mantenga al menos 8 líneas debajo del cursor' >> ~/.config/nvim/init.vim
+echo 'set encoding=UTF-8 		" codificacion de archivos siempre al guardar (file encoding always on save)' >> ~/.config/nvim/init.vim
+echo 'set shiftwidth=2    	" Tab por espacios, indentado de 2 espacios (2 space indent)' >> ~/.config/nvim/init.vim
+echo '" :::::::::::: IU' >> ~/.config/nvim/init.vim
+echo "let &t_ut=''  			\"VIM: Para representar adecuadamente el fondo de la combinación de colores" >> ~/.config/nvim/init.vim
+echo 'set ruler 				" habilitar en barra linea y posicion (enable in bar line and position)' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo '" 4. PLUGINS' >> ~/.config/nvim/init.vim
+echo '"-----------------------------------------' >> ~/.config/nvim/init.vim
+echo 'let mapleader =" "' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo "if has('nvim')" >> ~/.config/nvim/init.vim
+echo '    set background=dark' >> ~/.config/nvim/init.vim
+echo 'else' >> ~/.config/nvim/init.vim
+echo '	set background=dark' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo 'end' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '' >> ~/.config/nvim/init.vim
+echo '" para  guardar arhcivos' >> ~/.config/nvim/init.vim
+echo 'nmap <leader>so :source $HOME\_vimrc<CR>' >> ~/.config/nvim/init.vim
+echo 'nmap <leader>w :w <CR>' >> ~/.config/nvim/init.vim
+echo 'nmap <leader>x :x <CR>' >> ~/.config/nvim/init.vim
+echo 'nmap <leader>q :q <CR>' >> ~/.config/nvim/init.vim
+echo '"# Panel Navegador de Archivos (LEX) uso: Ctrl+b' >> ~/.config/nvim/init.vim
+echo 'nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim' >> ~/.config/nvim/init.vim
+echo 'inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>' >> ~/.config/nvim/init.vim
+echo '" ------------------------------------------------' >> ~/.config/nvim/init.vim
 
 ```
 

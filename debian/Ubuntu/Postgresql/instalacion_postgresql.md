@@ -112,31 +112,34 @@ $ sudo ufw status verbose
 ### Ejecutar comandos de test de conexion
 ```shell
 #psql -h <hostname or ip address> -p <port number of remote machine> -d <database name which you want to connect> -U <username of the database server>
-DB_HOST="localhost"
-DB_PORT="5432"
-DB_USER="postgres"
-DB_PASSWORD="1234"
-DB_NAME="postgres"
-#  database: canvas_prod
-#  host: database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com
-#  username: canvas_prod
-#  password: Vrn8EDgxBIJ
+
+# # -------------- database: canvas_prod
 DB_HOST="database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com"
 DB_PORT="5432"
 DB_USER="canvas_prod"
 DB_PASSWORD="Vrn8EDgxBIJJ"
 DB_NAME="canvas_prod"
 
+# #----------------------local
+DB_HOST="localhost"
+DB_PORT="5432"
+DB_USER="postgres"
+DB_PASSWORD="1234"
+DB_NAME="canvas_prod"
+
 export PGPASSWORD=$DB_PASSWORD;
-psql -h $DB_HOST -p $DB_PORT -d $DB_NAME -U $DB_USER 
+#psql -h $DB_HOST -p $DB_PORT -d $DB_NAME -U $DB_USER 
+psql -h $DB_HOST -p $DB_PORT -d $DB_NAME -U $DB_USER -c 'SELECT * FROM information_schema.tables limit 10' 
 
 
 # :::::::: ejcutar un script sql
 export PGPASSWORD='Vrn8EDgxBIJJ'; psql -h 'database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com' -U 'canvas_prod' -d 'canvas_prod' -c 'SELECT * FROM information_schema.tables'
 export PGPASSWORD='Vrn8EDgxBIJJ'; psql -h 'database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com' -U 'canvas_prod' -d 'canvas_prod' -c 'SELECT count(*) FROM public.failed_jobs'
+export PGPASSWORD='Vrn8EDgxBIJJ'; psql -h 'localhost' -U 'postgres' -d 'canvas_prod' -c 'SELECT count(*) FROM public.accounts'
 
 
 psql --host database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com --port 5432 --username canvas_prod  --dbname=canvas_prod -c 'SELECT * FROM information_schema.tables'
+psql --host localhost --port 5432 --username postgres  --dbname=canvas_prod -c 'SELECT * FROM information_schema.tables'
 ```
 
 ### ✅ Reiniciamos

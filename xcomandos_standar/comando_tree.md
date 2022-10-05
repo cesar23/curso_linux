@@ -161,3 +161,8 @@ tree -L 1 -a
 # ver los archivos  ocultos y sus persmisos con p
 tree -L 2 -pa
 ```
+
+## parámetros `-hD` muestra el árbol con el tamaño de los ficheros y la fecha de modificación
+```shell
+tree -L 2 -a -hD
+```

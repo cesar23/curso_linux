@@ -11,11 +11,14 @@ import psycopg2
 # # pg_isready -d canvas_prod -h database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com -p 5432 -U canvas_prod
 
 
-DB_HOST = "database-1.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com"
+DB_HOST = "localhost"
 DB_PORT = "5432"
-DB_USER = "canvas_prod"
-DB_PASSWORD = "Vrn8EDgxBIJJ"
+DB_USER = "postgres"
+DB_PASSWORD = "1234"
 DB_NAME = "canvas_prod"
+
+
+
 
 # --------------------------- para server Eucim
 # DB_PORT = "5432"
