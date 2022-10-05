@@ -5,8 +5,34 @@
 fuentes:
 - https://www.ionos.es/digitalguide/servidores/configuracion/comando-linux-find/#:~:text=Para%20encontrar%20un%20archivo%20en,todas%20las%20distribuciones%20de%20Linux.
 
+<a href="#" id="indice">Indice 👌</a>
 
-## 🏆🚀📜1. General
+## Tabla de contenido
+
+- <a href="#100">📜1. General</a>
+- <a href="#200">🏆 2. Filtrar por tipo de fichero o carpeta</a>
+- <a href="#300">🏆 3. Utilizar el comando find de Linux para filtrar por tamaño</a>
+- <a href="#400">🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo</a>
+- <a href="#500">🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso</a>
+- <a href="#600">🏆 6. Limitación de la profundidad de recursión del comando find de Linux</a>
+- <a href="#700">🏆 7. Utilizar el comando find de Linux para encontrar y procesar archivos</a>
+- <a href="#800">🏆 8.Utilizar el comando find de Linux para eliminar directorios y archivos vacíos</a>
+- <a href="#xxxxxxx">xxxxxxxx</a>
+
+
+-- - 
+
+
+
+-- - 
+
+[//]: # (100------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="100">🏆🚀📜1. General</h2>
 sintaxis
 `find <directory_path> <search_parameter>`
 
@@ -67,7 +93,15 @@ find . -name "my-file.txt" -delete
 ```
 
 
-## 🏆 2. Utilizar el comando find de Linux para filtrar por tipo de archivo
+-- - 
+
+[//]: # (200------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="200">🏆 2. Utilizar el comando find de Linux para filtrar por tipo de archivo</h2>
 Aquí es donde entra en juego el argumento -type. Linux ofrece a los usuarios las siguientes opciones para buscar archivos por tipo:
 
 | **Tipo de archivo** | **Explicación**            |
@@ -90,7 +124,15 @@ find . -type f -iname "*.jpeg"
 find . -type f -iname "*.jpeg" -or -iname "*.jpg"
 ```
 
-## 🏆 3. Utilizar el comando find de Linux para filtrar por tamaño
+-- - 
+
+[//]: # (300------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="300">🏆 3. Utilizar el comando find de Linux para filtrar por tamaño</h2>
 En Linux, el concepto de archivo vincula varias piezas de información. Esto suele incluir al menos lo siguiente:
 
 - Nombre
@@ -159,7 +201,15 @@ find . -type d -empty
 ```
 
 
-## 🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo
+-- - 
+
+[//]: # (400------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="400">🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo</h2>
 
 marcas de tiempo para la creación, la última modificación y el último acceso a un archivo.
 
@@ -262,7 +312,16 @@ buscar cambios y excluyendo carpetas
 
 ```
 
-## 🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso
+-- - 
+
+[//]: # (500------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="500">🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso</h2>
+
 En Linux, cada archivo tiene asignado un usuario que actúa como propietario. Además, cada archivo pertenece a un determinado grupo de usuarios. En base a esto, se definen ciertos derechos de acceso (permisos) para cada archivo. En base a toda esta información, podemos utilizar el comando find para filtrar y encontrar archivos en Linux. A continuación, presentamos un resumen de los parámetros de búsqueda utilizados:
 
 | **Parámetro de búsqueda** | **Explicación**                |
@@ -302,7 +361,15 @@ find . -perm 700
 ```
 
 
-## 🏆 6. Limitación de la profundidad de recursión del comando find de Linux
+-- - 
+
+[//]: # (600------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="600">🏆 6. Limitación de la profundidad de recursión del comando find de Linux</h2>
 Normalmente, el comando find de Linux recorre recursivamente todos los subdirectorios.
 Sin embargo, a menudo es útil limitar la profundidad de la recursión. 
 Para ello, utilizamos los parámetros de búsqueda `-maxdepth` y `-mindepth`:
@@ -324,7 +391,15 @@ Para encontrar los archivos que son mayores de 50 megabytes, incluyendo solo los
 find . -type f -mindepth 3 -and -maxdepth 5 -size +50M
 ```
 
-## 🏆 7. Utilizar el comando find de Linux para encontrar y procesar archivos
+-- - 
+
+[//]: # (700------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="700">🏆 7. Utilizar el comando find de Linux para encontrar y procesar archivos</h2>
 procesamiento masivo de los archivos encontrados.
 
 Utilizar el comando find de Linux para ajustar el usuario y los grupos
@@ -349,7 +424,15 @@ Para establecer los permisos de todos los directorios a `755`, utilizamos el sig
 find . -type d -maxdepth 1 -exec chmod 755 {} \;
 ```
 
-## 🏆 8.Utilizar el comando find de Linux para eliminar directorios y archivos vacíos
+-- - 
+
+[//]: # (800------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+
+<h2  id="800">🏆 8.Utilizar el comando find de Linux para eliminar directorios y archivos vacíos</h2>
 También puedes utilizar el comando find para borrar los archivos y directorios 
 encontrados. Como precaución, mostraremos esto aquí solo para archivos y directorios 
 vacíos. Además, en lugar del parámetro `-exec`, utilizamos el parámetro `-ok` 
