@@ -24,7 +24,7 @@ sudo nano /etc/ssh/sshd_config
 
 
 
-## 1-. Modificar el puerto de escucha de OpenSSH.
+## 1 .🏆 Modificar el puerto de escucha de OpenSSH.
 
 Por defecto escucha el puerto 22, pero si queremos que escuche otro, no tenemos que modificar en el fichero, la entrada donde hace referencia 
  a “Port 22“.
@@ -35,19 +35,19 @@ Para establecer el puerto 2222 en lugar del 22, la linea de Port, quedaria:
 
 Port 2222
 
-## 2-. Para no permitir que se puedan conectar por SSH utilizando el usuario root, tendremos que ir a la seccion “Authentificacion“. En esta seccion hay una linea como esta:
+## 2 .🏆 Para no permitir que se puedan conectar por SSH utilizando el usuario root, tendremos que ir a la seccion “Authentificacion“. En esta seccion hay una linea como esta:
 
  PermitRootLogin yes
 Bien, para hacer que no se pueda conectar el usuario root, deberemos modificarla a “no“:
 
 PermitRootLogin no
 
-## 3-. Si queremos que cada vez que se relice sesion mediante SSH a nuestro servidor, muestre un mensaje en concreto, deberemos modificar el fichero que estamos comentando (/ect/ssh/sshd_config) para descomentar la linea:
+## 3 .🏆 Si queremos que cada vez que se relice sesion mediante SSH a nuestro servidor, muestre un mensaje en concreto, deberemos modificar el fichero que estamos comentando (/ect/ssh/sshd_config) para descomentar la linea:
 
 X11 Forwarding: Nos indica que el reenviador X11 está activo
 #Banner /etc/issue.net
 
-## 4 .podemso personalizar el login ssh
+## 4 . 🏆podemso personalizar el login ssh
 Podemos, ya puestos, modificar el fichero `/etc/issue.net` para que muestre lo que nosotros queramos.
 
 Reiniciar el servicio SSH
@@ -89,20 +89,56 @@ ssh-keygen
 
 
 ### 2  -  leer la clave ubicada en /y//.ssh/id_rsa.pub
-   #copiar el contenido en el servidor crea un archivo si no existe el la ubicacion /home/cesar/.ssh/authorized_keys
+   copiar el contenido en el servidor crea un archivo si no existe el la ubicacion /home/cesar/.ssh/authorized_keys
+
+> Tenemos este  error al tratar de acceder
+> <img  src="https://i.imgur.com/QoJzCEX.png" alt="My cool logo"/>
 
 
- - Opcion 1
+> nuestra key publica no esta como veremos
+> <img  src="https://i.imgur.com/kM5z7VU.png" alt="My cool logo"/>
+
+>y el servidor solo tenemos solo una  public key que no es nuestra
+<img  src="https://i.imgur.com/m92J4PL.png" alt="My cool logo"/>
+
+######  Ahora haremos el proceso de solucion par apoder acceder 
+
+ - 🏆 Opcion 1
+   - fuente: https://www.youtube.com/watch?v=_u3_z1ywWec
    
 ```shell
    #copiar desde una  ruta local al server
    #crear el archivo en el servidor y la  carpeta
    mkdir -p /home/cesar/.ssh/  &&  touch /home/cesar/.ssh/authorized_keys
    #enviar el archivo al server
-   scp /y//.ssh/id_rsa.pub cesar@192.168.192.136:>>/home/cesar/.ssh/authorized_keys
+   scp /y//.ssh/id_rsa.pub cesar@192.168.192.136:/home/cesar/id_rsa.pub
+   # ya en el server remoto
+   cesar@192.168.192.136:~# cat id_rsa.pub >> .ssh/authorized_keys
+   
+   # ------------------------------------------------------------- 
+   # ::::::: si estas usando mobax
+   scp /c/Users/Cesar/mobax/home/.ssh/id_rsa.pub root@142.93.195.232:id_rsa.pub
+   # ya en el server remoto
+   root@digi-ubuntu:~# cat id_rsa.pub >> .ssh/authorized_keys
 ```
 
-- Opcion 2 (facil)
+> ############### resultado ahora en el server ##########################
+<img width="90%" src="https://i.imgur.com/E1gUqMC.png" alt="My cool logo"/>
+
+> ############### resultado ahora al conectarme ##########################
+<img width="90%" src="https://i.imgur.com/FhyzTi4.png" alt="My cool logo"/>
+
+### Posible error
+
+<img   src="https://i.imgur.com/aK98iIu.png" alt="My cool logo"/>
+
+### Solucion al error 
+<img src="https://i.imgur.com/UqTlfRH.png" alt="My cool logo"/>
+
+
+
+
+- 🏆 Opcion 2 (facil)
 ```shell
    #lo que  hara es copiar nuestro  /y//.ssh/id_rsa.pub a /home/cesar/.ssh/authorized_keys
    ssh-copy-id cesar@192.168.192.136

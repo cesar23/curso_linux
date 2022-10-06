@@ -36,10 +36,11 @@ tar -czvf l3mon.tar.gz L3MON --exclude="L3MON/app" --exclude='*.png'
 
 # :::: comprimir mas de una rutas (carpetas L3MON,build )
 tar -czvf l3mon_2.tar.gz L3MON build --exclude='*.png'
+```
 
+# Descomprimir
 
-
-
-
-
+```shell
+# :::::::: descomprimir backup
+tar -xzvf home.tar.gz ~/directorio
 ```

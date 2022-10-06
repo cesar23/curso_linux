@@ -191,7 +191,8 @@ find . -size +400M  -exec ls -lah {} \;
 # excluyendo path
 find . -size +400M  -not -path "./AppData/Local/Docker*" -not -path "./AppData/Local/JetBrains/*"  -exec ls -lah {} \;
 # eliminando
-find . -size +400M  -exec rm -rf {} \;
+#find . -size +400M  -exec rm -rf {} \;
+find . -size +400M  -not -path "./AppData/Local/Docker*" -not -path "./AppData/Local/JetBrains/*"  -exec rm -rf  {} \;
 ```
 
 Buscar archivos vacios
