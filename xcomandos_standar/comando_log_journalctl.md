@@ -60,7 +60,9 @@ journalctl |grep 'error'
 <a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
 
 
-<h2  id="103"> 1.3. escuchar en linea cualquier log q se genere como `tail -f`</h2> 
+<h2  id="103"> 1.3. escuchar en linea cualquier log q se genere como `tail -f` </h2> 
+ ver los  ultimos logs
+
 ```shell
 journalctl -f
 ```
@@ -236,6 +238,18 @@ journalctl _SYSTEMD_UNIT=apache2.service + _SYSTEMD_UNIT=dbus.service
 
 #  filtrar todo de hoy
 journalctl -u nginx.service -u php-fpm.service --since today
+
+# --------- por ssh
+journalctl -u ssh.service --since today
+
+
+journalctl -u ssh.service \
+  --since='2022-10-07 19:22:00' --until='2022-10-07 20:22:00'
+ 
+ # ver los  ultimos generados
+journalctl -u ssh.service -f
+  
+
 ```
 
 #### ⚠️Revision de servicios mas usados

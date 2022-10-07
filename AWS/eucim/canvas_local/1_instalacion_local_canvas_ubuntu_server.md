@@ -41,11 +41,26 @@ rails -v
 ```shell
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash 
 sudo apt-get install -y nodejs
+
+# 👁‍🗨 Y Importante YARN 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt -y update
+sudo apt -y install yarn
+yarn --version
+
 ```
 
-## 2.3 Instalar pqeues app test
+## 2.3 Instalar APP test para saber qeu  funciona Rails 2.6 perfectamente
+fuente: 
+- https://www.youtube.com/watch?v=wSNTT8MLI90
+
 ```shell
 cesar@cesarserver:~$ rails new appdemo
+# probamos la app
+cesar@cesarserver:~$ rails server
+# si da  error ejecutar
+cesar@cesarserver:~$ bundle exec rails webpacker:install
 
 ```
   
