@@ -356,8 +356,12 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 ```
 
+---
+[//]: # (------------------)
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+<h2  id="script_init">Agregar conf `sin plugins` desde consola</h2>
 
-# Ultimo config sin plugins
+
 ```shell
 
 echo '' > ~/.config/nvim/init.vim
@@ -462,15 +466,11 @@ echo '" ------------------------------------------------' >> ~/.config/nvim/init
 
 ```
 
+# Verion de archivo `~/.config/nvim/init.vim` Sin Plugins
 
-
----
-[//]: # (------------------)
-<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
-<h2  id="script_init">Agregar conf `sin plugins` desde consola</h2>
 
 ```shell
- cat > ~/.config/nvim/init.vim <<EOF
+
 " TABLE OF CONTENTS:
 " -----------confg sin plugins
 
@@ -569,8 +569,6 @@ nmap <leader>q :q <CR>
 "# Panel Navegador de Archivos (LEX) uso: Ctrl+b
 nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
 inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
-" ------------------------------------------------
-EOF
 
 ```
 
@@ -648,8 +646,12 @@ descargar y instalar las fuentes del link:
 
 
 ## configurar `nvim` a root
+use `sudo -E -s ` para  preservar el editor nvim
 ```shell
-sudo mv /root/.config/nvim /root/.config/nvim.bkp; sudo ln -s $HOME/.config/nvim /root/.config/
+# ejemplo
+sudo -E -s nvim testdb.sh
+
+# sudo mv /root/.config/nvim /root/.config/nvim.bkp; sudo ln -s $HOME/.config/nvim /root/.config/
 ```
 
 ## Cambiar syntaxis de lenguaje

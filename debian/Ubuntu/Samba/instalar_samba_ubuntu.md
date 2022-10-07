@@ -13,7 +13,7 @@ Si no lo tenemos instalado abrimos una terminal y en ella escribimos el siguient
 
 ### ojo si  hay  algun error o  bloqueo  ejecutar 
 ![](https://i.imgur.com/iuX0SMs.png) 
-```
+```shell
     sudo rm /var/lib/dpkg/lock
 ```
 
@@ -25,14 +25,14 @@ Con estos paquetes instalados ya podemos configurar «Samba» para que nos permi
 
 
 ### 3. Revisamos que el servicio este corriendo sin problemas:
-```
+```shell
 sudo systemctl status nmbd
 ```
 ![](https://i.imgur.com/v2gdbKq.png) 
 
 
 ### 4. Revisar el firewall, aquí debemos enterarnos si esta activado o desactivado
-```
+```shell
  sudo ufw status
  sudo ufw enable
  sudo ufw disable
@@ -44,34 +44,36 @@ sudo systemctl status nmbd
     sudo ufw allow "OpenSSH"
 ```
 
-```
+```shell
 # allow outbound icmp
 -A ufw-before-output -p icmp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 -A ufw-before-output -p icmp -m state --state ESTABLISHED,RELATED -j ACCEPT
 ```
 Guardar configuracion..
-```
+```shell
 sudo ufw reload
 ```
 
 ### 4.2 Revisar Estado deFirewall
-```
+```shell
  sudo ufw status
 ```
 ![](https://i.imgur.com/5x0A9YJ.png)    
 
 ### 5. Crear copia del archivo de configuración de samba
-```
+```shell
  cd /etc/samba
  sudo cp smb.conf smb.conf.copia
 ```
  
 ### 6. Revisar algunas configuraciones globales
-```
+```shell
  sudo vim smb.conf
+ # editarlo con nvim
+ sudo -E-s nvim /etc/samba/smb.conf
 ```
 
-```
+```shell
 
      ...
      # Most people will want "standalone sever" or "member server".
@@ -99,7 +101,7 @@ sudo ufw reload
 
 
  Si hubo cambios es necesario reiniciar el servicio para que este tenga efecto
-```
+```shell
  sudo systemctl restart nmbd
 ```
 
@@ -107,19 +109,19 @@ sudo ufw reload
 #CREANDO USUARIOS Y DIRECTORIOS
 
 ### 7. En nuestro directorio home vamos a crear la carpeta "compartido"
-```
+```shell
  sudo mkdir /compartido
 ```
 
 
 ### 8. Cuando Samba se instala crea un grupo llamado "sambashare", entonces vamos a dejar como propietario
 # de la carpeta "compartido" recien creada a nuestro grupo "sambashare"
-```
+```shell
 sudo chgrp sambashare /compartido
 ```
 
 ### 9. Creamos un usuario dentro del sistema pero que solo utilizará el servicio de samba
-```
+```shell
  sudo useradd -M -d /compartido/pepito -s /usr/sbin/nologin -G sambashare pepito
 
   -M -do not create the user’s home directory. We’ll manually create this directory.
@@ -131,28 +133,28 @@ sudo chgrp sambashare /compartido
 
 
 ### 10. Creamos el directorio que será compartido bajo la propiedad del usuario que recien se creó
-```
+```shell
  sudo mkdir /compartido/pepito
  sudo chown pepito:sambashare /compartido/pepito
 ```
 
 ### 11. Configuramos algunos permisos sobre el directorio
-```
+```shell
 sudo chmod 2770 /compartido/pepito
 ```
 
 ### 12. Asignamos una contraseña de samba para el usuario que recien creamos
-```
+```shell
 sudo smbpasswd -a pepito
 ```
 
 ### 13. Habilitamos esa contraseña con ese usuario para samba
-```
+```shell
 sudo smbpasswd -e pepito
 ```
 
 ### 13.2 creamos un usuario adminsamba
-```
+```shell
 sudo useradd -M -d /compartido/publico -s /usr/sbin/nologin -G sambashare adminsamba
 sudo smbpasswd -a adminsamba
 sudo smbpasswd -e adminsamba
@@ -162,7 +164,7 @@ sudo smbpasswd -e adminsamba
 
 ### 14.  creamos una  carpeta publica para  todos
 
-```
+```shell
  sudo mkdir /compartido/publico
 
  #-----------Opcion 1 -------------
@@ -182,9 +184,9 @@ sudo smbpasswd -e adminsamba
  sudo chmod 2770 -R /compartido/publico
  sudo chown adminsamba:sambashare /compartido/publico
 ```
-#CONFIGURACIÓN DEL ARCHIVO SMB.CONF
+# CONFIGURACIÓN DEL ARCHIVO SMB.CONF
 
-```
+```shell
 [publico]
     path = /compartido/publico
     browseable = yes
@@ -208,12 +210,14 @@ sudo smbpasswd -e adminsamba
 ```
 
 Luego de  eso  reiniciamos  samba
-```
+```shell
  sudo systemctl restart nmbd
+ # y lo anadimo como servicio o al demonio
+ sudo systemctl enable nmbd
 ```
 
 ###Verificamos la configuración ejecutando el siguiente comando:
-```
+```shell
 testparm
 ```
 
