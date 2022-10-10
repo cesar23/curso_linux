@@ -1,6 +1,33 @@
 # Manejo de repositorios debian
 
-### 1. restaurar desde backup
+### 1. Ubicaciones de Repositorio
+Los repositorios se encuentran en el archivo sources.list, para añadir o modificar debemos abrir el editor nano como root.
+
+```shell
+nano /etc/apt/sources.list # principal
+
+# ubicacion de repositorios agregados
+ cd /etc/apt/sources.list.d
+```
+<img width="90%" src="https://i.imgur.com/Xw6odcf.png" alt="My cool logo"/>
+
+Cada linea que describe un repositorio tiene una bien definida sintaxis:
+
+```shell
+deb [url] [distribution] [component…]
+```
+
+##### Si analizamos por separado sería:
+
+
+- **[deb ó deb-src]**  =>  Con esto indicamos si el repositorio indicado contiene paquetes binarios o fuentes, en caso que necesitar ambos debes especificar cada uno en un linea diferente
+- **[url]**  =>  Con esto indicamos si el repositorio indicado contiene paquetes binarios o fuentes, en caso que necesitar ambos debes especificar cada uno en un linea diferente
+- **[distribution]**  => `deb https://deb.debian.org/debian **stable** main contrib non-free` indica la distribución (o rama) utilizada... es posible usar el nombre en código (Buster, Bullseye, sid) o el nombre genérico (stable, testing, unstable)
+- **[component]**  => `deb https://deb.debian.org/debian stable **main contrib non-free**`  indica las secciones del repositorio, non-free , main , contrib....
+A continuación veremos una lista de repositorios oficiales para agregar a nuestro sources.list
+
+
+### 2. restaurar desde backup
 
 descargar el archivo
 ```shell

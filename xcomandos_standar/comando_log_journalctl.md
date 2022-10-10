@@ -345,3 +345,18 @@ Ejecutamos el comando: `journalctl --disk-usage`
 root@ubuntu:~# journalctl --disk-usage
 # Archived and active journals take up 1.0G in the file system.
 ```
+
+
+[//]: # (1100------------------)
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+<h2  id="1200">12. Ver log de servicios</h2>
+
+```shell
+# :::::::::::: NGINX :::::::::::::
+ # ver los  ultimos generados
+sudo journalctl -u nginx.service -f
+# equivalencia
+  sudo tail -f /var/log/nginx/error.log
+```

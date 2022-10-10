@@ -44,8 +44,8 @@
 ### Instalar Debian NVIM 
 
 ```shell
-sudo apt-get install vim neovim
-sudo apt-get install python3-neovim
+sudo apt-get install -y vim neovim
+sudo apt-get install -y python3-neovim
 
 
 ```
