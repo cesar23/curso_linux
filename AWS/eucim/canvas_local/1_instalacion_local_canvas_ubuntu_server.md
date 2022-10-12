@@ -61,6 +61,9 @@ cesar@cesarserver:~$ cd  /home/cesar
 cesar@cesarserver:~$ rails new appdemo
 # entramos a la  app
 cesar@cesarserver:~$ cd /home/cesar/appdemo
+# instalamos bundle
+cesar@cesarserver:~$ sudo gem install bundler
+cesar@cesarserver:~$ bundle install
 # probamos la app
 cesar@cesarserver:~$ rails server
 cesar@cesarserver:~$ rails s --binding=0.0.0.0 # para  exponerlo fuera de la  red

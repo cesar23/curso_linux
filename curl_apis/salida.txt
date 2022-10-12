@@ -1,1 +1,0 @@
-<h1 class='titulo_fichas'>Su sesi&oacute;n ha caducado. <font size='1pt'> &nbsp;&nbsp;</font></h1><h2 class='subtitulo'>Si desea continuar sirvase ingresar nuevamente </h2><div id='validabox'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></div>

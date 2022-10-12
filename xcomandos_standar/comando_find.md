@@ -51,6 +51,8 @@ sintaxis
  busca el archivo my-file.txt en el duirectorio actual
 ```shell
 find . -name "my-file.txt"
+find . -type f -name "puma.conf"
+find . -type f -name "puma.sock"
 # buscar recursoivamente 
 find . -name .gitignore
 ```
