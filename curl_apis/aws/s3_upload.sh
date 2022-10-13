@@ -1,7 +1,7 @@
 #Date: 21/7/2017
 #Author: Mohan
 #Purpose: To upload files to AWS S3 via Curl
-#Uploads file at the top level folder by default
+#Uploads file at the top level folder by canvas.cesar.com.conf
 
 
 #S3 parameters

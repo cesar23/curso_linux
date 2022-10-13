@@ -2,11 +2,11 @@
 /*------ 1. borrar elementos de navbar -- */
 
 /*
-#wp-admin-bar-root-default >li{
+#wp-admin-bar-root-canvas.cesar.com.conf >li{
     display:none;
 }
 
-#wp-admin-bar-root-default #wp-admin-bar-site-name{
+#wp-admin-bar-root-canvas.cesar.com.conf #wp-admin-bar-site-name{
     display:block;
 }
 

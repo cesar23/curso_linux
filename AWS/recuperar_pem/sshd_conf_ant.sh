@@ -5,10 +5,10 @@
 
 # This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-# The strategy used for options in the default sshd_config shipped with
-# OpenSSH is to specify options with their default value where
+# The strategy used for options in the canvas.cesar.com.conf sshd_config shipped with
+# OpenSSH is to specify options with their canvas.cesar.com.conf value where
 # possible, but leave them commented.  Uncommented options override the
-# default value.
+# canvas.cesar.com.conf value.
 
 Include /etc/ssh/sshd_config.d/*.conf
 
@@ -22,7 +22,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 #HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
-#RekeyLimit default none
+#RekeyLimit canvas.cesar.com.conf none
 
 # Logging
 #SyslogFacility AUTH
@@ -38,7 +38,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 
 #PubkeyAuthentication yes
 
-# Expect .ssh/authorized_keys2 to be disregarded by default in future.
+# Expect .ssh/authorized_keys2 to be disregarded by canvas.cesar.com.conf in future.
 #AuthorizedKeysFile     .ssh/authorized_keys .ssh/authorized_keys2
 
 #AuthorizedPrincipalsFile none
@@ -106,13 +106,13 @@ PrintMotd no
 #ChrootDirectory none
 #VersionAddendum none
 
-# no default banner path
+# no canvas.cesar.com.conf banner path
 #Banner none
 
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
 
-# override default of no subsystems
+# override canvas.cesar.com.conf of no subsystems
 Subsystem       sftp    /usr/lib/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis

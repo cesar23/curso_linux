@@ -23,5 +23,5 @@ router.post("/new-entry", createNewEntry);
 
 router.get("/delete/:id", deleteBook);
 
-// export default router;
+// export canvas.cesar.com.conf router;
 module.exports = router;

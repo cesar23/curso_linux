@@ -33,7 +33,7 @@ vim /etc/rsyslog.conf
  # dentro de estan las configuraciones extras
 vim  /etc/rsyslog.d/*.conf 
 
-# OJO en   /etc/rsyslog.d/50-default.conf 
+# OJO en   /etc/rsyslog.d/50-canvas.cesar.com.conf.conf
 
 				# ║			*.*       -/var/log/all.log
 				# ║			auth,authpriv.*                 /var/log/auth.log

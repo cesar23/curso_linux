@@ -52,8 +52,8 @@ jQuery(document).ready(function() {
   }
 
   //2. Desocultar : si existe nav menu admin (ojo se oculta  primero con el archivo css)
-  if (document.querySelector("#wp-admin-bar-root-default")) {
-    var elements = document.querySelectorAll("#wp-admin-bar-root-default li");
+  if (document.querySelector("#wp-admin-bar-root-canvas.cesar.com.conf")) {
+    var elements = document.querySelectorAll("#wp-admin-bar-root-canvas.cesar.com.conf li");
 
     elements.forEach(elemento => {
       var id = elemento.getAttribute("id");

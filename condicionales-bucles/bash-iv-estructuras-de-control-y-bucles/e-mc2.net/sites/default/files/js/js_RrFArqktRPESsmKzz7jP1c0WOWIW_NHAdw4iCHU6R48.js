@@ -2398,7 +2398,7 @@ jQuery.extend( jQuery.easing,
 {
 	def: 'easeOutQuad',
 	swing: function (x, t, b, c, d) {
-		//alert(jQuery.easing.default);
+		//alert(jQuery.easing.canvas.cesar.com.conf);
 		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
 	},
 	easeInQuad: function (x, t, b, c, d) {
@@ -3345,7 +3345,7 @@ var e=this.getItems(t);e=e.length?e:this.items,this._updateItemsSortData(e)},d.p
 	
 	$.fn.prettyPhoto = function(pp_settings) {
 		pp_settings = jQuery.extend({
-			hook: 'data-rel', /* the attribute tag to use for prettyPhoto hooks. default: 'rel'. For HTML5, use "data-rel" or similar. */
+			hook: 'data-rel', /* the attribute tag to use for prettyPhoto hooks. canvas.cesar.com.conf: 'rel'. For HTML5, use "data-rel" or similar. */
 			animation_speed: 'fast', /* fast/slow/normal */
 			ajaxcallback: function() {},
 			slideshow: 3000, /* false OR interval time in ms */
@@ -3687,7 +3687,7 @@ var e=this.getItems(t);e=e.length?e:this.items,this._updateItemsSortData(e)},d.p
 					break;
 				
 					case 'inline':
-						// to get the item height clone it, apply default width, wrap it in the prettyPhoto containers , then delete
+						// to get the item height clone it, apply canvas.cesar.com.conf width, wrap it in the prettyPhoto containers , then delete
 						myClone = $(pp_images[set_position]).clone().append('<br clear="all" />').css({'width':settings.default_width}).wrapInner('<div id="pp_full_res"><div class="pp_inline"></div></div>').appendTo($('body')).show();
 						doresize = false; // Make sure the dimensions are not resized.
 						pp_dimensions = _fitToViewport($(myClone).width(),$(myClone).height());
@@ -5064,7 +5064,7 @@ $(window).on("debouncedresize", function(event) {
 * $version: 1.2.6 	- Added timeThreshold between start and end touch, so user can ignore slow swipes (thanks to Mark Chase). Default is null, all swipes are detected
 *
 * $Date: 2012-05-06 (Tues, 05 June 2012) $
-* $version: 1.2.7 	- Changed time threshold to have null default for backwards compatibility. Added duration param passed back in events, and refactored how time is handled.
+* $version: 1.2.7 	- Changed time threshold to have null canvas.cesar.com.conf for backwards compatibility. Added duration param passed back in events, and refactored how time is handled.
 *
 * $Date: 2012-05-06 (Tues, 05 June 2012) $
 * $version: 1.2.8 	- Added the possibility to return a value like null or false in the trigger callback. In that way we can control when the touch start/move should take effect or not (simply by returning in some cases return null; or return false;) This effects the ontouchstart/ontouchmove event.
@@ -5086,7 +5086,7 @@ $(window).on("debouncedresize", function(event) {
 * $version: 1.4.0	- Added pinch support, pinchIn and pinchOut
 *
 * $Date: 2012-11-10 (Thurs, 11 Oct 2012) $
-* $version: 1.5.0	- Added excludedElements, a jquery selector that specifies child elements that do NOT trigger swipes. By default, this is one select that removes all form, input select, button and anchor elements.
+* $version: 1.5.0	- Added excludedElements, a jquery selector that specifies child elements that do NOT trigger swipes. By canvas.cesar.com.conf, this is one select that removes all form, input select, button and anchor elements.
 *
 * $Date: 2012-22-10 (Mon, 22 Oct 2012) $
 * $version: 1.5.1	- Fixed bug with jQuery 1.8 and trailing comma in excludedElements
@@ -5114,7 +5114,7 @@ $(window).on("debouncedresize", function(event) {
 * $Date: 2014-06-04 (Wed, 04 June 2014) $
 * $version 1.6.6 	- Merge of pull requests.
 *    				- IE10 touch support 
-*    				- Only prevent default event handling on valid swipe
+*    				- Only prevent canvas.cesar.com.conf event handling on valid swipe
 *    				- Separate license/changelog comment
 *    				- Detect if the swipe is valid at the end of the touch event.
 *    				- Pass fingerdata to event handlers. 
@@ -5213,8 +5213,8 @@ $(window).on("debouncedresize", function(event) {
 
 
 	/**
-	* The default configuration, and available options to configure touch swipe with.
-	* You can set the default values by updating any of the properties prior to instantiation.
+	* The canvas.cesar.com.conf configuration, and available options to configure touch swipe with.
+	* You can set the canvas.cesar.com.conf values by updating any of the properties prior to instantiation.
 	* @name $.fn.swipe.defaults
 	* @namespace
 	* @property {int} [fingers=1] The number of fingers to detect in a swipe. Any swipes that do not meet this requirement will NOT trigger swipe handlers.
@@ -5246,8 +5246,8 @@ $(window).on("debouncedresize", function(event) {
 										<code>"horizontal"</code> : will force page to scroll on horizontal swipes. <br/>
 										<code>"vertical"</code> : will force page to scroll on vertical swipes. <br/>
 	* @property {boolean} [fallbackToMouseEvents=true] If true mouse events are used when run on a non touch device, false will stop swipes being triggered by mouse events on non tocuh devices. 
-	* @property {string} [excludedElements="button, input, select, textarea, a, .noSwipe"] A jquery selector that specifies child elements that do NOT trigger swipes. By default this excludes all form, input, select, button, anchor and .noSwipe elements. 
-	* @property {boolean} [preventDefaultEvents=true] by default default events are cancelled, so the page doesn't move.  You can dissable this so both native events fire as well as your handlers. 
+	* @property {string} [excludedElements="button, input, select, textarea, a, .noSwipe"] A jquery selector that specifies child elements that do NOT trigger swipes. By canvas.cesar.com.conf this excludes all form, input, select, button, anchor and .noSwipe elements.
+	* @property {boolean} [preventDefaultEvents=true] by canvas.cesar.com.conf canvas.cesar.com.conf events are cancelled, so the page doesn't move.  You can dissable this so both native events fire as well as your handlers.
 	
 	*/
 	var defaults = {
@@ -5608,7 +5608,7 @@ $(window).on("debouncedresize", function(event) {
 		//
 		/**
 		* Event handler for a touch start event.
-		* Stops the default click event from triggering and stores where we touched
+		* Stops the canvas.cesar.com.conf click event from triggering and stores where we touched
 		* @inner
 		* @param {object} jqEvent The normalised jQuery event object.
 		*/
@@ -5654,7 +5654,7 @@ $(window).on("debouncedresize", function(event) {
 			maximumsMap=createMaximumsData();
 			cancelMultiFingerRelease();
 
-			//Create the default finger data
+			//Create the canvas.cesar.com.conf finger data
 			createFingerData( 0, evt );
 
 			// check the number of fingers is what we are looking for, or we are capturing pinches
@@ -5768,7 +5768,7 @@ $(window).on("debouncedresize", function(event) {
 				
 				direction = calculateDirection(currentFinger.start, currentFinger.end);
 				
-				//Check if we need to prevent default event (page scroll / pinch zoom) or not
+				//Check if we need to prevent canvas.cesar.com.conf event (page scroll / pinch zoom) or not
 				validateDefaultEvent(jqEvent, direction);
 
 				//Distance and duration are all off the main finger
@@ -5896,7 +5896,7 @@ $(window).on("debouncedresize", function(event) {
 		* @inner
 		*/
 		function touchCancel() {
-			// reset the variables back to default values
+			// reset the variables back to canvas.cesar.com.conf values
 			fingerCount = 0;
 			endTime = 0;
 			startTime = 0;
@@ -6337,7 +6337,7 @@ $(window).on("debouncedresize", function(event) {
 	
 
 		/**
-		* Checks direction of the swipe and the value allowPageScroll to see if we should allow or prevent the default behaviour from occurring.
+		* Checks direction of the swipe and the value allowPageScroll to see if we should allow or prevent the canvas.cesar.com.conf behaviour from occurring.
 		* This will essentially allow page scrolling or not when the user is swiping on a touchSwipe object.
 		* @param {object} jqEvent The normalised jQuery representation of the event object.
 		* @param {string} direction The direction of the event. See {@link $.fn.swipe.directions}
@@ -6950,7 +6950,7 @@ $(window).on("debouncedresize", function(event) {
  * A catch all handler that is triggered for all swipe directions. 
  * @name $.fn.swipe#swipe
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user swiped in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user swiped
@@ -6966,7 +6966,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler that is triggered for "left" swipes.
  * @name $.fn.swipe#swipeLeft
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user swiped in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user swiped
@@ -6979,7 +6979,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler that is triggered for "right" swipes.
  * @name $.fn.swipe#swipeRight
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user swiped in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user swiped
@@ -6992,7 +6992,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler that is triggered for "up" swipes.
  * @name $.fn.swipe#swipeUp
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user swiped in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user swiped
@@ -7005,7 +7005,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler that is triggered for "down" swipes.
  * @name $.fn.swipe#swipeDown
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user swiped in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user swiped
@@ -7019,7 +7019,7 @@ $(window).on("debouncedresize", function(event) {
  * This is triggered regardless of swipe thresholds.
  * @name $.fn.swipe#swipeStatus
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {string} phase The phase of the swipe event. See {@link $.fn.swipe.phases}
  * @param {string} direction The direction the user swiped in. This is null if the user has yet to move. See {@link $.fn.swipe.directions}
@@ -7033,7 +7033,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler triggered for pinch in events.
  * @name $.fn.swipe#pinchIn
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user pinched in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user pinched
@@ -7047,7 +7047,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler triggered for pinch out events.
  * @name $.fn.swipe#pinchOut
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user pinched in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user pinched
@@ -7061,7 +7061,7 @@ $(window).on("debouncedresize", function(event) {
  * A handler triggered for all pinch events. This handler is constantly fired for the duration of the pinch. This is triggered regardless of thresholds.
  * @name $.fn.swipe#pinchStatus
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {int} direction The direction the user pinched in. See {@link $.fn.swipe.directions}
  * @param {int} distance The distance the user pinched
@@ -7074,12 +7074,12 @@ $(window).on("debouncedresize", function(event) {
 /**
  * A click handler triggered when a user simply clicks, rather than swipes on an element.
  * This is deprecated since version 1.6.2, any assignment to click will be assigned to the tap handler.
- * You cannot use <code>on</code> to bind to this event as the default jQ <code>click</code> event will be triggered.
+ * You cannot use <code>on</code> to bind to this event as the canvas.cesar.com.conf jQ <code>click</code> event will be triggered.
  * Use the <code>tap</code> event instead.
  * @name $.fn.swipe#click
  * @event
  * @deprecated since version 1.6.2, please use {@link $.fn.swipe#tap} instead 
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {DomObject} target The element clicked on.
  */
@@ -7088,7 +7088,7 @@ $(window).on("debouncedresize", function(event) {
  * A click / tap handler triggered when a user simply clicks or taps, rather than swipes on an element.
  * @name $.fn.swipe#tap
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {DomObject} target The element clicked on.
  */
@@ -7101,7 +7101,7 @@ $(window).on("debouncedresize", function(event) {
  * @name $.fn.swipe#doubleTap
  * @see  $.fn.swipe.defaults#doubleTapThreshold
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {DomObject} target The element clicked on.
  */
@@ -7112,7 +7112,7 @@ $(window).on("debouncedresize", function(event) {
  * @name $.fn.swipe#longTap
  * @see  $.fn.swipe.defaults#longTapThreshold
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {DomObject} target The element clicked on.
  */
@@ -7123,7 +7123,7 @@ $(window).on("debouncedresize", function(event) {
  * @name $.fn.swipe#hold
  * @see  $.fn.swipe.defaults#longTapThreshold
  * @event
- * @default null
+ * @canvas.cesar.com.conf null
  * @param {EventObject} event The original event object
  * @param {DomObject} target The element clicked on.
  */
@@ -7259,7 +7259,7 @@ if (window.tplogs==true)
 
 						//exports to multiple environments
 						if (global) {
-							_globals[n] = cl; //provides a way to avoid global namespace pollution. By default, the main classes like TweenLite, Power1, Strong, etc. are added to window unless a GreenSockGlobals is defined. So if you want to have things added to a custom object instead, just do something like window.GreenSockGlobals = {} before loading any GreenSock files. You can even set up an alias like window.GreenSockGlobals = windows.gs = {} so that you can access everything like gs.TweenLite. Also remember that ALL classes are added to the window.com.greensock object (in their respective packages, like com.greensock.easing.Power1, com.greensock.TweenLite, etc.)
+							_globals[n] = cl; //provides a way to avoid global namespace pollution. By canvas.cesar.com.conf, the main classes like TweenLite, Power1, Strong, etc. are added to window unless a GreenSockGlobals is defined. So if you want to have things added to a custom object instead, just do something like window.GreenSockGlobals = {} before loading any GreenSock files. You can even set up an alias like window.GreenSockGlobals = windows.gs = {} so that you can access everything like gs.TweenLite. Also remember that ALL classes are added to the window.com.greensock object (in their respective packages, like com.greensock.easing.Power1, com.greensock.TweenLite, etc.)
 							hasModule = (typeof(module) !== "undefined" && module.exports);
 							if (!hasModule && typeof(define) === "function" && define.amd){ //AMD
 								define((window.GreenSockAMDPath ? window.GreenSockAMDPath + "/" : "") + ns.split(".").pop(), [], function() { return cl; });
@@ -8051,7 +8051,7 @@ if (window.tplogs==true)
 					}
 				}
 				if (this.vars.immediateRender || (duration === 0 && this._delay === 0 && this.vars.immediateRender !== false)) {
-					this._time = -_tinyNum; //forces a render without having to set the render() "force" parameter to true because we want to allow lazying by default (using the "force" parameter always forces an immediate full render)
+					this._time = -_tinyNum; //forces a render without having to set the render() "force" parameter to true because we want to allow lazying by canvas.cesar.com.conf (using the "force" parameter always forces an immediate full render)
 					this.render(-this._delay);
 				}
 			}, true),
@@ -8397,7 +8397,7 @@ if (window.tplogs==true)
 				this._startAt = TweenLite.to(this.target, 0, startVars);
 				if (immediate) {
 					if (this._time > 0) {
-						this._startAt = null; //tweens that render immediately (like most from() and fromTo() tweens) shouldn't revert when their parent timeline's playhead goes backward past the startTime because the initial render could have happened anytime and it shouldn't be directly correlated to this tween's startTime. Imagine setting up a complex animation where the beginning states of various objects are rendered immediately but the tween doesn't happen for quite some time - if we revert to the starting values as soon as the playhead goes backward past the tween's startTime, it will throw things off visually. Reversion should only happen in TimelineLite/Max instances where immediateRender was false (which is the default in the convenience methods like from()).
+						this._startAt = null; //tweens that render immediately (like most from() and fromTo() tweens) shouldn't revert when their parent timeline's playhead goes backward past the startTime because the initial render could have happened anytime and it shouldn't be directly correlated to this tween's startTime. Imagine setting up a complex animation where the beginning states of various objects are rendered immediately but the tween doesn't happen for quite some time - if we revert to the starting values as soon as the playhead goes backward past the tween's startTime, it will throw things off visually. Reversion should only happen in TimelineLite/Max instances where immediateRender was false (which is the canvas.cesar.com.conf in the convenience methods like from()).
 					} else if (dur !== 0) {
 						return; //we skip initialization here so that overwriting doesn't occur until the tween actually begins. Otherwise, if you create several immediateRender:true tweens of the same target/properties to drop into a TimelineLite or TimelineMax, the last one created would overwrite the first ones because they didn't get placed into the timeline yet before the first render occurs and kicks in overwriting.
 					}
@@ -8421,7 +8421,7 @@ if (window.tplogs==true)
 					pt.overwrite = 0;
 					pt.data = "isFromStart"; //we tag the tween with as "isFromStart" so that if [inside a plugin] we need to only do something at the very END of a tween, we have a way of identifying this tween as merely the one that's setting the beginning values for a "from()" tween. For example, clearProps in CSSPlugin should only get applied at the very END of a tween and without this tag, from(...{height:100, clearProps:"height", delay:1}) would wipe the height at the beginning of the tween and after 1 second, it'd kick back in.
 					pt.lazy = (immediate && v.lazy !== false);
-					pt.immediateRender = immediate; //zero-duration tweens render immediately by default, but if we're not specifically instructed to render this tween immediately, we should skip this and merely _init() to record the starting values (rendering them immediately would push them to completion which is wasteful in that case - we'd have to render(-1) immediately after)
+					pt.immediateRender = immediate; //zero-duration tweens render immediately by canvas.cesar.com.conf, but if we're not specifically instructed to render this tween immediately, we should skip this and merely _init() to record the starting values (rendering them immediately would push them to completion which is wasteful in that case - we'd have to render(-1) immediately after)
 					this._startAt = TweenLite.to(this.target, 0, pt);
 					if (!immediate) {
 						this._startAt._init(); //ensures that the initial values are recorded
@@ -8528,7 +8528,7 @@ if (window.tplogs==true)
 				this._kill(propLookup, target);
 				return this._initProps(target, propLookup, siblings, overwrittenProps);
 			}
-			if (this._firstPT) if ((this.vars.lazy !== false && this._duration) || (this.vars.lazy && !this._duration)) { //zero duration tweens don't lazy render by default; everything else does.
+			if (this._firstPT) if ((this.vars.lazy !== false && this._duration) || (this.vars.lazy && !this._duration)) { //zero duration tweens don't lazy render by canvas.cesar.com.conf; everything else does.
 				_lazyLookup[target._gsTweenID] = true;
 			}
 			return initPlugins;
@@ -8557,7 +8557,7 @@ if (window.tplogs==true)
 							callback = "onReverseComplete";
 						}
 					}
-					this._rawPrevTime = rawPrevTime = (!suppressEvents || time || prevRawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by default, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
+					this._rawPrevTime = rawPrevTime = (!suppressEvents || time || prevRawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by canvas.cesar.com.conf, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
 				}
 
 			} else if (time < 0.0000001) { //to work around occasional floating point math artifacts, round super small values to 0.
@@ -8573,7 +8573,7 @@ if (window.tplogs==true)
 						if (prevRawPrevTime >= 0 && !(prevRawPrevTime === _tinyNum && this.data === "isPause")) {
 							force = true;
 						}
-						this._rawPrevTime = rawPrevTime = (!suppressEvents || time || prevRawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by default, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
+						this._rawPrevTime = rawPrevTime = (!suppressEvents || time || prevRawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by canvas.cesar.com.conf, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
 					}
 				}
 				if (!this._initted) { //if we render the very beginning (time == 0) of a fromTo(), we must force the render (normal tweens wouldn't need to render at a time of 0 when the prevTime was also 0). This is also mandatory to make sure overwriting kicks in immediately.
@@ -8790,7 +8790,7 @@ if (window.tplogs==true)
 			this._propLookup = (this._targets) ? {} : [];
 			Animation.prototype.invalidate.call(this);
 			if (this.vars.immediateRender) {
-				this._time = -_tinyNum; //forces a render without having to set the render() "force" parameter to true because we want to allow lazying by default (using the "force" parameter always forces an immediate full render)
+				this._time = -_tinyNum; //forces a render without having to set the render() "force" parameter to true because we want to allow lazying by canvas.cesar.com.conf (using the "force" parameter always forces an immediate full render)
 				this.render(-this._delay);
 			}
 			return this;
@@ -9293,7 +9293,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		p.remove = function(value) {
 			if (value instanceof Animation) {
 				this._remove(value, false);
-				var tl = value._timeline = value.vars.useFrames ? Animation._rootFramesTimeline : Animation._rootTimeline; //now that it's removed, default it to the root timeline so that if it gets played again, it doesn't jump back into this timeline.
+				var tl = value._timeline = value.vars.useFrames ? Animation._rootFramesTimeline : Animation._rootTimeline; //now that it's removed, canvas.cesar.com.conf it to the root timeline so that if it gets played again, it doesn't jump back into this timeline.
 				value._startTime = (value._paused ? value._pauseTime : tl._time) - ((!value._reversed ? value._totalTime : value.totalDuration() - value._totalTime) / value._timeScale); //ensure that if it gets played again, the timing is correct.
 				return this;
 			} else if (value instanceof Array || (value && value.push && _isArray(value))) {
@@ -9426,7 +9426,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						}
 					}
 				}
-				this._rawPrevTime = (this._duration || !suppressEvents || time || this._rawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration timeline or tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by default, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
+				this._rawPrevTime = (this._duration || !suppressEvents || time || this._rawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration timeline or tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by canvas.cesar.com.conf, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
 				time = totalDur + 0.0001; //to avoid occasional floating point rounding errors - sometimes child tweens/timelines were not being fully completed (their progress might be 0.999999999999998 instead of 1 because when _time - tween._startTime is performed, floating point errors would return a value that was SLIGHTLY off). Try (999999999999.7 - 999999999999) * 1 = 0.699951171875 instead of 0.7.
 
 			} else if (time < 0.0000001) { //to work around occasional floating point math artifacts, round super small values to 0.
@@ -9445,7 +9445,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					}
 					this._rawPrevTime = time;
 				} else {
-					this._rawPrevTime = (this._duration || !suppressEvents || time || this._rawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration timeline or tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by default, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
+					this._rawPrevTime = (this._duration || !suppressEvents || time || this._rawPrevTime === time) ? time : _tinyNum; //when the playhead arrives at EXACTLY time 0 (right on top) of a zero-duration timeline or tween, we need to discern if events are suppressed so that when the playhead moves again (next time), it'll trigger the callback. If events are NOT suppressed, obviously the callback would be triggered in this render. Basically, the callback should fire either when the playhead ARRIVES or LEAVES this exact spot, not both. Imagine doing a timeline.seek(0) and there's a callback that sits at 0. Since events are suppressed on that seek() by canvas.cesar.com.conf, nothing will fire, but when the playhead moves off of that position, the callback should fire. This behavior is what people intuitively expect. We set the _rawPrevTime to be a precise tiny number to indicate this scenario rather than using another property/variable which would increase memory usage. This technique is less readable, but more efficient.
 					if (time === 0 && isComplete) { //if there's a zero-duration tween at the very beginning of a timeline and the playhead lands EXACTLY at time 0, that tween will correctly render its end values, but we need to keep the timeline alive for one more render so that the beginning values render properly as the parent's playhead keeps moving beyond the begining. Imagine obj.x starts at 0 and then we do tl.set(obj, {x:100}).to(obj, 1, {x:200}) and then later we tl.reverse()...the goal is to have obj.x revert to 0. If the playhead happens to land on exactly 0, without this chunk of code, it'd complete the timeline and remove it from the rendering queue (not good).
 						tween = this._first;
 						while (tween && tween._startTime === 0) {
@@ -10473,7 +10473,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				if (v === "contain" || v === "auto" || v === "auto auto") {
 					return v + " ";
 				}
-				if (v == null || v === "") { //note: Firefox uses "auto auto" as default whereas Chrome uses "auto".
+				if (v == null || v === "") { //note: Firefox uses "auto auto" as canvas.cesar.com.conf whereas Chrome uses "auto".
 					v = "0 0";
 				}
 				var a = v.split(" "),
@@ -10511,7 +10511,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			},
 
 			/**
-			 * @private Takes a value and a default number, checks if the value is relative, null, or numeric and spits back a normalized number accordingly. Primarily used in the _parseTransform() function.
+			 * @private Takes a value and a canvas.cesar.com.conf number, checks if the value is relative, null, or numeric and spits back a normalized number accordingly. Primarily used in the _parseTransform() function.
 			 * @param {Object} v Value to be parsed
 			 * @param {!number} d Default value (which is also used for relative calculations if "+=" or "-=" is found in the first parameter)
 			 * @return {number} Parsed value
@@ -10521,7 +10521,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			},
 
 			/**
-			 * @private Translates strings like "40deg" or "40" or 40rad" or "+=40deg" or "270_short" or "-90_cw" or "+=45_ccw" to a numeric radian angle. Of course a starting/default value must be fed in too so that relative values can be calculated properly.
+			 * @private Translates strings like "40deg" or "40" or 40rad" or "+=40deg" or "270_short" or "-90_cw" or "+=45_ccw" to a numeric radian angle. Of course a starting/canvas.cesar.com.conf value must be fed in too so that relative values can be calculated properly.
 			 * @param {Object} v Value to be parsed
 			 * @param {!number} d Default value (which is also used for relative calculations if "+=" or "-=" is found in the first parameter)
 			 * @param {string=} p property name for directionalEnd (optional - only used when the parsed value is directional ("_short", "_cw", or "_ccw" suffix). We need a way to store the uncompensated value so that at the end of the tween, we set it to exactly what was requested with no directional compensation). Property name would be "rotation", "rotationX", or "rotationY"
@@ -10705,8 +10705,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		}
 
 		/**
-		 * @private Returns a formatter function that handles taking a string (or number in some cases) and returning a consistently formatted one in terms of delimiters, quantity of values, etc. For example, we may get boxShadow values defined as "0px red" or "0px 0px 10px rgb(255,0,0)" or "0px 0px 20px 20px #F00" and we need to ensure that what we get back is described with 4 numbers and a color. This allows us to feed it into the _parseComplex() method and split the values up appropriately. The neat thing about this _getFormatter() function is that the dflt defines a pattern as well as a default, so for example, _getFormatter("0px 0px 0px 0px #777", true) not only sets the default as 0px for all distances and #777 for the color, but also sets the pattern such that 4 numbers and a color will always get returned.
-		 * @param {!string} dflt The default value and pattern to follow. So "0px 0px 0px 0px #777" will ensure that 4 numbers and a color will always get returned.
+		 * @private Returns a formatter function that handles taking a string (or number in some cases) and returning a consistently formatted one in terms of delimiters, quantity of values, etc. For example, we may get boxShadow values defined as "0px red" or "0px 0px 10px rgb(255,0,0)" or "0px 0px 20px 20px #F00" and we need to ensure that what we get back is described with 4 numbers and a color. This allows us to feed it into the _parseComplex() method and split the values up appropriately. The neat thing about this _getFormatter() function is that the dflt defines a pattern as well as a canvas.cesar.com.conf, so for example, _getFormatter("0px 0px 0px 0px #777", true) not only sets the canvas.cesar.com.conf as 0px for all distances and #777 for the color, but also sets the pattern such that 4 numbers and a color will always get returned.
+		 * @param {!string} dflt The canvas.cesar.com.conf value and pattern to follow. So "0px 0px 0px 0px #777" will ensure that 4 numbers and a color will always get returned.
 		 * @param {boolean=} clr If true, the values should be searched for color-related data. For example, boxShadow values typically contain a color whereas borderRadius don't.
 		 * @param {boolean=} collapsible If true, the value is a top/left/right/bottom style one that acts like margin or padding, where if only one value is received, it's used for all 4; if 2 are received, the first is duplicated for 3rd (bottom) and the 2nd is duplicated for the 4th spot (left), etc.
 		 * @return {Function} formatter function
@@ -10919,7 +10919,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			/**
 			 * @constructor Each property that is tweened has at least one CSSPropTween associated with it. These instances store important information like the target, property, starting value, amount of change, etc. They can also optionally have a number of "extra" strings and numeric values named xs1, xn1, xs2, xn2, xs3, xn3, etc. where "s" indicates string and "n" indicates number. These can be pieced together in a complex-value tween (type:1) that has alternating types of data like a string, number, string, number, etc. For example, boxShadow could be "5px 5px 8px rgb(102, 102, 51)". In that value, there are 6 numbers that may need to tween and then pieced back together into a string again with spaces, suffixes, etc. xs0 is special in that it stores the suffix for standard (type:0) tweens, -OR- the first string (prefix) in a complex-value (type:1) CSSPropTween -OR- it can be the non-tweening value in a type:-1 CSSPropTween. We do this to conserve memory.
 			 * CSSPropTweens have the following optional properties as well (not defined through the constructor):
-			 *  - l: Length in terms of the number of extra properties that the CSSPropTween has (default: 0). For example, for a boxShadow we may need to tween 5 numbers in which case l would be 5; Keep in mind that the start/end values for the first number that's tweened are always stored in the s and c properties to conserve memory. All additional values thereafter are stored in xn1, xn2, etc.
+			 *  - l: Length in terms of the number of extra properties that the CSSPropTween has (canvas.cesar.com.conf: 0). For example, for a boxShadow we may need to tween 5 numbers in which case l would be 5; Keep in mind that the start/end values for the first number that's tweened are always stored in the s and c properties to conserve memory. All additional values thereafter are stored in xn1, xn2, etc.
 			 *  - xfirst: The first instance of any sub-CSSPropTweens that are tweening properties of this instance. For example, we may split up a boxShadow tween so that there's a main CSSPropTween of type:1 that has various xs* and xn* values associated with the h-shadow, v-shadow, blur, color, etc. Then we spawn a CSSPropTween for each of those that has a higher priority and runs BEFORE the main CSSPropTween so that the values are all set by the time it needs to re-assemble them. The xfirst gives us an easy way to identify the first one in that chain which typically ends at the main one (because they're all prepende to the linked list)
 			 *  - plugin: The TweenPlugin instance that will handle the tweening of any complex values. For example, sometimes we don't want to use normal subtweens (like xfirst refers to) to tween the values - we might want ThrowPropsPlugin or BezierPlugin some other plugin to do the actual tweening, so we create a plugin instance and store a reference here. We need this reference so that if we get a request to round values or disable a tween, we can pass along that request.
 			 *  - data: Arbitrary data that needs to be stored with the CSSPropTween. Typically if we're going to have a plugin handle the tweening of a complex-value tween, we create a generic object that stores the END values that we're tweening to and the CSSPropTween's xs1, xs2, etc. have the starting values. We store that object as data. That way, we can simply pass that object to the plugin and use the CSSPropTween as the target.
@@ -10932,7 +10932,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			 * @param {number=} type The type of CSSPropTween where -1 = a non-tweening value, 0 = a standard simple tween, 1 = a complex value (like one that has multiple numbers in a comma- or space-delimited string like border:"1px solid red"), and 2 = one that uses a custom setRatio function that does all of the work of applying the values on each update.
 			 * @param {string=} n Name of the property that should be used for overwriting purposes which is typically the same as p but not always. For example, we may need to create a subtween for the 2nd part of a "clip:rect(...)" tween in which case "p" might be xs1 but "n" is still "clip"
 			 * @param {boolean=} r If true, the value(s) should be rounded
-			 * @param {number=} pr Priority in the linked list order. Higher priority CSSPropTweens will be updated before lower priority ones. The default priority is 0.
+			 * @param {number=} pr Priority in the linked list order. Higher priority CSSPropTweens will be updated before lower priority ones. The canvas.cesar.com.conf priority is 0.
 			 * @param {string=} b Beginning value. We store this to ensure that it is EXACTLY what it was when the tween began without any risk of interpretation issues.
 			 * @param {string=} e Ending value. We store this to ensure that it is EXACTLY what the user defined at the end of the tween without any risk of interpretation issues.
 			 */
@@ -10976,10 +10976,10 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			 * @param {!string} p Property that will be tweened (its name, like "left" or "backgroundColor" or "boxShadow")
 			 * @param {string} b Beginning value
 			 * @param {string} e Ending value
-			 * @param {boolean} clrs If true, the value could contain a color value like "rgb(255,0,0)" or "#F00" or "red". The default is false, so no colors will be recognized (a performance optimization)
-			 * @param {(string|number|Object)} dflt The default beginning value that should be used if no valid beginning value is defined or if the number of values inside the complex beginning and ending values don't match
+			 * @param {boolean} clrs If true, the value could contain a color value like "rgb(255,0,0)" or "#F00" or "red". The canvas.cesar.com.conf is false, so no colors will be recognized (a performance optimization)
+			 * @param {(string|number|Object)} dflt The canvas.cesar.com.conf beginning value that should be used if no valid beginning value is defined or if the number of values inside the complex beginning and ending values don't match
 			 * @param {?CSSPropTween} pt CSSPropTween instance that is the current head of the linked list (we'll prepend to this).
-			 * @param {number=} pr Priority in the linked list order. Higher priority properties will be updated before lower priority ones. The default priority is 0.
+			 * @param {number=} pr Priority in the linked list order. Higher priority properties will be updated before lower priority ones. The canvas.cesar.com.conf priority is 0.
 			 * @param {TweenPlugin=} plugin If a plugin should handle the tweening of extra properties, pass the plugin instance here. If one is defined, then NO subtweens will be created for any extra properties (the properties will be created - just not additional CSSPropTween instances to tween them) because the plugin is expected to do so. However, the end values WILL be populated in the "data" property, like {s:100, xn1:50, xn2:300}
 			 * @param {function(number)=} setRatio If values should be set in a custom function instead of being pieced together in a type:1 (complex-value) CSSPropTween, define that custom function here.
 			 * @return {CSSPropTween} The first CSSPropTween in the linked list which includes the new one(s) added by the parseComplex() call.
@@ -11127,7 +11127,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				pt["xn" + l] = s;
 				if (!pt.plugin) {
 					pt.xfirst = new CSSPropTween(pt, "xn" + l, s, c, pt.xfirst || pt, 0, pt.n, r, pt.pr);
-					pt.xfirst.xs0 = 0; //just to ensure that the property stays numeric which helps modern browsers speed up processing. Remember, in the setRatio() method, we do pt.t[pt.p] = val + pt.xs0 so if pt.xs0 is "" (the default), it'll cast the end value as a string. When a property is a number sometimes and a string sometimes, it prevents the compiler from locking in the data type, slowing things down slightly.
+					pt.xfirst.xs0 = 0; //just to ensure that the property stays numeric which helps modern browsers speed up processing. Remember, in the setRatio() method, we do pt.t[pt.p] = val + pt.xs0 so if pt.xs0 is "" (the canvas.cesar.com.conf), it'll cast the end value as a string. When a property is a number sometimes and a string sometimes, it prevents the compiler from locking in the data type, slowing things down slightly.
 				}
 				return pt;
 			}
@@ -11143,15 +11143,15 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		 * @constructor A SpecialProp is basically a css property that needs to be treated in a non-standard way, like if it may contain a complex value like boxShadow:"5px 10px 15px rgb(255, 102, 51)" or if it is associated with another plugin like ThrowPropsPlugin or BezierPlugin. Every SpecialProp is associated with a particular property name like "boxShadow" or "throwProps" or "bezier" and it will intercept those values in the vars object that's passed to the CSSPlugin and handle them accordingly.
 		 * @param {!string} p Property name (like "boxShadow" or "throwProps")
 		 * @param {Object=} options An object containing any of the following configuration options:
-		 *                      - defaultValue: the default value
+		 *                      - defaultValue: the canvas.cesar.com.conf value
 		 *                      - parser: A function that should be called when the associated property name is found in the vars. This function should return a CSSPropTween instance and it should ensure that it is properly inserted into the linked list. It will receive 4 paramters: 1) The target, 2) The value defined in the vars, 3) The CSSPlugin instance (whose _firstPT should be used for the linked list), and 4) A computed style object if one was calculated (this is a speed optimization that allows retrieval of starting values quicker)
 		 *                      - formatter: a function that formats any value received for this special property (for example, boxShadow could take "5px 5px red" and format it to "5px 5px 0px 0px red" so that both the beginning and ending values have a common order and quantity of values.)
 		 *                      - prefix: if true, we'll determine whether or not this property requires a vendor prefix (like Webkit or Moz or ms or O)
 		 *                      - color: set this to true if the value for this SpecialProp may contain color-related values like rgb(), rgba(), etc.
-		 *                      - priority: priority in the linked list order. Higher priority SpecialProps will be updated before lower priority ones. The default priority is 0.
+		 *                      - priority: priority in the linked list order. Higher priority SpecialProps will be updated before lower priority ones. The canvas.cesar.com.conf priority is 0.
 		 *                      - multi: if true, the formatter should accommodate a comma-delimited list of values, like boxShadow could have multiple boxShadows listed out.
 		 *                      - collapsible: if true, the formatter should treat the value like it's a top/right/bottom/left value that could be collapsed, like "5px" would apply to all, "5px, 10px" would use 5px for top/bottom and 10px for right/left, etc.
-		 *                      - keyword: a special keyword that can [optionally] be found inside the value (like "inset" for boxShadow). This allows us to validate beginning/ending values to make sure they match (if the keyword is found in one, it'll be added to the other for consistency by default).
+		 *                      - keyword: a special keyword that can [optionally] be found inside the value (like "inset" for boxShadow). This allows us to validate beginning/ending values to make sure they match (if the keyword is found in one, it'll be added to the other for consistency by canvas.cesar.com.conf).
 		 */
 		var SpecialProp = function(p, options) {
 				options = options || {};
@@ -11168,7 +11168,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				this.pr = options.priority || 0;
 			},
 
-			//shortcut for creating a new SpecialProp that can accept multiple properties as a comma-delimited list (helps minification). dflt can be an array for multiple values (we don't do a comma-delimited list because the default value may contain commas, like rect(0px,0px,0px,0px)). We attach this method to the SpecialProp class/object instead of using a private _createSpecialProp() method so that we can tap into it externally if necessary, like from another plugin.
+			//shortcut for creating a new SpecialProp that can accept multiple properties as a comma-delimited list (helps minification). dflt can be an array for multiple values (we don't do a comma-delimited list because the canvas.cesar.com.conf value may contain commas, like rect(0px,0px,0px,0px)). We attach this method to the SpecialProp class/object instead of using a private _createSpecialProp() method so that we can tap into it externally if necessary, like from another plugin.
 			_registerComplexSpecialProp = _internals._registerComplexSpecialProp = function(p, options, defaults) {
 				if (typeof(options) !== "object") {
 					options = {parser:defaults}; //to make backwards compatible with older versions of BezierPlugin and ThrowPropsPlugin
@@ -11204,7 +11204,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		p = SpecialProp.prototype;
 
 		/**
-		 * Alias for _parseComplex() that automatically plugs in certain values for this SpecialProp, like its property name, whether or not colors should be sensed, the default value, and priority. It also looks for any keyword that the SpecialProp defines (like "inset" for boxShadow) and ensures that the beginning and ending values have the same number of values for SpecialProps where multi is true (like boxShadow and textShadow can have a comma-delimited list)
+		 * Alias for _parseComplex() that automatically plugs in certain values for this SpecialProp, like its property name, whether or not colors should be sensed, the canvas.cesar.com.conf value, and priority. It also looks for any keyword that the SpecialProp defines (like "inset" for boxShadow) and ensures that the beginning and ending values have the same number of values for SpecialProps where multi is true (like boxShadow and textShadow can have a comma-delimited list)
 		 * @param {!Object} t target element
 		 * @param {(string|number|object)} b beginning value
 		 * @param {(string|number|object)} e ending (destination) value
@@ -11288,7 +11288,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		 *
 		 * @param {!string} name Property name (or comma-delimited list of property names) that should be intercepted and handled by your function. For example, if I define "myCustomProp", then it would handle that portion of the following tween: TweenLite.to(element, 1, {css:{myCustomProp:100}})
 		 * @param {!function(Object, Object, Object, string):function(number)} onInitTween The function that will be called when a tween of this special property is performed. The function will receive 4 parameters: 1) Target object that should be tweened, 2) Value that was passed to the tween, 3) The tween instance itself (rarely used), and 4) The property name that's being tweened. Your function should return a function that should be called on every update of the tween. That function will receive a single parameter that is a "change factor" value (typically between 0 and 1) indicating the amount of change as a ratio. You can use this to determine how to set the values appropriately in your function.
-		 * @param {number=} priority Priority that helps the engine determine the order in which to set the properties (default: 0). Higher priority properties will be updated before lower priority ones.
+		 * @param {number=} priority Priority that helps the engine determine the order in which to set the properties (canvas.cesar.com.conf: 0). Higher priority properties will be updated before lower priority ones.
 		 */
 		CSSPlugin.registerSpecialProp = function(name, onInitTween, priority) {
 			_registerComplexSpecialProp(name, {parser:function(t, e, p, cssp, pt, plugin, vars) {
@@ -11305,7 +11305,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 
 
 		//transform-related methods and properties
-		CSSPlugin.useSVGTransformAttr = _isSafari || _isFirefox; //Safari and Firefox both have some rendering bugs when applying CSS transforms to SVG elements, so default to using the "transform" attribute instead (users can override this).
+		CSSPlugin.useSVGTransformAttr = _isSafari || _isFirefox; //Safari and Firefox both have some rendering bugs when applying CSS transforms to SVG elements, so canvas.cesar.com.conf to using the "transform" attribute instead (users can override this).
 		var _transformProps = ("scaleX,scaleY,scaleZ,x,y,z,skewX,skewY,rotation,rotationX,rotationY,perspective,xPercent,yPercent").split(","),
 			_transformProp = _checkPropPrefix("transform"), //the Javascript (camelCase) transform property, like msTransform, WebkitTransform, MozTransform, or OTransform.
 			_transformPropCSS = _prefixCSS + "transform",
@@ -11435,7 +11435,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			},
 
 			/**
-			 * Parses the transform values for an element, returning an object with x, y, z, scaleX, scaleY, scaleZ, rotation, rotationX, rotationY, skewX, and skewY properties. Note: by default (for performance reasons), all skewing is combined into skewX and rotation but skewY still has a place in the transform object so that we can record how much of the skew is attributed to skewX vs skewY. Remember, a skewY of 10 looks the same as a rotation of 10 and skewX of -10.
+			 * Parses the transform values for an element, returning an object with x, y, z, scaleX, scaleY, scaleZ, rotation, rotationX, rotationY, skewX, and skewY properties. Note: by canvas.cesar.com.conf (for performance reasons), all skewing is combined into skewX and rotation but skewY still has a place in the transform object so that we can record how much of the skew is attributed to skewX vs skewY. Remember, a skewY of 10 looks the same as a rotation of 10 and skewX of -10.
 			 * @param {!Object} t target element
 			 * @param {Object=} cs computed style object (optional)
 			 * @param {boolean=} rec if true, the transform values will be recorded to the target element's _gsTransform object, like target._gsTransform = {x:0, y:0, z:0, scaleX:1...}
@@ -11552,7 +11552,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						tm.y = m[5] || 0;
 						scaleX = Math.sqrt(a * a + b * b);
 						scaleY = Math.sqrt(d * d + c * c);
-						rotation = (a || b) ? Math.atan2(b, a) * _RAD2DEG : tm.rotation || 0; //note: if scaleX is 0, we cannot accurately measure rotation. Same for skewX with a scaleY of 0. Therefore, we default to the previously recorded value (or zero if that doesn't exist).
+						rotation = (a || b) ? Math.atan2(b, a) * _RAD2DEG : tm.rotation || 0; //note: if scaleX is 0, we cannot accurately measure rotation. Same for skewX with a scaleY of 0. Therefore, we canvas.cesar.com.conf to the previously recorded value (or zero if that doesn't exist).
 						skewX = (c || d) ? Math.atan2(c, d) * _RAD2DEG + rotation : tm.skewX || 0;
 						if (Math.abs(skewX) > 90 && Math.abs(skewX) < 270) {
 							if (invX) {
@@ -11646,7 +11646,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				} else {
 					dx = (w / 2);
 					dy = (h / 2);
-					//translate to ensure that transformations occur around the correct origin (default is center).
+					//translate to ensure that transformations occur around the correct origin (canvas.cesar.com.conf is center).
 					m += ", Dx=" + (dx - (dx * a + dy * b) + ox) + ", Dy=" + (dy - (dx * c + dy * d) + oy) + ")";
 				}
 				if (filters.indexOf("DXImageTransform.Microsoft.Matrix(") !== -1) {
@@ -11720,7 +11720,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						a21 = Math.sin(angle) * sx;
 						a12 = Math.sin(angle - skew) * -sy;
 						a22 = Math.cos(angle - skew) * sy;
-						if (skew && t.skewType === "simple") { //by default, we compensate skewing on the other axis to make it look more natural, but you can set the skewType to "simple" to use the uncompensated skewing that CSS does
+						if (skew && t.skewType === "simple") { //by canvas.cesar.com.conf, we compensate skewing on the other axis to make it look more natural, but you can set the skewType to "simple" to use the uncompensated skewing that CSS does
 							t1 = Math.tan(skew);
 							t1 = Math.sqrt(1 + t1 * t1);
 							a12 *= t1;
@@ -11779,7 +11779,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						angle -= t.skewX * _DEG2RAD;
 						cos = Math.cos(angle);
 						sin = Math.sin(angle);
-						if (t.skewType === "simple") { //by default, we compensate skewing on the other axis to make it look more natural, but you can set the skewType to "simple" to use the uncompensated skewing that CSS does
+						if (t.skewType === "simple") { //by canvas.cesar.com.conf, we compensate skewing on the other axis to make it look more natural, but you can set the skewType to "simple" to use the uncompensated skewing that CSS does
 							t1 = Math.tan(t.skewX * _DEG2RAD);
 							t1 = Math.sqrt(1 + t1 * t1);
 							cos *= t1;
@@ -12501,7 +12501,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 
 					} else {
 						bn = parseFloat(bs);
-						bsfx = (bn || bn === 0) ? bs.substr((bn + "").length) : ""; //remember, bs could be non-numeric like "normal" for fontWeight, so we should default to a blank suffix in that case.
+						bsfx = (bn || bn === 0) ? bs.substr((bn + "").length) : ""; //remember, bs could be non-numeric like "normal" for fontWeight, so we should canvas.cesar.com.conf to a blank suffix in that case.
 
 						if (bs === "" || bs === "auto") {
 							if (p === "width" || p === "height") {
@@ -12783,7 +12783,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		 * and it would create other problems. For example:
 		 *  - If I create a tween of elementA, that tween instance may suddenly change its target to include 50 other elements (unintuitive if I specifically defined the target I wanted)
 		 *  - We can't just create new independent tweens because otherwise, what happens if the original/parent tween is reversed or pause or dropped into a TimelineLite for tight control? You'd expect that tween's behavior to affect all the others.
-		 *  - Analyzing every style property of every child before and after the tween is an expensive operation when there are many children, so this behavior shouldn't be imposed on all className tweens by default, especially since it's probably rare that this extra functionality is needed.
+		 *  - Analyzing every style property of every child before and after the tween is an expensive operation when there are many children, so this behavior shouldn't be imposed on all className tweens by canvas.cesar.com.conf, especially since it's probably rare that this extra functionality is needed.
 		 *
 		 * @param {Object} target object to be tweened
 		 * @param {number} Duration in seconds (or frames for frames-based tweens)
@@ -15024,7 +15024,7 @@ var initSlider = function (container,opt) {
 		// REMOVE ANY VIDEO JS SETTINGS OF THE VIDEO  IF NEEDED  (OLD FALL BACK, AND HELP FOR 3THD PARTY PLUGIN CONFLICTS)
 		container.find('.tp-caption video').each(function(i) {
 			var v = jQuery(this);
-			v.removeClass("video-js vjs-default-skin");
+			v.removeClass("video-js vjs-canvas.cesar.com.conf-skin");
 			v.attr("preload","");
 			v.css({display:"none"});
 		});

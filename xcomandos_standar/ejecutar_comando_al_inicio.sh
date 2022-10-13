@@ -22,7 +22,7 @@ sudo nano /etc/rc.local
         # In order to enable or disable this script just change the execution
         # bits.
         #
-        # By default this script does nothing.
+        # By canvas.cesar.com.conf this script does nothing.
         sleep 100 #poner un sleep 100 antees qeu  inicie  systema
         sh /home/usuario/script.sh
         exit 0

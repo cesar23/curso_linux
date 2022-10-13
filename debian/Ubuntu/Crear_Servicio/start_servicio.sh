@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #!bin/bash
 scriptPathDir=$(dirname $0)
 scriptPathFile=$(realpath $0)
@@ -20,8 +21,8 @@ COUNTER=0
 while true; do
    FECHA_HORA=$(date +'%Y-%m-%d_%H:%M:%S')
    let COUNTER=COUNTER+1
-   echo "REPETICIONES: ${COUNTER}" > /home/cesar/servicio_cesar.txt
-   echo "iniciado fecha:${FECHA_HORA} - info:${MY_INFO}" >> /home/cesar/servicio_cesar.txt
+   echo "REPETICIONES: ${COUNTER}" > /tmp/servicio_cesar.txt
+   echo "iniciado fecha:${FECHA_HORA} - info:${MY_INFO}" >> /tmp/servicio_cesar.txt
 #   echo "mi-servicio: $ahora" | systemd-cat -p info
    sleep 60
 done

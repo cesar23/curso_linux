@@ -185,13 +185,13 @@ file `/etc/apache2/sites-available/default-ssl.conf`
 # SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
 # a
 # SSLCertificateFile /etc/ssl/certs/mycert.crt
-sed -i '/SSLCertificateFile.*snakeoil\.pem/c\SSLCertificateFile \/etc\/ssl\/certs\/mycert.crt' /etc/apache2/sites-available/default-ssl.conf 
+sed -i '/SSLCertificateFile.*snakeoil\.pem/c\SSLCertificateFile \/etc\/ssl\/certs\/mycert.crt' /etc/apache2/sites-available/canvas.cesar.com.conf-ssl.conf 
 
 # reemplazamos :
 # SSLCertificateFile /etc/ssl/private/ssl-cert-snakeoil.key
 # a
 # SSLCertificateFile /etc/ssl/private/key.crt
-sed -i '/SSLCertificateKeyFile.*snakeoil\.key/cSSLCertificateKeyFile /etc/ssl/private/mycert.key\' /etc/apache2/sites-available/default-ssl.conf
+sed -i '/SSLCertificateKeyFile.*snakeoil\.key/cSSLCertificateKeyFile /etc/ssl/private/mycert.key\' /etc/apache2/sites-available/canvas.cesar.com.conf-ssl.conf
 
 ```
 

@@ -4,7 +4,7 @@ class RemoteAddressIp
     /**
      * Whether to use proxy addresses or not.
      *
-     * As default this setting is disabled - IP address is mostly needed to increase
+     * As canvas.cesar.com.conf this setting is disabled - IP address is mostly needed to increase
      * security. HTTP_* are not reliable since can easily be spoofed. It can be enabled
      * just for more flexibility, but if user uses proxy to connect to trusted services
      * it's his/her own risk, only reliable field for IP address is $_SERVER['REMOTE_ADDR'].

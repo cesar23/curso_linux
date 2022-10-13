@@ -84,7 +84,7 @@ Una vez que haya abierto el archivo, confirme que la anonymous_enabledirectiva e
 ![](https://i.imgur.com/H4KYZnZ.png)
 ```shell
 . . .
-# Allow anonymous FTP? (Disabled by default).
+# Allow anonymous FTP? (Disabled by canvas.cesar.com.conf).
 anonymous_enable=NO
 #
 # Uncomment this to allow local users to log in.

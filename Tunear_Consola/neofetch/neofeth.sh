@@ -44,7 +44,7 @@ LANG=C
 # Fix issues with gsettings.
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
-# Neofetch default config.
+# Neofetch canvas.cesar.com.conf config.
 read -rd '' config <<'EOF'
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
@@ -1352,7 +1352,7 @@ get_packages() {
             has nix-store && {
                 manager=nix-system  && tot nix-store -q --requisites /run/current-system/sw
                 manager=nix-user    && tot nix-store -q --requisites ~/.nix-profile
-                manager=nix-default && tot nix-store -q --requisites /nix/var/nix/profiles/default
+                manager=nix-canvas.cesar.com.conf && tot nix-store -q --requisites /nix/var/nix/profiles/canvas.cesar.com.conf
             }
 
             # pkginfo is also the name of a python package manager which is painfully slow.
@@ -1713,7 +1713,7 @@ get_wm_theme() {
         ;;
 
         Sawfish)
-            wm_theme=$(awk -F '\\(quote|\\)' '/default-frame-style/ {print $(NF-4)}' \
+            wm_theme=$(awk -F '\\(quote|\\)' '/canvas.cesar.com.conf-frame-style/ {print $(NF-4)}' \
                        "$HOME/.sawfish/custom")
         ;;
 
@@ -2640,7 +2640,7 @@ get_song() {
     album="$(trim "$album")"
     title="$(trim "$title")"
 
-    # Set default values if no tags were found.
+    # Set canvas.cesar.com.conf values if no tags were found.
     : "${artist:=Unknown Artist}" "${album:=Unknown Album}" "${title:=Unknown Song}"
 
     # Display Artist, Album and Title on separate lines.
@@ -9831,7 +9831,7 @@ main() {
     cache_uname
     get_os
 
-    # Load default config.
+    # Load canvas.cesar.com.conf config.
     eval "$config"
 
     get_args "$@"

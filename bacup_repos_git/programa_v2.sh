@@ -57,6 +57,7 @@ declare -a RUTAS_REPOS_GITHUB=(
 
 declare -A RUTAS_REPOS=(
   ["D:\www\curso_plugin_theme_wordpress"]="master"
+  ["D:\www\wordpress_estatico"]="master"
   ["D:\www\test_trabajos"]="master"
   ["D:\repos\curso_android"]="master"
   ["D:\repos\curso_kubernetes"]="master"

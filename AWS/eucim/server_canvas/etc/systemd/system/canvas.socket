@@ -1,0 +1,14 @@
+[Unit]
+
+[Socket]
+SocketUser=www-data
+DirectoryMode=0777
+ListenStream=/run/puma/canvas.socket
+#ListenStream=0.0.0.0:9292
+#ListenStream=0.0.0.0:9293
+NoDelay=true
+ReusePort=true
+Backlog=1024
+
+[Install]
+WantedBy=sockets.target

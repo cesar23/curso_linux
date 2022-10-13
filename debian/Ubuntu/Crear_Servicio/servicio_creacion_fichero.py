@@ -18,7 +18,7 @@ while True:
     i=i+1
     print("------creacion:{}".format(i))
     time.sleep(10)
-    path_fichero = "/home/cesar/servicio_cesar.txt"
+    path_fichero = "/home/cesar/servicio_mipy.txt"
     crearFichero(path_fichero,i)
     time.sleep(10)
     os.system("rm -r {path_fichero}".format(path_fichero=path_fichero))

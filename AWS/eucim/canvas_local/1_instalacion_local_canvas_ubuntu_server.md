@@ -26,7 +26,7 @@ Por ejemplo, instale la versión 2.6.6 de Ruby:
 ```shell
 rvm install 2.6.6
 # poner como defecto la version de ruby
-rvm use 2.6.6 --default
+rvm use 2.6.6 --canvas.cesar.com.conf
 ruby -v
 # ----instalamos ruby rails
 gem install rails -v 6.0.4.1
@@ -229,8 +229,33 @@ passenger-config restart-app $(pwd)
 
 ```
 
+# instalar Servicios 
+agregar archivo de servicio `sudo nano /etc/systemd/system/canvas.service`
 
-# si hay errores y hay qeu  modifcar
+```shell
+[Unit]
+After=network.target
+#Requires=canvas.socket
+
+[Service]
+User=www-data
+UMask=0002
+RuntimeDirectory=puma/canvas
+WorkingDirectory=/home/cesar/appdemo
+# Greatly reduce Ruby memory fragmentation and heap usage
+# https://www.mikeperham.com/2018/04/25/taming-rails-memory-bloat/
+Environment=MALLOC_ARENA_MAX=2
+#Environment=PUMA_DEBUG=1
+ExecStart=/bin/bash -lc 'bundle exec puma'
+#ExecStart=/bin/bash -lc 'bundle exec --keep-file-descriptors puma'
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+```
+
+# si hay errores y hay que  modifcar
 ```shell
 sudo chown -R $USER:$USER .
 # despues de modificar regresarlo

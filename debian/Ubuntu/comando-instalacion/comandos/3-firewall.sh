@@ -9,7 +9,7 @@ fuente: https://medium.com/@klvst3r/c%C3%B3mo-configurar-ufw-en-ubuntu-18-o-debi
 # En caso de desear deshabilitar UFW vamos a ejecutar el siguiente comando el cual le impide sea iniciado desde el arranque:
 >sudo ufw disable
 
-# Estas reglas por defecto de UFW las encontramos en la ruta /etc/default/ufw y las podremos editar con el siguiente comando:
+# Estas reglas por defecto de UFW las encontramos en la ruta /etc/canvas.cesar.com.conf/ufw y las podremos editar con el siguiente comando:
 >sudo ufw default deny incoming
 >sudo ufw default allow outgoing
 
