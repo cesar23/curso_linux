@@ -194,52 +194,6 @@ server {
 ```
 # 7. configurar servicios
 
-Crear servicio `nano /etc/systemd/system/canvas.service`
-
-```shell
-[Unit]
-After=network.target
-#Requires=canvas.socket
-
-[Service]
-#User=cesar
-User=www-data
-UMask=0002
-RuntimeDirectory=puma/canvas
-WorkingDirectory=/home/cesar/appdemo
-# Greatly reduce Ruby memory fragmentation and heap usage
-# https://www.mikeperham.com/2018/04/25/taming-rails-memory-bloat/
-Environment=MALLOC_ARENA_MAX=2
-#Environment=PUMA_DEBUG=1
-#ExecStart=/bin/bash -lc 'bundle exec puma'
-ExecStart=/bin/bash -lc 'bundle exec puma'
-#ExecStart=/bin/bash -lc 'bundle exec --keep-file-descriptors puma'
-Restart=on-failure
-RestartSec=3
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Colocar Permisos
-```shell
-sudo mkdir -p /run/puma/canvas/
-
-
-#sudo chmod 777 -R /run/puma/canvas/
-```
-
-
-# realizar el bundle
-```shell
-
- 
-
-
-
-
-```
 
 # instalar Servicios 
 agregar archivo de servicio `sudo nano /etc/systemd/system/canvas.service`

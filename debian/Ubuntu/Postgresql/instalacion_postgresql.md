@@ -7,6 +7,10 @@ fuente
 ```shell
 # instalamos
 sudo apt -y install postgresql postgresql-contrib postgresql-client
+
+
+# verificar qeu  postgres este  instlado:
+sudo -u postgres psql -c "SELECT version();"
 ```
 
 ## 2. Usuarios  roles
@@ -65,8 +69,17 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE alumnos TO user_admin2;
 
 
 ## Habilitación del acceso remoto en PostgreSQL
+
+##### Para acceder de forma remota a una base de datos PostgreSQL, debe establecer los dos archivos de configuración principales de PostgreSQL:
+hay que  editar los archivos:
 ```shell
-sudo nvim /etc/postgresql/14/main/postgresql.conf
+postgresql.conf
+pg_hba.conf
+```
+### 
+```shell
+sudo nvim /etc/postgresql/12/main/postgresql.conf
+#sudo nvim /etc/postgresql/14/main/postgresql.conf
 ```
 
 En este archivo de configuración, busque listen_addresses en la sección “CONEXIONES Y AUTENTICACIÓN”. Descomenta la línea y cambia localhost a ‘*’. Esto le da instrucciones a PostgreSQL para escuchar en todas las interfaces de red las conexiones entrantes.
@@ -75,6 +88,37 @@ En este archivo de configuración, busque listen_addresses en la sección “CON
 listen_addresses="*"
 ```
 <img width="100%" src="https://i.imgur.com/Xokpcif.png" alt="My cool logo"/>
+
+#### En el cliente 🙎
+el cliente tiene la  direccion ip `192.168.0.3`
+
+#### En el Servidor 💻
+Verifique la dirección de red de la máquina **Servidor**
+configure los parámetros en el archivo `pg_hba.conf` 
+para que postgresql pueda aceptar conexiones desde hosts de `máquinas virtuales`. 
+agrega la direccion `192.168.0.3`al archivo `pg_hba.conf`:
+
+```shell
+# editar
+sudo nano /etc/postgresql/12/main/pg_hba.conf
+```
+<img width="90%" src="https://i.imgur.com/y5wDO3r.png" alt="My cool logo"/>
+
+quedaria  asi para que se pueda  acceder localmente
+```shell
+host    all             all              192.168.0.0/24                       md5
+# :cualquier  lugar
+#host    all             all              0.0.0.0/0                       md5
+```
+
+<img width="90%" src="https://i.imgur.com/GjH4Sln.png" alt="My cool logo"/>
+
+
+Ahora  reiniciar
+```shell
+sudo service postgresql restart
+```
+
 
 -- -- 
 Guarde su configuración y reinicie PostgreSQL Server para que se produzcan los cambios reflejados.
@@ -97,7 +141,9 @@ $ ss -ltn
 Si ha habilitado el cortafuegos UFW en el servidor, necesita puerto abierto 5432 para conexiones TCP entrantes ejecutando el siguiente comando.
 
 ```shell
-$ sudo ufw allow 5432/tcp
+sudo ufw allow ssh
+sudo ufw allow 5432/tcp
+sudo ufw enable
 ```
 También verifique la regla de firewall de UFW ejecutando el siguiente comando.
 
@@ -145,8 +191,22 @@ psql --host localhost --port 5432 --username postgres  --dbname=canvas_prod -c '
 ### ✅ Reiniciamos
 ```shell
 # Ahora reiniciar servicio
-sudo systemctl restart postgresql
+#sudo systemctl restart postgresql
+sudo systemctl status postgresql
 
 # Ahora reiniciar servicio
 sudo systemctl enable postgresql
+
+# ingresamos al server
+sudo -u postgres psql
+
+# Para comprobar que los cambios que ha realizado están activos, los usuarios pueden hacerlo con la utilidad ss integrada en Ubuntu.
+
+ss -nlt | grep 5432
 ```
+# 5 .Configuracion de Archivos
+
+
+
+En primer lugar, configure el servicio PostgreSQL para escuchar en el puerto 5432 en todas las interfaces de red en la máquina con Windows 7:
+editareamos el archivo `sudo nvim /etc/postgresql/14/main/postgresql.conf`

@@ -56,19 +56,20 @@ fuente:
 - https://www.youtube.com/watch?v=wSNTT8MLI90
 
 ```shell
-cesar@cesarserver:~$ cd  /home/cesar
-# generiamos la aplicacion
-cesar@cesarserver:~$ rails new appdemo
 # entramos a la  app
-cesar@cesarserver:~$ cd /home/cesar/appdemo
+cesar@cesarserver:~$ cd /srv/canvas/current
 # instalamos bundle
+cesar@cesarserver:~$ rm -rf ./vendor/*
+cesar@cesarserver:~$ rm -rf ./node-modules/*
+cesar@cesarserver:~$ rm -rf ./tmp/*
 cesar@cesarserver:~$ sudo gem install bundler
 cesar@cesarserver:~$ bundle install
-# probamos la app
-cesar@cesarserver:~$ rails server
-cesar@cesarserver:~$ rails s --binding=0.0.0.0 # para  exponerlo fuera de la  red
 # si da  error ejecutar
 cesar@cesarserver:~$ bundle exec rails webpacker:install
+# probamos la app
+#cesar@cesarserver:~$ rails server
+#cesar@cesarserver:~$ rails s --binding=0.0.0.0 # para  exponerlo fuera de la  red
+
 
 ```
   
@@ -118,7 +119,7 @@ sudo chown -R $USER:$USER  /run/puma/canvas/
 ahora  configuraremos nuestro proyecto
 ```shell
 # entramso  a nuestra  app
-cd  /home/cesar/appdemo
+cd  /srv/canvas/current
 
 
 RAILS_ENV=production
@@ -152,18 +153,19 @@ worker_boot_timeout 300
 
 bind 'unix:///run/puma/canvas/canvas.socket'
 #activate_control_app 'unix:///run/puma/canvas/canvas-pumactl.socket', { no_token: true }
-directory '/home/cesar/appdemo'
+directory '/srv/canvas/current'
 environment ENV.fetch('RAILS_ENV', 'production')
 # prune_bundler
 preload_app!
 ```
+
 probar configuracion con socket
 ```shell
 puma -b 'unix:///run/puma/canvas/canvas.socket'
 ```
 
 # 6. configurar Nginx
-configurar `nano /etc/nginx/sites-available/canvas.cesar.com.conf`
+configurar `nvim /etc/nginx/sites-available/canvas.cesar.com.conf`
 
 ```shell
 
@@ -172,7 +174,7 @@ server {
         server_name canvas.cesar.com;
         access_log /var/log/nginx/canvas.cesar.com-access.log ;
         error_log  /var/log/nginx/canvas.cesar.com-error.log info;
-        root /home/cesar/appdemo/public;
+        root /srv/canvas/current/public;
 
         location / {
                try_files $uri @app;
@@ -194,54 +196,6 @@ server {
 ```
 # 7. configurar servicios
 
-Crear servicio `nano /etc/systemd/system/canvas.service`
-
-```shell
-[Unit]
-After=network.target
-#Requires=canvas.socket
-
-[Service]
-#User=cesar
-User=www-data
-UMask=0002
-RuntimeDirectory=puma/canvas
-WorkingDirectory=/home/cesar/appdemo
-# Greatly reduce Ruby memory fragmentation and heap usage
-# https://www.mikeperham.com/2018/04/25/taming-rails-memory-bloat/
-Environment=MALLOC_ARENA_MAX=2
-#Environment=PUMA_DEBUG=1
-#ExecStart=/bin/bash -lc 'bundle exec puma'
-ExecStart=/bin/bash -lc 'bundle exec puma'
-#ExecStart=/bin/bash -lc 'bundle exec --keep-file-descriptors puma'
-Restart=on-failure
-RestartSec=3
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Colocar Permisos
-```shell
-sudo mkdir -p /run/puma/canvas/
-
-
-#sudo chmod 777 -R /run/puma/canvas/
-```
-
-
-# realizar el bundle
-```shell
-
- 
-
-
-
-
-```
-
-# instalar Servicios 
 agregar archivo de servicio `sudo nano /etc/systemd/system/canvas.service`
 
 ```shell
@@ -254,7 +208,7 @@ User=www-data
 User=cesar
 UMask=0002
 RuntimeDirectory=puma/canvas
-WorkingDirectory=/home/cesar/appdemo
+WorkingDirectory=/srv/canvas/current
 # Greatly reduce Ruby memory fragmentation and heap usage
 # https://www.mikeperham.com/2018/04/25/taming-rails-memory-bloat/
 Environment=MALLOC_ARENA_MAX=2
