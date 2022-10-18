@@ -43,3 +43,22 @@ sudo systemctl enable docker
 sudo systemctl status docker
 
 ```
+
+# Adición de una cuenta de usuario a un grupo con acceso de usuario no raíz
+
+1. Crear el grupo docker si no existe
+```shell
+sudo groupadd docker
+```
+2. Agregue su usuario al grupo docker.
+```shell
+sudo usermod -aG docker $USER
+```
+3. Inicie sesión en el nuevo grupo docker (para evitar tener que cerrar sesión/iniciar sesión nuevamente; pero si no es suficiente, intente reiniciar):
+```shell
+sudo newgrp docker
+```
+4. Check if docker can be run without root
+```shell
+$ docker run hello-world
+```

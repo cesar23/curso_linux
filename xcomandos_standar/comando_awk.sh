@@ -54,10 +54,19 @@ ls -l | awk '{ print $0 }'
  # Imprimir campos de un fichero: 
  awk '{ print $2, $1 }' demo2.txt
 
+# a;adir caracteres a al hora de imprimir
+awk '{print "*"$1"*" " " $2}'  salida_du.txt
 
- # Imprimir último campo de cada línea:
- awk '{ print $NF }' demo2.txt 
- 
+awk '{ system("( " $1 " * 1000 - print | ); }' salida_du.txt
+# printf $2 " - " ;                               => pinta el directorio
+# numfmt --to=iec-i --suffix=B --format=\"%.3f\"  => funcion para obtener bytes a human
+# $((" $1 " * 1000)) " )                          => para convertir Kilobytes a Bytes
+awk '{printf $2 " - " ; system("  numfmt --to=iec-i --suffix=B --format=\"%.3f\"  $((" $1 " * 1000)) " ) }' salida_du.txt
+
+
+# Imprimir último campo de cada línea:
+awk '{ print $NF }' demo2.txt
+
  
  # Imprimir los campos en orden inverso:
 awk '{ for (i = NF; i > 0; --i) print $i }' demo2.txt
@@ -99,6 +108,20 @@ myfunc()
 }' clientes.txt
 
 
+du -a | sort -n -r | head -n 7 | awk '
+                                 function myfunc()
+                                 {
+                                 valor=$(kiloBytes_To_HumanReadable $1)
+
+                                 printf "The user %s \n", $valor
+
+                                 }
+
+                                 {
+
+                                 myfunc()
+
+                                 }'
 
  
 # busqueda de palabra
@@ -135,3 +158,9 @@ awk 'BEGIN {print "Report Title"}'
  screen -ls | grep '(Detached)' | awk '{system("screen -S -X  ${1}   quit")}' file.log
  screen -ls | grep '(Detached)' | awk '{system("echo $1  ")}'
  screen -ls | grep '(Detached)' | awk '{system("echo $1  ")}'
+
+
+
+
+# con formateado Humano
+du -a  /home | sort -n -r | head -n 7 | awk '{printf $2 " - " ; system("  numfmt --to=iec-i --suffix=B --format=\"%.2f\"  $((" $1 " * 1000)) " ) }'

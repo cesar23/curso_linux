@@ -223,6 +223,17 @@ RestartSec=3
 WantedBy=multi-user.target
 ```
 
+# modificar archivos
+```shell
+cd /srv/canvas/current/
+nvim config/database.yml
+nvim config/outgoing_mail.yml
+# Security: Random hashing at 
+nvim config/security.yml
+nvim config/domain.yml
+nvim config/dynamic_settings.yml
+```
+
 # si hay errores y hay que  modifcar
 ```shell
 sudo chown -R $USER:$USER .
@@ -236,5 +247,6 @@ rm config/credentials.yml.enc
 ```shell
 # entrar a la app
 tail -f log/development.log
-tail -f log/production.log
+tail -f /srv/canvas/current/log/production.log
+systemctl status canvas.service
 ```

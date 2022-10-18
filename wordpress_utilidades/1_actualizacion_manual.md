@@ -83,15 +83,15 @@ php wp-cli.phar core update-db
 # paso 2
 # borrar los archivos que ya no se necesitaran
 #----------------------------------------------------
-DOMAIN_MASTER="inversionesletich.com"
-DOMAIN="lissacorp.pe"
+DOMAIN_MASTER="inversionesletich.com" # No Modificar ❌
+DOMAIN="importaciondeceroaexperto.com" # Aqui Cambiar ✅
 DOMAIN_PATH="/home/kpopilrp/${DOMAIN}"
 # limieza
-rm -r "${DOMAIN_PATH}/wp-admin"
-rm -r "${DOMAIN_PATH}/wp-content/cache/wp-rocket/${DOMAIN}/*"
+rm -rf "${DOMAIN_PATH}/wp-admin"
+rm -rf "${DOMAIN_PATH}/wp-content/cache/wp-rocket/${DOMAIN}/*"
 
 # Crera enlaze simbolico
-rm -r "${DOMAIN_PATH}/wp-includes"
+rm -rf "${DOMAIN_PATH}/wp-includes"
 ln -s "/home/kpopilrp/${DOMAIN_MASTER}/wp-includes" "/home/kpopilrp/${DOMAIN}/wp-includes"
 
 

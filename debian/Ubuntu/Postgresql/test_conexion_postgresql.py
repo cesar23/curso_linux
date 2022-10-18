@@ -21,22 +21,28 @@ DB_NAME = "canvas_prod"
 
 
 # --------------------------- para server Eucim
-# DB_PORT = "5432"
-# DB_USER = "canvas_prod"
-# DB_PASSWORD = "Vrn8EDgxBIJJ"
-# DB_NAME = "canvas_prod"
+DB_HOST = "back-db001.cp4rylpf5r1x.sa-east-1.rds.amazonaws.com"
+DB_PORT = "5432"
+DB_USER = "canvas_prod"
+DB_PASSWORD = "Vrn8EDgxBIJJ"
+DB_NAME = "canvas_prod"
 print("ddd")
 
 
-conn = psycopg2.connect(dbname=DB_NAME,
-                        user=DB_USER,
-                        host=DB_HOST,
-                        password=DB_PASSWORD,
-                        port=DB_PORT)
-cursor = conn.cursor()
-cursor.execute('SELECT * FROM information_schema.tables')
-rows = cursor.fetchall()
-for table in rows:
-    print(table)
-conn.close()
+try:
+    conn = psycopg2.connect(dbname=DB_NAME,
+                            user=DB_USER,
+                            host=DB_HOST,
+                            password=DB_PASSWORD,
+                            port=DB_PORT)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM information_schema.tables')
+    rows = cursor.fetchall()
+    for table in rows:
+        print(table)
+    conn.close()
+except Exception as err:
+    print("Cocurrio un erro",err)
+
+
 
