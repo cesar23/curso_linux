@@ -54,4 +54,15 @@ echo 'trap finish EXIT' >>delete_me.sh
 echo 'rm --  "$( readlink -f -- "${BASH_SOURCE[0]:-$0}" 2> '/dev/null'; )";' >>delete_me.sh
 ```
 
+
+# echo condicional
+```shell
+VARIABLE="yes"
+# imprimora no si no existe al variable: VARIABLE
+echo  ${VARIABLE-no}
+```
+
+
+
+
 read -p "Presionar:"
