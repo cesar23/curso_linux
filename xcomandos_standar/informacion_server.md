@@ -24,6 +24,10 @@ lspci
 
 ```shell
 lscpu
+# metodo 2
+cat /proc/cpuinfo
+# obtener numero de procesadores
+grep -c processor /proc/cpuinfo
 ```
 ### mostrar informacion memonia
 

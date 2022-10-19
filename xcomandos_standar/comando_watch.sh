@@ -1,2 +1,2 @@
-#monitorear cambios en directorio
+#monitorear cambios en directorio carpeta o fichero
 watch ls -lha

@@ -34,6 +34,7 @@ apt-cache policy docker-ce
 
 ```shell
 sudo apt -y install docker-ce
+sudo apt -y install docker-compose 
 ```
 Con esto, Docker quedará instalado, el demonio se iniciará y el proceso se habilitará para ejecutarse en el inicio. Compruebe que funcione:
 

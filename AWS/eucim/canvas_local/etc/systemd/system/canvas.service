@@ -6,7 +6,7 @@ After=network.target
 User=www-data
 UMask=0002
 RuntimeDirectory=puma/canvas
-WorkingDirectory=/home/cesar/appdemo
+WorkingDirectory=/srv/canvas/current
 # Greatly reduce Ruby memory fragmentation and heap usage
 # https://www.mikeperham.com/2018/04/25/taming-rails-memory-bloat/
 Environment=MALLOC_ARENA_MAX=2
@@ -18,3 +18,4 @@ RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
+

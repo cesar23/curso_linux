@@ -7,7 +7,17 @@ Los repositorios se encuentran en el archivo sources.list, para añadir o modifi
 nano /etc/apt/sources.list # principal
 
 # ubicacion de repositorios agregados
- cd /etc/apt/sources.list.d
+cd /etc/apt/sources.list.d
+
+root@ip-172-31-33-216:/etc/apt/sources.list.d# ll 
+# output:
+#   -rw-r--r-- 1 root root  136 Jan 25  2021 brightbox-ubuntu-ruby-ng-focal.list
+#   -rw-r--r-- 1 root root   63 Jan 25  2021 nginx.list
+#   -rw-r--r-- 1 root root  109 Mar 30  2021 nodesource.list
+#   -rw-r--r-- 1 root root   47 Jan 25  2021 yarn.list
+
+ 
+ 
 ```
 <img width="90%" src="https://i.imgur.com/Xw6odcf.png" alt="My cool logo"/>
 
