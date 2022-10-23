@@ -215,3 +215,23 @@ TECLA : u
 <img width="90%" src="https://i.imgur.com/04FJNQD.png" alt="My cool logo"/>
 
 -- --
+
+## Comando `kill`
+
+matar processo
+```shell
+kill -9 [PID del proceso]
+```
+
+matar processo y reinicarlo perfecto para  servicios
+```shell
+kill -HUP [PID de Apache]
+# kill -HUP 1431
+```
+
+
+matar proceso por Nombre de app
+```shell
+pkill -9 htop
+pkill -9 firefox
+```
