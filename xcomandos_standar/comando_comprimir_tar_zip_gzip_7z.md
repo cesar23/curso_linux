@@ -32,6 +32,14 @@ Excluyendo carpetas y ficheros
 # ::::::: excluyendo path
 tar -czvf l3mon.tar.gz L3MON --exclude="L3MON/app"
 
+# backup de mobax
+tar -czvf home.tar.gz * \
+ --exclude=".ssh" \
+ --exclude=".bash_history" \
+ --exclude="*.tar.gz" \
+ --exclude="*.ssh"
+
+
 tar -czvf l3mon.tar.gz L3MON --exclude="L3MON/app" --exclude='*.png'
 
 # :::: comprimir mas de una rutas (carpetas L3MON,build )
