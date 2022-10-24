@@ -20,13 +20,13 @@ printf " ✓\n"
 # :: descargamos
 printf " %s" "- Descargando... home.tar.gz" && sleep 3
 curl -A 'Mozilla/3.0 (Win95; I)'  \
-	-L -o "./home.tar.gz" "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/home.tar.gz"
+	-L -o "./home.tar.gz" "https://gitlab.com/perucaos/utils_dev/-/raw/master/dotfiles/mobax/home.tar.gz" >/dev/null 2>&1
 printf " ✓\n"
 
 # :: descomprimimos
 printf " %s" "- Descomprimiendo" && sleep 3
 tar -xzvf home.tar.gz >/dev/null 2>&1
-printf "\n ✓\n"
+printf " ✓\n"
 
 
 echo "OK"
