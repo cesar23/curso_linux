@@ -2,10 +2,39 @@ fuente : https://curl.se/docs/manual.html
 
 
 
-# Ejemplo 1)manda al salida a un archivo
+# Ejemplo 1) manda al salida a un archivo
+- 1: ejecuta el comando `ls -l`
+- 2: `| tee ` manda la salida del `ls -l` y `tee` mostrara la salida
+- 3: `block_devices.txt` donde guardara la salida
+
 ```shell
 ls -l | tee block_devices.txt
+# output:
+#   total 57599
+#   -rw-r--r-- 1 cesar 197121    10694 Jul 17 19:15 1.manipulacion de ficheros.sh
+#   -rw-r--r-- 1 cesar 197121   129985 Jul 17 19:15 9999_lineas.txt
+#   -rw-r--r-- 1 cesar 197121        0 Jul 17 19:15 Nuevo documento de texto.txt
+#   -rw-r--r-- 1 cesar 197121       15 Jul 17 19:15 README.md
+#   -rw-r--r-- 1 cesar 197121      127 Jul 17 19:15 abrir_navegador.sh
+#   drwxr-xr-x 1 cesar 197121        0 Aug 10 20:32 amarillo
+#   -rw-r--r-- 1 cesar 197121     7981 Jul 17 19:15 apellidos.txt
+#     ....
+
+
+# Ahora si hacemos un cat 
+cat block_devices.txt
+# output:
+#   total 57599
+#   -rw-r--r-- 1 cesar 197121    10694 Jul 17 19:15 1.manipulacion de ficheros.sh
+#   -rw-r--r-- 1 cesar 197121   129985 Jul 17 19:15 9999_lineas.txt
+#   -rw-r--r-- 1 cesar 197121        0 Jul 17 19:15 Nuevo documento de texto.txt
+#   -rw-r--r-- 1 cesar 197121       15 Jul 17 19:15 README.md
+#   -rw-r--r-- 1 cesar 197121      127 Jul 17 19:15 abrir_navegador.sh
+#   drwxr-xr-x 1 cesar 197121        0 Aug 10 20:32 amarillo
+#   -rw-r--r-- 1 cesar 197121     7981 Jul 17 19:15 apellidos.txt
+#     ....
 ```
+
 # Ejemplo 2)guarda al salida  en  varios  archivo
 ```shell
 hostname | tee tee_ouput_1.txt tee_ouput_2.txt

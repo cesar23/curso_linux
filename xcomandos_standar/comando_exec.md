@@ -27,3 +27,35 @@ Estado de salida:
 
 exec /sbin/ip a
 ```
+
+### 2. ejemplo escapar de la shell actual
+si no se proporciona ningún comando, las redirecciones se pueden usar para modificar el entorno de shell actual.
+
+```shell
+# creamos  un nuevo bash 
+#   (para cuando hagamos exir no salgamos del todo)
+bash
+# mandaremos todo lo que hagamos al file tmp
+exec > tmp
+# ahora verificamos las variables de entorno
+env
+# output:
+  # ... nada
+  
+echo " salida 111.."
+
+# ahora  saldremos
+exit
+# y haremso un cat
+cat tmp
+```
+
+<img width="100%" src="https://i.imgur.com/OiYt7Kg.png" alt="My cool logo"/>
+
+-- -- 
+
+### otro ejemplo
+
+```shell
+
+```
