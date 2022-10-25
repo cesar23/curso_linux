@@ -8,6 +8,7 @@
 
 ## Tabla de contenido
 
+- <a href="#iniciar-vim-comando">0. Iniciar con  comando 📀</a>
 - <a href="#instalar-vim">0. Instalacion 📀</a>
 - <a href="#copiar-linaea">1. Copiar una Linea 📀</a>
 - <a href="#cortar-linea">2. Cortar Linea 📦</a>
@@ -31,6 +32,19 @@
 - <a href="#xxxxxxxx">xxxxxxxxxxxx 📦</a>
 - <a href="#xxxxxxxx">xxxxxxxxxxxx 📦</a>
 
+
+---
+[//]: # (0------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+<h2  id="iniciar-vim-comando">Inicar con comando</h2>
+### iniciar vim con comando
+
+```shell
+sudo vim -c "set number" /etc/ssh/sshd_config
+```
 
 
 ---
