@@ -24,11 +24,13 @@ Para exportar la instancia, utilice lacreate-instance-export-taskcomando. El arc
 
 - preparamos el archivo de configuracion para exportar
 ```shell
-aws ec2 create-instance-export-task \ 
+aws ec2 create-instance-export-task \
   --instance-id instance-id \
   --target-environment vmware \
   --export-to-s3-task file://C:\file.json
 ```
+
+
 
 - El archivo `file.json` es un documento JSON que contiene la información necesaria.
 
@@ -40,6 +42,43 @@ aws ec2 create-instance-export-task \
 "S3Prefix": "vms/"
 }
 ```
+
+
+
+## Usado para eucim
+<img  src="https://cesar23.github.io/cdn_webs/iconos_png/aws_cloudShell.png" alt="My cool logo"/>
+
+Ultimo usado para  exportar lo de eucim desde `AWS CloudShell`
+
+```shell
+# para usar la region d e sau paulo
+# export AWS_DEFAULT_REGION=sa-east-1
+# el de configuracion
+path_file="./ec2_file_export.json"
+id_instance="i-08f4c67cddfbae129"
+
+# el script de exportacion
+aws ec2 create-instance-export-task \
+  --instance-id $id_instance \
+  --target-environment vmware \
+  --export-to-s3-task file://$path_file --profile eucim
+```
+
+El archivo `ec2_file_export.json`
+```shell
+{
+"ContainerFormat": "ova",
+"DiskImageFormat": "VMDK",
+"S3Bucket": "backup-ami-cesar2"
+}
+```
+
+<img width="100%" src="https://i.imgur.com/j5CT05j.png" alt="My cool logo"/>
+
+-- -- 
+
+
+
 
 - Supervisa una tarea de exportación de instancias
 ```shell
