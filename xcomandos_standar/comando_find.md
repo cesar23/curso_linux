@@ -452,12 +452,67 @@ para obligar al usuario a aceptar explícitamente el borrado.
 ###### Para eliminar todos los directorios de Linux vacíos utilizamos el siguiente comando find junto con el comando rmdir:
 
 ```shell
+# carchivos modificados de mas de 90 dias
+find . -mtime +90 -exec echo rm -f {} \; # para solo ver la  salida
+
+find . -mtime +90 -exec rm -f {} \;
+
+find . -size +1024k -exec rm -f {} \;
+
+#buscar archivos que mas de 80 dias y con un  peso   de 10 M los liste
+find . -mtime +80 -size +2M -exec ls -lah {} \;
+```
+
+Eliminar correos antiguos del cpanel
+```shell
+# :::::::::: correo de cpanel
+find "/home/kpopilrp/mail/.Archive/" \
+"/home/kpopilrp/mail/.Drafts/" \
+"/home/kpopilrp/mail/.Junk/" \
+"/home/kpopilrp/mail/.Sent/" \
+"/home/kpopilrp/mail/.spam/" \
+"/home/kpopilrp/mail/.Trash/" \
+"/home/kpopilrp/mail/cur/" \
+"/home/kpopilrp/mail/new/" \
+"/home/kpopilrp/mail/tmp/" \
+  -type f \
+  -mtime +60 \
+    -exec ls -lsha {} \;  
+  -exec  rm -f {} \;
+
+
+# :::::::::: para dominio  
+find /home/kpopilrp/mail/lissacorp.pe/*/.Archive/ \
+/home/kpopilrp/mail/lissacorp.pe/*/.Drafts/ \
+/home/kpopilrp/mail/lissacorp.pe/*/.Junk/ \
+/home/kpopilrp/mail/lissacorp.pe/*/.Sent/ \
+/home/kpopilrp/mail/lissacorp.pe/*/.spam/ \
+/home/kpopilrp/mail/lissacorp.pe/*/.Trash/ \
+/home/kpopilrp/mail/lissacorp.pe/*/cur/ \
+/home/kpopilrp/mail/lissacorp.pe/*/new/ \
+/home/kpopilrp/mail/lissacorp.pe/*/tmp/ \
+  -type f \
+  -mtime +60 \
+  -exec  rm -f {} \;
+#  -exec ls -lsha {} \;  
+  
+  
+  
+
+
+```
+
+```shell
+# comprobar lo que  eliminara
+find . -type d -maxdepth 1 -empty -ok echo rmdir {} \;
 find . -type d -maxdepth 1 -empty -ok rmdir {} \;
 ```
 
 ###### Para borrar todos los archivos vacíos de Linux, utilizamos el siguiente comando find con el comando rm:
 
 ```shell
+# comprobar lo que  eliminara
+find . -type f -maxdepth 1 -empty -ok echo rm {} \;
 find . -type f -maxdepth 1 -empty -ok rm {} \;
 ```
 

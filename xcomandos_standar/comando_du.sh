@@ -18,6 +18,7 @@ du -a  /home | sort -n -r | head -n 7
 
 # con formateado Humano
 du -a  /home | sort -n -r | head -n 7 | awk '{printf $2 " - " ; system("  numfmt --to=iec-i --suffix=B --format=\"%.2f\"  $((" $1 " * 1000)) " ) }'
+du -a  "/home/kpopilrp/mail/.Archive/" | sort -n -r | head -n 7 | awk '{printf $2 " - " ; system("  numfmt --to=iec-i --suffix=B --format=\"%.2f\"  $((" $1 " * 1000)) " ) }'
 
 # --------------------------------------------------------------
 #//-------------------------ver peso de archivos
