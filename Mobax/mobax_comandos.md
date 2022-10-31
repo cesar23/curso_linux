@@ -30,8 +30,21 @@ MobaXterm_Personal_22.1.exe -openfolder "D:\repos\curso_linux"
 MobaXterm_Personal_22.1.exe -openfolder "/drives/D/repos/curso_linux"
 ```
 
-### 5. 
+### 5. Variables de entorno Mobax
 ```shell
+PUTTYHOME # C:\Users\cesar\mobax\home
+VERSION # 22.1
+MOBAEXTRACTONTHEFLY # 
+MY_IP_ADDRESS # muestra la ip
+
+
+# comprobar que estoy en al shell mobax
+if [ -n "$PUTTYHOME" ]; then
+  echo "Si existe variable"
+else
+  echo "No existe"
+fi
+
 
 ```
 

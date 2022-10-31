@@ -58,7 +58,7 @@ sudo vim -c "set number" /etc/ssh/sshd_config
 ### Instalar Debian NVIM 
 
 ```shell
-sudo apt-get install -y vim neovim
+sudo apt-get install -y vim neovim && \
 sudo apt-get install -y python3-neovim
 
 

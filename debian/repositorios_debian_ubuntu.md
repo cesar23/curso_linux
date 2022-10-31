@@ -1,3 +1,36 @@
+# Actualizar Repositorio
+si hay error
+<img width="100%" src="https://i.imgur.com/OZtlvTs.png" alt="My cool logo"/>
+
+-- -- 
+
+```shell
+## resolverlo actualizando dnds
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
+sudo apt-get update
+
+# ---------opcion 2
+# limpiar repositorio
+apt-get clean
+apt-get update
+```
+
+# Agregar repositorio de google
+fuente: https://www.softzone.es/linux/tutoriales/actualizar-lista-repositorios-linux/
+
+````shell
+# Descargar reposotorio
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+````
+Una vez ejecutado el anterior comando, ya podemos añadir el repositorio a la lista de repositorios de Ubuntu. Y eso lo haremos con el siguiente comando:
+
+```shell
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+# actualizar nuestro repos
+sudo apt update
+```
+
+
 # Agregar un repositorio PAA
 ```shell
 sudo add-apt-repository ppa:ondrej/php
