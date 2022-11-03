@@ -29,6 +29,10 @@ sudo systemctl reload nginx
 # habilitar y Deshabilitar servicio
 sudo systemctl disable nginx
 sudo systemctl enable nginx
+
+# Reinicar Servicio
+pkill -9 nginx   &&  nginx -c /etc/nginx/nginx.conf &&  nginx -s reload
+
 ```
 ## 4. Configurar bloques de servidor (recomendado)
 ```shell
@@ -112,6 +116,15 @@ sudo systemctl restart nginx
 sudo tail -f /var/log/nginx/error.log
 ```
 
+### Verificar que este corriendo
+```shell
+ sudo netstat -tlpn | grep nginx
+```
+<img width="100%" src="https://i.imgur.com/Sa0WrhF.png" alt="My cool logo"/>
+
+-- -- 
+
+
 ### asegurar server con Permisos
 ```shell
 sudo find /var/www/cesar.peru.com/ -type d -exec chmod 755 "{}" \;
@@ -126,3 +139,50 @@ y le agregamos
 159.223.181.200 cesar.peru.com
 ```
 <img width="100%" src="https://i.imgur.com/p7HkVDZ.png" alt="My cool logo"/>
+
+
+# Generando SSL
+fuente: https://www.tecmint.com/install-nginx-with-virtual-hosts-and-ssl-certificate/
+
+To create a self-signed certificate, first create a directory where your certificates will be stored.
+
+```shell
+$ sudo mkdir /etc/nginx/ssl-certs/
+```
+Then generate your self-signed certificate and the key using the openssl command line tool.
+
+```shell
+$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl-certs/nginx.key -out /etc/nginx/ssl-certs/nginx.crt
+
+```
+
+
+<img width="100%" src="https://i.imgur.com/2fjrJyv.png" alt="My cool logo"/>
+
+-- -- 
+
+
+### ahora crearemos el fichro de configuracion
+ubicacion del fichero`/etc/nginx/conf.d/cesar.peru.com.conf`
+
+```shell
+server {
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    
+    ssl on;
+    ssl_certificate /etc/nginx/ssl-certs/nginx.crt;
+    ssl_trusted_certificate /etc/nginx/ssl-certs/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl-certs/nginx.key;
+    
+    server_name  wearetecmint.com;
+    root           /var/www/html/wearetecmint.com/public_html;
+    index          index.html;
+    location / {
+                try_files $uri $uri/ =404;
+        }
+
+}
+```

@@ -243,9 +243,13 @@ journalctl -u nginx.service -u php-fpm.service --since today
 journalctl -u ssh.service --since today
 
 
+#journalctl -u ssh.service \
+#  --since='2022-10-07 19:22:00' --until='2022-10-07 20:22:00'
+#
+#journalctl --since "2022-10-25" --until "2022-10-26"
 journalctl -u ssh.service \
-  --since='2022-10-07 19:22:00' --until='2022-10-07 20:22:00'
- 
+  --since "2022-10-25 01:00" --until "2022-10-25 22:00"
+  
  # ver los  ultimos generados
 journalctl -u ssh.service -f
   
