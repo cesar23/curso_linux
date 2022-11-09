@@ -1,0 +1,20 @@
+[Unit]
+Description=Servicio para correccion de inicio canvas
+# ::::::: siqueremos que inicie despues que otro servicio aya iniciado
+#After=network.target mysql.service
+#Before=network.target mysql.service
+[Service]
+Type=simple
+# :::si obia el User  ejecutar como Root
+# :::directorio de trabajo
+WorkingDirectory=/srv/script/
+
+# ::::: par usar python
+#ExecStart=/usr/bin/env python3 /home/cesar/script/servicio_creacion_fichero.py
+
+ExecStart=sh /srv/script/canvas_restore.service.sh
+# :::::por ahora no se puede  configurar
+#ExecStop=sh /home/cesar/script/stop_servicio.sh
+[Install]
+# ::::: multi-user.target (modo no grafico)
+WantedBy=multi-user.target
