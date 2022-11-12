@@ -126,7 +126,7 @@ redis-cli -h 192.168.0.80 -p 6379
 # por url
 redis-cli -u redis://192.168.0.80:6379
 
-
+192.168.0.80:6379
 ```
 
 # Inseracion de datos
