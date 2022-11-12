@@ -43,3 +43,8 @@ command 2>&1 > output.txt
 ```shell
 command &>  output.txt
 ```
+
+## Para Redirigir Salida y error en WINDOWS
+```cmd
+git pull origin master > a.txt 2>&1
+```
