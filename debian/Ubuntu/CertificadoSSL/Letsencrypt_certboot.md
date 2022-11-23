@@ -37,12 +37,17 @@ RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 # instalaciond e certbot Lets encrypt
 
 ```shell
+# :: Apache
 apt install certbot python3-certbot-apache
+
+# :: Nginx
+sudo apt install certbot python3-certbot-nginx
 ```
 
 luego de eso ejecutar comando
 ```shell
 certbot --apache
+certbot --nginx
 ```
 
 Acontinuacion deberas poner el correo
