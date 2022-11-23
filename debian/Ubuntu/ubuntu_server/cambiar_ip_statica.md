@@ -56,36 +56,13 @@ network:
       nameservers:
           addresses: [8.8.8.8, 1.1.1.1]
 ```
-luego reinicar el servicio `sudo netplan apply`
 
-
+Luego reinicar el servicio `sudo netplan apply`
 
 
 ## Ahora aplicar los
 ```shell
 sudo netplan restart
-```
-para poner mas de una  red
-```shell
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    ens33:
-      dhcp4: no
-      addresses:
-        - 192.168.0.22/24
-      gateway4: 192.168.0.1
-      nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
-    ens38:
-      dhcp4: no
-      addresses:
-        - 192.168.0.23/24
-      gateway4: 192.168.0.1
-      nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
-                             
 ```
 
 
