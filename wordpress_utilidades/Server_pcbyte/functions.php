@@ -503,7 +503,7 @@ $config_child_cesar = [
          * estos path seran restringidos por el filtrado de las ips
          * (valid_ip_country_capa_1 , valid_ip_country_capa_2)
          */
-        'not_allowed' => array( "/mi-cuenta/", "/my-account/")
+        'not_allowed' => array( "/mi-cuenta/", "/my-account/","/xmlrpc.php")
 
     ],
     //------------------Aqui ingresa los ids de usuarios  limitados
