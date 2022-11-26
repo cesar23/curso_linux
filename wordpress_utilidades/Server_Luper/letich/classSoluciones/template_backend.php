@@ -1,5 +1,5 @@
 <?php
-// version: 2.0.0
+// version: 2.5.0
 //--Eliminar la  version de wordpres (seguridad)
 function complete_version_removal()
 {
@@ -1053,6 +1053,202 @@ function my_login_form_lock_down($errors, $redirect_to)
     return $errors;
 }
 
+
+function action_url_restric_for_ip()
+{
+    global $config_child_cesar;
+    if ($config_child_cesar['restrict_paths_url']['active'] != 1) {
+        return true;
+    }
+
+    // si ya se  logeo salir
+    if (is_user_logged_in()) {
+        return true;
+    }
+
+    global $config_child_cesar;
+    $HORAS_VIDA_COOKIE = 1;
+    $ip = $_SERVER['REMOTE_ADDR'];
+    // Get the current URI.
+    $uri = $_SERVER['REQUEST_URI'];
+    $not_allowed =$config_child_cesar['restrict_paths_url']['not_allowed'];
+//    $not_allowed = array(
+//        "/mi-cuenta/",
+//        "/my-account/"
+//    );
+
+
+    if ($config_child_cesar['valid_ip_country_capa_1']['active'] == 1) {
+        // verificamos si la url se validara
+        $ruta_filtrar = false;
+        foreach ($not_allowed as $check) {
+            if (strpos(strtolower($uri), strtolower($check)) !== false) {
+//                wp_redirect( home_url(), 301 ); exit;
+                $ruta_filtrar = true;
+            }
+        }
+
+        if ($ruta_filtrar == true) {
+            //------------------------------------------------
+            //----------- primera capa con archivo
+            //------------------------------------------------
+            $ips_allows = $config_child_cesar['valid_ip_country_capa_1']['ips_allows'];
+            // si la  ip esta  siempre permitida la  agregamos
+            if (in_array($ip, $ips_allows)) {
+                return true;
+            }
+
+            if (strlen($ip) <= 15) {
+                require_once(dirname(__FILE__) . '/CheckRangeIpCountry.php');
+                $isTrueIpRange = CheckRangeIpCountry::validIpCountry($ip, "PE");
+                if ($isTrueIpRange !== true) {
+                    plantilla_bloqueo(
+                        "{$ip}",
+                        'CAPA SEGURIDAD NUMERO 01',
+                        "",
+                        "",
+                        "",
+                        "La ip:{$ip} no esta  en el rango de ips permitidas"
+                    );
+
+
+                } else {
+                    phpConsoleLog("Se valido ip {$ip}", "valid_ip_capa_1");
+                    //mostrar modal
+                    if ($config_child_cesar['valid_ip_country_capa_1']['modal_info'] == 1) {
+                        showPopUp("Se valido ip {$ip} valid_ip_capa_1");
+                    }
+
+                    return true;
+                }
+            }
+        }
+
+
+    }
+
+
+    //------------------------------------------------
+    //--------- segunda  capa con api geoIp
+    //------------------------------------------------
+    //Si activamos la  validacion de ip
+    if ($config_child_cesar['valid_ip_country_capa_2']['active'] == 1) {
+
+        $ruta_filtrar = false;
+        foreach ($not_allowed as $check) {
+            if (strpos(strtolower($uri), strtolower($check)) !== false) {
+//                wp_redirect( home_url(), 301 ); exit;
+                $ruta_filtrar = true;
+            }
+        }
+
+        if ($ruta_filtrar == true) {
+
+            //-- 1. comprobar si ya se  guardo en la cookie la ip
+            if (isset($_COOKIE['cook_ip'])) {
+                $cookie = stripslashes($_COOKIE['cook_ip']);
+                $cook = json_decode($cookie);
+                $_MESSAGES = implode(",", $cook->messages);
+                $_DEBUG = implode(",", $cook->debug);
+                phpConsoleLog($cook, "COOKIE");
+
+                // si la ip no es  valida
+                if ($cook->ip == $ip && $cook->valid == 0) {
+                    plantilla_bloqueo(
+                        "{$ip}",
+                        'CAPA SEGURIDAD NUMERO 02 - cookie',
+                        "{$_MESSAGES}",
+                        "{$cook->country_code}",
+                        "{$cook->country_name}",
+                        $cook
+                    );
+
+
+                }
+                //si la  ip que se guardo previamente es valida salimos de la funcion
+                if ($cook->ip == $ip && $cook->valid == 1) {
+                    //mostrar modal
+                    if ($config_child_cesar['valid_ip_country_capa_2']['modal_info'] == 1) {
+                        showPopUp("Se valido ip {$ip} valid_ip_capa_2, cookie");
+                    }
+
+                    return true;
+                }
+            } else {
+                phpConsoleLog("No se encontro cookie", "COOKIE");
+            }
+
+
+            require_once(dirname(__FILE__) . '/filterGeoIp.php');
+
+            try {
+                $CountryIpAllowClass = new FilterGeoIp();
+                //$ip=getUserIP();
+
+                //return true;
+
+
+//        $country_allows = array("PE");
+                $country_allows = $config_child_cesar['valid_ip_country_capa_2']['country_allows'];
+                $ips_allows = $config_child_cesar['valid_ip_country_capa_2']['ips_allows'];
+                // si la ip no es valida por pais
+                $objRes = $CountryIpAllowClass->validIpCountry($ip, $country_allows, $ips_allows);//
+                $_DEBUG = implode(",", $objRes->debug);
+                $_MESSAGES = implode(",", $objRes->messages);
+
+
+                if ($objRes->success === false) {
+                    setcookie('cook_ip', json_encode(array(
+                        "ip" => $ip,
+                        "valid" => 0,
+                        "messages" => implode(",", $objRes->messages),
+                        "country_code" => $objRes->country_code,
+                        "country_name" => $objRes->country_name,
+                        "debug" => $objRes
+                    )), time() + 3600);//dos  horas
+
+                    plantilla_bloqueo(
+                        "{$ip}",
+                        'CAPA SEGURIDAD NUMERO 02',
+                        "{$_MESSAGES}",
+                        "{$objRes->country_code}",
+                        "{$objRes->country_name}",
+                        $objRes
+                    );
+
+
+                    // wp_die("Tu Ip 2: {$ip}  No es valida", 'Error', array('back_link' => true));
+                } else {
+                    setcookie('cook_ip', json_encode(array(
+                        "ip" => $ip,
+                        "valid" => 1,
+                        "messages" => "ip valida [{$ip}]",
+                        "country_code" => $objRes->country_code,
+                        "country_name" => $objRes->country_name,
+                        "debug" => $_DEBUG
+                    )), time() + 3600);//dos  horas
+                    //mostrar modal
+                    if ($config_child_cesar['valid_ip_country_capa_2']['modal_info'] == 1) {
+                        showPopUp("Se valido ip {$ip} valid_ip_capa_2");
+                    }
+
+                    phpConsoleLog($objRes, "debug");
+
+                }
+
+
+            } catch (Exception $e) {
+                wp_die('Error: ' . $e->getMessage(), 'Error', array('back_link' => true));
+
+            }
+
+        }
+
+
+    }
+
+}
+add_action( 'template_redirect', 'action_url_restric_for_ip' );
 
 //add_action('admin_init', 'fn_load_init', 10, 0);
 add_action('admin_init', 'theme_recursos_bloqueados');

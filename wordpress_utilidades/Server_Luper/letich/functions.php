@@ -2,7 +2,7 @@
 //letich
 $url_amigable='www.'.preg_replace('/(http|https):\/\/(www.)?(\S+)(\/)?/i', '${2}', home_url('/') );//www.example.com
 
-
+global $config_child_cesar;
 define ('VERSION', '2020-09-04.5');
 
 function version_id() {
@@ -97,6 +97,16 @@ $config_child_cesar = [
         'country_allows' => array('PE'),
         ///ips  validas
         'ips_allows' => array('77.111.246.39'),
+
+    ],
+    'restrict_paths_url' => [
+        //si queremso que este activo
+        'active' => 1,
+        /*
+         * estos path seran restringidos por el filtrado de las ips
+         * (valid_ip_country_capa_1 , valid_ip_country_capa_2)
+         */
+        'not_allowed' => array( "/mi-cuenta/", "/my-account/")
 
     ],
     //------------------Aqui ingresa los ids de usuarios  limitados
@@ -269,6 +279,10 @@ $config_child_cesar = [
         )
     ),
 ];
+
+// Disblae update (plugin and themes) cesar
+add_filter( 'auto_update_plugin', '__return_false' );
+add_filter( 'auto_update_theme', '__return_false' );
 
 require(dirname(__FILE__) . '/classSoluciones/template_backend.php');
 

@@ -1,5 +1,6 @@
 <?php
 require("json_db.php");
+
 class FilterGeoIp
 {
 
@@ -15,10 +16,13 @@ class FilterGeoIp
     {
 
     }
-    public function isJson($string) {
+
+    public function isJson($string)
+    {
         json_decode($string);
         return json_last_error() === JSON_ERROR_NONE;
     }
+
     public function curl($url, $method = 'get', $header = null, $postdata = null, $timeout = 60)
     {
 
@@ -75,7 +79,6 @@ class FilterGeoIp
         // don't need to SSL verify ,if present it need openSSL PHP extension
 
 
-
         $response = curl_exec($s);
 
         $body = null;
@@ -102,18 +105,18 @@ class FilterGeoIp
                 // $body = substr($response, $header_size);
                 $body = $response;
                 //comprobamos si es un json la respuesta para decodearla
-                if($this->isJson($body)){
+                if ($this->isJson($body)) {
                     $result["data"] = json_decode($body);
-                }else{
+                } else {
                     $result["data"] = $body;
                 }
 
             } else {
                 $body = $response;
                 //comprobamos si es un json la respuesta para decodearla
-                if($this->isJson($body)){
+                if ($this->isJson($body)) {
                     $result["data"] = json_decode($body);
-                }else{
+                } else {
                     $result["data"] = $body;
                 }
             }
@@ -124,47 +127,48 @@ class FilterGeoIp
         return json_encode($result);
     }
 
-    function sendRequest($cuenta,$ip){
-        $data=array();
-        $data["error"]=true;
-        $data["message"]="No se encontr url";
-        $data["country_code"]="";
-        $data["country_name"]="";
+    function sendRequest($cuenta, $ip)
+    {
+        $data = array();
+        $data["error"] = true;
+        $data["message"] = "No se encontr url";
+        $data["country_code"] = "";
+        $data["country_name"] = "";
         // 104=>limite  exedido,106=> ip invalida, 101 => api key es  invalida
-        $data["code"]=0;
+        $data["code"] = 0;
 
-        switch ($cuenta->url){
+        switch ($cuenta->url) {
             case "http://api.ipstack.com":
                 $_request = file_get_contents("http://api.ipstack.com/{$ip}?access_key={$cuenta->key}");
                 $_res_data = json_decode($_request);
                 if ($_res_data->country_code) {
-                    $data["error"]=false;
-                    $data["code"]=0;
-                    $data["country_code"]=$_res_data->country_code;
-                    $data["country_name"]=$_res_data->country_name;
-                    $data["message"]="request desde {$cuenta->url}";
-                }else{
+                    $data["error"] = false;
+                    $data["code"] = 0;
+                    $data["country_code"] = $_res_data->country_code;
+                    $data["country_name"] = $_res_data->country_name;
+                    $data["message"] = "request desde {$cuenta->url}";
+                } else {
 
 
                     if ($_res_data->error->code === 104) {
-                        $data["error"]=true;
-                        $data["code"]=104;
-                        $data["message"]="Error limite exedido para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
+                        $data["error"] = true;
+                        $data["code"] = 104;
+                        $data["message"] = "Error limite exedido para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
                     } // ip invalida
                     elseif ($_res_data->error->code === 106) {
-                        $data["error"]=true;
-                        $data["code"]=106;
-                        $data["message"]="Ip invalida:[{$ip}], api.ipstack.com";
+                        $data["error"] = true;
+                        $data["code"] = 106;
+                        $data["message"] = "Ip invalida:[{$ip}], api.ipstack.com";
 
                     } // error de la ip key: cuando la  api key es  inavlida
                     elseif ($_res_data->error->code === 101) {
-                        $data["error"]=true;
-                        $data["code"]=106;
-                        $data["message"]="No ha proporcionado una clave de acceso API, provider: {$cuenta->provider}";
+                        $data["error"] = true;
+                        $data["code"] = 106;
+                        $data["message"] = "No ha proporcionado una clave de acceso API, provider: {$cuenta->provider}";
                     } else {
-                        $data["error"]=true;
-                        $data["code"]=$_res_data->error->code;
-                        $data["message"]="Otros errores, api.ipstack.com";
+                        $data["error"] = true;
+                        $data["code"] = $_res_data->error->code;
+                        $data["message"] = "Otros errores, api.ipstack.com";
                     }
 
                 }
@@ -180,36 +184,42 @@ class FilterGeoIp
                 $headers[] = 'Cache-Control: no-cache';
 
                 $_request = $this->curl($url, 'get', $headers, null, 70);
-                $_res_json =json_decode($_request);
-                if($_res_json->statusCode ===200){
-                    $resData=$_res_json->data;
+                $_res_json = json_decode($_request);
+                if ($_res_json->statusCode === 200) {
+                    $resData = $_res_json->data;
                     if ($resData->country_code) {
-                        $data["error"]=false;
-                        $data["code"]=0;
-                        $data["country_code"]=$resData->country_code;
-                        $data["country_name"]=$resData->country_name;
-                        $data["message"]="ipapi.co";
-                    }else{
-                        $msg="";
-                        if($resData->reason){
-                            $msg=$resData->reason;
-                        }else{
-                            $msg=$resData;
-                        };
+                        $data["error"] = false;
+                        $data["code"] = 0;
+                        $data["country_code"] = $resData->country_code;
+                        $data["country_name"] = $resData->country_name;
+                        $data["message"] = "ipapi.co";
+                    } else {
+                        $msg = "";
+                        if ($resData->reason) {
+                            $msg = $resData->reason;
+                        } else {
+                            $msg = "";
+                            if (gettype($resData) == "string") {
+                                $msg = $resData;
+                            }
 
-                        $data["error"]=true;
-                        $data["code"]=0;
-                        $data["message"]="{$msg}, para la key:[{$cuenta->key}], ipapi.co";
+                        };
+                        //validar si no es  string
+
+
+                        $data["error"] = true;
+                        $data["code"] = 0;
+                        $data["message"] = "API:{$url} -{$msg}, para la key:[{$cuenta->key}], ipapi.co";
                     }
 
-                } elseif ($_res_json->statusCode ===403) { //si se exedio de la  cuota
-                    $data["error"]=true;
-                    $data["code"]=104;
-                    $data["message"]="Quota exceeded 403, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
-                }else{
-                    $data["error"]=true;
-                    $data["code"]=0;
-                    $data["message"]="Error: {$_res_json->data} , provider: {$cuenta->provider}";
+                } elseif ($_res_json->statusCode === 403) { //si se exedio de la  cuota
+                    $data["error"] = true;
+                    $data["code"] = 104;
+                    $data["message"] = "Quota exceeded 403, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
+                } else {
+                    $data["error"] = true;
+                    $data["code"] = 0;
+                    $data["message"] = "Error: {$_res_json->data} , provider: {$cuenta->provider}";
                 }
 
 
@@ -225,36 +235,43 @@ class FilterGeoIp
                 $headers[] = 'Cache-Control: no-cache';
 
                 $_request = $this->curl($url, 'get', $headers, null, 70);
-                $_res_json =json_decode($_request);
-                if($_res_json->statusCode ===200){
-                    $resData=$_res_json->data;
+                $_res_json = json_decode($_request);
+                if ($_res_json->statusCode === 200) {
+                    $resData = $_res_json->data;
                     if ($resData->country_code) {
-                        $data["error"]=false;
-                        $data["code"]=0;
-                        $data["country_code"]=$resData->country_code;
-                        $data["country_name"]=$resData->country_name;
-                        $data["message"]="ok, provider: {$cuenta->provider}";
-                    }else{
-                        $msg="";
-                        if($resData->reason){
-                            $msg=$resData->reason;
-                        }else{
-                            $msg=$resData;
+                        $data["error"] = false;
+                        $data["code"] = 0;
+                        $data["country_code"] = $resData->country_code;
+                        $data["country_name"] = $resData->country_name;
+                        $data["message"] = "ok, provider: {$cuenta->provider}";
+                    } else {
+                        $msg = "";
+                        if ($resData->reason) {
+                            $msg = $resData->reason;
+                        } else if ($resData->continent_name) {
+                            $msg = "Continente: {$resData->continent_name}";
+                        } else {
+                            $msg = "no se obtubo alguna  data";
                         };
 
-                        $data["error"]=true;
-                        $data["code"]=0;
-                        $data["message"]="{$msg}, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
+                        //validar si no es  string
+//                        if(gettype($msg)!=="string"){
+//                            $msg="No se encontro la ip en ipdata";
+//                        }
+
+                        $data["error"] = true;
+                        $data["code"] = 0;
+                        $data["message"] = "API:{$url} {$msg}, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
                     }
 
-                } elseif ($_res_json->statusCode ===422) { //si se exedio de la  cuota
-                    $data["error"]=true;
-                    $data["code"]=104;
-                    $data["message"]="Quota exceeded, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
-                }else{
-                    $data["error"]=true;
-                    $data["code"]=0;
-                    $data["message"]="Error: {$_res_json->data} , provider: {$cuenta->provider}";
+                } elseif ($_res_json->statusCode === 422) { //si se exedio de la  cuota
+                    $data["error"] = true;
+                    $data["code"] = 104;
+                    $data["message"] = "API:{$url} Quota exceeded, para la key:[{$cuenta->key}], provider: {$cuenta->provider}";
+                } else {
+                    $data["error"] = true;
+                    $data["code"] = 0;
+                    $data["message"] = "API:{$url} Error: {$_res_json->data} , provider: {$cuenta->provider}";
                 }
 
 
@@ -264,35 +281,34 @@ class FilterGeoIp
     }
 
 
-
-    private function getKeyApi(){
+    private function getKeyApi()
+    {
         $CUR_DIR = dirname(__FILE__);
         $path_file = $CUR_DIR . "/data_geo_keys.json";
-        $path_file=str_replace("\\", "/", $path_file);
+        $path_file = str_replace("\\", "/", $path_file);
         $obj = new JsonDb($path_file);
-        $keys=array();
+        $keys = array();
 
 
         $rows = $obj->getTableFilter('access_keys', 'active', true);//obtenemos la  tabla
-        $current_date=date("Y-m-d");
+        $current_date = date("Y-m-d");
         foreach ($rows as $row) {
             //sololos que que estan activos
-            $current_time=strtotime($current_date);
-            $active_date_desde=strtotime($row['active_date_desde']);
+            $current_time = strtotime($current_date);
+            $active_date_desde = strtotime($row['active_date_desde']);
 
-            if($current_time>$active_date_desde){
-                array_push($keys,$row);
+            if ($current_time > $active_date_desde) {
+                array_push($keys, $row);
             }
 
         }
 
-        if(count($keys)<=0){
+        if (count($keys) <= 0) {
             throw new Exception('No hay api Keys activar para validar ips');
         }
         shuffle($keys);
         return $keys[0];
     }
-
 
 
     function validIpCountry($ip, $country_allows = array(), $ips_allows = array())
@@ -309,7 +325,7 @@ class FilterGeoIp
         );
         try {
             $_cuenta = $this->getKeyApi();
-            $_cuenta = (object) $_cuenta;
+            $_cuenta = (object)$_cuenta;
             ///-------validar ips lista  blanca si asi solo debolvemos
             if (in_array($ip, $ips_allows)) {
                 $_resOutput->success = true;
@@ -320,34 +336,33 @@ class FilterGeoIp
 
 
             // --- aqui comenzara la  validacion
-            $_res_data=$this->sendRequest($_cuenta,$ip);
+            $_res_data = $this->sendRequest($_cuenta, $ip);
 
 //            $_request = file_get_contents("http://api.ipstack.com/{$ip}?access_key={$_key}");
 //            $_res_data = json_decode($_request);
 
             // si devolbio un error
-            if ($_res_data['error']===true) {
+            if ($_res_data['error'] === true) {
 
 //                $_resOutput->error_code = $_res_data->error->code;
 //                $_resOutput->messages[] = "Error limite exedido para la key:[{$_cuenta->key}]";
 
 
-
                 // error: usage_limit_reached : exedio la cuota la key de la cuenta
-                if ($_res_data['code']===104) {
-                    $_resOutput->error_code =$_res_data['code'];
+                if ($_res_data['code'] === 104) {
+                    $_resOutput->error_code = $_res_data['code'];
                     $_resOutput->messages[] = $_res_data['message'];
                     $_resOutput->debug[] = "{$_res_data['message']} - Supero el limite de request. 104";
                     //-----aqui desbilitaremos la key
                     $CUR_DIR = dirname(__FILE__);
                     $path_file = $CUR_DIR . "/data_geo_keys.json";
                     $obj = new JsonDb($path_file);
-                    $date_new_active= date('Y-m-d', strtotime(date("Y-m-d"). ' + 30 days'));
-                    $obj->rowUpdate('access_keys', 'active_date_desde',$date_new_active, 'key', $_cuenta->key);
+                    $date_new_active = date('Y-m-d', strtotime(date("Y-m-d") . ' + 30 days'));
+                    $obj->rowUpdate('access_keys', 'active_date_desde', $date_new_active, 'key', $_cuenta->key);
 
 
                 } else {
-                    $_resOutput->error_code =$_res_data['code'];
+                    $_resOutput->error_code = $_res_data['code'];
                     $_resOutput->messages[] = $_res_data['message'];
                     $_resOutput->debug[] = "{$_res_data['message']} - Sucedio Otro errro :{$_res_data['code']}";
                 }
@@ -355,8 +370,8 @@ class FilterGeoIp
 
             } else {
                 $_resOutput->success = true;
-                $_resOutput->country_code =$_res_data['country_code'];
-                $_resOutput->country_name =$_res_data['country_name'];
+                $_resOutput->country_code = $_res_data['country_code'];
+                $_resOutput->country_name = $_res_data['country_name'];
                 $_resOutput->messages[] = $_res_data['message'];
                 $_resOutput->debug[] = "{$_res_data['message']}";
             }
@@ -365,8 +380,8 @@ class FilterGeoIp
             if (in_array($_resOutput->country_code, $country_allows)) {
                 $_resOutput->success = true;
                 return $_resOutput;
-            }else{
-                $__country_allows=@implode(',', $country_allows);
+            } else {
+                $__country_allows = @implode(',', $country_allows);
                 $_resOutput->success = false;
                 $_resOutput->messages[] = "El el pais [{$_resOutput->country_name}] no esta permitido, {$_res_data['message']}";
                 $_resOutput->debug[] = "El el pais [{$_resOutput->country_name}] | 
@@ -389,15 +404,12 @@ class FilterGeoIp
     }
 
 
-
-
-    public function validIpCountryAll($ip,$allows=array())
+    public function validIpCountryAll($ip, $allows = array())
     {
-        $key=$this->getKeyApi();
+        $key = $this->getKeyApi();
 
         try {
             ///validar ips lista  blanca
-
 
 
             // $funk = 1;
@@ -409,7 +421,6 @@ class FilterGeoIp
         } catch (Exception $e) {
             return null;
         }
-
 
 
     }
