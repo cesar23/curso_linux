@@ -10,6 +10,17 @@ apt-get install util-linux
 lsusb
 ```
 
+
+### mostrar informacion del CPU USADO
+```shell
+#top
+top -bn2 | grep '%Cpu' | tail -1 | grep -P '(....|...) id,'|awk '{print "CPU Usage: " 100-$8 "%"}'
+# output:
+#  CPU Usage: 50.8%
+```
+
+
+
 ### mostrar lo conectado por pci
 
 ```shell
@@ -34,6 +45,18 @@ grep -c processor /proc/cpuinfo
 ```shell
 lsmen
 free -h
+
+
+# Esto informará el porcentaje de memoria en uso
+free | grep Mem | awk '{print $3/$2 * 100.0}'
+# output:
+# 19.734
+
+
+#Esto informará el porcentaje de memoria que está libre
+free | grep Mem | awk '{print $4/$2 * 100.0}'
+# output:
+# 58.734
 ```
 
 ### mostrar USB conectados
