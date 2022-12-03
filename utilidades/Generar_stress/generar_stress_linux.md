@@ -45,7 +45,6 @@ stress -c 4 -i 4 -m 6 --vm-bytes 256M -t 20s --verbose
 
 Si solo queremos estresar la memoria, podemos ejecutar el comando de la siguiente manera:
 
-
 ```shell
 stress -m 4 -t 20s
 ```
