@@ -46,17 +46,24 @@ grep -c processor /proc/cpuinfo
 lsmen
 free -h
 
+# Detalle de memoria
+free -h | grep Mem | awk '{print "Memoria Total: " $2 " , Memoria usada: "$3 " , Memoria Libre: "$4}'
+# output:
+# Memoria Total: 1.8G , Memoria usada: 835M , Memoria Libre: 243M
+
 
 # Esto informará el porcentaje de memoria en uso
-free | grep Mem | awk '{print $3/$2 * 100.0}'
+free | grep Mem | awk '{print "Procentaje usado: %" $3/$2 * 100.0}'
 # output:
-# 19.734
+# %19.734
+
+
 
 
 #Esto informará el porcentaje de memoria que está libre
-free | grep Mem | awk '{print $4/$2 * 100.0}'
+free | grep Mem | awk '{print "Procentaje libre: %" $4/$2 * 100.0}'
 # output:
-# 58.734
+# %58.734
 ```
 
 ### mostrar USB conectados
