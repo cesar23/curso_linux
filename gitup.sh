@@ -4,6 +4,10 @@ CURRENT_USER=$(id -un)
 CURRENT_PC_NAME=$(exec /usr/bin/hostname)
 MY_INFO="${CURRENT_USER}@${CURRENT_PC_NAME}"
 
+scriptPathDir=$(dirname $0)
+scriptPathFile=$(realpath $0)
+scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+
 function upgit() {
 	git pull
     git add -A
@@ -26,6 +30,7 @@ function gitup2() {
     git push
 }
 clear
+cd $scriptPathDir
 gitup
 
 echo ""

@@ -234,4 +234,6 @@ matar proceso por Nombre de app
 ```shell
 pkill -9 htop
 pkill -9 firefox
+
+pkill -9 nginx
 ```

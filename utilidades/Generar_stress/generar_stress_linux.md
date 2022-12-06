@@ -163,7 +163,8 @@ stress-ng --all 4 --timeout 5m
 
 ```shell
 # cuando se mando a  usar el stress  de  cpu
-kill -9 pidof stress-ng-cpu
+#kill -9 pidof stress-ng-cpu
+pkill -9 stress-ng-cpu
 
 # cuando se mando a  usar el stress  de  memoria
 kill -9 pidof stress-ng-mv
