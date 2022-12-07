@@ -195,3 +195,15 @@ sed -i '/SSLCertificateKeyFile.*snakeoil\.key/cSSLCertificateKeyFile /etc/ssl/pr
 
 ```
 
+### Reemplazar SeLinux en centos
+esto sirve para  deshabilitar selinux
+file `/etc/selinux/config`
+```shell
+sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config
+sudo sestatus
+
+# test
+# sudo sed -i 's/enforcing/disabled/g' /d/repos/curso_linux/xcomandos_standar/archivos_test/selinux.conf
+
+
+```
