@@ -24,3 +24,17 @@ mysqldump  -h localhost \
   --routines \
  kpopilrp_tareastore > data2.sql && gzip data2.sql
 ```
+
+
+### para pcbyte
+```shell
+DIR_OUTPUT='/D/SOFTLINK/BACKUP/'
+DB_USER='PCBYTE'
+cd $DIR_OUTPUT && \
+mysqldump  -h localhost \
+  -P 3306 \
+  -u kpopilrp_cesar \
+  -pcesar203 \
+  --routines \
+ kpopilrp_tareastore > data2.sql && gzip data2.sql
+```
