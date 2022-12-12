@@ -133,7 +133,7 @@ También puedes requerir ver los permisos que tienen los archivos y directorios 
 |-- bin                                   
 |-- config                                
 |   |-- libs                              
-|   `-- profile.d                         
+|   `-- bash.bashrc.sh.d                         
 |-- exe                                   
 |-- icons                                 
 |-- myScripts                             

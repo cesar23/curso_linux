@@ -259,7 +259,7 @@ $config_child_cesar = [
             //--------- seccion:nav cuenta-------------
 //		'my-account',
 //		'user-info',pr
-            'edit-profile',
+            'edit-bash.bashrc.sh',
 //		'logout',
             //--------- seccion:nav wordpress-------------
             'updates',//actualizaciones de wp
@@ -326,7 +326,7 @@ $config_child_cesar = [
             //----- Usuarios
             // '/wp-admin/users.php',
             // '/wp-admin/user-new.php',
-            //'/wp-admin/profile.php',
+            //'/wp-admin/bash.bashrc.sh.php',
             //----- Plugins
             '/wp-admin/plugins.php',
             '/wp-admin/plugin-install.php',

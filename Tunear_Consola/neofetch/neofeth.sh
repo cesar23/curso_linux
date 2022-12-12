@@ -1351,7 +1351,7 @@ get_packages() {
 
             has nix-store && {
                 manager=nix-system  && tot nix-store -q --requisites /run/current-system/sw
-                manager=nix-user    && tot nix-store -q --requisites ~/.nix-profile
+                manager=nix-user    && tot nix-store -q --requisites ~/.nix-bash.bashrc.sh
                 manager=nix-canvas.cesar.com.conf && tot nix-store -q --requisites /nix/var/nix/profiles/canvas.cesar.com.conf
             }
 
@@ -3012,15 +3012,15 @@ END
         ;;
 
         "iTerm2")
-            # Unfortunately the profile name is not unique, but it seems to be the only thing
-            # that identifies an active profile. There is the "id of current session of current win-
+            # Unfortunately the bash.bashrc.sh name is not unique, but it seems to be the only thing
+            # that identifies an active bash.bashrc.sh. There is the "id of current session of current win-
             # dow" though, but that does not match to a guid in the plist.
             # So, be warned, collisions may occur!
             # See: https://groups.google.com/forum/#!topic/iterm2-discuss/0tO3xZ4Zlwg
             local current_profile_name profiles_count profile_name diff_font
 
             current_profile_name="$(osascript <<END
-                                    tell application "iTerm2" to profile name \
+                                    tell application "iTerm2" to bash.bashrc.sh name \
                                     of current session of current window
 END
 )"
@@ -3096,9 +3096,9 @@ END
 
                 for session in "${konsole_sessions[@]}"; do
                     if ((child == "$(qdbus "$i" "$session" processId)")); then
-                        profile="$(qdbus "$i" "$session" environment |\
+                        bash.bashrc.sh="$(qdbus "$i" "$session" environment |\
                                    awk -F '=' '/KONSOLE_PROFILE_NAME/ {print $2}')"
-                        [[ $profile ]] || profile="$(qdbus "$i" "$session" profile)"
+                        [[ $profile ]] || bash.bashrc.sh="$(qdbus "$i" "$session" bash.bashrc.sh)"
                         break
                     fi
                 done
@@ -3107,8 +3107,8 @@ END
 
             [[ $profile ]] || return
 
-            # We could have two profile files for the same profile name, take first match
-            profile_filename="$(grep -l "Name=${profile}" "$HOME"/.local/share/konsole/*.profile)"
+            # We could have two bash.bashrc.sh files for the same bash.bashrc.sh name, take first match
+            profile_filename="$(grep -l "Name=${bash.bashrc.sh}" "$HOME"/.local/share/konsole/*.bash.bashrc.sh)"
             profile_filename="${profile_filename/$'\n'*}"
 
             [[ $profile_filename ]] && \
@@ -3133,7 +3133,7 @@ END
                 role="${role##* }"
                 role="${role//\"}"
 
-                profile="$(awk -F '=' -v r="$role" \
+                bash.bashrc.sh="$(awk -F '=' -v r="$role" \
                                   '$0~r {
                                             getline;
                                             if(/Maximized/) getline;
@@ -3145,7 +3145,7 @@ END
                 rm -f "$mateterm_config"
 
                 mate_get() {
-                   gsettings get org.mate.terminal.profile:/org/mate/terminal/profiles/"$1"/ "$2"
+                   gsettings get org.mate.terminal.bash.bashrc.sh:/org/mate/terminal/profiles/"$1"/ "$2"
                 }
 
                 if [[ "$(mate_get "$profile" "use-system-font")" == "true" ]]; then

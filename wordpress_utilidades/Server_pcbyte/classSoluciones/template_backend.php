@@ -931,7 +931,7 @@ function remove_from_admin_bar($wp_admin_bar)
 //        //--------- seccion:nav cuenta-------------
 ////		'my-account',
 ////		'user-info',
-//        'edit-profile',
+//        'edit-bash.bashrc.sh',
 ////		'logout',
 //        //--------- seccion:nav wordpress-------------
 //        'updates',//actualizaciones de wp

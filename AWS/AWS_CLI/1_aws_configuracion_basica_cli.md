@@ -8,14 +8,14 @@ aws --version
 # aws-cli/1.26.1 Python/3.8.10 Windows/10 botocore/1.28.1
 
 
-# ---------- configurar profile default
+# ---------- configurar bash.bashrc.sh default
 aws configure
-# ---------- configurar profile cesar
-aws configure --profile cesar
+# ---------- configurar bash.bashrc.sh cesar
+aws configure --bash.bashrc.sh cesar
 ```
 ### 1.3 desde la consola
 ```shell
-$ aws configure --profile produser
+$ aws configure --bash.bashrc.sh produser
 AWS Access Key ID [None]: AKIAI44QH8DHBEXAMPLE
 AWS Secret Access Key [None]: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 Default region name [None]: us-east-1
@@ -30,15 +30,15 @@ ahi dentro deberiamos crear los siguientes archivos: `config` y `credentials`
 
 fichero: `nano ~/.aws/credentials`
 ```shell
-# ::::: por defecto si no se usa:  --profile <elegido>
+# ::::: por defecto si no se usa:  --bash.bashrc.sh <elegido>
 
 [default]
 aws_access_key_id=AKxxxxxxxxxxxxxxx
 aws_secret_access_key=u3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-# ::::: se usuara  --profile eucim
-# --------- ejemplo: aws s3 ls --profile eucim
+# ::::: se usuara  --bash.bashrc.sh eucim
+# --------- ejemplo: aws s3 ls --bash.bashrc.sh eucim
 
 [eucim]
 aws_access_key_id=Axxxxxxxxxxxxxxx
@@ -48,13 +48,13 @@ aws_secret_access_key=cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 fichero: `nano ~/.aws/config`
 
 ```shell
-# :: profile defecto la regiuon de virgina
+# :: bash.bashrc.sh defecto la regiuon de virgina
 [default]
 region = us-east-1
 output=json
 
-# :: profile eucim la regiuon de sau paulo
-[profile eucim]
+# :: bash.bashrc.sh eucim la regiuon de sau paulo
+[bash.bashrc.sh eucim]
 #::::: sau paulo
 region = sa-east-1
 output=text
@@ -63,18 +63,18 @@ output=text
 # 2. Ejemplos de comandos CLI
 lista todos las instancas de Eucin en la zona de disponibilidad
 ```shell
-aws ec2 describe-instances --profile eucim
+aws ec2 describe-instances --bash.bashrc.sh eucim
 
 # seteando la zona e virginia
 export AWS_DEFAULT_REGION=us-east-1
 export AWS_DEFAULT_REGION=sa-east-1
-aws ec2 describe-instances --profile eucim
+aws ec2 describe-instances --bash.bashrc.sh eucim
 ```
 
 listar bucket s3
 ```shell
-aws s3 ls --profile eucim
-aws s3 ls --profile cesar
+aws s3 ls --bash.bashrc.sh eucim
+aws s3 ls --bash.bashrc.sh cesar
 ```
 
 # 3. pasar credenciales por enviroment
@@ -136,12 +136,12 @@ fichero: `nano ~/.aws/config`
 # output=json
 
 # ------------------------------------------------
-[profile eucim]
+[bash.bashrc.sh eucim]
 region = sa-east-1
 output=json
 
 # ------------------------------------------------
-[profile cesar]
+[bash.bashrc.sh cesar]
 region = us-east-1
 output=json
 ```

@@ -61,7 +61,7 @@ id_instance="i-08f4c67cddfbae129"
 aws ec2 create-instance-export-task \
   --instance-id $id_instance \
   --target-environment vmware \
-  --export-to-s3-task file://$path_file --profile eucim
+  --export-to-s3-task file://$path_file --bash.bashrc.sh eucim
 ```
 
 El archivo `ec2_file_export.json`
