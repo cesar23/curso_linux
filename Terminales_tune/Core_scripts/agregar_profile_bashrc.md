@@ -18,6 +18,9 @@ INFO_PC="${CURRENT_USER}@${CURRENT_PC_NAME}"
 # :::::::: Importanmos las librerias
 if [ -f "${MOBAX_PATH}/libs/init.sh" ]; then
  source "${MOBAX_PATH}/libs/init.sh"
+ 
+ # ingresar al espacio de trabajo
+ cd $(path_windows_to_path_shell "${env_dir_work}")
 fi
 
 
