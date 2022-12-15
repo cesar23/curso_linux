@@ -5,9 +5,11 @@
 ```shell
 sudo apt update
 sudo apt install apache2
+
+sudo a2enmod ssl
 ```
 
-###3 habilitar firewall
+### 1.1 habilitar firewall
 
 ```shell
 sudo ufw allow in "Apache"
