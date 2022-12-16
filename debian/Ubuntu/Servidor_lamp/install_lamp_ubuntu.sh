@@ -10,7 +10,7 @@ sudo chown -R $USER:$USER /var/www/sunat.local
 
 
 
-#
+# creamos el host virtual
 sudo touch /etc/apache2/sites-available/sunat.local.conf
 
 DOMAIN_CONFIG="/etc/apache2/sites-available/sunat.local.conf"
@@ -168,7 +168,7 @@ echo '<VirtualHost *:443>
 
 # habilitamos el ssl del dominio
 sudo a2ensite sunat.local-ssl.conf
-sudo systemctl 
+sudo systemctl
 
 
 
