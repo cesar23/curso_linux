@@ -1,5 +1,5 @@
-sudo apt-get install apache2 -y
-sudo apt-get install mysql-server -y
+sudo apt-get install apache2 -y  && \
+sudo apt-get install mysql-server -y && \
 sudo apt install php libapache2-mod-php php-mysql -y
 
 
@@ -7,6 +7,8 @@ sudo apt install php libapache2-mod-php php-mysql -y
 # :::::::: carpetas
 sudo mkdir /var/www/sunat.local
 sudo chown -R $USER:$USER /var/www/sunat.local
+
+
 
 #
 sudo touch /etc/apache2/sites-available/sunat.local.conf
@@ -36,10 +38,10 @@ sudo apache2ctl configtest
 
 echo '<html>
         <head>
-          <title>sunat.local website</title>
+          <title>sunat.local website2</title>
         </head>
         <body>
-          <h1>Hello sunat.local!</h1>
+          <h1>Hello sunat.local! ubuntu</h1>
 
           <p>This is the landing page of <strong>your_domain</strong>.</p>
         </body>
@@ -52,70 +54,121 @@ sudo systemctl reload apache2
 # ------------- Habilitar ssl--------------------------------------------
 sudo a2enmod ssl
 
-cp sunat.local.key /etc/ssl/private/
-cp sunat.local.crt /etc/ssl/certs/
+
+
+# ::crear directorio donde almacenaremos los certidficados
+sudo mkdir -p /etc/apache2/crt
+sudo chown -R $USER:$USER /etc/apache2/crt
+
+
+#rm -rf /etc/apache2/crt/*
+
+#sudo cp -r sunat.local/ /etc/apache2/crt/
 
 
 #sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
-sudo openssl req -x509 \
-            -sha256 -days 356 \
-            -nodes \
-            -newkey rsa:2048 \
-            -subj "/CN=sunat.local/C=PE/L=Lima" \
-            -keyout /etc/ssl/private/sunat.local.key \
-            -out /etc/ssl/certs/sunat.local.crt
 
-sudo openssl req -x509 \
-        -nodes -days 365 \
-        -newkey rsa:2048 \
-        -keyout /etc/ssl/private/apache-selfsigned.key \
-        -out /etc/ssl/certs/apache-selfsigned.crt
+CURRENT_DIR="/home/cesar"
+DOMAIN="sunat.local"
+PATH_CONFIG_CERT="${CURRENT_DIR}/cert.conf"
+PATH_OUT_CERT="${CURRENT_DIR}/${DOMAIN}"
+
+if [ ! -d "${PATH_OUT_CERT}" ]; then
+ mkdir -p "${PATH_OUT_CERT}"
+fi
+
+cat > $PATH_CONFIG_CERT <<EOF
+[ req ]
+
+default_bits        = 2048
+default_keyfile     = server-key.pem
+distinguished_name  = subject
+req_extensions      = req_ext
+x509_extensions     = x509_ext
+string_mask         = utf8only
+
+[ subject ]
+
+countryName                 = Country Name (2 letter code)
+countryName_default         = US
+
+stateOrProvinceName         = State or Province Name (full name)
+stateOrProvinceName_default = NY
+
+localityName                = Locality Name (eg, city)
+localityName_default        = New York
+
+organizationName            = Organization Name (eg, company)
+organizationName_default    = Soluciones system, PE
+
+commonName                  = Common Name (e.g. server FQDN or YOUR name)
+commonName_default          = ${DOMAIN}
+
+emailAddress                = Email Address
+emailAddress_default        = test@example.com
+
+[ dn ]
+C = US
+ST = California
+L = San Fransisco
+O = MLopsHub
+OU = MlopsHub Dev
+# aqui cambiar Dominio
+CN = ${DOMAIN}
 
 
-openssl genrsa -out server.key 2048
-openssl rsa -in server.key -out server.key
-openssl req -sha256 -new -key server.key -out server.csr -subj '/C=PE/ST=Test/L=Test/O=Test/CN=sunat.local'
-openssl x509 -req -sha256 -days 365 -in server.csr -signkey server.key -out server.crt
+[ x509_ext ]
+
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer
+
+basicConstraints       = CA:FALSE
+keyUsage               = digitalSignature, keyEncipherment
+subjectAltName         = @alternate_names
+nsComment              = "OpenSSL Generated Certificate"
+
+[ req_ext ]
+
+subjectKeyIdentifier = hash
+
+basicConstraints     = CA:FALSE
+keyUsage             = digitalSignature, keyEncipherment
+subjectAltName       = @alternate_names
+nsComment            = "OpenSSL Generated Certificate"
+
+[ alternate_names ]
+# aqui cambiar Dominio
+DNS.1 = ${DOMAIN}
+DNS.2 = www.${DOMAIN}
+
+EOF
+
+
+
+openssl req -config "${PATH_CONFIG_CERT}" -new -sha256 -newkey rsa:2048 -nodes -keyout "${PATH_OUT_CERT}/server.key" -x509 -days 365 -out "${PATH_OUT_CERT}/server.crt"
+
+
+
+sudo rm -rf /etc/apache2/crt/*
+sudo cp -r $DOMAIN/ /etc/apache2/crt/
+
+
 
 
 DOMAIN_CONFIG="/etc/apache2/sites-available/sunat.local-ssl.conf"
+
 echo '<VirtualHost *:443>
          ServerName sunat.local
          DocumentRoot /var/www/sunat.local
 
          SSLEngine on
-         SSLCertificateFile /etc/ssl/certs/sunat.local.crt
-         SSLCertificateKeyFile /etc/ssl/private/sunat.local.key
+         SSLCertificateFile /etc/apache2/crt/sunat.local/server.crt
+         SSLCertificateKeyFile /etc/apache2/crt/sunat.local/server.key
       </VirtualHost>' | sudo tee $DOMAIN_CONFIG
 
+# habilitamos el ssl del dominio
 sudo a2ensite sunat.local-ssl.conf
-
-
-
-
-
-
-
-sudo apt-get a2emod ssl
-a2ensite default-ssl
-service apache2 reload
-
-
-sudo a2enmod ssl
-
-# Prepare fake SSL certificate
-RUN apt-get install -y ssl-cert
-
-
-
-# Setup Apache2 HTTPS env
-a2ensite default-ssl.conf
-
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl1.key -out /etc/ssl/certs/ssl1.crt
-
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl-certs/nginx.key -out /etc/nginx/ssl-certs/nginx.crt
-openssl req -config example-com.conf -new -x509 -sha256 -newkey rsa:2048 -nodes \
-    -keyout example-com.key.pem -days 365 -out example-com.cert.pem
+sudo systemctl 
 
 
 
@@ -125,97 +178,3 @@ openssl req -config example-com.conf -new -x509 -sha256 -newkey rsa:2048 -nodes 
 
 
 
-# Install useful tools and install important libaries
-RUN apt-get -y update && \
-    apt-get -y --no-install-recommends install \
-dialog \
-libsqlite3-dev \
-libsqlite3-0 \
-default-mysql-client \
-     && \
-apt-get -y --no-install-recommends install --fix-missing \
-build-essential \
-libonig-dev && \
-apt-get -y --no-install-recommends install --fix-missing libcurl4 \
-libcurl4-openssl-dev \
-openssl && \
-rm -rf /var/lib/apt/lists/* && \
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install xdebug
-RUN pecl install xdebug-2.8.0 && \
-    docker-php-ext-enable xdebug
-
-# Install redis
-RUN pecl install redis-5.1.1 && \
-    docker-php-ext-enable redis
-
-# Install imagick
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install --fix-missing libmagickwand-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    pecl install imagick && \
-    docker-php-ext-enable imagick
-
-# Other PHP7 Extensions
-
-RUN docker-php-ext-install pdo_mysql && \
-    docker-php-ext-install pdo_sqlite && \
-    docker-php-ext-install mysqli && \
-#    docker-php-ext-install curl && \
-    docker-php-ext-install tokenizer && \
-    docker-php-ext-install json && \
-#    docker-php-ext-install zip && \
-    docker-php-ext-install -j$(nproc) intl && \
-    docker-php-ext-install mbstring && \
-    docker-php-ext-install gettext && \
-    docker-php-ext-install calendar && \
-    docker-php-ext-install exif
-
-
-# Install Freetype
-RUN apt-get -y update && \
-    apt-get --no-install-recommends install -y libfreetype6-dev \
-libjpeg62-turbo-dev \
-libpng-dev && \
-    rm -rf /var/lib/apt/lists/* && \
-    docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg && \
-    docker-php-ext-install gd
-
-
-
-#RUN pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
-
-RUN docker-php-ext-configure \
-#    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
-    gd  --enable-gd --with-freetype --with-jpeg && \
-    docker-php-ext-install gd \
-    opcache \
-    gd \
-    bcmath \
-    intl \
-    mbstring \
-    soap \
-    xsl \
-    zip
-
-
-#-------para  instalar mcrypt
-RUN apt-get install libmcrypt-dev
-RUN pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
-
-
-
-# Enable apache modules
-RUN a2enmod ssl
-RUN a2enmod rewrite
-RUN a2enmod headers
-
-
-#-instal mcrypt
-#RUN docker-php-ext-configure mcrypt \
-#    && docker-php-ext-install mcrypt
-
-
-# Cleanup
-RUN rm -rf /usr/src/*

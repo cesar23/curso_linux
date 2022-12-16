@@ -15,18 +15,20 @@ fuentes:
 ## Tabla de contenido
 
 - <a href="#101">1.1 para exportar y revisar los log localmente</a>
-- <a href="#102">1.2. filtrar los log</a>
+- <a href="#102">1.2. filtrar los log 🩸</a>
 - <a href="#103">1.3. escuchar en linea cualquier log</a>
 - <a href="#200">2. listar logs guardados por fechas</a>
 - <a href="#300">3. Ver los mensajes del kernel</a>
 - <a href="#400">4. Filtrar por número de entradas en el registro de logs</a>
-- <a href="#500">5. Mostrar la salida por PID</a>
+- <a href="#500">5. Mostrar la salida por PID 💊</a>
 - <a href="#600">6. Especificar la salida por usuarios</a>
 - <a href="#700">7. Filtrar la salida por servicios de systemd</a>
 - <a href="#800">8. Filtrar por fechas</a>
 - <a href="#900">9. Filtrar por la prioridad del mensaje</a>
 - <a href="#1000">10. Mensajes de los discos duros</a>
 - <a href="#1100">11. Ver el espacio que están ocupando los diferentes logs</a>
+- <a href="#1200">12. Ver Log de Forma clasica (💣💻) Servicios Linux con `tail`</a>
+
 
 
 
@@ -214,6 +216,7 @@ y si nos interesa uno en particular, estudiamos sus mensajes añadiendo el pará
 `journalctl -u apache2.service`
 ```shell
 root@ubuntu:/var/log/apache2# journalctl -u apache2.service
+root@ubuntu:/var/log/apache2# journalctl -u apache2.service -f
 # -- Logs begin at Sun 2019-10-06 08:09:30 -05, end at Wed 2022-09-28 14:55:01 -05. --
 # Oct 02 16:50:47 ubuntu systemd[1]: Starting LSB: Apache2 web server...
 # Oct 02 16:50:47 ubuntu apache2[1303]:  * Starting Apache httpd web server apache2
@@ -355,12 +358,25 @@ root@ubuntu:~# journalctl --disk-usage
 <a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
 
 
-<h2  id="1200">12. Ver log de servicios</h2>
+<h2  id="1200">12. Ver log de servicios con (💣💻) Tail por Servicios</h2>
 
+### Servicios de Nginx
 ```shell
 # :::::::::::: NGINX :::::::::::::
  # ver los  ultimos generados
 sudo journalctl -u nginx.service -f
 # equivalencia
-  sudo tail -f /var/log/nginx/error.log
+sudo tail -f /var/log/nginx/error.log
+```
+
+### Servicios de Apache
+
+```shell
+# :::::::::::: Apache :::::::::::::
+sudo journalctl -u apache2.service -f -f
+# equivalencia
+
+sudo tail -f  /var/log/apache2/access.log
+  # sudo tail -f -100 /var/log/apache2/access.log
+sudo tail -f /var/log/apache2/error.log
 ```
