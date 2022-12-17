@@ -1,3 +1,16 @@
+PATH_SCRIPT=`readlink -f "${BASH_SOURCE:-$0}"`
+CURRENT_DIR=`dirname $PATH_SCRIPT`
+# Crear certificado para windows
+#set /p domain="Enter Domain: "
+#set OPENSSL_CONF=../conf/openssl.cnf
+#
+#rem if not exist .\%domain% mkdir .\%domain%
+DOMAIN="peru.campus.com"
+#PATH_CONFIG_CERT="${CURRENT_DIR}/cert.conf"
+PATH_CONFIG_CERT="${CURRENT_DIR}/cert.conf"
+
+### -aqui creara el archivo de configuracion
+cat > $PATH_CONFIG_CERT <<EOF
 [ req ]
 
 default_bits        = 2048
@@ -22,7 +35,7 @@ organizationName            = Organization Name (eg, company)
 organizationName_default    = Soluciones system, PE
 
 commonName                  = Common Name (e.g. server FQDN or YOUR name)
-commonName_default          = sunat.local
+commonName_default          = ${DOMAIN}
 
 emailAddress                = Email Address
 emailAddress_default        = test@example.com
@@ -34,7 +47,7 @@ L = San Fransisco
 O = MLopsHub
 OU = MlopsHub Dev
 # aqui cambiar Dominio
-CN = sunat.local
+CN = ${DOMAIN}
 
 
 [ x509_ext ]
@@ -58,7 +71,24 @@ nsComment            = "OpenSSL Generated Certificate"
 
 [ alternate_names ]
 # aqui cambiar Dominio
-DNS.1 = sunat.local
-DNS.2 = www.sunat.local
-# IP.1 = 192.168.0.150
-# IP.2 = 192.168.0.152
+DNS.1 = ${DOMAIN}
+DNS.2 = www.${DOMAIN}
+
+EOF
+
+
+PATH_OUT_CERT="${CURRENT_DIR}/${DOMAIN}"
+
+# si no existe el directorio lo creamos
+if [ ! -d "${PATH_OUT_CERT}" ]; then
+ mkdir "${PATH_OUT_CERT}"
+
+fi
+
+
+# ------- Generamos el Certificado
+#openssl.exe req -config cert.conf -new -sha256 -newkey rsa:2048 -nodes -keyout server.key -x509 -days 365 -out server.crt
+openssl.exe req -config "${PATH_CONFIG_CERT}" -new -sha256 -newkey rsa:2048 -nodes -keyout "${PATH_OUT_CERT}/server.key" -x509 -days 365 -out "${PATH_OUT_CERT}/server.crt"
+
+# ------- Revisamos la informacion del Certificado
+openssl x509 -text -noout -in "${PATH_OUT_CERT}/server.crt"

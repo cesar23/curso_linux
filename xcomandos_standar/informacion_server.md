@@ -11,6 +11,45 @@ lsusb
 ```
 
 
+### mostrar La ip local
+
+```shell
+hostname -I | awk '{print $1}'
+# SERVER_IP_LOCAL=$(hostname -I | awk '{print $1}')
+```
+
+### mostrar el nombre del host del server
+
+```shell
+hostname
+# SERVER_HOSTNAME=$(hostname)
+```
+
+### Mostrar informacion del servidor
+como nombre, distribucion
+
+```shell
+cat /proc/version
+# SERVER_HOSTNAME=$(cat /proc/version)
+
+# output
+#   Linux version 5.10.147-133.644.amzn2.x86_64 (mockbuild@ip-10-0-33-205) (gcc10-gcc (GCC) 10.3.1 20210422 (Red Hat 10.3.1-1), GNU ld version 2.35-21.amzn2.0.1) #1 SMP Fri Oct 14 01:16:24 UTC 2022
+
+
+cat /etc/*-release
+# output
+#     NAME="Amazon Linux"
+#     VERSION="2"
+#     ID="amzn"
+#     ID_LIKE="centos rhel fedora"
+#     VERSION_ID="2"
+#     PRETTY_NAME="Amazon Linux 2"
+#     ANSI_COLOR="0;33"
+#     CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2"
+#     HOME_URL="https://amazonlinux.com/"
+#     Amazon Linux release 2 (Karoo)
+```
+
 ### mostrar informacion del CPU USADO
 ```shell
 #top

@@ -19,7 +19,32 @@
 -- --
 
 
-# Cómo ver los certificados digitales instalados
+# Cómo ver los certificados digitales instalados y Eliminar y Exportar
+
+
+
+
+### Opcion 1 - Administrar Certificados desde Edge
+
+Pueda que no aparescan los  certificados instalados lo mejor seria  entrar desde el navegador y eliminarlos desde ahi
+
+<img src="https://i.imgur.com/gWJRhEr.png" alt="My cool logo"/>
+
+-- --
+
+<img src="https://i.imgur.com/AVMMyXV.png" alt="My cool logo"/>
+
+-- --
+
+<img src="https://i.imgur.com/Hj6fTNG.png" alt="My cool logo"/>
+
+-- --
+
+<img src="https://i.imgur.com/dzmpKGe.png" alt="My cool logo"/>
+
+-- --
+
+### Opcion 2 - Desde el Panel de Windows
 
 para ver los certificados instalados ejecutar `certlm.msc`
 
@@ -38,6 +63,7 @@ Equipo\HKEY_CURRENT_USER\SOFTWARE\Microsoft\SystemCertificates\CA\Certificates
 Equipo\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SystemCertificates\CA\Certificates
 ```
 
+
 ### Eliminar y Exportar
 
 <img src="https://i.imgur.com/itiqN0Y.png" alt="My cool logo"/>
@@ -45,9 +71,6 @@ Equipo\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SystemCertificates\CA\Certificates
 -- --
 
 
-## para ver informacion del certificado
 
-```shell
-openssl x509 -text -noout -in "/d/repos/curso_linux/debian/Ubuntu/CertificadoSSL/Crear_certificado_Windows/sunat.local/server.crt"
 
-```
+
