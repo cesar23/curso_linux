@@ -100,7 +100,7 @@ function cds (){
 
     # read -p "Ingresa path windows: " path_dir
     PATH_WINDOWS=$(path_windows_to_path_shell  "${dir}") 
-    cd $PATH_WINDOWS
+    cd "${PATH_WINDOWS}"
 }
 
 
