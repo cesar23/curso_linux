@@ -389,7 +389,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_Info_server = async () => {
         try {
             cpu.innerHTML = img_loading
-            const url = window.location.origin + "?get_data=info_server";
+            const url = document.URL + "?get_data=info_server";
             const resp = await axios.get(url);
             console.log(resp.data);
             cpu.innerHTML = `${resp.data.info_cpu} <br> ${resp.data.info_memoria} <br> ${resp.data.info_memoria_porcentaje} <br>`
@@ -409,7 +409,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_generar_stress = async () => {
         try {
             comandos_history.innerHTML = img_loading
-            const url = window.location.origin + "?get_data=start_stress";
+            const url = document.URL + "?get_data=start_stress";
             const resp = await axios.get(url);
             console.log(resp.data);
             if (resp.data.statusCode === 200) {
@@ -437,7 +437,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_stop_stress = async () => {
         try {
             comandos_history.innerHTML = img_loading
-            const url = window.location.origin + "?get_data=stop_stress";
+            const url = document.URL + "?get_data=stop_stress";
             const resp = await axios.get(url);
             console.log(resp.data);
 
@@ -467,7 +467,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_history_comands = async () => {
         try {
             comandos_history.innerHTML = img_loading
-            const url = window.location.origin + "?get_data=get_history_command";
+            const url = document.URL + "?get_data=get_history_command";
             const resp = await axios.get(url);
             console.log(resp.data);
 
@@ -493,7 +493,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_history_clear_comands = async () => {
         try {
             comandos_history.innerHTML = img_loading
-            const url = window.location.origin + "?get_data=get_history_clear_command";
+            const url = document.URL + "?get_data=get_history_clear_command";
             const resp = await axios.get(url);
             console.log(resp.data);
 
@@ -518,7 +518,7 @@ if (strlen(isset($_POST)) > 0) {
     const request_comand_shell = async (cmd) => {
         try {
             resul_cmd.innerHTML = img_loading
-            const url = window.location.origin ;
+            const url = document.URL ;
             const resp = await axios.post(url,{
                 cmd:cmd
             });
