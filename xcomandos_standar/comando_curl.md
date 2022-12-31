@@ -193,6 +193,10 @@ curl -u cesar:cesar203 ftp://ftp.linoxide.com/file.tar.gz
 
 ## ✅ Descargar y Ejecutar sh
 ```shell
+curl -sL https://gitlab.com/perucaos/utils_dev/raw/master/scripts/ubuntu/util_linux.sh | bash /dev/stdin
+# con parametros
+# curl -sL https://gitlab.com/perucaos/utils_dev/raw/master/scripts/ubuntu/util_linux.sh | bash /dev/stdin arg1 arg2
+
 #setup task, for running Taskfiles
 RUN curl -sL https://taskfile.dev/install.sh | BINDIR=/usr/local/bin sh
 
