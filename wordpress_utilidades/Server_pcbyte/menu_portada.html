@@ -1,7 +1,58 @@
-<div  class="toolbar_container">
-    <div class="toolbar_title">Ventas:</div>
-    <div class="toolbar_item"><i class="fab fa-whatsapp"></i> 946480897</div>
-    <div class="toolbar_item"><i class="fab fa-whatsapp"></i> 934822375</div>
-    <div class="toolbar_item"><i class="fab fa-whatsapp"></i> 998197574</div>
-</div>
+<style>
+    .toolbar_container {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.4em;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    .toolbar_container > .toolbar_title {
+        color: white;
+        margin: 10px;
+        text-align: center;
+    }
 
+    .toolbar_container > .toolbar_item {
+        color: white;
+        padding: 9px;
+        text-align: center;
+        display: flex;
+        margin: 0 0 0 0;
+    }
+
+    .toolbar_container > .toolbar_item i {
+        padding: 5px;
+    }
+    .hide_mobil {
+        display: block;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .hide_mobil {
+            display: none;
+        }
+        .toolbar_container {
+            font-size: 1.4em;
+        }
+
+        .toolbar_container > .toolbar_title {
+            /*display: none;*/
+            width: 100%;
+
+        }
+
+        .toolbar_container > .toolbar_item {
+            padding: 0px 9px 0px 9px;
+        }
+
+    }
+</style>
+
+<div class="toolbar_container">
+    <div class="toolbar_title hide_mobil">Ventas:</div>
+    <div class="toolbar_item inner"><i class="fab fa-whatsapp"></i> 946480897</div>
+    <div class="toolbar_item inner"><i class="fab fa-whatsapp" data-info="jhanet garcia"></i> 934822375</div>
+    <div class="toolbar_item inner"><i class="fab fa-whatsapp"></i> 998197574</div>
+    <div class="toolbar_item inner"><i class="fab fa-whatsapp"></i> 923625925</div>
+</div>

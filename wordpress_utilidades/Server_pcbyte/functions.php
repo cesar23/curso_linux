@@ -122,15 +122,7 @@ function add_custom_body_open_code() {
                     </div>
                 </a>
             </div>
-            <div style="width: 100%;height: 50px;margin-bottom: 3px;">
-                <a target="_blank"
-                   href="https://api.whatsapp.com/send?phone=51934822375&text=Hola PCBYTE, tengo una consulta">
-                    <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
-                    <div style="float: left">
-                        <strong>JOZZY TUESTA</strong><br>934 822 375
-                    </div>
-                </a>
-            </div>
+
             <div style="width: 100%;height: 50px;margin-bottom: 3px;">
                 <a target="_blank"
                    href="https://api.whatsapp.com/send?phone=51998197574&text=Hola PCBYTE, tengo una consulta">
@@ -498,12 +490,12 @@ $config_child_cesar = [
     ],
     'restrict_paths_url' => [
         //si queremso que este activo
-        'active' => 1,
+        'active' => 0,
         /*
          * estos path seran restringidos por el filtrado de las ips
          * (valid_ip_country_capa_1 , valid_ip_country_capa_2)
          */
-        'not_allowed' => array( "/mi-cuenta/", "/my-account/","/xmlrpc.php")
+        'not_allowed' => array( "/mi-cuenta/", "/my-account/")
 
     ],
     //------------------Aqui ingresa los ids de usuarios  limitados
@@ -599,7 +591,7 @@ $config_child_cesar = [
             //--------- seccion:nav cuenta-------------
 //		'my-account',
 //		'user-info',
-            'edit-bash.bashrc.sh',
+            'edit-profile',
 //		'logout',
             //--------- seccion:nav wordpress-------------
             'updates',//actualizaciones de wp
@@ -666,7 +658,7 @@ $config_child_cesar = [
             //----- Usuarios
             '/wp-admin/users.php',
             '/wp-admin/user-new.php',
-            '/wp-admin/bash.bashrc.sh.php',
+            '/wp-admin/profile.php',
             //----- Plugins
             '/wp-admin/plugins.php',
             '/wp-admin/plugin-install.php',
