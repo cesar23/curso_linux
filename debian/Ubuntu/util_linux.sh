@@ -1,6 +1,6 @@
 # ----------------------------------------
 # :: usando curl
-# curl -sL https://gitlab.com/perucaos/utils_dev/raw/master/scripts/ubuntu/util_linux.sh | bash /dev/stdin
+#  sudo apt-get -y install curl && curl -sL https://gitlab.com/perucaos/utils_dev/raw/master/scripts/ubuntu/util_linux.sh | bash /dev/stdin
 
 #   sudo chmod +x util_linux.sh
 # ----------------------------------------
