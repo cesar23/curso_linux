@@ -33,12 +33,25 @@ cat /etc/netplan/00-installer-config.yaml
 ```shell
 network:
   ethernets:
-    enp0s3:
+    ens33:
       dhcp4: no
       addresses: [192.168.1.10/24]
       gateway4: 192.168.1.1
       nameservers:
          addresses: [208.67.222.222]
+  version: 2
+```
+
+
+```shell
+network:
+  ethernets:
+    enps33:
+      dhcp4: no
+      addresses: [192.168.0.70/24]
+      gateway4: 192.168.0.1
+      nameservers:
+         addresses: [8.8.8.8, 1.1.1.1]
   version: 2
 ```
 
