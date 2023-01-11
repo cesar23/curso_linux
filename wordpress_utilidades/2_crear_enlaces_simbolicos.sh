@@ -183,37 +183,6 @@ du -smh /home/kpopilrp/vacjet.pe/*
 
 
 
-#-----------------------------------------------------------------------------------------------------------------
-#--------------------------------------------------------------------------------bambooregalos.pe
-#-----------------------------------------------------------------------------------------------------------------
-
-#ln -s "/home/kpopilrp/inversionesluper.com/public_html/wp-content/plugins/admin-menu-editor-pro" "/home/kpopilrp/vitafitperu.com/wp-content/plugins/admin-menu-editor-pro"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/all-in-one-wp-security-and-firewall" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/all-in-one-wp-security-and-firewall"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/duplicate-wp-page-post" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/duplicate-wp-page-post"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/woocommerce" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/woocommerce"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/loco-translate" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/loco-translate"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/soluciones-widget" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/soluciones-widget"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/user-role-editor" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/user-role-editor"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/tracking-code-manager" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/tracking-code-manager"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wordpress-seo-premium" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wordpress-seo-premium"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-optimize-premium" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wp-optimize-premium"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-rocket" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wp-rocket"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-smush-pro" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wp-smush-pro"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/imsanity" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/imsanity"
- ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wpforms-pro" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wpforms-pro"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/webp-express" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/webp-express"
-
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-mail-smtp-pro" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/wp-mail-smtp-pro"
-## el core de wordpress- al (-------CORE----------)
-ln -s "/home/kpopilrp/inversionesletich.com/wp-includes" "/home/kpopilrp/bambooregalos.pe/wp-includes"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/media-cleaner-pro" "/home/kpopilrp/bambooregalos.pe/wp-content/plugins/media-cleaner-pro"
-
-
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/themes/flatsome-child/classSoluciones" "/home/kpopilrp/bambooregalos.pe/wp-content/themes/Impreza-child/classSoluciones"
-#VER ELÑ PESO de carpeta y su contenido
-du -smh /home/kpopilrp/bambooregalos.pe/
-du -smh /home/kpopilrp/bambooregalos.pe/*
-
 
 #-----------
 ln -s "/home/kpopilrp/inversionesluper.com/public_html/wp-content/plugins/gravityforms" "/home/kpopilrp/solucionessystem.com/wp-content/plugins/gravityforms"
@@ -242,8 +211,7 @@ ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/jet-menu" "/home/
 
 ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/happy-elementor-addons" "/home/kpopilrp/pacificobrevetes.com/wp-content/plugins/happy-elementor-addons"
 # ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/happy-elementor-addons-pro" "/home/kpopilrp/pacificobrevetes.com/wp-content/plugins/happy-elementor-addons-pro"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/all-in-one-wp-security-and-firewall" "/home/kpopilrp/pacificobrevetes.com/wp-content/plugins/all-in-one-wp-security-and-firewall"
-ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wordpress-seo-premium" "/home/kpopilrp/pacificobrevetes.com/wp-content/plugins/wordpress-seo-premium"
+
 #-----------------------news end
 
 #ln -s "/home/kpopilrp/inversionesluper.com/public_html/wp-content/plugins/admin-menu-editor-pro" "/home/kpopilrp/vitafitperu.com/wp-content/plugins/admin-menu-editor-pro"
@@ -475,3 +443,19 @@ ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wp-mail-smtp-pro"
 ln -s /home/kpopilrp/inversionesletich.com/wp-includes /home/kpopilrp/importaciondeceroaexperto.com/wp-includes
 ln -s /home/kpopilrp/inversionesletich.com/wp-content/themes/hello-elementor /home/kpopilrp/importaciondeceroaexperto.com/wp-content/themes/hello-elementor
 wilder@eucim.es
+
+
+
+# ---------------- grupolissacorp.com
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/all-in-one-wp-security-and-firewall" "/home/kpopilrp/grupolissacorp.com/wp-content/plugins/all-in-one-wp-security-and-firewall"
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wordpress-seo-premium" "/home/kpopilrp/grupolissacorp.com/wp-content/plugins/wordpress-seo-premium"
+
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/elementor" "/home/kpopilrp/grupolissacorp.com/wp-content/plugins/elementor"
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/elementor-pro" "/home/kpopilrp/grupolissacorp.com/wp-content/plugins/elementor-pro"
+
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/plugins/wpforms-pro" "/home/kpopilrp/grupolissacorp.com/wp-content/plugins/wpforms-pro"
+
+
+ln -s "/home/kpopilrp/inversionesletich.com/wp-content/themes/flatsome-child/classSoluciones" "/home/kpopilrp/grupolissacorp.com/wp-content/themes/generatepress-child/classSoluciones"
+
+ln -s /home/kpopilrp/inversionesletich.com/wp-includes /home/kpopilrp/grupolissacorp.com/wp-includes
