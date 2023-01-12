@@ -122,3 +122,15 @@ rsync -avzhP -e ssh --max-size='500k' --bwlimit=100 /root/Desktop/origen/ /root/
 Prefijos para el ancho de banda pueden ser k, m, g
 Si se indica --bwlimit=0 es ancho de banda ilimitado, o es lo mismo
 no indicar la opción en si.)
+
+### 9. manera remota
+```shell
+
+# ------------ por el momento solo funciona con mobax
+
+rsync -anv /drives/D/repos/wordpress_docker/www/ cesar@192.168.0.40:/home/cesar/docker
+
+# para que los directorios esten identicos borrar los archivos del destino si en el origen ya no estan
+rsync -anv --delete /drives/D/repos/wordpress_docker/www/ cesar@192.168.0.40:/home/cesar/docker/www
+rsync -anv --delete --chmod=777 /drives/D/repos/wordpress_docker/www/ cesar@192.168.0.40:/home/cesar/docker
+```

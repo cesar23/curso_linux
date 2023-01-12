@@ -12,15 +12,20 @@ sudo apt -y install apt-transport-https ca-certificates curl software-properties
 Luego, añada la clave de GPG para el repositorio oficial de Docker en su sistema:
 
 ```shell
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
+
+
 Agregue el repositorio de Docker a las fuentes de APT:
 ```shell
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 ```
-A continuación, actualice el paquete de base de datos con los paquetes de Docker del repositorio recién agregado:
 
+
+A continuación, actualice el paquete de base de datos con los paquetes de Docker del repositorio recién agregado:
 ```shell
 sudo apt update -y
 ```
