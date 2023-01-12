@@ -19,9 +19,14 @@ sudo mv ./ngrok /usr/bin/ngrok
 
 
 ## configurar configuracion de  token personal
-creamos la configuracion , creamos el archivo `~./ngrok.yml` para la configuracion del tunel.
+creamos la configuracion , creamos el archivo `~/ngrok.yml` para la configuracion del tunel.
+
 ```shell
-authtoken: 1SUMV0bQWCU8lTXuKvpyF6eIEyO_4g3xTatHJ122Xk4BETrSa
+# ----------perucaos
+# authtoken: 1SUMV0bQWCU8lTXuKvpyF6eIEyO_4g3xTatHJ122Xk4BETrSa
+
+# ----------casystem 
+authtoken: 2KEa395BbE0afq5e2qClwr9PB1S_6At8d93kFQmxEeqcqTUS7
 console_ui: true
 region: sa # (us=United States, eu=Europa, sa=America Latina, ap=Asia)
 # web de interface para ver los  log de manera local
