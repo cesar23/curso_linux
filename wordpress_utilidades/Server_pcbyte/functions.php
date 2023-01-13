@@ -428,7 +428,7 @@ $config_child_cesar = [
         ),
         'css_add' => array(
             "css-style-front-sol"=>"soluciones-tools/css/front-end.css",
-            "cdn-font-awesome-sol"=>"https://raw.githubusercontent.com/cesar23/cdn_webs/master/libs/font-awesome/5.9.0/css/all.min.css",
+            "cdn-font-awesome-sol"=>"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
         ),
 
 
