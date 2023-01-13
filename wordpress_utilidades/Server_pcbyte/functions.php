@@ -133,6 +133,16 @@ function add_custom_body_open_code() {
                 </a>
             </div>
 
+            <div style="width: 100%;height: 50px;margin-bottom: 3px;">
+                <a target="_blank"
+                   href="https://api.whatsapp.com/send?phone=51934822375&text=Hola PCBYTE, tengo una consulta">
+                    <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
+                    <div style="float: left">
+                        <strong>VENTAS</strong><br>934-822375
+                    </div>
+                </a>
+            </div>
+
         </div>
     </div>
     <span id="botn_whapsa" style="cursor: pointer" class="float" target="_blank">
