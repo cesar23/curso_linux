@@ -83,12 +83,17 @@ Para Linux o Mac
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 export AWS_DEFAULT_REGION=us-west-2
+
+# para definir que profile usaremos
+export AWS_PROFILE=cesar
 ```
 Para  windows
 ```bash
 C:\> setx AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE
 C:\> setx AWS_SECRET_ACCESS_KEY wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 C:\> setx AWS_DEFAULT_REGION us-west-2
+# para definir que profile usaremos
+C:\> setx AWS_PROFILE cesar
 ```
 
 para  powerShell
@@ -98,6 +103,19 @@ $Env:AWS_SECRET_ACCESS_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 $Env:AWS_DEFAULT_REGION="us-west-2"
 ```
 
+### veriicar que usuario estamos trabajando
+```shell
+aws sts get-caller-identity
+# output:
+
+#   {
+#       "UserId": "AIDA22BBY3MPMNSJSBRLM",
+#       "Account": "743100177182",
+#       "Arn": "arn:aws:iam::743100177182:user/userDevops"
+#   }
+   
+
+```
 
 ## configuracion de Laptop
 fichero: `nano ~/.aws/credentials`
