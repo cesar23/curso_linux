@@ -12,6 +12,17 @@ aws --version
 aws configure
 # ---------- configurar bash.bashrc.sh cesar
 aws configure --bash.bashrc.sh cesar
+
+# ---- configurar asignando un profile
+aws configure --profile cesar
+
+# ------ lista  los  rpfiles
+aws configure list-profiles
+
+# -informacion del profile  actual
+aws sts get-caller-identity
+
+
 ```
 ### 1.3 desde la consola
 ```shell
