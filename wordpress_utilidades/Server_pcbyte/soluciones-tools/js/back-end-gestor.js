@@ -1,3 +1,6 @@
+/*
+version: 1.0.1
+ */
 jQuery(document).ready(function() {
     var li_activos_menu = ["menu-media", "menu-posts-product", "menu-dashboard","menu-posts-blocks","toplevel_page_woocommerce"];
     var li_activos_nav = [

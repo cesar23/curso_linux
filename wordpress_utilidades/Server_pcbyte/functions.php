@@ -1,7 +1,11 @@
 <?php
-//pcbyte
+/*
+server: pcbyte
+version de file: 1.0.1
+*/
 
-$url_amigable='www.'.preg_replace('/(http|https):\/\/(\S+)(\/)/i', '${2}', home_url('/') );//www.example.com
+$my_url = home_url( '/' ); //http://www.example.com/
+$url_amigable='www.'.preg_replace('/(http|https):\/\/(\S+)(\/)/i', '${2}',$my_url );//www.example.com
 
 define ('VERSION', '2022-08-07-7');
 
@@ -579,7 +583,7 @@ $config_child_cesar = [
         ///ips  validas
         'sub_menus_del_array' => array(
             //---------Inicio
-            'index.php' => array('update-core.php','wpforms-getting-started'),
+            'index.php' => array($my_url.'wp-admin/update-core.php','update-core.php','wpforms-getting-started'),
 
             //--------Ajustes
             'options-general.php' => array('options-writing.php'),
@@ -593,7 +597,12 @@ $config_child_cesar = [
             'plugins.php' => array('plugin-editor.php', 'plugin-install.php'),
 
             //----- Otros plugins
-            'woocommerce' => array('https://pcbyte.com.pe/wp-admin/admin.php?page=wc-settings&tab=qlwcdc', 'wc-settings','wc-addons','pcfme_plugin_options'),
+            // aqui removemso los items sel submenu de wordpress
+            'woocommerce' => array(
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=qlwcdc',
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=wooccm',
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=wc_remove_all_products_page',
+                'wc-settings','wc_remove_all_products_page','wc-addons','pcfme_plugin_options','dgwt_wcas_settings','checkout_form_designer','wc-status','wooccm'),
 
         ),
         //--------------------MENU NAV---------------------------

@@ -1,3 +1,6 @@
+/*
+version: 1.0.1
+ */
 /*ocultar opciones de escritorio y ayuda wp */
 #screen-meta-links{
     display:none;
@@ -24,5 +27,9 @@
 
 /*---- Ocultar Paneles de Graviti forms ------*/
 #wpadminbar #wp-admin-bar-gform-forms{
+    display:none;
+}
+
+#wp-admin-bar-updates{
     display:none;
 }
