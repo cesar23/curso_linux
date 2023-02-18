@@ -123,7 +123,7 @@ sshd    3193 cesar    4u  IPv4  57146      0t0  TCP cesar-virtual-machine:ssh->1
 - P: --programs           display PID/Program name for sockets
 - N: Permite ver los números de los puertos.
 ```shell
-cesar@cesar-virtual-machine:~$ sudo netstat -tulpn
+cesar@cesar-virtual-machine:~$ sudo netstat -tulpn | grep LISTEN
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      941/cupsd
