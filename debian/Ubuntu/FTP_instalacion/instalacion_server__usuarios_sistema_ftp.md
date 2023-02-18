@@ -9,7 +9,8 @@ Step 1 — Installing vsftpd
 Start by updating your package list:
 
 ```shell
-sudo apt update -y && sudo apt dist-upgrade -y
+sudo apt update -y 
+#&& sudo apt dist-upgrade -y
 # ------- Ahora instalamos el paquete que nos instala paquetes esenciales: 
 sudo apt-get install -y build-essential
 # instalar utilidades
