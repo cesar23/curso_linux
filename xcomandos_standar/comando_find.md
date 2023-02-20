@@ -4,6 +4,7 @@
 # Linux find: comando para buscar y encontrar archivos en Linux
 fuentes:
 - https://www.ionos.es/digitalguide/servidores/configuracion/comando-linux-find/#:~:text=Para%20encontrar%20un%20archivo%20en,todas%20las%20distribuciones%20de%20Linux.
+- doc oficial: https://man7.org/linux/man-pages/man1/find.1.html
 
 <a href="#" id="indice">Indice 👌</a>
 
@@ -37,14 +38,14 @@ sintaxis
 `find <directory_path> <search_parameter>`
 
 
-| **Parámetro de búsqueda** | **Explicación**                 |
-|---------------------------|---------------------------------|
-| -name, -iname             | Filtrar por nombre de archivo   |
-| -type                     | Filtrar por tipo de archivo     |
-| -size, -empty             | Filtrar por tamaño de archivo   |
-| -ctime, -mtime, -atime    | Filtrar por marca de tiempo     |
-| -user, -group             | Filtrar por propietario y grupo |
-| -perm                     | Filtrar por derechos de archivo |
+| **Parámetro de búsqueda** | **Explicación**                                                           |
+|---------------------------|---------------------------------------------------------------------------|
+| -name, -iname             | Filtrar por nombre de archivo                                             |
+| -type                     | Filtrar por tipo de archivo( f= fichero, d=directorio, l= archibos links) |
+| -size, -empty             | Filtrar por tamaño de archivo                                             |
+| -ctime, -mtime, -atime    | Filtrar por marca de tiempo                                               |
+| -user, -group             | Filtrar por propietario y grupo                                           |
+| -perm                     | Filtrar por derechos de archivo                                           |
 
 
 ## ejemplos basicos
