@@ -13,6 +13,7 @@ fuentes:
 - <a href="#100">📜1. General</a>
 - <a href="#200">🏆 2. Filtrar por tipo de fichero o carpeta</a>
 - <a href="#300">🏆 3. Utilizar el comando find de Linux para filtrar por tamaño</a>
+- <a href="#302">🏆 3.2 Filtrar con regex</a>
 - <a href="#400">🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo</a>
 - <a href="#500">🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso</a>
 - <a href="#600">🏆 6. Limitación de la profundidad de recursión del comando find de Linux</a>
@@ -210,6 +211,23 @@ Este comando también funciona para los directorios:
 find . -type d -empty
 ```
 
+-- - 
+
+[//]: # (302------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+<h2  id="400">🏆 3.2 Utilizar regex </h2>
+
+seleciona todos los archivos con extensiones `sql,zip,7z`
+```shell
+find . -type f -regex ".*\.\(sql\|zip\|7z\)"
+```
+
+buscar directorios con estos  nombre `build,dist`
+```shell
+find . -type d  \( -iname 'build' -o -iname 'dist' \) 
+```
 
 -- - 
 
