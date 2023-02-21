@@ -54,30 +54,25 @@ echo "----------------------------------------------"
 echo ""
 
 # Oviamos ficheros y Oviaremos archivos especificos
-find . -type f -not -regex ".*\.\(py\|sh\|md\)" -size +5M \
-  -not -path "/D/repos/curso_linux/.git" \
-  -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \
-  -exec ls -lah {} \;
-
-
-find .  -type f  -size +5M
-
-
-# :::::::::: limpieza
 read -p " se realizara la limpieza [ presionar Enter ]"
 
 find .  -not -path "./.git/*"  \
   -type f \
-  -size +5M \
-  -exec  ls -lah {} {} \;
+  -not \( -iname '*.py' -o -iname '*.sh' -o -iname '*.md' \) \
+  -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \
+  -size +3M \
+  -exec  ls -lah {} \;
 
+
+
+
+# :::::::::: limpieza
 
 
 
 find .  -not -path "./.git/*"  \
   -type f \
-  -not \( -iname '*.py' -o -iname '*.sh' -o -iname '*.md' \) \  \
-  -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \ \
-  -size +5M \
-  -exec  ls -lah {} \;
-
+  -not \( -iname '*.py' -o -iname '*.sh' -o -iname '*.md' \) \
+  -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \
+  -size +3M \
+  -exec rm -rf  {} \;

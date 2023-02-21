@@ -219,7 +219,7 @@ find . -type d -empty
 
 <h2  id="400">🏆 3.2 Utilizar regex </h2>
 
-seleciona todos los archivos con extensiones `sql,zip,7z`
+seleciona todos los archivos con extensiones `sql,zip,7z` ojo puede traer confligto si utilizas otros filtros
 ```shell
 find . -type f -regex ".*\.\(sql\|zip\|7z\)"
 ```
