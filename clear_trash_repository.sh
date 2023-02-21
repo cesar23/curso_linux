@@ -25,11 +25,16 @@ find . -type d  -name "__pycache__"  -exec du  -smh {} \;
 find . -type d  \( -iname 'build' -o -iname 'dist' \) -exec du  -smh {} \;
 
 # :::::::::: limpieza
-read -p " se realizara la limpieza [ presionar Enter ]"
-
-find . -type d  -name "__pycache__"    -exec rm -rf  {} \;
-find . -type d  \( -iname 'build' -o -iname 'dist' \)   -exec rm -rf  {} \;
-
+BACK="$(tput cub1)"
+yes_no=y
+echo -e "Enter y to continue n to exit: $yes_no$BACK\c" ; read yes_no
+#:::: si es y  entra  aqui
+if [ "${yes_no}" == "y" ]
+then
+   echo "clean ..."
+   find . -type d  -name "__pycache__"    -exec rm -rf  {} \;
+   find . -type d  \( -iname 'build' -o -iname 'dist' \)   -exec rm -rf  {} \;
+fi
 
 
 
@@ -40,11 +45,18 @@ echo ""
 
 find . -type f -regex ".*\.\(sql\|zip\|7z\|tar\|tar.gz\)"  -exec ls -lah {} \;
 
-# :::::::::: limpieza
-read -p " se realizara la limpieza [ presionar Enter ]"
 
-find . -type f -regex ".*\.\(sql\|zip\|7z\|tar\|tar.gz\)"  -exec rm -rf  {} \;
-find . -type f -regex ".*\.\(mp3\|mp4\)"  -exec rm -rf  {} \;
+# :::::::::: limpieza
+BACK="$(tput cub1)"
+yes_no=y
+echo -e "Enter y to continue n to exit: $yes_no$BACK\c" ; read yes_no
+#:::: si es y  entra  aqui
+if [ "${yes_no}" == "y" ]
+then
+   echo "clean ..."
+  find . -type f -regex ".*\.\(sql\|zip\|7z\|tar\|tar.gz\)"  -exec rm -rf  {} \;
+  find . -type f -regex ".*\.\(mp3\|mp4\)"  -exec rm -rf  {} \;
+fi
 
 
 
@@ -53,8 +65,7 @@ echo "::::::::::: Limpieza [archivos pesados pero no los .py] -----------"
 echo "----------------------------------------------"
 echo ""
 
-# Oviamos ficheros y Oviaremos archivos especificos
-read -p " se realizara la limpieza [ presionar Enter ]"
+
 
 find .  -not -path "./.git/*"  \
   -type f \
@@ -65,14 +76,23 @@ find .  -not -path "./.git/*"  \
 
 
 
-
 # :::::::::: limpieza
+BACK="$(tput cub1)"
+yes_no=y
+echo -e "Enter y to continue n to exit: $yes_no$BACK\c" ; read yes_no
+#:::: si es y  entra  aqui
+if [ "${yes_no}" == "y" ]
+then
+  echo "clean ..."
+  find .  -not -path "./.git/*"  \
+    -type f \
+    -not \( -iname '*.py' -o -iname '*.sh' -o -iname '*.md' \) \
+    -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \
+    -size +3M \
+    -exec rm -rf  {} \;
+fi
 
 
 
-find .  -not -path "./.git/*"  \
-  -type f \
-  -not \( -iname '*.py' -o -iname '*.sh' -o -iname '*.md' \) \
-  -not \( -iname 'mongodump.exe' -o -iname 'mongoexport.exe' -o -iname 'mongorestore.exe' \) \
-  -size +3M \
-  -exec rm -rf  {} \;
+
+
