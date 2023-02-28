@@ -536,6 +536,13 @@ find . -type f -maxdepth 1 -empty -ok rm {} \;
 ```
 
 
+### limpieza PC
+```shell
+find /c/Users/cesar/AppData/Local -type d -maxdepth 1  -exec du  -smh {} \;
+
+```
+
+
 ### limpieza de repositorios
 con estos comandos se limpiaran los repositorios
 
@@ -553,6 +560,7 @@ echo "::::::::::: Limpieza [carpetas no deseadas] -----------"
 echo "----------------------------------------------"
 # pra ver peso en  carpetas con find usaremos du
 find . -type d  -name "__pycache__"  -exec du  -smh {} \;
+find . -type d  \( -iname 'build' -o -iname 'dist' \) -exec du  -smh {} \;
 find . -type d  \( -iname 'build' -o -iname 'dist' \) -exec du  -smh {} \;
 
 # :::::::::: limpieza
