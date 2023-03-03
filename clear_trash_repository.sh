@@ -44,13 +44,17 @@ function fn_file__get_dir_weight() {
   rm -rf "${LOG_TEMP}"
   echo -n $OUTPUT
 }
+clear
+echo "---------- Repositorio: ${CURRENT_DIR} ------------"
+printf 'Calculando peso... \n'
+PESO_DIR=$(fn_file__get_dir_weight "${CURRENT_DIR}")
+echo "Peso Actual:${PESO_DIR}"
+
 ##------------------------------------------------
 echo "----------------------------------------------"
 echo "----------Limpieza de repositorio ------------"
 echo "----------------------------------------------"
 echo ""
-PESO_DIR=$(fn_file__get_dir_weight "${CURRENT_DIR}")
-echo "Peso Actual:${PESO_DIR}"
 #-------------------------
 
 
