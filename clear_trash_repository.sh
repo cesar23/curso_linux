@@ -49,7 +49,7 @@ echo "---------- Repositorio: ${CURRENT_DIR} ------------"
 printf 'Calculando peso... \n'
 PESO_DIR=$(fn_file__get_dir_weight "${CURRENT_DIR}")
 echo "Peso Actual:${PESO_DIR}"
-
+printf '\n\n'
 ##------------------------------------------------
 echo "----------------------------------------------"
 echo "----------Limpieza de repositorio ------------"
@@ -61,6 +61,8 @@ echo ""
 echo "----------------------------------------------"
 echo "::::::::::: Limpieza [carpetas no deseadas] -----------"
 echo "----------------------------------------------"
+echo "------(build,dist,__pycache__)------------------------"
+echo ""
 # pra ver peso en  carpetas con find usaremos du
 find . -type d  -name "__pycache__"  -exec du  -smh {} \;
 find . -type d  \( -iname 'build' -o -iname 'dist' \) -exec du  -smh {} \;
@@ -78,13 +80,17 @@ then
 fi
 
 
-
+# ----------------------------------------------------------------------
+regex_extensions=".*\.\(sql\|7z\|tar\|tar.gz|mp3|mp4\)"
+extensions_show=$(echo "${regex_extensions}" | sed 's/\\//g' | sed -e 's/\.\*\.//g')
+echo ""
 echo "----------------------------------------------"
-echo "::::::::::: Limpieza [por extensiones sql,zip,7z.etc] -----------"
+echo "::: Limpieza [por extensiones ${extensions_show}] -----------"
 echo "----------------------------------------------"
 echo ""
 
-find . -type f -regex ".*\.\(sql\|zip\|7z\|tar\|tar.gz\)"  -exec ls -lah {} \;
+
+find . -type f -regex "${regex_extensions}"  -exec ls -lah {} \;
 
 
 # :::::::::: limpieza
@@ -95,12 +101,12 @@ echo -e "Enter y to continue n to exit: $yes_no$BACK\c" ; read yes_no
 if [ "${yes_no}" == "y" ]
 then
    echo "clean ..."
-  find . -type f -regex ".*\.\(sql\|zip\|7z\|tar\|tar.gz\)"  -exec rm -rf  {} \;
-  find . -type f -regex ".*\.\(mp3\|mp4\)"  -exec rm -rf  {} \;
+  find . -type f -regex ".*\.\(sql\|7z\|tar\|tar.gz\)"  -exec rm -rf  {} \;
 fi
 
 
-
+# ----------------------------------------------------------------------
+echo ""
 echo "----------------------------------------------"
 echo "::::::::::: Limpieza [archivos pesados pero no los .py] -----------"
 echo "----------------------------------------------"
@@ -136,7 +142,9 @@ fi
 
 
 PESO_DIR=$(fn_file__get_dir_weight "${CURRENT_DIR}")
+echo ""
 echo "Peso Actual:${PESO_DIR}"
+echo ""
 #-------------------------
 
 read -p "[Enter para salir]" out
