@@ -23,6 +23,8 @@ function gitup() {
     # git pull
     git pull origin master
 	  git add -A
+#    git commit -m "${MY_INFO} se actualizo :${DATE_HOUR_GIT}"
+    read -p "ingrese el commit aqui: " commit
     git commit -m "${MY_INFO} se actualizo :${DATE_HOUR_GIT}"
     git push origin master
     #-----------------------------------------------------
