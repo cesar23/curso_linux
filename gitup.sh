@@ -28,7 +28,7 @@ function upgit() {
 function gitup() {
     # git pull
     CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-    echo -en "Actualizando rama ${BGreen}${CURRENT_BRANCH}${Color_Off} \n" && sleep 3
+    echo -en "Actualizando rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
     git pull origin $CURRENT_BRANCH
     git add -A
     git commit -m "${MY_INFO} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
