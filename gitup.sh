@@ -11,6 +11,12 @@ scriptPathDir=$(dirname $0)
 scriptPathFile=$(realpath $0)
 scriptPathFileTemp=$(echo "$scriptPathFile" | sed 's/.sh/.tmp/g')
 scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+# par  darlo colores
+if [ -f "${CURRENT_DIR}/colors.sh" ]; then
+  source "${CURRENT_DIR}colors.sh"
+fi
+
+
 
 function upgit() {
 	git pull
@@ -22,8 +28,7 @@ function upgit() {
 function gitup() {
     # git pull
     CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-    echo "Actualizando rama: ${CURRENT_BRANCH} ..." && sleep 3
-
+    echo -en "Actualizando rama ${BGreen}${CURRENT_BRANCH}${Color_Off} \n" && sleep 3
     git pull origin $CURRENT_BRANCH
     git add -A
     git commit -m "${MY_INFO} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
