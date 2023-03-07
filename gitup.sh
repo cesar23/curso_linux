@@ -21,10 +21,14 @@ function upgit() {
 
 function gitup() {
     # git pull
-    git pull origin master
-	  git add -A
-    git commit -m "${MY_INFO} se actualizo :${DATE_HOUR_GIT}"
-    git push origin master
+    CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    echo "Actualizando rama: ${CURRENT_BRANCH} ..." && sleep 3
+
+    git pull origin $CURRENT_BRANCH
+    git add -A
+    git commit -m "${MY_INFO} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
+    git push origin $CURRENT_BRANCH
+
     #-----------------------------------------------------
     printf "\n ------repositorio github----- \n\n" && sleep 2
     git push origin2 master
