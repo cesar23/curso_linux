@@ -49,6 +49,7 @@ clear
 cd $scriptPathDir
 gitup
 
+echo -en "Actualizando rama ${Green} \n"
 echo ""
 echo "  ██████  ██   ██                ██████ ███████ ███████  █████  ██████  "
 echo " ██    ██ ██  ██                ██      ██      ██      ██   ██ ██   ██ "
