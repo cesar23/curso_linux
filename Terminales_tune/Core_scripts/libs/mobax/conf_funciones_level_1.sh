@@ -125,15 +125,15 @@ function gcm() {
 function gitup() {
     # ::-- start -- actualizar fecha y hora
     reload_date
-    # ::-- end -- actualizar fecha y hora
-    git pull
-	  git add -A
-    read -p 'Message commit: ' msg_commit
-    git commit -m "${msg_commit} | ${INFO_PC} se actualizo :${DATE_HOUR_GIT}"
-    git push -u origin master
+    CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    echo -en "Actualizando rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
+    git pull origin $CURRENT_BRANCH
+    git add -A
+    git commit -m "${msg_commit} | ${INFO_PC} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
+    git push -u origin $CURRENT_BRANCH
+
     # git push
 }
-
 function gitup-qa() {
     # ::-- start -- actualizar fecha y hora
     reload_date
