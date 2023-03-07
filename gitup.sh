@@ -13,7 +13,7 @@ scriptPathFileTemp=$(echo "$scriptPathFile" | sed 's/.sh/.tmp/g')
 scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 # par  darlo colores
 if [ -f "${CURRENT_DIR}/colors.sh" ]; then
-  source "${CURRENT_DIR}colors.sh"
+  source "${CURRENT_DIR}/colors.sh"
 fi
 
 
