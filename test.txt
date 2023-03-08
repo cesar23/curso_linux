@@ -1,3 +1,32 @@
-111
-222
-333333
+~$  bash get_fasta_lines_2.sh 1
+error: argumento no valido
+
+ get_fasta_lines: mperfect solo las cadenas de nucleotido/aminoacidos de un archivo fasta
+
+    Usage: get_fasta_lines.sh [-in fasta input]
+
+    -in/--input archivo multifasta de entrada
+~$  bash get_fasta_lines_2.sh 1
+error: argumento no valido
+
+ get_fasta_lines: mperfect solo las cadenas de nucleotido/aminoacidos de un archivo fasta
+
+    Usage: get_fasta_lines.sh [-in fasta input]
+
+    -in/--input archivo multifasta de entrada
+
+    ~$  bash get_fasta_lines_2.sh 1
+    error: argumento no valido
+
+     get_fasta_lines: mperfect solo las cadenas de nucleotido/aminoacidos de un archivo fasta
+
+        Usage: get_fasta_lines.sh [-in fasta input]
+
+        -in/--input archivo multifasta de entrada~$  bash get_fasta_lines_2.sh 1
+                                                 error: argumento no valido
+
+                                                  get_fasta_lines: mperfect solo las cadenas de nucleotido/aminoacidos de un archivo fasta
+
+                                                     Usage: get_fasta_lines.sh [-in fasta input]
+
+                                                     -in/--input archivo multifasta de entrada
