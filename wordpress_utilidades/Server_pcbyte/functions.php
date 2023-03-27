@@ -824,7 +824,7 @@ function dcms_show_stock_list_products() {
 }
 
 //--------------- busqueda por  sku
-function search_by_sku( $search, &$query_vars ) {
+function search_by_sku( $search, $query_vars ) {
     global $wpdb;
     if(isset($query_vars->query['s']) && !empty($query_vars->query['s'])){
         $args = array(
