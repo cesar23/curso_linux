@@ -36,7 +36,8 @@ ALL_FILES="${@:2}"
 local_path_fichero="${CURRENT_DIR}/demo.txt"
 
 
-ftp_name_fichero="docker/$(basename $local_path_fichero)"
+#ftp_name_fichero="docker/$(basename $local_path_fichero)"
+ftp_name_fichero="docs/*"
 
 echo "Fichero en local : ${local_path_fichero}"
 echo "Fichero en ftp   : ${ftp_name_fichero}"
