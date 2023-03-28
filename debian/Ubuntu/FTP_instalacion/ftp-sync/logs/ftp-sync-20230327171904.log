@@ -1,0 +1,16 @@
+FTP Sync v1.95 (2023/03/27 17:19:04)
+--------------
+Checking connection to ftp://192.168.0.40:21/...
+Successfully connected!
+--------------
+Script PID: 1598
+Source: ftp://192.168.0.40:21/
+Destination: /D/repos/curso_linux/debian/Ubuntu/FTP_instalacion/ftp-sync/remote/
+Log file: logs/ftp-sync-20230327171904.log
+Download method: wget
+--------------
+Finding files...
+Regex: ^.*$
+--------------
+Finished...
+Total time spent: 00:00:01

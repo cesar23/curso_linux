@@ -1,0 +1,90 @@
+FTP Sync v1.95 (2023/03/27 18:53:20)
+--------------
+Checking connection to ftp://192.168.0.40:21/...
+Successfully connected!
+--------------
+Script PID: 5155
+Source: ftp://192.168.0.40:21/
+Destination: /D/repos/curso_linux/debian/Ubuntu/FTP_instalacion/ftp-sync/remote/
+Log file: logs/ftp-sync-20230327185320.log
+Download method: wget
+--------------
+Finding files...
+Regex: ^.*$
+--------------
+Process file : .Xauthority
+Hash: 9d8a48d8fef8b1e0d7ceb544ad005f37
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .bash_history
+Hash: 0a97c9183c241136b2330a66266325fc
+Size: 2.34 Kb
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .bash_logout
+Hash: eda0a494fc7458ea7aeac39811299e39
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .bashrc
+Hash: 85cf9b51417c7cfb8766aa6b56f7edb9
+Size: 3.68 Kb
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .cache/motd.legal-displayed
+Hash: c5154733fc22af3a6a73ca9ebad2720a
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .profile
+Hash: 593308ff3a1800e7975e8fdd7f830dd3
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .ssh/authorized_keys
+Hash: d89ecd1998d063fd7baff537330005db
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : .sudo_as_admin_successful
+Hash: 29c563b5fad64a950b94b5b68829c65e
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : deftp.xml
+Hash: 032f0eaa57e4bc635bfc146838e9f607
+Size: 2.81 Kb
+Status : Exists but sizes are different...
+Start download to /D/repos/curso_linux/debian/Ubuntu/FTP_instalacion/ftp-sync/remote/deftp.xml... Please wait...
+File successfully downloaded!
+Time spent: 00:00:02
+--------------
+Process file : demo.txt
+Hash: 5a10a5f2e827cced2a744cb1481ec74d
+Size: 
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : docker/ss.xml
+Hash: f674609aa1521734d25fd4431cfd9298
+Size: 2.81 Kb
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Process file : vsftp.conf
+Hash: 1588be1a30895c50a86c14954522d609
+Size: 5.71 Kb
+Status : Already downloaded and valid. Skip download...
+Time spent: 00:00:01
+--------------
+Finished...
+Total time spent: 00:00:21

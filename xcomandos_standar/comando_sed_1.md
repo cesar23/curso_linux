@@ -207,3 +207,15 @@ sudo sestatus
 
 
 ```
+
+
+## comando sed con regex como variable
+
+```shell
+CURRENT_DIR=`dirname $PATH_SCRIPT`
+NAME_DIR=$(basename $CURRENT_DIR)
+
+
+regex="s/\/${NAME_DIR}//"
+ROOT_PATH=$(echo $CURRENT_DIR | sed -e $regex) # D:/repos/curso_plugin_theme_wordpress
+```

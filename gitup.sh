@@ -3,7 +3,6 @@ DATE_HOUR_GIT="`date +%Y`-`date +%m`-`date +%d`_`date +%H`:`date +%M`:`date +%S`
 CURRENT_USER=$(id -un)
 CURRENT_PC_NAME=$(exec /usr/bin/hostname)
 MY_INFO="${CURRENT_USER}@${CURRENT_PC_NAME}"
-
 PATH_SCRIPT=`readlink -f "${BASH_SOURCE:-$0}"`
 CURRENT_DIR=`dirname $PATH_SCRIPT`
 
