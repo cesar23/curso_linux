@@ -5,6 +5,7 @@ CURRENT_PC_NAME=$(exec /usr/bin/hostname)
 MY_INFO="${CURRENT_USER}@${CURRENT_PC_NAME}"
 PATH_SCRIPT=`readlink -f "${BASH_SOURCE:-$0}"`
 CURRENT_DIR=`dirname $PATH_SCRIPT`
+NAME_DIR=$(basename $CURRENT_DIR) # nombre del Directorio actual
 
 scriptPathDir=$(dirname $0)
 scriptPathFile=$(realpath $0)
