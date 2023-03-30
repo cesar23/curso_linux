@@ -1,7 +1,7 @@
 <?php
 /*
 server: pcbyte
-version de file: 1.0.1
+version de file: 1.0.2
 */
 
 $my_url = home_url( '/' ); //http://www.example.com/
@@ -117,15 +117,6 @@ function add_custom_body_open_code() {
 
         <div class="contenedor_inferior" style="">
 
-            <div style="width: 100%;height: 50px;margin-bottom: 3px;">
-                <a target="_blank"
-                   href="https://api.whatsapp.com/send?phone=51946480897&text=Hola PCBYTE, tengo una consulta">
-                    <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
-                    <div style="float: left">
-                        <strong>KATE VILLASANTE</strong><br>946-480897
-                    </div>
-                </a>
-            </div>
 
             <div style="width: 100%;height: 50px;margin-bottom: 3px;">
                 <a target="_blank"
@@ -139,10 +130,21 @@ function add_custom_body_open_code() {
 
             <div style="width: 100%;height: 50px;margin-bottom: 3px;">
                 <a target="_blank"
-                   href="https://api.whatsapp.com/send?phone=51934822375&text=Hola PCBYTE, tengo una consulta">
+                   href="https://api.whatsapp.com/send?phone=51946480897&text=Hola PCBYTE, tengo una consulta">
                     <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
                     <div style="float: left">
-                        <strong>VENTAS</strong><br>934-822375
+                        <strong>KATE VILLASANTE</strong><br>946-480897
+                    </div>
+                </a>
+            </div>
+
+
+            <div style="width: 100%;height: 50px;margin-bottom: 3px;">
+                <a target="_blank"
+                   href="https://api.whatsapp.com/send?phone=519934822375&text=Hola PCBYTE, tengo una consulta">
+                    <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
+                    <div style="float: left">
+                        <strong>JOSEPH RODRIGUEZ</strong><br>934-822375
                     </div>
                 </a>
             </div>
@@ -824,7 +826,7 @@ function dcms_show_stock_list_products() {
 }
 
 //--------------- busqueda por  sku
-function search_by_sku( $search, $query_vars ) {
+function search_by_sku( $search, &$query_vars ) {
     global $wpdb;
     if(isset($query_vars->query['s']) && !empty($query_vars->query['s'])){
         $args = array(
