@@ -1,4 +1,4 @@
-# OpenSSH en Windows 10
+server# OpenSSH en Windows 10
 
 fuente: https://www.softzone.es/windows/como-se-hace/activar-usar-ssh-windows-10/
 
