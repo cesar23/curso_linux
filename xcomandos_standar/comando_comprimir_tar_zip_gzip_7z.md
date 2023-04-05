@@ -2,26 +2,24 @@
 
 ### :::::::::::::::::::: Archivos .tar.gz
 ```shell
-# siempre tienes que estar en la ruta de compresion
+# siempre tienes que estar dentro de la carpeta que comprimiremos
 
-tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/
 
-# ejemplo mobax
-cd /drives/D/lemon
 
-tree -d -L 1 # listamos directorios en primer nivel
+# entramos a la carpeta
+cd /drives/D/temp_d/openoffice
+
+
 # 
-# └── L3MON
-# 
-
-# una vez  ubicados en el directorio para  comprimir
-tar -czvf l3mon.tar.gz L3MON
+# /drives/D/repos/backup_cesar/daily/bac2.tar.gz =(donde esta  el backup)
+# * = (comprimiremos todo de la carpeta actual)
+tar -czvf /drives/D/temp_d/bak/bac2.tar.gz *
 ```
-<img width="80%" src="https://i.imgur.com/YNAOU6r.png" alt="My cool logo"/>
+<img width="60%" src="https://i.imgur.com/P03U9hV.png" alt="My cool logo"/>
 
 -- -- 
 
-<img width="80%" src="https://i.imgur.com/xUtwlBO.png" alt="My cool logo"/>
+<img width="80%" src="https://i.imgur.com/OQD8haI.png" alt="My cool logo"/>
 
 -- -- 
 

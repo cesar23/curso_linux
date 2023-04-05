@@ -151,3 +151,8 @@ Linux premium28.web-hosting.com 2.6.32-954.3.5.lve1.4.87.el6.x86_64 #1 SMP Fri J
 <img width="100%" src="https://i.imgur.com/Xm1C5U2.png" alt="My cool logo"/>
 
 -- -- 
+### ver espacio en discos
+
+```shell
+df -h
+```
