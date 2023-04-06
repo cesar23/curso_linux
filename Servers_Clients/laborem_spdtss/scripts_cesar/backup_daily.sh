@@ -26,8 +26,8 @@ file_output_path="${dir_backup}/${file_backup}"
 
 
 # ---------- Data Test
-#dir_input=/drives/D/temp_d/openoffice/
-#dir_backup=/drives/D/repos/curso_linux/Server_clientes/laborem_spdtss/backup_cesar/daily
+#dir_input=/D/temp_d/openoffice/
+#dir_backup=/D/repos/curso_linux/Servers_Clients/laborem_spdtss/backup_cesar/daily
 ## ---- donde se almacenara el backup
 ## ---- con que nombre se guardara el backup
 #file_backup="${DATE_HOUR}_spdtsso2.tar.gz"
@@ -36,10 +36,18 @@ file_output_path="${dir_backup}/${file_backup}"
 
 
 
-# entramos al directorio que  comprimiremos
+# 1. entramos al directorio que  comprimiremos
 cd $dir_input
 tar -czvf $file_output_path *
 
-# --regresamos al directorio de los script
+
+# 2. entramos al directorio donde estan los backups
+cd $dir_backup
+#  dejamos los ultimos 8 ficheros mas recientes y los  antiguos los eliminamos
+rm `ls -t *.tar.gz | awk 'NR>5'`
+
+# 3.Regresamos al directorio de los script
 cd $CURRENT_DIR
 echo "ejecutado el backup ${file_backup}">> "${DATE_MONTH}.log"
+
+

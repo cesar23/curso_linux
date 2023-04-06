@@ -1,6 +1,6 @@
-# comprimir archivos
+# Comprimir archivos
 
-### :::::::::::::::::::: Archivos .tar.gz
+# 1. :::::::::::::::::::: Archivos .tar.gz
 ```shell
 # siempre tienes que estar dentro de la carpeta que comprimiremos
 
@@ -44,9 +44,31 @@ tar -czvf l3mon.tar.gz L3MON --exclude="L3MON/app" --exclude='*.png'
 tar -czvf l3mon_2.tar.gz L3MON build --exclude='*.png'
 ```
 
-# Descomprimir
+#### Descomprimir
 
 ```shell
 # :::::::: descomprimir backup
 tar -xzvf home.tar.gz ~/directorio
 ```
+
+
+
+# 2. :::::::::::::::::::: Archivos .gz
+comprime el fichero pero y el fichero ya no estara disponible
+```shell
+#> ls
+
+# -r-xr-x---    1 cesar    UsersGrp   1799107 Apr  5 18:23 test.sql
+--------------------------------
+gzip test.txt
+
+#> ls
+# output:
+
+#    test.txt.gz
+
+```
+<img width="80%" src="https://i.imgur.com/YeFu5an.png" alt="My cool logo"/>
+
+-- -- 
+
