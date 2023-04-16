@@ -1,5 +1,8 @@
 # Agregar Scripts para los terminales
 
+
+
+
 ### 1. para agregar en mobax
 ingresar al directorio: `C:\Users\Cesar\mobax\home\.bash_profile`
 
@@ -210,3 +213,34 @@ fi
 
 
 ```
+
+### 3. para  linux
+
+editar el archivo `vim ~/.bashrc` o `nvim ~/.bashrc`
+
+```shell
+
+# ----------------------------------------------------
+# ----------- Start script Cesar ---------------------
+# ----------------------------------------------------
+scriptPath2=${0%/*}
+CURRENT_USER=$(id -un)
+CURRENT_PC_NAME=$(exec /usr/bin/hostname)
+INFO_PC="${CURRENT_USER}@${CURRENT_PC_NAME}"
+	
+# :::::::: Importanmos las librerias
+if [ -f "${HOME}/libs_shell/init.sh" ]; then
+ source "${HOME}/libs_shell/init.sh"
+
+fi
+# ----------------------------------------------------
+# ----------- end script Cesar -----------------------
+# ----------------------------------------------------
+
+
+```
+# 🔴 Ojo si  dar eeor realizar el paso de  cdarle formato `unix` a los ficheros
+
+<img src="https://i.imgur.com/sH2ikx6.png" alt="My cool logo"/>
+
+-- --

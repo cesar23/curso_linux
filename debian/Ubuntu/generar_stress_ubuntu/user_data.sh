@@ -1,4 +1,7 @@
 #!/usr/bin/bash
+
+echo "ddd"
+exit
 #sudo -i # para  centos
 
 sudo ufw allow 22

@@ -619,3 +619,16 @@ find .  -not -path "./.git/*"  \
 ```
 
 
+## Buscar ficheros con formato y salto de linea Windows
+- CRLF -> de Windows
+- LF   -> de Linux
+
+```shell
+# busca todos con formato Windows
+find ${HOME}/libs_shell -type f -exec grep -Iq . {} \; -and -exec grep -Il $'\r' {} +
+```
+
+Usando el paquete confvertitr a formato linux
+```shell
+find ${HOME}/libs_shell -name "*.*" -exec dos2unix {} +
+```

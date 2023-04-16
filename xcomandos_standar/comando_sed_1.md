@@ -219,3 +219,13 @@ NAME_DIR=$(basename $CURRENT_DIR)
 regex="s/\/${NAME_DIR}//"
 ROOT_PATH=$(echo $CURRENT_DIR | sed -e $regex) # D:/repos/curso_plugin_theme_wordpress
 ```
+
+
+## comando quita los saltos de linea windows y los pone a linux
+
+- CRLF -> de Windows
+- LF   -> de Linux
+
+```shell
+find ${HOME}/libs_shell -type f -exec sed -i 's/\r//g' {} +
+```

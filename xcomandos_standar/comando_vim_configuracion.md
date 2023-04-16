@@ -109,7 +109,7 @@ nano ~/.config/nvim/init.vim
 ```
 o ejecutar el siguiente comando para la configuracion
 
-<a href="#script_init"> script confgi nvim:</a> `~/.config/nvim/init.vim` 
+<a href="#script_init"> 👉 Aqui contenido para el init.vim:</a> `~/.config/nvim/init.vim` 
 
 
 

@@ -4,21 +4,34 @@ CURRENT_DIR=`dirname $PATH_SCRIPT`
 # ----- Para  encontrar el tipo de terminal actual--------
 # --------------------------------------------------------
 CURRENT_TERMINAL='gitbash'
-CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/gitbash"
-# si se encuentra terminal cmder
-if [ -n "$CMDER_ROOT" ]; then
-  CURRENT_TERMINAL='cmder'
-  CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/cmder"
-fi
 
-# si se encuentra terminal mobax
-if [ -n "$PUTTYHOME" ]; then
-  CURRENT_TERMINAL='mobax'
-  CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/mobax"
+if [ "$SHELL" == "/usr/bin/bash" ]; then
+    CURRENT_TERMINAL='gitbash'
+    # si existe la variable $CMDER_ROOT es cmder
+    if [ -n "$CMDER_ROOT"  ]; then
+      CURRENT_TERMINAL='cmder'
+    fi
+
 fi
 
 
-#echo "---------CURRENT_TERMINAL: ${CURRENT_TERMINAL}"
+# si la  shel es de Linux
+if [ "$SHELL" == "/bin/bash" ]; then
+    CURRENT_TERMINAL='linux'
+fi
+
+
+# si la  shel es de mobax
+if [ "$SHELL" == "/bin/bash.exe" ]; then
+    CURRENT_TERMINAL='mobax'
+fi
+
+
+
+CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/${CURRENT_TERMINAL}"
+
+echo "---------CURRENT_TERMINAL: ${CURRENT_TERMINAL}"
+echo "---------CURRENT_TERMINAL_SCRIPTS: ${CURRENT_TERMINAL_SCRIPTS}"
 
 case "$CURRENT_TERMINAL" in
     # ---------------------------------------------------------
@@ -63,7 +76,6 @@ case "$CURRENT_TERMINAL" in
                     source "${CURRENT_TERMINAL_SCRIPTS}/fzf_script.sh"
                     source "${CURRENT_TERMINAL_SCRIPTS}/colors.sh"
                     #--------- Includes Core ----------------------
-         #           source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones.sh"
                     #------------------------------
                     source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_1.sh"
                     source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_2.sh"
@@ -79,6 +91,30 @@ case "$CURRENT_TERMINAL" in
        fi
    ;;
 
+
+   # ---------------------------------------------------------
+   # Linux
+   # ---------------------------------------------------------
+   "linux")
+
+   if [ -f "${CURRENT_TERMINAL_SCRIPTS}/colors.sh" ]; then
+              function reload_config(){
+
+                    source "${CURRENT_TERMINAL_SCRIPTS}/colors.sh"
+                    #--------- Includes Core ----------------------
+                    #------------------------------
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_1.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_2.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_alias_level_1.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_ides.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_extras.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_menu.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_neofetch.sh"
+                    source "${CURRENT_TERMINAL_SCRIPTS}/conf_alias_docker.sh"
+              }
+              reload_config
+       fi
+   ;;
 
     # ---------------------------------------------------------
     # mobax
@@ -101,7 +137,6 @@ case "$CURRENT_TERMINAL" in
 
                            source "${CURRENT_TERMINAL_SCRIPTS}/colors.sh"
                           #--------- Includes Core ----------------------
-               #           source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones.sh"
                           #------------------------------
                            source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_1.sh"
                            source "${CURRENT_TERMINAL_SCRIPTS}/conf_funciones_level_2.sh"
