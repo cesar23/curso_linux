@@ -244,3 +244,14 @@ fi
 <img src="https://i.imgur.com/sH2ikx6.png" alt="My cool logo"/>
 
 -- --
+
+
+comando 
+#  ✅ opcion con comando SED (Mejor que utilize)
+- CRLF -> de Windows
+- LF   -> de Linux
+
+```shell
+# pondra todos en formato de Unix
+find ${HOME}/libs_shell -type f -exec sed -i 's/\r//g' {} +
+```
