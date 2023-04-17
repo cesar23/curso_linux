@@ -245,8 +245,8 @@ fi
 
 -- --
 
-
 comando 
+
 #  ✅ opcion con comando SED (Mejor que utilize)
 - CRLF -> de Windows
 - LF   -> de Linux
