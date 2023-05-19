@@ -47,6 +47,8 @@ function gitup2() {
 }
 clear
 cd $scriptPathDir
+
+echo ${MY_INFO} && sleep 5
 gitup
 
 echo -en "Actualizando rama ${Green} \n"

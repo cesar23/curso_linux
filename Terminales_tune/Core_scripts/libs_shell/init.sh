@@ -30,8 +30,8 @@ fi
 
 CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/${CURRENT_TERMINAL}"
 
-echo "---------CURRENT_TERMINAL: ${CURRENT_TERMINAL}"
-echo "---------CURRENT_TERMINAL_SCRIPTS: ${CURRENT_TERMINAL_SCRIPTS}"
+#echo "---------CURRENT_TERMINAL: ${CURRENT_TERMINAL}"
+#echo "---------CURRENT_TERMINAL_SCRIPTS: ${CURRENT_TERMINAL_SCRIPTS}"
 
 case "$CURRENT_TERMINAL" in
     # ---------------------------------------------------------
