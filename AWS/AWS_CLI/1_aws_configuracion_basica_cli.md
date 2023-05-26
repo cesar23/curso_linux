@@ -27,8 +27,8 @@ aws sts get-caller-identity
 ### 1.3 desde la consola
 ```shell
 $ aws configure --bash.bashrc.sh produser
-AWS Access Key ID [None]: AKIAI44QH8DHBEXAMPLE
-AWS Secret Access Key [None]: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+AWS Access Key ID [None]: xxxxxxxxxxxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Default region name [None]: us-east-1
 Default output format [None]: text
 ```
