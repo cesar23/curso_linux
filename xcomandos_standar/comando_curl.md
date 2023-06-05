@@ -1,4 +1,12 @@
-fuente : https://curl.se/docs/manual.html
+fuente : 
+- https://curl.se/docs/manual.html
+- https://reqbin.com/req/c-ekublyqq/curl-user-agent
+
+
+## POST 
+ejemplos 
+https://reqbin.com/req/c-sma2qrvp/curl-post-form-example
+
 
 ## ✅ Simple uso
 

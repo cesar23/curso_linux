@@ -12,7 +12,7 @@ curl "https://stream82.uqload.com/3rfk4mlxgnw2q4drdkt7h5pybb6k74lx3gyjrews5wxnpx
 
 
 
-## Ejemplo de envio con script
+## Ejemplo de envio con script send Json
 
 ```shell
 #/bin
