@@ -12,3 +12,7 @@ curl --location 'https://inversionesletich.com/sistema_luper/login.php' \
 curl --location 'https://inversionesletich.com/sistema_luper/listar_producto.php' \
 --cookie "${CURRENT_DIR}/cookie_jar.txt" \
 --header "Mozilla/3.0 (Win95; I)"
+
+
+
+

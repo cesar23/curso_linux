@@ -5,7 +5,7 @@ CURRENT_DIR=`dirname $PATH_SCRIPT`
 #set OPENSSL_CONF=../conf/openssl.cnf
 #
 #rem if not exist .\%domain% mkdir .\%domain%
-DOMAIN="laborem.local"
+DOMAIN="tienda.local"
 #PATH_CONFIG_CERT="${CURRENT_DIR}/cert.conf"
 PATH_CONFIG_CERT="${CURRENT_DIR}/cert.conf"
 
