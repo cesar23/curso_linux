@@ -1,0 +1,29 @@
+# token :perucaos
+authtoken: 1SUMV0bQWCU8lTXuKvpyF6eIEyO_4g3xTatHJ122Xk4BETrSa
+# token codetips
+#authtoken: 223rFTunHUYWrDPkor5N9PM6tVm_7CL5d6rhdZqYzuuSDv6hz
+console_ui: true
+region: sa # (us=United States, eu=Europa, sa=America Latina, ap=Asia)
+# web de interface para ver los  log de manera local
+web_addr: localhost:4046
+log_level: info # (crit,warn,error,info,debug)
+log_format: logfmt #tipos de log (logfmt,json,term)
+log: ngrok.log
+version: 2
+
+
+
+
+
+
+
+
+
+#-------------------------------------------------------------------------------------TUNELES ------
+tunnels:
+  #---------------------- exponer una web
+
+  #---------------------- exponer para escritorio remoto
+  remoto:
+    proto: http
+    addr: 7071

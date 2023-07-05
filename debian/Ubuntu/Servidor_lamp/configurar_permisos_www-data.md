@@ -31,7 +31,6 @@ chown -R www-data:www-data /var/www/html
 
 
 
-<img width="100%" src="https://i.imgur.com/S92PDoP.png" alt="My cool logo"/>
 
 -- -- 
 
@@ -39,6 +38,7 @@ chown -R www-data:www-data /var/www/html
 ## Permisos para apache
 
 
+<img width="100%" src="https://i.imgur.com/S92PDoP.png" alt="My cool logo"/>
 
 2. Ahora le damos permisos de escritura en el directorio /var/www/html, al grupo `www-data`
 ```shell

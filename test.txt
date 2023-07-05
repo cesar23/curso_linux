@@ -30,3 +30,5 @@ error: argumento no valido
                                                      Usage: get_fasta_lines.sh [-in fasta input]
 
                                                      -in/--input archivo multifasta de entrada
+
+<img width="100%" src="dddddddddd" alt="My cool logo"/>
