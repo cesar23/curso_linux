@@ -1143,3 +1143,166 @@ t=2023-07-04T08:51:28-0500 lvl=info msg="join connections" obj=join id=e1ea50dae
 t=2023-07-04T08:57:13-0500 lvl=info msg="join connections" obj=join id=e7e249c09418 l=127.0.0.1:7071 r=3.230.248.18:7002
 t=2023-07-04T08:58:18-0500 lvl=info msg="join connections" obj=join id=734568f917fe l=127.0.0.1:7071 r=3.230.248.18:35901
 t=2023-07-04T14:31:23-0500 lvl=info msg="update available" obj=updater
+t=2023-07-04T20:31:23-0500 lvl=info msg="update available" obj=updater
+t=2023-07-05T12:49:37-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046
+t=2023-07-05T12:49:38-0500 lvl=info msg="update available" obj=updater
+t=2023-07-05T12:49:38-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-07-05T12:49:38-0500 lvl=info msg="client session established" obj=csess id=0f2ff4797742
+t=2023-07-05T12:49:38-0500 lvl=info msg="started tunnel" obj=tunnels name="remoto (http)" addr=http://localhost:7071 url=http://62cf-179-6-168-248.ngrok-free.app
+t=2023-07-05T12:49:38-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://62cf-179-6-168-248.ngrok-free.app
+t=2023-07-05T12:52:45-0500 lvl=info msg="join connections" obj=join id=c73872204621 l=127.0.0.1:7071 r=3.230.89.127:14887
+t=2023-07-05T12:55:39-0500 lvl=info msg="join connections" obj=join id=9caedaf6ecea l=127.0.0.1:7071 r=3.229.80.75:64185
+t=2023-07-05T12:56:44-0500 lvl=info msg="join connections" obj=join id=90190454ef98 l=127.0.0.1:7071 r=3.230.89.127:58418
+t=2023-07-05T12:57:51-0500 lvl=info msg="join connections" obj=join id=4047079e43f1 l=127.0.0.1:7071 r=54.175.55.75:51087
+t=2023-07-05T12:59:00-0500 lvl=info msg="join connections" obj=join id=43089713c861 l=127.0.0.1:7071 r=54.175.55.75:22772
+t=2023-07-05T13:57:54-0500 lvl=info msg="join connections" obj=join id=db899b2a77a8 l=127.0.0.1:7071 r=3.230.248.18:19825
+t=2023-07-05T13:58:59-0500 lvl=info msg="join connections" obj=join id=893a38e27196 l=127.0.0.1:7071 r=54.162.110.104:43582
+t=2023-07-05T14:26:33-0500 lvl=info msg="join connections" obj=join id=2f7e550ed481 l=127.0.0.1:7071 r=3.229.80.75:49092
+t=2023-07-05T14:27:38-0500 lvl=info msg="join connections" obj=join id=6595eab26d8a l=127.0.0.1:7071 r=3.230.248.18:12956
+t=2023-07-05T14:28:45-0500 lvl=info msg="join connections" obj=join id=16aafb0b8f42 l=127.0.0.1:7071 r=3.229.80.75:43900
+t=2023-07-05T14:29:54-0500 lvl=info msg="join connections" obj=join id=beb78df333a5 l=127.0.0.1:7071 r=3.229.80.75:7502
+t=2023-07-05T14:31:06-0500 lvl=info msg="join connections" obj=join id=1251eaf35fac l=127.0.0.1:7071 r=3.229.80.75:46785
+t=2023-07-05T14:32:21-0500 lvl=info msg="join connections" obj=join id=3da374bbe63b l=127.0.0.1:7071 r=54.162.110.104:3687
+t=2023-07-05T14:33:38-0500 lvl=info msg="join connections" obj=join id=1f8ba647ca17 l=127.0.0.1:7071 r=54.175.55.75:42519
+t=2023-07-05T14:34:58-0500 lvl=info msg="join connections" obj=join id=58f257561b63 l=127.0.0.1:7071 r=3.229.80.75:25849
+t=2023-07-05T14:36:23-0500 lvl=warn msg="failed to open private leg" id=7f56ce5e3469 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:37:46-0500 lvl=info msg="join connections" obj=join id=50b2600668bf l=127.0.0.1:7071 r=52.73.230.96:17428
+t=2023-07-05T14:39:16-0500 lvl=info msg="join connections" obj=join id=d931b35ae6c4 l=127.0.0.1:7071 r=54.175.55.75:63722
+t=2023-07-05T14:40:46-0500 lvl=info msg="join connections" obj=join id=217ff975a884 l=127.0.0.1:7071 r=52.73.230.96:44727
+t=2023-07-05T14:42:20-0500 lvl=info msg="join connections" obj=join id=5ef8a2477886 l=127.0.0.1:7071 r=3.229.80.75:19300
+t=2023-07-05T14:44:01-0500 lvl=warn msg="failed to open private leg" id=72d82c75ffef privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:45:40-0500 lvl=info msg="join connections" obj=join id=d710c526174d l=127.0.0.1:7071 r=3.230.248.18:24664
+t=2023-07-05T14:47:28-0500 lvl=info msg="join connections" obj=join id=9d7a9eaaa4c9 l=127.0.0.1:7071 r=3.229.80.75:64198
+t=2023-07-05T14:49:21-0500 lvl=warn msg="failed to open private leg" id=ddcded2bc5ea privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:50:55-0500 lvl=info msg="join connections" obj=join id=7081c406ac0c l=127.0.0.1:7071 r=52.73.230.96:23909
+t=2023-07-05T14:51:13-0500 lvl=info msg="join connections" obj=join id=eb2c87f47e1d l=127.0.0.1:7071 r=3.229.80.75:6158
+t=2023-07-05T14:52:02-0500 lvl=warn msg="failed to open private leg" id=30130948a49e privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:53:05-0500 lvl=info msg="join connections" obj=join id=1bcbcd8ca6c8 l=127.0.0.1:7071 r=3.229.80.75:7797
+t=2023-07-05T14:53:11-0500 lvl=info msg="join connections" obj=join id=a96d005eca48 l=127.0.0.1:7071 r=3.229.80.75:18056
+t=2023-07-05T14:54:16-0500 lvl=warn msg="failed to open private leg" id=eef78c082f77 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:55:17-0500 lvl=warn msg="failed to open private leg" id=ff5c35c4c228 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:55:26-0500 lvl=warn msg="failed to open private leg" id=c95c2310afe6 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T14:56:36-0500 lvl=info msg="join connections" obj=join id=e67d1fb9333f l=127.0.0.1:7071 r=3.229.80.75:18056
+t=2023-07-05T14:57:24-0500 lvl=info msg="join connections" obj=join id=d0ab5799f684 l=127.0.0.1:7071 r=3.229.80.75:44578
+t=2023-07-05T14:57:54-0500 lvl=info msg="join connections" obj=join id=edc6f30e7c4b l=127.0.0.1:7071 r=52.73.230.96:19500
+t=2023-07-05T14:59:13-0500 lvl=info msg="join connections" obj=join id=784ef8717c72 l=127.0.0.1:7071 r=3.230.248.18:50874
+t=2023-07-05T14:59:37-0500 lvl=info msg="join connections" obj=join id=539ad164dca7 l=127.0.0.1:7071 r=52.73.230.96:33642
+t=2023-07-05T15:00:35-0500 lvl=warn msg="failed to open private leg" id=fea73fcbb760 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:01:58-0500 lvl=info msg="join connections" obj=join id=a98d7261e28c l=127.0.0.1:7071 r=54.175.55.75:34902
+t=2023-07-05T15:01:58-0500 lvl=info msg="join connections" obj=join id=cadf74348445 l=127.0.0.1:7071 r=3.229.80.75:17964
+t=2023-07-05T15:02:35-0500 lvl=info msg="join connections" obj=join id=50fbd2f7f101 l=127.0.0.1:7071 r=54.162.110.104:34559
+t=2023-07-05T15:03:30-0500 lvl=warn msg="failed to open private leg" id=ba1766971e02 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:04:27-0500 lvl=warn msg="failed to open private leg" id=e880096a9572 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:05:01-0500 lvl=warn msg="failed to open private leg" id=ee524806991a privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:05:45-0500 lvl=info msg="join connections" obj=join id=27b97831dd7e l=127.0.0.1:7071 r=179.6.168.248:57594
+t=2023-07-05T15:06:34-0500 lvl=info msg="join connections" obj=join id=2e391c965e85 l=127.0.0.1:7071 r=3.230.248.18:20776
+t=2023-07-05T15:06:55-0500 lvl=info msg="join connections" obj=join id=c399a5a1299b l=127.0.0.1:7071 r=54.175.55.75:16962
+t=2023-07-05T15:08:15-0500 lvl=info msg="join connections" obj=join id=18b01894b30b l=127.0.0.1:7071 r=3.230.248.18:35542
+t=2023-07-05T15:09:33-0500 lvl=info msg="join connections" obj=join id=c5aa62138c94 l=127.0.0.1:7071 r=54.197.21.180:41460
+t=2023-07-05T15:09:57-0500 lvl=info msg="join connections" obj=join id=96f47f79cc51 l=127.0.0.1:7071 r=3.230.248.18:44125
+t=2023-07-05T15:09:58-0500 lvl=info msg="join connections" obj=join id=6d2bf7c490df l=127.0.0.1:7071 r=179.6.168.248:57594
+t=2023-07-05T15:11:44-0500 lvl=info msg="join connections" obj=join id=2637fd702f9c l=127.0.0.1:7071 r=3.229.80.75:38034
+t=2023-07-05T15:12:14-0500 lvl=info msg="join connections" obj=join id=075fb977afa7 l=127.0.0.1:7071 r=3.230.248.18:50727
+t=2023-07-05T15:13:37-0500 lvl=info msg="join connections" obj=join id=b5fc0ab6f5be l=127.0.0.1:7071 r=3.230.248.18:52293
+t=2023-07-05T15:15:05-0500 lvl=info msg="join connections" obj=join id=e597ca494e06 l=127.0.0.1:7071 r=54.162.110.104:62213
+t=2023-07-05T15:15:34-0500 lvl=info msg="join connections" obj=join id=0440f489c066 l=127.0.0.1:7071 r=54.162.110.104:15854
+t=2023-07-05T15:17:37-0500 lvl=warn msg="failed to open private leg" id=bdc01e24f188 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:18:05-0500 lvl=warn msg="failed to open private leg" id=5136cd37e240 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:19:05-0500 lvl=info msg="join connections" obj=join id=38329f8f02e4 l=127.0.0.1:7071 r=179.6.168.248:57594
+t=2023-07-05T15:19:39-0500 lvl=info msg="join connections" obj=join id=273b5b631161 l=127.0.0.1:7071 r=3.229.80.75:32250
+t=2023-07-05T15:21:05-0500 lvl=info msg="join connections" obj=join id=6566bbe58c0a l=127.0.0.1:7071 r=3.229.80.75:63146
+t=2023-07-05T15:21:50-0500 lvl=info msg="join connections" obj=join id=c217bfe838e9 l=127.0.0.1:7071 r=54.197.21.180:1364
+t=2023-07-05T15:23:44-0500 lvl=info msg="join connections" obj=join id=7ff16328e8ea l=127.0.0.1:7071 r=3.230.89.127:38343
+t=2023-07-05T15:24:06-0500 lvl=info msg="join connections" obj=join id=9e4f17cf4477 l=127.0.0.1:7071 r=54.162.110.104:35617
+t=2023-07-05T15:24:17-0500 lvl=info msg="join connections" obj=join id=9f222156c41b l=127.0.0.1:7071 r=3.230.89.127:10323
+t=2023-07-05T15:24:49-0500 lvl=info msg="join connections" obj=join id=a808da53c4fe l=127.0.0.1:7071 r=54.162.110.104:48033
+t=2023-07-05T15:25:56-0500 lvl=info msg="join connections" obj=join id=0f25bfc6ed6a l=127.0.0.1:7071 r=3.229.80.75:45196
+t=2023-07-05T15:26:27-0500 lvl=info msg="join connections" obj=join id=04abc2da55be l=127.0.0.1:7071 r=54.175.55.75:42260
+t=2023-07-05T15:27:05-0500 lvl=info msg="join connections" obj=join id=fbd3ed3ec54e l=127.0.0.1:7071 r=3.230.248.18:2684
+t=2023-07-05T15:27:38-0500 lvl=warn msg="failed to open private leg" id=07bfff61cd15 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:28:19-0500 lvl=warn msg="failed to open private leg" id=b42b15ae5d21 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:28:56-0500 lvl=warn msg="failed to open private leg" id=ca31c3f8791a privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:29:32-0500 lvl=warn msg="failed to open private leg" id=a27f4decb401 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:30:47-0500 lvl=warn msg="failed to open private leg" id=ec2de7373c48 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:31:03-0500 lvl=warn msg="failed to open private leg" id=a7392c6abe34 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:31:26-0500 lvl=warn msg="failed to open private leg" id=9bcc715faee0 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:32:05-0500 lvl=warn msg="failed to open private leg" id=c3f9f840fdba privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:33:25-0500 lvl=warn msg="failed to open private leg" id=fb973daaf1a4 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:34:02-0500 lvl=warn msg="failed to open private leg" id=2c12995a7c6d privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:34:36-0500 lvl=warn msg="failed to open private leg" id=ebdb0e13ffe6 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:34:50-0500 lvl=warn msg="failed to open private leg" id=c5414c3e7cd7 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:36:18-0500 lvl=warn msg="failed to open private leg" id=c693989dd5d8 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:36:43-0500 lvl=warn msg="failed to open private leg" id=14d497ee6e11 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:37:49-0500 lvl=warn msg="failed to open private leg" id=769a85e96a42 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:38:16-0500 lvl=warn msg="failed to open private leg" id=4a639827d0cc privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:39:23-0500 lvl=warn msg="failed to open private leg" id=ab0c27432ada privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:39:32-0500 lvl=warn msg="failed to open private leg" id=591d2fcf5a4f privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:41:02-0500 lvl=warn msg="failed to open private leg" id=830b567f4146 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:42:06-0500 lvl=warn msg="failed to open private leg" id=9676e88ca859 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:42:28-0500 lvl=warn msg="failed to open private leg" id=348bb952bc87 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:42:44-0500 lvl=warn msg="failed to open private leg" id=f0061762bea6 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:44:30-0500 lvl=warn msg="failed to open private leg" id=57e4485bcb9a privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:45:30-0500 lvl=warn msg="failed to open private leg" id=e09610386913 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:46:05-0500 lvl=warn msg="failed to open private leg" id=f45ecaf7d084 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:46:21-0500 lvl=warn msg="failed to open private leg" id=5b81498e676b privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:48:15-0500 lvl=warn msg="failed to open private leg" id=448c12a7ea68 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:48:39-0500 lvl=warn msg="failed to open private leg" id=79e8c7444316 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:50:14-0500 lvl=warn msg="failed to open private leg" id=e0e2b591222b privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:50:14-0500 lvl=warn msg="failed to open private leg" id=cbb70e0f740a privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:51:56-0500 lvl=warn msg="failed to open private leg" id=c87c9e475e8c privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:52:18-0500 lvl=warn msg="failed to open private leg" id=6539e66758bd privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:54:27-0500 lvl=warn msg="failed to open private leg" id=9e30ea17ee34 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:54:33-0500 lvl=warn msg="failed to open private leg" id=ae2e54d362b9 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:55:21-0500 lvl=warn msg="failed to open private leg" id=4d76a46931ec privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:56:41-0500 lvl=warn msg="failed to open private leg" id=c6a71f9fbf72 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T15:58:52-0500 lvl=info msg="join connections" obj=join id=4b3110f1a7e9 l=127.0.0.1:7071 r=54.144.213.24:18002
+t=2023-07-05T15:58:57-0500 lvl=info msg="join connections" obj=join id=77962061d9f7 l=127.0.0.1:7071 r=54.162.110.104:60722
+t=2023-07-05T15:58:59-0500 lvl=info msg="join connections" obj=join id=9dd2a425e404 l=127.0.0.1:7071 r=54.197.21.180:14626
+t=2023-07-05T16:01:24-0500 lvl=info msg="join connections" obj=join id=f87a83a385bb l=127.0.0.1:7071 r=3.230.248.18:28055
+t=2023-07-05T16:02:37-0500 lvl=warn msg="failed to open private leg" id=2ce5c06d3aea privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T16:06:26-0500 lvl=warn msg="failed to open private leg" id=3265f38b8cc9 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T16:10:26-0500 lvl=warn msg="failed to open private leg" id=615144138564 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-05T16:14:20-0500 lvl=info msg="join connections" obj=join id=1a7f9dfe6e80 l=127.0.0.1:7071 r=3.229.80.75:11508
+t=2023-07-05T16:14:24-0500 lvl=info msg="join connections" obj=join id=95beb29f87b1 l=127.0.0.1:7071 r=3.230.89.127:46478
+t=2023-07-05T16:14:33-0500 lvl=info msg="join connections" obj=join id=bb54a995d4e5 l=127.0.0.1:7071 r=54.162.110.104:10747
+t=2023-07-05T16:15:25-0500 lvl=info msg="join connections" obj=join id=5bcadf124893 l=127.0.0.1:7071 r=3.229.80.75:60495
+t=2023-07-05T16:15:29-0500 lvl=info msg="join connections" obj=join id=8fc40e77b510 l=127.0.0.1:7071 r=3.230.248.18:4913
+t=2023-07-05T18:49:38-0500 lvl=info msg="update available" obj=updater
+t=2023-07-06T09:44:35-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046
+t=2023-07-06T09:44:36-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-07-06T09:44:36-0500 lvl=info msg="client session established" obj=csess id=be9a5c1af88b
+t=2023-07-06T09:44:36-0500 lvl=info msg="update available" obj=updater
+t=2023-07-06T09:44:36-0500 lvl=info msg="started tunnel" obj=tunnels name="remoto (http)" addr=http://localhost:7071 url=http://2fd2-179-6-168-248.ngrok-free.app
+t=2023-07-06T09:44:36-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://2fd2-179-6-168-248.ngrok-free.app
+t=2023-07-06T09:45:28-0500 lvl=warn msg="failed to open private leg" id=034de35943b9 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-06T09:46:20-0500 lvl=info msg="join connections" obj=join id=b6a93b34c288 l=127.0.0.1:7071 r=54.197.21.180:52226
+t=2023-07-06T09:48:14-0500 lvl=info msg="join connections" obj=join id=da5514d67053 l=127.0.0.1:7071 r=54.175.55.75:3729
+t=2023-07-06T15:44:37-0500 lvl=info msg="update available" obj=updater
+t=2023-07-06T21:44:37-0500 lvl=info msg="update available" obj=updater
+t=2023-07-07T10:29:41-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046
+t=2023-07-07T10:29:42-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-07-07T10:29:42-0500 lvl=info msg="client session established" obj=csess id=3a43b27edc66
+t=2023-07-07T10:29:42-0500 lvl=info msg="update available" obj=updater
+t=2023-07-07T10:29:42-0500 lvl=info msg="started tunnel" obj=tunnels name="remoto (http)" addr=http://localhost:7071 url=http://8171-179-6-168-248.ngrok-free.app
+t=2023-07-07T10:29:42-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://8171-179-6-168-248.ngrok-free.app
+t=2023-07-07T10:38:43-0500 lvl=warn msg="failed to open private leg" id=78b4c8679449 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-07-07T10:39:19-0500 lvl=info msg="join connections" obj=join id=587d1f588e23 l=127.0.0.1:7071 r=54.197.21.180:16051
+t=2023-07-07T11:02:23-0500 lvl=info msg="join connections" obj=join id=ef9134db7786 l=127.0.0.1:7071 r=3.229.80.75:58525
+t=2023-07-07T11:03:28-0500 lvl=info msg="join connections" obj=join id=1358fe50a1fa l=127.0.0.1:7071 r=3.229.80.75:12986
+t=2023-07-07T11:04:35-0500 lvl=info msg="join connections" obj=join id=837c1d05a0d4 l=127.0.0.1:7071 r=52.73.230.96:19352
+t=2023-07-07T11:05:44-0500 lvl=info msg="join connections" obj=join id=f836716855e3 l=127.0.0.1:7071 r=54.162.110.104:21962
+t=2023-07-07T11:06:56-0500 lvl=info msg="join connections" obj=join id=7302a096cddb l=127.0.0.1:7071 r=54.162.110.104:20708
+t=2023-07-07T11:08:11-0500 lvl=info msg="join connections" obj=join id=6e7af7a2a2d6 l=127.0.0.1:7071 r=54.175.55.75:55656
+t=2023-07-07T11:09:28-0500 lvl=info msg="join connections" obj=join id=b102081eb55b l=127.0.0.1:7071 r=3.230.89.127:6663
+t=2023-07-07T11:10:48-0500 lvl=info msg="join connections" obj=join id=5fcd88286946 l=127.0.0.1:7071 r=52.73.230.96:55917
+t=2023-07-07T11:12:11-0500 lvl=info msg="join connections" obj=join id=4ea73d6a6307 l=127.0.0.1:7071 r=3.230.248.18:55328
+t=2023-07-07T11:13:38-0500 lvl=info msg="join connections" obj=join id=b487c9b8557e l=127.0.0.1:7071 r=54.197.21.180:28549
+t=2023-07-07T11:15:08-0500 lvl=info msg="join connections" obj=join id=44ac12f4cab0 l=127.0.0.1:7071 r=54.144.213.24:61282
+t=2023-07-07T11:16:42-0500 lvl=info msg="join connections" obj=join id=07b0915d063e l=127.0.0.1:7071 r=54.175.55.75:42531
+t=2023-07-07T11:18:19-0500 lvl=info msg="join connections" obj=join id=a3e510af7af7 l=127.0.0.1:7071 r=3.229.80.75:20574
+t=2023-07-07T11:20:00-0500 lvl=info msg="join connections" obj=join id=ab459ab21f29 l=127.0.0.1:7071 r=54.197.21.180:23229
+t=2023-07-07T11:21:44-0500 lvl=info msg="join connections" obj=join id=e687a3d5da4c l=127.0.0.1:7071 r=3.230.89.127:53841
+t=2023-07-07T11:23:32-0500 lvl=info msg="join connections" obj=join id=5d7231683d32 l=127.0.0.1:7071 r=3.230.89.127:1322
+t=2023-07-07T11:25:25-0500 lvl=info msg="join connections" obj=join id=225f60ac44ca l=127.0.0.1:7071 r=54.144.213.24:37236
+t=2023-07-07T11:27:22-0500 lvl=info msg="join connections" obj=join id=bbb7db84e259 l=127.0.0.1:7071 r=54.175.55.75:63817
+t=2023-07-07T11:29:23-0500 lvl=info msg="join connections" obj=join id=d6f45bbe6eea l=127.0.0.1:7071 r=3.229.80.75:11974

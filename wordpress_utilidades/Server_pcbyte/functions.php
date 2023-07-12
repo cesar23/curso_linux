@@ -1,13 +1,13 @@
 <?php
 /*
 server: pcbyte
-version de file: 1.0.2
+version de file: 1.0.1
 */
 
 $my_url = home_url( '/' ); //http://www.example.com/
 $url_amigable='www.'.preg_replace('/(http|https):\/\/(\S+)(\/)/i', '${2}',$my_url );//www.example.com
 
-define ('VERSION', '2022-08-07-7');
+define ('VERSION', '2023-04-18-1');
 
 
 function version_id() {
@@ -120,10 +120,10 @@ function add_custom_body_open_code() {
 
             <div style="width: 100%;height: 50px;margin-bottom: 3px;">
                 <a target="_blank"
-                   href="https://api.whatsapp.com/send?phone=51998197574&text=Hola PCBYTE, tengo una consulta">
+                   href="https://api.whatsapp.com/send?phone=5199819757&text=Hola PCBYTE, tengo una consulta">
                     <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
                     <div style="float: left">
-                        <strong>JANET GARCIA</strong><br>998-197574
+                        <strong>JANET GARCIA</strong><br>998-19757
                     </div>
                 </a>
             </div>
@@ -133,7 +133,7 @@ function add_custom_body_open_code() {
                    href="https://api.whatsapp.com/send?phone=51946480897&text=Hola PCBYTE, tengo una consulta">
                     <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
                     <div style="float: left">
-                        <strong>KATE VILLASANTE</strong><br>946-480897
+                        <strong>J. GUTIERREZ</strong><br>946-480897
                     </div>
                 </a>
             </div>
@@ -141,13 +141,24 @@ function add_custom_body_open_code() {
 
             <div style="width: 100%;height: 50px;margin-bottom: 3px;">
                 <a target="_blank"
-                   href="https://api.whatsapp.com/send?phone=519934822375&text=Hola PCBYTE, tengo una consulta">
+                   href="https://api.whatsapp.com/send?phone=51916603298&text=Hola PCBYTE, tengo una consulta">
                     <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
                     <div style="float: left">
-                        <strong>JOSEPH RODRIGUEZ</strong><br>934-822375
+                        <strong>SHARON CARBAJAL</strong><br>916-603298
                     </div>
                 </a>
             </div>
+
+  <div style="width: 100%;height: 50px;margin-bottom: 3px;">
+                <a target="_blank"
+                   href="https://api.whatsapp.com/send?phone=51934822375&text=Hola PCBYTE, tengo una consulta">
+                    <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
+                    <div style="float: left">
+                        <strong>ERICK LLERENA</strong><br>934-822375
+                    </div>
+                </a>
+            </div>
+
 
         </div>
     </div>
