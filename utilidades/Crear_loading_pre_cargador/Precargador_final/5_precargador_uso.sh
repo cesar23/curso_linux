@@ -8,9 +8,9 @@
 # @param str
 # @return void
 # @example
+#       ProgressBar 10 ${end_number}  " iniciando copia.." && sleep 2
 # @since   2023-28-14
 #######################################
-
 
 function ProgressBar {
 # Process data
