@@ -7,14 +7,6 @@
     font-style: normal
 }
 
-#wp-admin-bar-et-use-visual-builder a:before {
-    font-family: ETmodules !important;
-    content: "\e625";
-    font-size: 30px !important;
-    width: 28px;
-    margin-top: -3px;
-    color: #974df3 !important
-}
 
 #wp-admin-bar-et-use-visual-builder:hover a:before {
     color: #fff !important
