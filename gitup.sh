@@ -40,9 +40,13 @@ function gitup() {
          git commit -m "${MY_INFO} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
          git push origin $CURRENT_BRANCH
 
-         #-----------------------------------------------------
-         printf "\n ------repositorio github----- \n\n" && sleep 2
-         git push origin2 master
+         #------- Verificamos si extiste un segundo repositorio ------
+         if [ "1" == "$( fn_check_remote_origin_2 )" ]
+         then
+            printf "\n ------Repositorio github----- \n\n" && sleep 2
+            git push origin2 $CURRENT_BRANCH
+         fi
+
   else
      echo -en "No se encontraron cambios en rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
   fi
@@ -57,13 +61,8 @@ function gitup2() {
 }
 # verificar si hay cambios en repositorio
 function fn_check_changes_repositor(){
-  file_temp="${TMP}/temp_git_$(date +%s).tmp"
-#  cd '/D/repos/curso_excel'
-#  cd '/D/repos/curso_git'
-  git status -s > "${file_temp}" 2>&1
-  OUT_GIT_STATUS=$( cat "${file_temp}" )
-  rm -rf "${file_temp}"
-  #cat "${CURRENT_DIR}/test.sh.txt"
+  #file_temp="${TMP}/temp_git_$(date +%s).tmp"
+  OUT_GIT_STATUS=$( git status -s |  head -n 1 )
   if [ -n "$OUT_GIT_STATUS" ]
   then
       echo "1"
@@ -71,6 +70,16 @@ function fn_check_changes_repositor(){
       echo "0"
   fi
 }
+function fn_check_remote_origin_2(){
+  OUT_GIT_STATUS=$( git remote -v | grep origin2 | head -n 1 )
+  if [ -n "$OUT_GIT_STATUS" ]
+  then
+      echo "1"
+  else
+      echo "0"
+  fi
+}
+
 clear
 cd $scriptPathDir
 gitup

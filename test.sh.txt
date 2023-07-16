@@ -1,0 +1,1 @@
+D:/repos/curso_linux/test.sh: line 58: s: command not found
