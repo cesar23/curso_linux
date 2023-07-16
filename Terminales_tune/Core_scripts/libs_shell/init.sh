@@ -7,9 +7,12 @@ CURRENT_TERMINAL='gitbash'
 
 if [ "$SHELL" == "/usr/bin/bash" ]; then
     CURRENT_TERMINAL='gitbash'
+    CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/gitbash"
     # si existe la variable $CMDER_ROOT es cmder
     if [ -n "$CMDER_ROOT"  ]; then
       CURRENT_TERMINAL='cmder'
+      CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/cmder"
+
     fi
 
 fi
@@ -18,17 +21,19 @@ fi
 # si la  shel es de Linux
 if [ "$SHELL" == "/bin/bash" ]; then
     CURRENT_TERMINAL='linux'
+    CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/linux"
 fi
 
 
 # si la  shel es de mobax
 if [ "$SHELL" == "/bin/bash.exe" ]; then
     CURRENT_TERMINAL='mobax'
+    CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/mobax"
 fi
 
 
 
-CURRENT_TERMINAL_SCRIPTS="${CURRENT_DIR}/${CURRENT_TERMINAL}"
+
 
 #echo "---------CURRENT_TERMINAL: ${CURRENT_TERMINAL}"
 #echo "---------CURRENT_TERMINAL_SCRIPTS: ${CURRENT_TERMINAL_SCRIPTS}"
