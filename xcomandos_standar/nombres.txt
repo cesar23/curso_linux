@@ -15,3 +15,68 @@ deysi
 camila
 Camilo
 yo.peru
+# Please Note:
+# In PHP Versions <= 7.4 MySQL8 is not supported due to lacking pdo support
+
+# To determine the name of your containers
+COMPOSE_PROJECT_NAME=plugin_wp
+
+
+#::::::::PHP
+# Possible values: php54, php56, php71, php72, php73, php74, php8
+PHPVERSION=7.4
+PHP_INI=.docker/config/php/php.ini
+PHP_INI_MCRYPT=./.docker/config/php/conf.d/docker-php-ext-mcrypt.ini
+PHP_INI_XDEBUG=./.docker/config/php/conf.d/docker-php-ext-xdebug.ini
+PHP_INI_ERROR_REPORT=./.docker/config/php/conf.d/error_reporting.ini
+
+#----------------------------------SERVER---------------------------------
+WEB_SERVER_PORT_LOCAL=80
+WEB_SERVER_PORT_LOCAL_HTTPS=443
+#WEB_SERVER_DIR_LOCAL=./pcbyte.local
+
+
+
+#:::::::::APACHE
+APACHE_DOMAIN_0=wp-plugin.local
+APACHE_VHOST_0=./www/wp-plugin.local
+APACHE_DOCUMENT_ROOT=/var/www/html
+
+APACHE_CRT=./.docker/etc/apache2/crt
+VHOSTS_DIR=./.docker/config/vhosts
+
+#-vhost
+APACHE_LOG_DIR=./data_docker/apache2/logs
+
+
+
+
+
+#----------------------------------Mongo DB---------------------------------
+#MONGO_DB_DATA=D:/mongo
+MONGO_DB_DATA=./data_docker/mongo
+MONGO_DB_PORT=27017
+#MONGO_DB_PORT=27018
+
+
+#----------------------------------REDIS---------------------------------
+
+#----------------------------------MYSQL---------------------------------
+
+#MYSQL_PORT_LOCAL=3306
+MYSQL_PORT_LOCAL=3306
+MYSQL_DATA_DIR=./data_docker/mysql/data/
+MYSQL_LOG_DIR=./data_docker/mysql/logs/
+
+MYSQL_DATABASE=pluging_wp
+# MySQL root user password
+MYSQL_ROOT_PASSWORD=cesar203
+#usuario nomal Mysql
+MYSQL_USER=admin
+MYSQL_PASSWORD=cesar203
+
+#----------------------------------PHMYADMIN---------------------------------
+# phpMyadmin
+HOST_MACHINE_PMA_PORT=8080
+UPLOAD_LIMIT=512M
+MEMORY_LIMIT=512M

@@ -19,6 +19,7 @@ Blue_full=`echo -en "\e[0;34m"`         # Blue
 Purple_full=`echo -en "\e[0;35m"`       # Purple
 Cyan_full=`echo -en "\e[0;36m"`         # Cyan
 White_full=`echo -en "\e[0;37m"`        # White
+White_full=`echo -en "\e[0;37m"`        # Gray
 
 # Bold
 BBlack_full=`echo -en "\e[1;30m"`       # Black
@@ -84,13 +85,6 @@ On_IWhite_full=`echo -en "\e[0;107m"`   # White
 # ----------------------------------------
 
 
-echo "$BGreen"
-echo "uno"
-echo "dad"
-echo "$Yellow"
-echo "uno"
-echo "dad"
-exit
 
 # Bold
 BBlack_full='\e[1;30m'       # Black
@@ -288,83 +282,83 @@ White_persint_full=`echo -en'\e[0;37m'        # White
  echo "${DEFAULT} DEFAULT "
  echo $DEFAULT
 
-exit
+
 
 # ------------------------------- ver colores en vivo
-#echo " ----------- # Regular Colors ------------"
-#echo -en "${Red} color Red ${Color_Off} \n"
-#echo -en "${Green} color Green ${Color_Off} \n"
-#echo -en "${Yellow} color Yellow ${Color_Off} \n"
-#echo -en "${Blue} color Blue ${Color_Off} \n"
-#echo -en "${Purple} color Purple ${Color_Off} \n"
-#echo -en "${Cyan} color Cyan ${Color_Off} \n"
-#echo -en "${White} color White ${Color_Off} \n"
-#
-#
-#echo " ----------- # Bold ------------"
-#
-## Bold
-#echo -en "${BBlack} color BBlack ${Color_Off} \n"
-#echo -en "${BRed} color BRed ${Color_Off} \n"
-#echo -en "${BGreen} color BGreen ${Color_Off} \n"
-#echo -en "${BYellow} color BYellow ${Color_Off} \n"
-#echo -en "${BBlue} color BBlue ${Color_Off} \n"
-#echo -en "${BPurple} color BPurple ${Color_Off} \n"
-#echo -en "${BCyan} color BCyan ${Color_Off} \n"
-#echo -en "${BWhite} color BWhite ${Color_Off} \n"
-#
-#echo " ----------- # Underline ------------"
-#
-#echo -en "${UBlack}color UBlack${Color_Off} \n"
-#echo -en "${URed}color URed${Color_Off} \n"
-#echo -en "${UGreen}color UGreen${Color_Off} \n"
-#echo -en "${UYellow}color UYellow${Color_Off} \n"
-#echo -en "${UBlue}color UBlue${Color_Off} \n"
-#echo -en "${UPurple}color UPurple${Color_Off} \n"
-#echo -en "${UCyan}color UCyan${Color_Off} \n"
-#echo -en "${UWhite}color UWhite${Color_Off} \n"
-#
-#echo " ----------- # Background ------------"
-#
-#echo -en "${On_Black}color On_Black ${Color_Off} \n"
-#echo -en "${On_Red}color On_Red ${Color_Off} \n"
-#echo -en "${On_Green}color On_Green ${Color_Off} \n"
-#echo -en "${On_Yellow}color On_Yellow ${Color_Off} \n"
-#echo -en "${On_Blue}color On_Blue ${Color_Off} \n"
-#echo -en "${On_Purple}color On_Purple ${Color_Off} \n"
-#echo -en "${On_Cyan}color On_Cyan ${Color_Off} \n"
-#echo -en "${On_White}color On_White ${Color_Off} \n"
-#
-#echo " ----------- # High Intensity ------------"
-#echo -en "${IBlack} intensidad IBlack ${Color_Off} \n"
-#echo -en "${IRed} intensidad IRed ${Color_Off} \n"
-#echo -en "${IGreen} intensidad IGreen ${Color_Off} \n"
-#echo -en "${IYellow} intensidad IYellow ${Color_Off} \n"
-#echo -en "${IBlue} intensidad IBlue ${Color_Off} \n"
-#echo -en "${IPurple} intensidad IPurple ${Color_Off} \n"
-#echo -en "${ICyan} intensidad ICyan ${Color_Off} \n"
-#echo -en "${IWhite} intensidad IWhite ${Color_Off} \n"
-#
-#echo " ----------- # Bold High Intensity ------------"
-#
-#echo -en "${BIBlack} bold intensidad BIBlack ${Color_Off} \n"
-#echo -en "${BIRed} bold intensidad BIRed ${Color_Off} \n"
-#echo -en "${BIGreen} bold intensidad BIGreen ${Color_Off} \n"
-#echo -en "${BIYellow} bold intensidad BIYellow ${Color_Off} \n"
-#echo -en "${BIBlue} bold intensidad BIBlue ${Color_Off} \n"
-#echo -en "${BIPurple} bold intensidad BIPurple ${Color_Off} \n"
-#echo -en "${BICyan} bold intensidad BICyan ${Color_Off} \n"
-#echo -en "${BIWhite} bold intensidad BIWhite ${Color_Off} \n"
-#
-#echo " ----------- # High Intensity backgrounds------------"
-#echo -en "${On_IBlack} bacckground intensidad On_IBlack ${Color_Off} \n"
-#echo -en "${On_IRed} bacckground intensidad On_IRed ${Color_Off} \n"
-#echo -en "${On_IGreen} bacckground intensidad On_IGreen ${Color_Off} \n"
-#echo -en "${On_IYellow} bacckground intensidad On_IYellow ${Color_Off} \n"
-#echo -en "${On_IBlue} bacckground intensidad On_IBlue ${Color_Off} \n"
-#echo -en "${On_IPurple} bacckground intensidad On_IPurple ${Color_Off} \n"
-#echo -en "${On_ICyan} bacckground intensidad On_ICyan ${Color_Off} \n"
-#
+echo " ----------- # Regular Colors ------------"
+echo -en "${Red} color Red ${Color_Off} \n"
+echo -en "${Green} color Green ${Color_Off} \n"
+echo -en "${Yellow} color Yellow ${Color_Off} \n"
+echo -en "${Blue} color Blue ${Color_Off} \n"
+echo -en "${Purple} color Purple ${Color_Off} \n"
+echo -en "${Cyan} color Cyan ${Color_Off} \n"
+echo -en "${White} color White ${Color_Off} \n"
+
+
+echo " ----------- # Bold ------------"
+
+# Bold
+echo -en "${BBlack} color BBlack ${Color_Off} \n"
+echo -en "${BRed} color BRed ${Color_Off} \n"
+echo -en "${BGreen} color BGreen ${Color_Off} \n"
+echo -en "${BYellow} color BYellow ${Color_Off} \n"
+echo -en "${BBlue} color BBlue ${Color_Off} \n"
+echo -en "${BPurple} color BPurple ${Color_Off} \n"
+echo -en "${BCyan} color BCyan ${Color_Off} \n"
+echo -en "${BWhite} color BWhite ${Color_Off} \n"
+
+echo " ----------- # Underline ------------"
+
+echo -en "${UBlack}color UBlack${Color_Off} \n"
+echo -en "${URed}color URed${Color_Off} \n"
+echo -en "${UGreen}color UGreen${Color_Off} \n"
+echo -en "${UYellow}color UYellow${Color_Off} \n"
+echo -en "${UBlue}color UBlue${Color_Off} \n"
+echo -en "${UPurple}color UPurple${Color_Off} \n"
+echo -en "${UCyan}color UCyan${Color_Off} \n"
+echo -en "${UWhite}color UWhite${Color_Off} \n"
+
+echo " ----------- # Background ------------"
+
+echo -en "${On_Black}color On_Black ${Color_Off} \n"
+echo -en "${On_Red}color On_Red ${Color_Off} \n"
+echo -en "${On_Green}color On_Green ${Color_Off} \n"
+echo -en "${On_Yellow}color On_Yellow ${Color_Off} \n"
+echo -en "${On_Blue}color On_Blue ${Color_Off} \n"
+echo -en "${On_Purple}color On_Purple ${Color_Off} \n"
+echo -en "${On_Cyan}color On_Cyan ${Color_Off} \n"
+echo -en "${On_White}color On_White ${Color_Off} \n"
+
+echo " ----------- # High Intensity ------------"
+echo -en "${IBlack} intensidad IBlack ${Color_Off} \n"
+echo -en "${IRed} intensidad IRed ${Color_Off} \n"
+echo -en "${IGreen} intensidad IGreen ${Color_Off} \n"
+echo -en "${IYellow} intensidad IYellow ${Color_Off} \n"
+echo -en "${IBlue} intensidad IBlue ${Color_Off} \n"
+echo -en "${IPurple} intensidad IPurple ${Color_Off} \n"
+echo -en "${ICyan} intensidad ICyan ${Color_Off} \n"
+echo -en "${IWhite} intensidad IWhite ${Color_Off} \n"
+
+echo " ----------- # Bold High Intensity ------------"
+
+echo -en "${BIBlack} bold intensidad BIBlack ${Color_Off} \n"
+echo -en "${BIRed} bold intensidad BIRed ${Color_Off} \n"
+echo -en "${BIGreen} bold intensidad BIGreen ${Color_Off} \n"
+echo -en "${BIYellow} bold intensidad BIYellow ${Color_Off} \n"
+echo -en "${BIBlue} bold intensidad BIBlue ${Color_Off} \n"
+echo -en "${BIPurple} bold intensidad BIPurple ${Color_Off} \n"
+echo -en "${BICyan} bold intensidad BICyan ${Color_Off} \n"
+echo -en "${BIWhite} bold intensidad BIWhite ${Color_Off} \n"
+
+echo " ----------- # High Intensity backgrounds------------"
+echo -en "${On_IBlack} bacckground intensidad On_IBlack ${Color_Off} \n"
+echo -en "${On_IRed} bacckground intensidad On_IRed ${Color_Off} \n"
+echo -en "${On_IGreen} bacckground intensidad On_IGreen ${Color_Off} \n"
+echo -en "${On_IYellow} bacckground intensidad On_IYellow ${Color_Off} \n"
+echo -en "${On_IBlue} bacckground intensidad On_IBlue ${Color_Off} \n"
+echo -en "${On_IPurple} bacckground intensidad On_IPurple ${Color_Off} \n"
+echo -en "${On_ICyan} bacckground intensidad On_ICyan ${Color_Off} \n"
+
 
 
 # -----------------------------------------------

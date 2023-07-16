@@ -26,6 +26,7 @@ Blue='\e[0;34m'         # Blue
 Purple='\e[0;35m'       # Purple
 Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
+Gray='\e[1;30m'        # Gray
 
 # Bold
 BBlack='\e[1;30m'       # Black
@@ -186,7 +187,7 @@ On_IWhite_full=`echo -en "\e[0;107m"`   # White
 #echo -en "${Purple} color Purple ${Color_Off} \n"
 #echo -en "${Cyan} color Cyan ${Color_Off} \n"
 #echo -en "${White} color White ${Color_Off} \n"
-#
+
 #
 #echo " ----------- # Bold ------------"
 #

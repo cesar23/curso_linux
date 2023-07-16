@@ -6,12 +6,17 @@
 Color_Off='\e[0m'       # Text Reset
 #Color_Off='\033[1;37m'       # Text Reset
 Color_Reset_full=`echo -en "\e[0m"`
+
 #Color_Off='\033[0m'       # Text Reset
+
+
 # ---------------------------------------------------------------
 # ------ 🏷️ Colores que afectan la linea actual ----------------
 # ---------------------------------------------------------------
+
 # ✔️:::::::::  ejemplo Uso:
 #      echo -en " -- ---- * command ${Red}:  ver menu ${Color_Off} favoritos \n"
+
 # Regular Colors
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
@@ -21,42 +26,48 @@ Blue='\e[0;34m'         # Blue
 Purple='\e[0;35m'       # Purple
 Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
+Gray='\e[1;30m'        # Gray
+
 # Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+BBlack='\e[1;30m'       # Black (Bold)
+BRed='\e[1;31m'         # Red (Bold)
+BGreen='\e[1;32m'       # Green (Bold)
+BYellow='\e[1;33m'      # Yellow (Bold)
+BBlue='\e[1;34m'        # Blue (Bold)
+BPurple='\e[1;35m'      # Purple (Bold)
+BCyan='\e[1;36m'        # Cyan (Bold)
+BWhite='\e[1;37m'       # White (Bold)
+
 # Underline
-UBlack='\e[4;30m'       # Black
-URed='\e[4;31m'         # Red
-UGreen='\e[4;32m'       # Green
-UYellow='\e[4;33m'      # Yellow
-UBlue='\e[4;34m'        # Blue
-UPurple='\e[4;35m'      # Purple
-UCyan='\e[4;36m'        # Cyan
-UWhite='\e[4;37m'       # White
+UBlack='\e[4;30m'       # Black  (Underline)
+URed='\e[4;31m'         # Red  (Underline)
+UGreen='\e[4;32m'       # Green  (Underline)
+UYellow='\e[4;33m'      # Yellow  (Underline)
+UBlue='\e[4;34m'        # Blue  (Underline)
+UPurple='\e[4;35m'      # Purple  (Underline)
+UCyan='\e[4;36m'        # Cyan  (Underline)
+UWhite='\e[4;37m'       # White  (Underline)
+
 # Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+On_Black='\e[40m'       # Black (BackGropund)
+On_Red='\e[41m'         # Red (BackGropund)
+On_Green='\e[42m'       # Green (BackGropund)
+On_Yellow='\e[43m'      # Yellow (BackGropund)
+On_Blue='\e[44m'        # Blue (BackGropund)
+On_Purple='\e[45m'      # Purple (BackGropund)
+On_Cyan='\e[46m'        # Cyan (BackGropund)
+On_White='\e[47m'       # White (BackGropund)
+
 # High Intensity
-IBlack='\e[0;90m'       # Black
-IRed='\e[0;91m'         # Red
-IGreen='\e[0;92m'       # Green
-IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
-IPurple='\e[0;95m'      # Purple
-ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+IBlack='\e[0;90m'       # Black (Intensitive)
+IRed='\e[0;91m'         # Red (Intensitive)
+IGreen='\e[0;92m'       # Green (Intensitive)
+IYellow='\e[0;93m'      # Yellow (Intensitive)
+IBlue='\e[0;94m'        # Blue (Intensitive)
+IPurple='\e[0;95m'      # Purple (Intensitive)
+ICyan='\e[0;96m'        # Cyan (Intensitive)
+IWhite='\e[0;97m'       # White (Intensitive)
+
 # Bold High Intensity
 BIBlack='\e[1;90m'      # Black
 BIRed='\e[1;91m'        # Red
@@ -66,6 +77,7 @@ BIBlue='\e[1;94m'       # Blue
 BIPurple='\e[1;95m'     # Purple
 BICyan='\e[1;96m'       # Cyan
 BIWhite='\e[1;97m'      # White
+
 # High Intensity backgrounds
 On_IBlack='\e[0;100m'   # Black
 On_IRed='\e[0;101m'     # Red
@@ -75,15 +87,24 @@ On_IBlue='\e[0;104m'    # Blue
 On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
+
+
+
+
 # --------------------------------------------------------------------
 # ------🏷️ colores que afectas a las lineas siguientes --------------
 # -------------------------------------------------------------------
+
+
 # ✔️:::::::::  ejemplo Uso:
 #        echo "$BGreen"
 #        echo "uno"
 #        echo "dad"
 #        echo "$Yellow"
 #        echo "uno"
+
+
+
 # Regular Colors
 Black_full=`echo -en "\e[0;30m"`        # Black
 Red_full=`echo -en "\e[0;31m"`          # Red
@@ -93,6 +114,7 @@ Blue_full=`echo -en "\e[0;34m"`         # Blue
 Purple_full=`echo -en "\e[0;35m"`       # Purple
 Cyan_full=`echo -en "\e[0;36m"`         # Cyan
 White_full=`echo -en "\e[0;37m"`        # White
+
 # Bold
 BBlack_full=`echo -en "\e[1;30m"`       # Black
 BRed_full=`echo -en "\e[1;31m"`         # Red
@@ -102,6 +124,8 @@ BBlue_full=`echo -en "\e[1;34m"`        # Blue
 BPurple_full=`echo -en "\e[1;35m"`      # Purple
 BCyan_full=`echo -en "\e[1;36m"`        # Cyan
 BWhite_full=`echo -en "\e[1;37m"`       # White
+
+
 # Underline
 UBlack_full=`echo -en "\e[4;30m"`       # Black
 URed_full=`echo -en "\e[4;31m"`         # Red
@@ -111,6 +135,7 @@ UBlue_full=`echo -en "\e[4;34m"`        # Blue
 UPurple_full=`echo -en "\e[4;35m"`      # Purple
 UCyan_full=`echo -en "\e[4;36m"`        # Cyan
 UWhite_full=`echo -en "\e[4;37m"`       # White
+
 # Background
 On_Black_full=`echo -en "\e[40m"`       # Black
 On_Red_full=`echo -en "\e[41m"`         # Red
@@ -120,6 +145,7 @@ On_Blue_full=`echo -en "\e[44m"`        # Blue
 On_Purple_full=`echo -en "\e[45m"`      # Purple
 On_Cyan_full=`echo -en "\e[46m"`        # Cyan
 On_White_full=`echo -en "\e[47m"`       # White
+
 # High Intensity
 IBlack_full=`echo -en "\e[0;90m"`       # Black
 IRed_full=`echo -en "\e[0;91m"`         # Red
@@ -129,6 +155,7 @@ IBlue_full=`echo -en "\e[0;94m"`        # Blue
 IPurple_full=`echo -en "\e[0;95m"`      # Purple
 ICyan_full=`echo -en "\e[0;96m"`        # Cyan
 IWhite_full=`echo -en "\e[0;97m"`       # White
+
 # Bold High Intensity
 BIBlack_full=`echo -en "\e[1;90m"`      # Black
 BIRed_full=`echo -en "\e[1;91m"`        # Red
@@ -138,6 +165,7 @@ BIBlue_full=`echo -en "\e[1;94m"`       # Blue
 BIPurple_full=`echo -en "\e[1;95m"`     # Purple
 BICyan_full=`echo -en "\e[1;96m"`       # Cyan
 BIWhite_full=`echo -en "\e[1;97m"`      # White
+
 # High Intensity backgrounds
 On_IBlack_full=`echo -en "\e[0;100m"`   # Black
 On_IRed_full=`echo -en "\e[0;101m"`     # Red
@@ -147,6 +175,9 @@ On_IBlue_full=`echo -en "\e[0;104m"`    # Blue
 On_IPurple_full=`echo -en "\e[0;105m"`  # Purple
 On_ICyan_full=`echo -en "\e[0;106m"`    # Cyan
 On_IWhite_full=`echo -en "\e[0;107m"`   # White
+
+
+
 # ------------------------------- ver colores en vivo
 #echo " ----------- # Regular Colors ------------"
 #echo -en "${Red} color Red ${Color_Off} \n"
@@ -222,13 +253,22 @@ On_IWhite_full=`echo -en "\e[0;107m"`   # White
 #echo -en "${On_IPurple} bacckground intensidad On_IPurple ${Color_Off} \n"
 #echo -en "${On_ICyan} bacckground intensidad On_ICyan ${Color_Off} \n"
 #
+
+
 # -----------------------------------------------
 # ------------------------- USO
 #echo -en " -- ---- * command ${Red}:  ver menu ${Color_Off} favoritos \n"
 #printf  " -- ---- * command ${Red}: %s ver menu ${Color_Off} favoritos \n" "param"
+
+
+
 # -----------------------------------------------
 # ---llamar a colores desde otro file
 #if [ -f ./colors.sh ]; then
 #  ./colors.sh
 #fi
 #
+
+
+
+

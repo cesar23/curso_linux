@@ -207,8 +207,8 @@ PATH_SCRIPT=`readlink -f "${BASH_SOURCE:-$0}"`
 CURRENT_DIR=`dirname $PATH_SCRIPT`
 
 # :::::::: Importanmos las librerias
-if [ -f "${CURRENT_DIR}/libs/init.sh" ]; then
- source "${CURRENT_DIR}/libs/init.sh"
+if [ -f "${CURRENT_DIR}/libs_shell/init.sh" ]; then
+ source "${CURRENT_DIR}/libs_shell/init.sh"
 fi
 
 

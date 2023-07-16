@@ -48,6 +48,7 @@ echo -e "\033[0;31m RED    [0;31m]  \e[m  \t  \033[1;31m LIGHT_RED      [1;31m  
 echo -e "\033[0;35m PURPLE [0;35m]  \e[m  \t  \033[1;35m LIGHT_PURPLE   [1;35m  \e[m"
 echo -e "\033[0;33m YELLOW [0;33m]  \e[m  \t  \033[1;33m LIGHT_YELLOW   [1;33m  \e[m"
 echo -e "\033[1;30m GRAY   [1;30m]  \e[m  \t  \033[0;37m LIGHT_GRAY     [0;37m  "
+echo -e "\033[0;30m GRAY   [1;30m]  \e[m  \t  \033[0;37m LIGHT_GRAY     [0;37m  "
 
 echo ""
 echo ""

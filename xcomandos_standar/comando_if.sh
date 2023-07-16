@@ -57,3 +57,27 @@ echo ""
 echo "valor de \$h es $h "
 [ -z $h ] && h=15
 echo "valor de \$h es $h "
+
+
+
+# -----------------------------------------------------------
+echo ""
+echo "----------------------- ejemplo 4"
+echo ""
+echo " comprobar si una variable esta vacia"
+echo ""
+echo "- (-z) verificar si la variable está vacía en Bash \`No considera los espacio \`"
+echo "- (-n) verificar si la variable está vacía en Bash \`SI considera los espacio \`"
+printf "\n\n"
+#h=2
+
+greet='cesa'
+
+# if [ -n "$greet" ] #:::: verifica con un trim y verifica si esta  vacia
+# if [ -z "$greet" ] #:::: No verifica con un trim y verifica si esta  vacia
+if [ -n "$greet" ]
+then
+    echo "\$greet is empty"
+else
+    echo "\$greet is not empty"
+fi

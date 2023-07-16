@@ -124,6 +124,7 @@ function gcm() {
 
 function gitup() {
     # ::-- start -- actualizar fecha y hora
+    echo -en "${Gray}[script core]${Color_Off} \n" && sleep 3
     reload_date
     CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
     echo -en "Actualizando rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3

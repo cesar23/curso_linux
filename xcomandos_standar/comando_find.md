@@ -17,6 +17,7 @@ fuentes:
 - <a href="#400">🏆 4. Utilizar el comando find de Linux para filtrar por marca de tiempo</a>
 - <a href="#500">🏆 5. Utilizar el comando find de Linux para filtrar por propietario, grupo y derechos de acceso</a>
 - <a href="#600">🏆 6. Limitación de la profundidad de recursión del comando find de Linux</a>
+- <a href="#601">🏆 6.1 Busqueda excluyendo paths</a>
 - <a href="#700">🏆 7. Utilizar el comando find de Linux para encontrar y procesar archivos</a>
 - <a href="#800">🏆 8.Utilizar el comando find de Linux para eliminar directorios y archivos vacíos</a>
 - <a href="#xxxxxxx">xxxxxxxx</a>
@@ -419,6 +420,36 @@ Para encontrar los archivos que son mayores de 50 megabytes, incluyendo solo los
 find . -type f -mindepth 3 -and -maxdepth 5 -size +50M
 ```
 
+
+
+
+-- - 
+
+[//]: # (601------------------)
+
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+
+
+<h2  id="601">🏆 6.1 buscar ficheros ignorando paths:</h2>
+
+buscando en un path pero solo en una carpeta especifica
+```shell
+find . -type f  -path '\./debian/*' 
+find . -type f  -path '*/\.git/*';
+```
+buscando en un path pero ignorando carpetas
+```shell
+find . -type f -not -path '\./debian/*' 
+find . -type f -not -path '*/\.git/*'
+```
+aqui podemos filtrar solo lo modificado y por carpetas
+```shell
+# find . -type f -not -path '*/\.git/*'   -mtime -1 -ls
+find . -type f -not -path '*/\.git/*' \
+  -not -path '*/\.idea/*' \
+  -not -path '*/\.vscode/*' \
+  -mtime -1 -ls
+```
 -- - 
 
 [//]: # (700------------------)

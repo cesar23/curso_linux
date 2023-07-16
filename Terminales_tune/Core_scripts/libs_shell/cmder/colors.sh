@@ -26,46 +26,47 @@ Blue='\e[0;34m'         # Blue
 Purple='\e[0;35m'       # Purple
 Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
+Gray='\e[1;30m'        # Gray
 
 # Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+BBlack='\e[1;30m'       # Black (Bold)
+BRed='\e[1;31m'         # Red (Bold)
+BGreen='\e[1;32m'       # Green (Bold)
+BYellow='\e[1;33m'      # Yellow (Bold)
+BBlue='\e[1;34m'        # Blue (Bold)
+BPurple='\e[1;35m'      # Purple (Bold)
+BCyan='\e[1;36m'        # Cyan (Bold)
+BWhite='\e[1;37m'       # White (Bold)
 
 # Underline
-UBlack='\e[4;30m'       # Black
-URed='\e[4;31m'         # Red
-UGreen='\e[4;32m'       # Green
-UYellow='\e[4;33m'      # Yellow
-UBlue='\e[4;34m'        # Blue
-UPurple='\e[4;35m'      # Purple
-UCyan='\e[4;36m'        # Cyan
-UWhite='\e[4;37m'       # White
+UBlack='\e[4;30m'       # Black  (Underline)
+URed='\e[4;31m'         # Red  (Underline)
+UGreen='\e[4;32m'       # Green  (Underline)
+UYellow='\e[4;33m'      # Yellow  (Underline)
+UBlue='\e[4;34m'        # Blue  (Underline)
+UPurple='\e[4;35m'      # Purple  (Underline)
+UCyan='\e[4;36m'        # Cyan  (Underline)
+UWhite='\e[4;37m'       # White  (Underline)
 
 # Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+On_Black='\e[40m'       # Black (BackGropund)
+On_Red='\e[41m'         # Red (BackGropund)
+On_Green='\e[42m'       # Green (BackGropund)
+On_Yellow='\e[43m'      # Yellow (BackGropund)
+On_Blue='\e[44m'        # Blue (BackGropund)
+On_Purple='\e[45m'      # Purple (BackGropund)
+On_Cyan='\e[46m'        # Cyan (BackGropund)
+On_White='\e[47m'       # White (BackGropund)
 
 # High Intensity
-IBlack='\e[0;90m'       # Black
-IRed='\e[0;91m'         # Red
-IGreen='\e[0;92m'       # Green
-IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
-IPurple='\e[0;95m'      # Purple
-ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+IBlack='\e[0;90m'       # Black (Intensitive)
+IRed='\e[0;91m'         # Red (Intensitive)
+IGreen='\e[0;92m'       # Green (Intensitive)
+IYellow='\e[0;93m'      # Yellow (Intensitive)
+IBlue='\e[0;94m'        # Blue (Intensitive)
+IPurple='\e[0;95m'      # Purple (Intensitive)
+ICyan='\e[0;96m'        # Cyan (Intensitive)
+IWhite='\e[0;97m'       # White (Intensitive)
 
 # Bold High Intensity
 BIBlack='\e[1;90m'      # Black

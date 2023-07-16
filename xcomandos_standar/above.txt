@@ -1,0 +1,3 @@
+MYSQL_PORT_LOCAL=3306
+MYSQL_DATA_DIR=./data_docker/mysql/data/=ccece
+MYSQL_LOG_DIR=./data_docker/mysql/logs/=hhhhh

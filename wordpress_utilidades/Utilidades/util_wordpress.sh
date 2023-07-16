@@ -14,7 +14,7 @@ scriptPathFileTemp=$(echo "$scriptPathFile" | sed 's/.sh/.tmp/g')
 scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 
 # ::::::::::::::::::::::::::::::::: Configuraciones::::::::::::::::::::::::::::::
-# obtenemso el root dir
+
 regex="s/\/${NAME_DIR}//"
 ROOT_PATH=$(echo $CURRENT_DIR | sed -e $regex) # D:/repos/curso_plugin_theme_wordpress
 PATH_DOMAIN="${ROOT_PATH}/www/wp-plugin.local"
@@ -22,19 +22,12 @@ PATH_TEMP="${ROOT_PATH}/tmp/"
 mkdir -p $PATH_TEMP
 
 # ::::::::::::::::::::::::::: Configuraciones mysql ::::::::::::::::::::::::::
-source ./libs_shell/read_env.sh
-#DB_HOST="localhost"
-#DB_PORT="3306"
-#DB_USER="root"
-#DB_PASSWORD="cesar203"
-#DB_NAME="pluging_wp"
-PATH_ENV='/D/repos/curso_linux/xcomandos_standar/.env'
-DB_HOST=$( find_env 'MYSQL_HOST' $PATH_ENV )
-DB_PORT=$( find_env 'MYSQL_PORT' $PATH_ENV )
-DB_USER=$( find_env 'MYSQL_USER_ROOT' $PATH_ENV )
-DB_PASSWORD=$( find_env 'MYSQL_ROOT_PASSWORD' $PATH_ENV )
-DB_NAME=$( find_env 'MYSQL_DATABASE' $PATH_ENV )
 
+DB_HOST="localhost"
+DB_PORT="3306"
+DB_USER="root"
+DB_PASSWORD="cesar203"
+DB_NAME="pluging_wp"
 
 PATH_CONFIG_MYSQL="${scriptPathDir}/config_mysql.cnf"
 PATH_FILE_SQL="${scriptPathDir}/backup.sql"

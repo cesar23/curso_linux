@@ -1,46 +1,100 @@
-Antillas Netherlands
-Argentina
-Armenia
-Aruba
-Australia
-Austria
-Bahamas
-Belgica
-Bermudas
-Bolivia
-Brasil
-Bulgaria
-Burundi
-Canada
-Alemania
-Andorra
-Colombia
-Corea
-Costa Rica
-Croatia
-Cuba
-Chile
-China
-Dinamarca
-Ecuador
-El Salvador
-España
-Estados Unidos
-Estonia
-Malaysia
-Mexico
-Netherlands
-Nicaragua
-Norfolk Island
-Perú
-Polonia
-Portugal
-Rumania
-Rusia
-Rwanda
-Singapur
-Slovakia
-Sri Lanka
-Sur Africa
-Yugoslavia
-Zaire
+1	AD	Andorra	20
+2	AE	Emiratos Árabes Unidos	784
+3	AF	Afganistán	4
+4	AG	Antigua y Barbuda	28
+5	AI	Anguila	660
+6	AL	Albania	8
+7	AM	Armenia	51
+8	AN	Antillas Neerlandesas	530
+9	AO	Angola	24
+10	AQ	Antártida	10
+11	AR	Argentina	32
+12	AS	Samoa Americana	16
+13	AT	Austria	40
+14	AU	Australia	36
+15	AW	Aruba	533
+16	AX	Islas Áland	248
+17	AZ	Azerbaiyán	31
+18	BA	Bosnia y Herzegovina	70
+19	BB	Barbados	52
+20	BD	Bangladesh	50
+21	BE	Bélgica	56
+22	BF	Burkina Faso	854
+23	BG	Bulgaria	100
+24	BH	Bahréin	48
+25	BI	Burundi	108
+26	BJ	Benin	204
+27	BL	San Bartolomé	652
+28	BM	Bermudas	60
+29	BN	Brunéi	96
+30	BO	Bolivia	68
+31	BR	Brasil	76
+32	BS	Bahamas	44
+33	BT	Bhután	64
+34	BV	Isla Bouvet	74
+35	BW	Botsuana	72
+36	BY	Belarús	112
+37	BZ	Belice	84
+38	CA	Canadá	124
+39	CC	Islas Cocos	166
+40	CF	República Centro-Africana	140
+41	CG	Congo	178
+42	CH	Suiza	756
+43	CI	Costa de Marfil	384
+44	CK	Islas Cook	184
+45	CL	Chile	152
+46	CM	Camerún	120
+47	CN	China	156
+48	CO	Colombia	170
+49	CR	Costa Rica	188
+50	CU	Cuba	192
+51	CV	Cabo Verde	132
+52	CX	Islas Christmas	162
+53	CY	Chipre	196
+54	CZ	República Checa	203
+55	DE	Alemania	276
+56	DJ	Yibuti	262
+57	DK	Dinamarca	208
+58	DM	Domínica	212
+59	DO	República Dominicana	214
+60	DZ	Argel	12
+61	EC	Ecuador	218
+62	EE	Estonia	233
+63	EG	Egipto	818
+64	EH	Sahara Occidental	732
+65	ER	Eritrea	232
+66	ES	España	724
+67	ET	Etiopía	231
+68	FI	Finlandia	246
+69	FJ	Fiji	242
+70	FK	Islas Malvinas	238
+71	FM	Micronesia	583
+72	FO	Islas Faroe	234
+73	FR	Francia	250
+74	GA	Gabón	266
+75	GB	Reino Unido	826
+76	GD	Granada	308
+77	GE	Georgia	268
+78	GF	Guayana Francesa	254
+79	GG	Guernsey	831
+80	GH	Ghana	288
+81	GI	Gibraltar	292
+82	GL	Groenlandia	304
+83	GM	Gambia	270
+84	GN	Guinea	324
+85	GP	Guadalupe	312
+86	GQ	Guinea Ecuatorial	226
+87	GR	Grecia	300
+88	GS	Georgia del Sur e Islas Sandwich del Sur	239
+89	GT	Guatemala	320
+90	GU	Guam	316
+91	GW	Guinea-Bissau	624
+92	GY	Guayana	328
+93	HK	Hong Kong	344
+94	HM	Islas Heard y McDonald	334
+95	HN	Honduras	340
+96	HR	Croacia	191
+97	HT	Haití	332
+98	HU	Hungría	348
+99	ID	Indonesia	360
+100	IE	Irlanda	372
