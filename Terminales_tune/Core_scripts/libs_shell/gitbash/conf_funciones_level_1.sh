@@ -122,18 +122,56 @@ function gcm() {
     # git push -u origin master
 }
 
-function gitup() {
-    # ::-- start -- actualizar fecha y hora
-    echo -en "${Gray}[script core]${Color_Off} \n" && sleep 3
-    reload_date
-    CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-    echo -en "Actualizando rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
-    git pull origin $CURRENT_BRANCH
-    git add -A
-    git commit -m "${msg_commit} | ${INFO_PC} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
-    git push -u origin $CURRENT_BRANCH
 
-    # git push
+function upgit() {
+	git pull
+    git add -A
+    git commit -m "${MY_INFO} se actualizo :${DATE_HOUR_GIT}"
+    git push -u origin master
+}
+
+function gitup() {
+  echo -en "${Gray}[script core]${Color_Off} \n" && sleep 3
+  CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  if [ "1" == "$( fn_check_changes_repositor )" ]
+  then
+         echo -en "Actualizando rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
+         git pull origin $CURRENT_BRANCH
+         git add -A
+         git commit -m "${MY_INFO} se actualizo rama ${CURRENT_BRANCH} :${DATE_HOUR_GIT}"
+         git push origin $CURRENT_BRANCH
+
+         #------- Verificamos si extiste un segundo repositorio ------
+         if [ "1" == "$( fn_check_remote_origin_2 )" ]
+         then
+            echo -en "\nActualizando Repositorio ${BYellow}Github : [${CURRENT_BRANCH}]${Color_Off} \n\n" && sleep 2
+            git push origin2 $CURRENT_BRANCH
+         fi
+
+  else
+     echo -en "No se encontraron cambios en rama actual: [${BGreen}${CURRENT_BRANCH}${Color_Off}] \n" && sleep 3
+  fi
+
+}
+# verificar si hay cambios en repositorio
+function fn_check_changes_repositor(){
+  #file_temp="${TMP}/temp_git_$(date +%s).tmp"
+  OUT_GIT_STATUS=$( git status -s |  head -n 1 )
+  if [ -n "$OUT_GIT_STATUS" ]
+  then
+      echo "1"
+  else
+      echo "0"
+  fi
+}
+function fn_check_remote_origin_2(){
+  OUT_GIT_STATUS=$( git remote -v | grep origin2 | head -n 1 )
+  if [ -n "$OUT_GIT_STATUS" ]
+  then
+      echo "1"
+  else
+      echo "0"
+  fi
 }
 
 function gitup-qa() {
