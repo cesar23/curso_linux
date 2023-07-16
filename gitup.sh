@@ -43,7 +43,7 @@ function gitup() {
          #------- Verificamos si extiste un segundo repositorio ------
          if [ "1" == "$( fn_check_remote_origin_2 )" ]
          then
-            echo -en "\nRepositorio ${BYellow}Github : [${CURRENT_BRANCH}]${Color_Off} \n\n" && sleep 2
+            echo -en "\nActualizando Repositorio ${BYellow}Github : [${CURRENT_BRANCH}]${Color_Off} \n\n" && sleep 2
             git push origin2 $CURRENT_BRANCH
          fi
 
