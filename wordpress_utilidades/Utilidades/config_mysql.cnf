@@ -1,0 +1,5 @@
+[client]
+user="root"
+password="cesar203"
+host="localhost"
+port=3306

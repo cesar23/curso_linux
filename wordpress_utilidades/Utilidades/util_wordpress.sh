@@ -22,12 +22,29 @@ PATH_TEMP="${ROOT_PATH}/tmp/"
 mkdir -p $PATH_TEMP
 
 # ::::::::::::::::::::::::::: Configuraciones mysql ::::::::::::::::::::::::::
+source ./libs_shell/read_env.sh
+#DB_HOST="localhost"
+#DB_PORT="3306"
+#DB_USER="root"
+#DB_PASSWORD="cesar203"
+#DB_NAME="pluging_wp"
 
-DB_HOST="localhost"
-DB_PORT="3306"
-DB_USER="root"
-DB_PASSWORD="cesar203"
-DB_NAME="pluging_wp"
+#PATH_ENV='/D/repos/curso_linux/xcomandos_standar/.env'
+PATH_ENV="${ROOT_PATH}/.env"
+
+DB_HOST=$( find_env 'MYSQL_HOST' $PATH_ENV )
+DB_PORT=$( find_env 'MYSQL_PORT' $PATH_ENV )
+DB_USER=$( find_env 'MYSQL_USER_ROOT' $PATH_ENV )
+DB_PASSWORD=$( find_env 'MYSQL_ROOT_PASSWORD' $PATH_ENV )
+DB_NAME=$( find_env 'MYSQL_DATABASE' $PATH_ENV )
+
+# printf " DB_HOST=${DB_HOST} \n DB_PORT=${DB_PORT} \n DB_USER=${DB_USER} \n DB_PASSWORD=${DB_PASSWORD} \n DB_NAME=${DB_NAME}," && exit
+
+#DB_HOST="localhost"
+#DB_PORT="3306"
+#DB_USER="root"
+#DB_PASSWORD="cesar203"
+#DB_NAME="pluging_wp"
 
 PATH_CONFIG_MYSQL="${scriptPathDir}/config_mysql.cnf"
 PATH_FILE_SQL="${scriptPathDir}/backup.sql"
@@ -110,6 +127,9 @@ function fn_download_wordpress() {
   #  descargar wp-cli
   cd $PATH_DOMAIN
   fn_download_wp_cli
+  # generaremos el wp-config.php con los accesos a la  DB
+  generate_config_wp
+
 }
 
 function fn_backup_wordpress() {
@@ -137,7 +157,7 @@ function fn_backup_wordpress_db() {
 
   (printf "[client]\nuser=\"%s\"\npassword=\"%s\"\nhost=\"%s\"\nport=%s" $DB_USER $DB_PASSWORD $DB_HOST $DB_PORT) | tee $PATH_CONFIG_MYSQL > null
   sleep 1
-  "${PATH_MYSQL_DUMP}" --defaults-file="${PATH_CONFIG_MYSQL}" --ssl-mode=DISABLED -h $DB_HOST -u $DB_USER $DB_NAME  --routines --triggers --skip-opt --lock-tables --set-gtid-purged=OFF  --result-file="${PATH_FILE_SQL}"
+  "${PATH_MYSQL_DUMP}" --defaults-file="${PATH_CONFIG_MYSQL}" --ssl-mode=DISABLED --protocol=TCP --host=${DB_HOST} --user=${DB_USER}  $DB_NAME  --routines --triggers --skip-opt --lock-tables --set-gtid-purged=OFF  --result-file="${PATH_FILE_SQL}"
 }
 
 function fn_restore_wordpress_db() {
@@ -181,6 +201,17 @@ function fn_update_wordpres_version() {
   cd $PATH_DOMAIN
   pwd
   php wp-cli.phar core update
+}
+
+function generate_config_wp(){
+  path_file="${PATH_DOMAIN}/wp-config-sample.php"
+  path_file_new="${PATH_DOMAIN}/wp-config.php"
+  cp $path_file $path_file_new
+
+  sed -i "s/database_name_here/${DB_NAME}/g" $path_file_new
+  sed -i "s/username_here/${DB_USER}/g" $path_file_new
+  sed -i "s/password_here/${DB_PASSWORD}/g" $path_file_new
+  sed -i "s/localhost/${DB_HOST}/g" $path_file_new
 }
 
 
