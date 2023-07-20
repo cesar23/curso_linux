@@ -173,6 +173,12 @@ Descargar archivo en un archivo
 curl -o thatpage.html http://www.example.com/
 # descargar si el archivo ah sido redireccionado
 curl -L -o https://www.vmware.com/go/getworkstation-linux
+
+# descargar y guardarlo en un fichero
+curl --output data_1.json \
+--location 'https://geographic-levels-prod.azurewebsites.net/api/country-segmentations?code=10VVx5cvEM-sO9KnqduSW2CbtHqwbwbEhpZ6tP72lwMKAzFuw_KkXQ%3D%3D' \
+--header 'x-api-version: 1' \
+--header 'x-country: CL'
 ```
 
 Continuar descarga de archivo

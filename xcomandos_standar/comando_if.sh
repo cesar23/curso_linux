@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# echo fuente: https://atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/
 
 echo ""
 echo "----------------------- ejemplo 1"
@@ -15,7 +15,7 @@ else
 fi
 # -----------------------------------------------------------
 echo ""
-echo "----------------------- ejemplo 2"
+echo "----------------------- ejemplo 2 - comparando string"
 echo ""
 param_1="uno"
 param_2="uno"
@@ -30,20 +30,31 @@ fi
 
 # -----------------------------------------------------------
 echo ""
-echo "----------------------- ejemplo 3"
+echo "----------------------- ejemplo 3 - comparando numeros"
 echo ""
-a=10
-if [[ $VAR -gt 10 ]]
+echo "|   Comando   |   operacion   |"
+echo "|-------------|---------------|"
+echo "| -gt         | mayor         |"
+echo "| -lt         | meno          |"
+echo "| -ge         | mayor o igual |"
+echo "| -le         | menor o igual |"
+echo "| -eq         | igual         |"
+echo "| -ne         | distinto      |"
+echo ""
+echo ""
+
+a=11
+if [[ $a -gt 10 ]]
 then
-  echo "es  mayor que 10."
+  echo "es \$a mayor que 10."
 else
-  echo "es  menor que 10."
+  echo "es \$a menor o igual que 10."
 fi
 
 
 # -----------------------------------------------------------
 echo ""
-echo "----------------------- ejemplo 3"
+echo "----------------------- ejemplo 4"
 echo ""
 echo " comprueba si existe la variable \$h si no existe asigna valor"
 echo ""
@@ -62,7 +73,7 @@ echo "valor de \$h es $h "
 
 # -----------------------------------------------------------
 echo ""
-echo "----------------------- ejemplo 4"
+echo "----------------------- ejemplo 5"
 echo ""
 echo " comprobar si una variable esta vacia"
 echo ""
