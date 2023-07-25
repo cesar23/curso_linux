@@ -9,8 +9,6 @@
 #   find_env 'MYSQL_LOG_DIR' '/D/repos/curso_linux/xcomandos_standar/.env'
 # @since   2023-23-15
 #######################################
-
-
 function find_env(){
  key=$1
  path_file=$2
@@ -18,7 +16,7 @@ function find_env(){
  #:::::::: Opcion 1 - buscar la ultima coincidencia
  # line_http=$(awk "BEGIN{FS=\"=\";OFS=\"\"} /^${key}/  {print \$2,\$3 }" $path_file | tail -n 1 )
  #:::::::: Opcion 2 - buscar la primera coincidencia
- line_http=$(awk "BEGIN{FS=\"=\";OFS=\"\"} /^${key}/  {print \$2,\$3 }" $path_file | head -n 1 )
+ line_http=$(awk "BEGIN{FS=\"=\";OFS=\"\"} /^${key}=/  {print \$2,\$3 }" $path_file | head -n 1 )
  echo $line_http
 }
 #valor=$( find_env 'MYSQL_LOG_DIR' '/D/repos/curso_linux/xcomandos_standar/.env' )
