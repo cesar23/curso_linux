@@ -51,11 +51,11 @@ function minify_merge() {
           ;;
         "css")
         RES=$(minfify_file "$element")
-        echo -en "\n/* :::: <file: %s > */\n ${RES}" >> $file_output
+        echo -en "\n/* :::: <file: ${FileName} > */\n ${RES}" >> $file_output
           ;;
         "html")
         RES=$(minfify_file "$element")
-        echo -en "\n<!-- :::: <file: %s > -->\n ${RES}" >> $file_output
+        echo -en "\n<!-- :::: <file: ${FileName} > -->\n ${RES}" >> $file_output
           ;;
         esac
 
@@ -110,6 +110,7 @@ function minfify_file() {
 # ---------------------------------------------------
 # ------------ ❗❗ Ojo instalar paquetes -------------
 #
+#  npm install uglify-js -g
 #  npm i uglifyjs uglifycss html-minifier -g
 # ---------------------------------------------------
 
