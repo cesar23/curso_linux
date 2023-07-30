@@ -129,6 +129,8 @@ neofetch
 
 ### 2. Para  agregar a Git Bash
 ruta `C:\Program Files\Git\etc\bash.bashrc`
+
+aqui  agregamos la carpeta `libs_shell` al home `C:\Users\cesar`
 ```shell
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
@@ -203,12 +205,8 @@ shopt -q login_shell || . /etc/profile.d/git-prompt.sh
 # --------------   Agregado por Cesar   --------------
 # ----------------------------------------------------
 
-PATH_SCRIPT=`readlink -f "${BASH_SOURCE:-$0}"`
-CURRENT_DIR=`dirname $PATH_SCRIPT`
-
-# :::::::: Importanmos las librerias
-if [ -f "${CURRENT_DIR}/libs_shell/init.sh" ]; then
- source "${CURRENT_DIR}/libs_shell/init.sh"
+if [ -f ~/libs_shell/init.sh ]; then
+ source ~/libs_shell/init.sh
 fi
 
 
