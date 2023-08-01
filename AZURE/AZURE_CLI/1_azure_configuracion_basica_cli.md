@@ -17,6 +17,10 @@ az account clear
 
 # esto mandara para que  te  logues en la web
 az login
+
+# si da  error realizarlo mdeiante
+az login --tenant c1eb8a44-807e-4c5c-a4b7-xxxxxxxxxxxx
+
 ```
 <img src="https://i.imgur.com/sW0pTjH.png" alt="My cool logo"/>
 
