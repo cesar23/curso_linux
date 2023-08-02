@@ -1422,3 +1422,7 @@ t=2023-07-27T15:47:16-0500 lvl=warn msg="failed to open private leg" id=0a068f65
 t=2023-07-27T15:48:01-0500 lvl=warn msg="failed to open private leg" id=e99e756bc15c privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
 t=2023-07-27T15:49:46-0500 lvl=warn msg="failed to open private leg" id=bc8e751dde03 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
 t=2023-07-27T15:49:46-0500 lvl=warn msg="failed to open private leg" id=4d2cd8a93014 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No connection could be made because the target machine actively refused it."
+t=2023-08-01T10:25:17-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-08-01T10:25:17-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=42058e67daba
+t=2023-08-01T10:25:17-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-08-01T10:25:18-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://832a-179-6-168-248.ngrok-free.app

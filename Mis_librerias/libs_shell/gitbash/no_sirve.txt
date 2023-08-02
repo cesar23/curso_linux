@@ -1,0 +1,50 @@
+
+# Underline
+UBlack=`echo -en "\e[4;30m"`       # Black
+URed=`echo -en "\e[4;31m"`         # Red
+UGreen=`echo -en "\e[4;32m"`       # Green
+UYellow=`echo -en "\e[4;33m"`      # Yellow
+UBlue=`echo -en "\e[4;34m"`        # Blue
+UPurple=`echo -en "\e[4;35m"`      # Purple
+UCyan=`echo -en "\e[4;36m"`        # Cyan
+UWhite=`echo -en "\e[4;37m"`       # White
+
+# Background
+On_Black=`echo -en "\e[40m"`       # Black
+On_Red=`echo -en "\e[41m"`         # Red
+On_Green=`echo -en "\e[42m"`       # Green
+On_Yellow=`echo -en "\e[43m"`      # Yellow
+On_Blue=`echo -en "\e[44m"`        # Blue
+On_Purple=`echo -en "\e[45m"`      # Purple
+On_Cyan=`echo -en "\e[46m"`        # Cyan
+On_White=`echo -en "\e[47m"`       # White
+
+# High Intensity
+IBlack=`echo -en "\e[0;90m"`       # Black
+IRed=`echo -en "\e[0;91m"`         # Red
+IGreen=`echo -en "\e[0;92m"`       # Green
+IYellow=`echo -en "\e[0;93m"`      # Yellow
+IBlue=`echo -en "\e[0;94m"`        # Blue
+IPurple=`echo -en "\e[0;95m"`      # Purple
+ICyan=`echo -en "\e[0;96m"`        # Cyan
+IWhite=`echo -en "\e[0;97m"`       # White
+
+# Bold High Intensity
+BIBlack=`echo -en "\e[1;90m"`      # Black
+BIRed=`echo -en "\e[1;91m"`        # Red
+BIGreen=`echo -en "\e[1;92m"`      # Green
+BIYellow=`echo -en "\e[1;93m"`     # Yellow
+BIBlue=`echo -en "\e[1;94m"`       # Blue
+BIPurple=`echo -en "\e[1;95m"`     # Purple
+BICyan=`echo -en "\e[1;96m"`       # Cyan
+BIWhite=`echo -en "\e[1;97m"`      # White
+
+# High Intensity backgrounds
+On_IBlack=`echo -en "\e[0;100m"`   # Black
+On_IRed=`echo -en "\e[0;101m"`     # Red
+On_IGreen=`echo -en "\e[0;102m"`   # Green
+On_IYellow=`echo -en "\e[0;103m"`  # Yellow
+On_IBlue=`echo -en "\e[0;104m"`    # Blue
+On_IPurple=`echo -en "\e[0;105m"`  # Purple
+On_ICyan=`echo -en "\e[0;106m"`    # Cyan
+On_IWhite=`echo -en "\e[0;107m"`   # White

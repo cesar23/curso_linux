@@ -16,8 +16,8 @@ scriptPathFileTemp_system=$(echo "${TMP}/${scriptPathFileName}" | sed 's/.sh/.tm
 
 
 # par  darlo colores
-if [ -f "${CURRENT_DIR}/colors.sh" ]; then
-  source "${CURRENT_DIR}/colors.sh"
+if [ -f ${CURRENT_DIR}/colors.sh ]; then
+  source ${CURRENT_DIR}/colors.sh
 fi
 
 

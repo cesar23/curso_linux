@@ -64,24 +64,20 @@ CURRENT_PC_NAME=$(exec /usr/bin/hostname)
 INFO_PC="${CURRENT_USER}@${CURRENT_PC_NAME}"
 	
 # :::::::: importamos los  colores
-if [ -f "${CMDER_ROOT}/libs/colors.sh" ]; then
- source "${CMDER_ROOT}/libs/colors.sh"
+if [ -f "${CMDER_ROOT}/libs_shell/mobax/colors.sh" ]; then
+ source "${CMDER_ROOT}/libs_shell/mobax/colors.sh"
 fi
-# --------------
-# --------- Includes Core ----------------------
-source "${CMDER_ROOT}/libs/conf_funciones.sh"
-# --------- require  fzf
 
 
 function reload_config(){
-  source "${CMDER_ROOT}/libs/conf_funciones_level_1.sh"
-  source "${CMDER_ROOT}/libs/conf_funciones_level_2.sh"
-  source "${CMDER_ROOT}/libs/conf_alias_level_1.sh"
-  source "${CMDER_ROOT}/libs/conf_funciones_ides.sh"
-  source "${CMDER_ROOT}/libs/conf_extras.sh"
-  source "${CMDER_ROOT}/libs/conf_menu.sh"
-  source "${CMDER_ROOT}/libs/conf_alias_docker.sh"
-  source "${CMDER_ROOT}/libs/mobax.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_funciones_level_1.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_funciones_level_2.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_alias_level_1.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_funciones_ides.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_extras.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_menu.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/conf_alias_docker.sh"
+  source "${CMDER_ROOT}/libs_shell/mobax/mobax.sh"
 
 }
 #--------cargar funciones
@@ -129,7 +125,7 @@ echo -n "手 き き 手 大 手 き                  き 手 % き き 手 き 
 
 let CONTADOR++
 done
-echo "${Color_Off}" #pintado normal
+echo "${Color_Reset_full}" #pintado normal
 clear
 
 echo "${Purple_full}" #pintado morado
@@ -172,5 +168,4 @@ echo -en "${Cyan}██${BCyan}██${ICyan}██${BICyan}██ \n"
 #--------------------------------------------------------------------
 #---------------------------- Start Menu personalizado-------------
 menu
-
 ```

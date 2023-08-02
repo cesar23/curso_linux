@@ -31,34 +31,49 @@ function contains() {
     return 1
 }
 
-
 array=("something to search for" "a string" "test2000")
+
+echo ''
+echo '-------------------------------------------------------------'
+echo '--- 1. buscar si existen el contenido en un array -----------'
+echo '-------------------------------------------------------------'
+echo ''
+
 containsElement "a string" "${array[@]}"
-echo $?
+# ojo tiene que  llamarse de esat  manera por que  sino  no funciona
+SALIDA=$?
+if [[ "$SALIDA" == "1" ]]; then
+    echo "si"
+else
+  echo "no"
+fi
+
+
 
 echo ''
 echo '-------------------------------------------------------------'
+echo '--- 3. busca que sea igual el string a un array   -----------'
 echo '-------------------------------------------------------------'
-
-containsElement "blaha" "${array[@]}"
-echo $?
-
-#-------------------------------
 echo ''
-echo '-------------------------------------------------------------'
-echo '-------------------------------------------------------------'
+
 if [ $(contains "${array[@]}" "test2000") == "y" ]; then
-    echo "contains one"
+    echo "si esta el valor"
 fi
 
 #-------------------------------
 echo ''
 echo '-------------------------------------------------------------'
+echo '--- 4. busca un string dentro de los arrays - Cesar  -----------'
 echo '-------------------------------------------------------------'
-value="test2000"
-if [[ " ${array[@]} " =~ " ${value} " ]]; then
+echo ''
+value="tesgt"
+#::::: opcion 1 :  exacto string
+#if [[ " ${array[@]} " =~ " ${value} " ]]; then
+
+#::::: opcion 2 :  contenga string en el array
+if [[ "${array[*]}" =~ ${value} ]] ; then
    echo "si"
 fi
 
 
-read -p "Presionar [Enter]:" name
+#read -p "Presionar [Enter]:" name

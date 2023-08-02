@@ -1,8 +1,8 @@
-header="| header | header |\n| ------ | ------ |\n";
-for i in *sh; do;
-    header+="| ${i} |  |\n";
-done;
-printf "$header"
+#header="| header | header |\n| ------ | ------ |\n";
+#for i in *sh; do;
+#    header+="| ${i} |  |\n";
+#done;
+#printf "$header"
 
 
 echo "------------------ for  simple------------------------"
@@ -47,3 +47,4 @@ do
     echo "$e"
 done
 sleep 10
+

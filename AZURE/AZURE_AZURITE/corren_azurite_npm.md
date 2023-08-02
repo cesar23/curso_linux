@@ -8,6 +8,8 @@ fuentes:
 ## instalar
 ```shell
 npm install -g azurite
+
+npm i -g azure-functions-core-tools
 ```
 ## Correr azurite
 ```shell
