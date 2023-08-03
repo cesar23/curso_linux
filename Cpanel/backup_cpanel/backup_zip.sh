@@ -17,11 +17,12 @@ scriptPathFileTemp_system=$(echo "${TMP}/${scriptPathFileName}" | sed 's/.sh/.tm
 path_dir="/home/cesar/libs_shell"
 #path_dir="/home/cesar/jenkins"
 
-dirs_backups="/home/cesar/backups"
+#dirs_backups="/home/cesar/backups"
+dirs_backups="/E/backups"
 mkdir -p $dirs_backups
 
 
-tar -zcvf "${dirs_backups}/${TIME_NOW}_name.tar.gz"  $path_dir
+#tar -zcvf "${dirs_backups}/${TIME_NOW}_name.tar.gz"  $path_dir
 # ----obtener lo tres ultimos
 
 
@@ -35,7 +36,8 @@ do
 done
 
 for key in "${!ARRAY_FILES[@]}"; do
-  echo "${key} ${ARRAY_FILES[${key}]}"
+#  echo "${key} ${ARRAY_FILES[${key}]}"
+  echo "${ARRAY_FILES[${key}]}"
 done
 #find "/home/cesar/backups/" -iname "*.tar.gz" -type f   -exec ls -lt {} \;
 #find "/home/cesar/backups/" -iname "*.tar.gz" -type f   -exec ls -lt {} \; | awk '{print $9 }'
@@ -53,6 +55,29 @@ function contains() {
     return 1
 }
 
+function check_in_array(){
+  local search="$1"   # Save first argument in a variable
+  shift            # Shift all arguments to the left (original $1 gets lost)
+  local arr=("$@") # Rebuild the array with rest of arguments
+  local output="n"
+  if [[ "${arr[*]}" =~ ${search} ]] ; then
+     output="y"
+  fi
+
+  echo $output
+}
+
+#result=$(check_in_array "2023-08-01_04-44-28_name.tar.gz" "${ARRAY_FILES[@]}")
+#echo "--------------------"
+#echo "salida:$result"
+#if [ "$result" == "y" ]
+#then
+#   echo "si"
+#else
+#   echo "pno"
+#fi
+#exit
+
 echo -en "\n\n\n"
 
 
@@ -66,32 +91,24 @@ dosomething () {
   local current_file_path=$1
   echo "Fichero path: $current_file_path"
 
-  found=0
-
-  for file in ${ARRAY_FILES[@]}
-  do
-     echo "found 0: ${found}"
-     echo "si : [${current_file_path}] contiene: [${file}]"
-      if [[  *"$current_file_path"* == "$file" ]]; then
-        echo "Esta el fichero"
-        let found++
-      fi
-  done
-  echo "found 3: ${found}"
+  result=$(check_in_array "$current_file_path" "${ARRAY_FILES[@]}")
+  echo "--------------------"
+  echo "salida:$result"
+  if [ "$result" == "y" ]
+  then
+     echo "si"
+  else
+     echo "pno"
+  fi
 
 
 
 
   # Aqui verificamos si esta en los files que no se  deben eliminar no haremos  nada
-  if [[ "${ARRAY_FILES[*]}" =~ ${current_file} ]] ; then
-      echo ">>>>>No eliminar: $current_file"
-  else
-      echo "delete $current_file"
-      echo "Si eliminar $current_file"
-  fi
+
 sleep 2
 }
 
-find "/home/cesar/backups/" -iname "*.tar.gz" -type f  | while read file; do dosomething "$file"; done
+find "${dirs_backups}/" -iname "*.tar.gz" -type f  | while read file; do dosomething "$file"; done
 
 #find . -type f -not -path '*/\.git/*'
