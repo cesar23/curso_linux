@@ -1,5 +1,5 @@
 <?php
-// version: 2.5.0
+// version: 3.5.0
 //--Eliminar la  version de wordpres (seguridad)
 function complete_version_removal()
 {
@@ -63,6 +63,134 @@ if (!function_exists('showPopUp')) {
         <?php
     }
 }
+
+if (!function_exists('save_my_log_db')) {
+    /**
+     * funcion que guardara la data en una tabla de log  (wp_my_log)
+     *
+     * @since    1.0.1
+     * @access   private
+     *
+     * Example usage:
+     *  save_my_log_db($label_log,$logdata);
+     *
+     *
+     * @param  string  $label  etiqueta con al que se guardara en al tabla
+     * @param  mixed  $data  data para guardarlaen la db
+     *
+     * @author  Cesar Auris
+     * @return void
+     */
+    function save_my_log_db(string $label,mixed $data)
+    {
+        global $wpdb;
+        $tablename = $wpdb->prefix . "my_log";
+
+
+        $create_table_query = "
+            CREATE TABLE IF NOT EXISTS `{$tablename}` (
+              `id` bigint(20)  NOT NULL AUTO_INCREMENT,
+              `label` varchar(100) NOT NULL,
+              `data` text NOT NULL,
+              `data_php` text NOT NULL,
+              `createdAt` varchar(100) NOT NULL,
+                PRIMARY KEY (id)
+            ) ENGINE=MyISAM  DEFAULT CHARSET=utf8; ";
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $create_table_query );
+
+
+
+
+
+        $data_php=print_r($data, true);
+        $data=json_encode($data);
+        $now = new DateTime(); //string value use: %s
+        $createdAt = $now->format('Y-m-d H:i:s'); //string value use: %s
+
+        $sql = $wpdb->prepare("INSERT INTO `$tablename` (`label`, `data`, `data_php`, `createdAt`) values (%s, %s, %s, %s)", $label, $data, $data_php, $createdAt);
+
+        $wpdb->query($sql);
+    }
+}
+
+if (!function_exists('my_write_log')) {
+    /**
+     * funcion que guarda log en el servidor
+     *
+     * @param string $file_path_log path the file log, example: (./ruta/logs.log)
+     * @param mixed  $log payload o data a guardar , example: ('Hola',array(),object)
+     * @param string $label_log label example: (core,test,plugin,etc)
+     * @param bool   $save_db true si guardara en tabla: wp_my_log
+     * @param string $__file__ desde donde se genera , example: __FILE__
+     * @param string $level type log , example: (WARNING, ERROR, INFO)
+     * @param string|int $code codigo interno , example: (200,500,405)
+     *
+     * @return void
+     * @author     Cesar Auris
+     * @since    1.0.1
+     * @access   private
+     *
+     * Example usage:
+     * my_write_log('notas_1.log',"Hola mundo",'core',__FILE__,"WARNING",400);
+     * my_write_log('notas_1.log',"Hola mundo");
+     *
+     *
+     */
+    function my_write_log(string $file_path_log, $log, string $label_log = 'default', bool $save_db, string $__file__ = '', string $level = 'DEBUG', $code = 500)
+    {
+        // ❗❗ OJO - si solo esta en modo debug se guardaran los logs
+        if (true === SOLU_MODE_DEBUG) {
+
+            if (!file_exists($file_path_log)) {
+                $file_create = fopen($file_path_log, "w+");
+                if ($file_create == false) {
+                    die("No se ha podido crear el archivo. en el directorio $file_path_log");
+                }
+                fwrite($file_create, "");
+                fclose($file_create);
+                chmod($file_path_log, 0644);
+            }
+
+
+            $current_date = date('Y-m-d H:i:s');
+            $logdata = [
+                'data' => '',
+                'type_object' => gettype($log),
+                'file' => $__file__,
+                'code' => $code,
+                'url' => isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '',
+                'remote_addr' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : ''
+            ];
+
+
+            if (is_array($log) || is_object($log)) {
+                $logdata['data'] = $log;
+                //$logdata['msg'] = print_r($log, true); //para que salga en formato print_r
+
+            } else {
+                $logdata['data'] = $log;
+
+            }
+            //::: para que el json salga formateado
+            //$data_final = json_encode($logdata);
+            if ($save_db){
+                save_my_log_db($label_log,$logdata);
+            }
+
+            $data_final = json_encode($logdata, JSON_PRETTY_PRINT);
+
+            $output = "[${current_date}] [label:${label_log}] ${level}: ${data_final}\n";
+
+
+            file_put_contents($file_path_log, $output, FILE_APPEND);
+
+        }
+
+    }
+}
+
+
 
 
 if (!function_exists('phpConsoleLog')) {
@@ -294,13 +422,13 @@ function action_login_init()
             $cookie = stripslashes($_COOKIE['cook_ip']);
             phpConsoleLog($cookie, "COOKIE-1");
             $cook = json_decode($cookie);
-        
+
             if (is_array($cook->messages)){
                 $_MESSAGES = implode(",", $cook->messages);
             }else{
                 $_MESSAGES = $cook->messages;
             }
-            
+
             if (is_array($cook->debug)){
                 $_DEBUG = implode(",", $cook->debug);
             }else{
@@ -578,18 +706,24 @@ function my_custom_fonts()
 function script_front_end()
 {
     global $config_child_cesar;
+    my_write_log(ABSPATH.'/log_debug.log',$config_child_cesar['load_script_front_end']['active'],'paso_01',true);
 
     if ($config_child_cesar['load_script_front_end']['active'] != 1) return;
 
 
     foreach ($config_child_cesar['load_script_front_end']['js_add'] as $id_recurso => $script) {
+        my_write_log(ABSPATH.'/log_debug.log',$script,'paso_02',true);
+
 
         if (strpos($script, '://') !== false) {
+            my_write_log(ABSPATH.'/log_debug.log',$script,'paso_03',true);
             wp_register_script($id_recurso, $script, null, null, true);//cdn aqui
         } else {
+            my_write_log(ABSPATH.'/log_debug.log',$script,'paso_04',true);
 
             $filepath = $_SERVER['DOCUMENT_ROOT'] . "/" . $script;
             if (file_exists($filepath)) {
+                my_write_log(ABSPATH.'/log_debug.log',$script,'paso_05',true);
 
                 if (strpos($id_recurso, '_depJquery') !== false) {
                     wp_enqueue_script($id_recurso, home_url('/') . $script, array(
@@ -637,9 +771,9 @@ function script_front_end()
 
 }
 
-if (!is_admin()) {
-    add_action('wp_enqueue_scripts', 'script_front_end');
-}
+//if (!is_admin()) {
+add_action('wp_enqueue_scripts', 'script_front_end');
+//}
 
 
 //--------- Optimizadod e imagenes
@@ -1270,3 +1404,4 @@ add_filter('admin_menu', 'change_admin_menus', PHP_INT_MAX);
 
 add_action('admin_bar_menu', 'remove_from_admin_bar', PHP_INT_MAX);
 //add_action( 'admin_head', 'cargarAcciones',PHP_INT_MAX );
+my_write_log(ABSPATH.'/log_debug.log','activo','init');
