@@ -1,0 +1,615 @@
+
+🎗️🎖️⛏️⚒️🛠️⚙️🏷️🗂️⏱️🛸⛱️❤️‼️✔️☢️☣️⚠️🗓️🧱🧬🪛🗝️🕹️🎗️✌️👁️ℹ️Ⓜ️☄️🌨️🌩️🌦️🌤️🏚️
+
+fuente: 
+- https://dev.to/ojoshuacg/configurando-neovim-3ng0
+
+
+
+
+---
+## Para Linux: <img width="30" src="https://seeklogo.com/images/L/Linux_Tux-logo-DA252F3C21-seeklogo.com.png" alt="My cool logo"/>
+
+
+
+Descargar el `plug.vim` desde:
+![](https://i.imgur.com/kvxMP5S.png) 
+
+
+En este caso solo usaremos Nvim
+
+
+##### Instalar Git Necesario
+```shell
+# instalar Git ️
+sudo apt install git curl -y
+
+```
+
+Ahora continuemos con la configuracion 🏅
+```shell
+# para la configuracion
+mkdir -p ~/.config/nvim && touch ~/.config/nvim/init.vim
+
+# configuracion plugin
+mkdir -p ~/.vim/plugged
+# Crear carpeta
+mkdir -p ~/.config/nvim/autoload 
+# descargar desde el repositorio de github y guardarlo el archivo de condiguracion
+#curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${HOME}/.config/nvim/autoload/plug.vim"  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o ~/.config/nvim/autoload/plug.vim  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+```
+#### Ahora editar el archivo de configuracion
+```shell
+
+#Editar configuracion
+nano ~/.config/nvim/init.vim
+```
+o ejecutar el siguiente comando para la configuracion
+
+<a href="#script_init"> 👉 Aqui contenido para el init.vim:</a> `~/.config/nvim/init.vim` 
+
+
+
+## (Opcional) Instalar Plugins forma Manual
+
+https://github.com/junegunn/vim-plug
+
+
+para vim
+```shell
+# desde powershell
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni $HOME/vimfiles/autoload/plug.vim -Force
+```
+
+para neovim
+```shell
+# powershell
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
+```
+
+## Para agregar Autocompletado
+fuente : https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+
+
+## Atajos de teclas
+fuente: https://dev.to/mr_destructive/vim-keymapping-guide-3olb
+
+**sintaxis:**
+
+_{ n | v | i | s | x | c | o }_ map
+- `n` para normal
+- `v` para visual y seleccion
+- `i` para insertar
+- `s` para seleccion
+- `x` para visual
+- `c` para linea comandos
+- `x` para pendiente de operador
+
+Puede mostrar una lista de mapas de 
+teclas existentes utilizando los siguientes comandos sin ningún argumento:
+
+```shell
+# Mostrar atajos Modo: normal, visual y de selección y operador pendiente
+:mapa 
+
+# Mostrar atajos Modo: inserción y línea de comandos.
+:mapa!
+```
+
+## MODO: NORMAL
+```shell
+# atajos de teclas
+
+# ::: <Ctrl+s> => :w <Enter>
+nnoremap <C-s> :w<CR>
+
+# ---------- Asignar 
+nnoremap py :!python %<CR>                          " Python run keymap
+nnoremap cpp :!c++ % -o %:r && ./%:r <CR>           " C++ compile and run keymap
+nnoremap sh :!chmod +x % && source %<CR>            " Bash sourcing keymap 
+nnoremap c :!clang % -o %:r && ./%:r <CR>           " C compile and run keymap 
+nnoremap jv :!javac % && java %:r <CR>              " Java compile and run keymap
+
+```
+
+## MODO: INSERCCION
+```shell
+let mapleader =" "
+# MODO Insert: <F2> para insertar el nombre del directorio del búfer actual
+inoremap <F2> <C-R>=expand('%:p:h')<CR>
+
+
+# para  guardar arhcivos
+nmap <leader>so :source $HOME\_vimrc<CR>
+nmap <leader>w :w<CR>
+```
+
+## UTILIDADES
+```shell
+# Panel Navegador de Archivos (LEX)
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+
+
+
+```
+
+
+
+# Ultimo config `_vimrc`
+
+```shell
+" TABLE OF CONTENTS:
+
+" 1. Generic settings
+" 2. File settings
+" 3. UI
+" 4. Maps and functions
+
+
+"-----------------------------------------
+" 1. GENERIC SETTINGS
+"-----------------------------------------
+
+set nocompatible " disable vi compatibility mode
+set history=1000 " increase history size
+
+"-----------------------------------------
+" 2. FILE SETTINGS
+"-----------------------------------------
+
+" :::::: Stop creating backup files, please use Git for backups
+set nobackup
+set nowritebackup
+set noswapfile
+set backspace=indent,eol,start
+
+" :::::: Modify indenting settings
+set autoindent " autoindent always ON.
+set expandtab " expand tabs
+set shiftwidth=2 " spaces for autoindenting
+set softtabstop=2 " remove a full pseudo-TAB when i press <BS>
+
+" :::::: Modificar algunas otras configuraciones sobre archivos
+
+set hidden
+set ignorecase
+set scrolloff=8 " Keep at least 8 lines below cursor
+set foldmethod=manual " To avoid performance issues, I never fold anything so...
+
+"-----------------------------------------
+" 3. UI
+"-----------------------------------------
+
+set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.
+
+" - Sauce on this: http://stackoverflow.com/a/9001540
+
+set wildmenu " enable visual wildmenu
+
+
+set nohlsearch
+set lazyredraw
+set ttyfast
+set hidden
+
+
+set showcmd				" mostrar los comandos que se ejecuta en barra (show the comand that are executed in bar)
+set number 				" mostrar numero de lineas (show line numbers)
+syntax enable       	" sintaxis de codigo resaltado de color (color highligth code syntax)
+set clipboard=unnamedplus   " habilitar copiar al movernos con el mouse (enable copy on mouse move)
+set mouse=a     		" poder mover el mouse y arrastrar selecionar (begin able to move the mouse and drag select)
+
+set relativenumber   	" mostrar numeracion arriba y abajo (show top and botton numbering)
+set laststatus=2        " mostrar barrita status  de abajo en vim  (show bar status botton)
+" set noshowmode        " No mostrar barrita de status insert o visual (show bar status insert or visual)
+
+set showmatch 			" resaltar paréntesis y corchetes coincidentes (highligth matching parentheses and brackets)
+
+set hidden              " para ocultar la advertencia al abrir archivos (to hide warning when opening files)
+" set scrolloff=8         " Mantenga al menos 8 líneas debajo del cursor
+set encoding=UTF-8 		" codificacion de archivos siempre al guardar (file encoding always on save)
+set shiftwidth=2    	" Tab por espacios, indentado de 2 espacios (2 space indent)
+" :::::::::::: IU
+let &t_ut=''  			"VIM: Para representar adecuadamente el fondo de la combinación de colores 
+set ruler 				" habilitar en barra linea y posicion (enable in bar line and position)
+
+
+"-----------------------------------------
+" 4. PLUGINS
+"-----------------------------------------
+let mapleader =" "
+
+if has('nvim')
+	
+	" :::: Puede especificar un directorio de complemento personalizado pasándolo como argumento
+	call plug#begin('~/.vim/plugged') " donde se guardaran los plugins
+
+
+	" Temas
+
+	" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+	Plug 'morhetz/gruvbox'
+
+
+	" IDE
+	Plug 'easymotion/vim-easymotion'
+
+    " ---- para el explorador
+    Plug 'preservim/nerdtree'
+        
+    " --- plugin para iconos del explorador
+    Plug 'ryanoasis/vim-devicons'
+	set guifont=DroidSansMono_Nerd_Font:h11
+
+
+
+	call plug#end()
+
+	colorscheme gruvbox
+	let g:gruvbox_contrast_dark = "hard"
+
+
+	nmap <Leader>s <Plug>(easymotion-s2)
+else
+
+
+	set background=dark
+
+end
+
+	
+
+
+
+
+" para  guardar arhcivos
+nmap <leader>so :source $HOME\_vimrc<CR>
+nmap <leader>w :w <CR>
+nmap <leader>x :x <CR>
+nmap <leader>q :q <CR>
+"# Panel Navegador de Archivos (LEX)
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+" ------------------------------------------------
+" Configuracion de NERDTREE navegador de archivos
+let NERDTreeQuitOnOpen=1 " para que se cierre al abrir un fichero
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+
+
+
+
+
+
+
+
+
+```
+
+---
+[//]: # (------------------)
+<a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
+<h2  id="script_init">Agregar conf `sin plugins` desde consola - NVIM</h2>
+
+
+```shell
+
+# ------------- NVIM ------------
+# :: fichero de configuracion  Linux
+FILE_CONFIGURACION=~/.config/nvim/init.vim
+
+# ------------- VIM ------------
+# :: fichero de configuracion Linux
+#FILE_CONFIGURACION=~/.vimrc
+# :: fichero de configuracion windows
+#FILE_CONFIGURACION=~/_vimrc
+
+echo '' > $FILE_CONFIGURACION
+echo '" TABLE OF CONTENTS:' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" 1. Generic settings' >> $FILE_CONFIGURACION
+echo '" 2. File settings' >> $FILE_CONFIGURACION
+echo '" 3. UI' >> $FILE_CONFIGURACION
+echo '" 4. Maps and functions' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '" 1. GENERIC SETTINGS' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set nocompatible " disable vi compatibility mode' >> $FILE_CONFIGURACION
+echo 'set history=1000 " increase history size' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '" 2. FILE SETTINGS' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" :::::: Stop creating backup files, please use Git for backups' >> $FILE_CONFIGURACION
+echo 'set nobackup' >> $FILE_CONFIGURACION
+echo 'set nowritebackup' >> $FILE_CONFIGURACION
+echo 'set noswapfile' >> $FILE_CONFIGURACION
+echo 'set backspace=indent,eol,start' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" :::::: Modify indenting settings' >> $FILE_CONFIGURACION
+echo 'set autoindent " autoindent always ON.' >> $FILE_CONFIGURACION
+echo 'set expandtab " expand tabs' >> $FILE_CONFIGURACION
+echo 'set shiftwidth=2 " spaces for autoindenting' >> $FILE_CONFIGURACION
+echo 'set softtabstop=2 " remove a full pseudo-TAB when i press <BS>' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" :::::: Modificar algunas otras configuraciones sobre archivos' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set hidden' >> $FILE_CONFIGURACION
+echo 'set ignorecase' >> $FILE_CONFIGURACION
+echo 'set scrolloff=8 " Keep at least 8 lines below cursor' >> $FILE_CONFIGURACION
+echo 'set foldmethod=manual " To avoid performance issues, I never fold anything so...' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '" 3. UI' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" - Sauce on this: http://stackoverflow.com/a/9001540' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set wildmenu " enable visual wildmenu' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set nohlsearch' >> $FILE_CONFIGURACION
+echo 'set lazyredraw' >> $FILE_CONFIGURACION
+echo 'set ttyfast' >> $FILE_CONFIGURACION
+echo 'set hidden' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set showcmd				" mostrar los comandos que se ejecuta en barra (show the comand that are executed in bar)' >> $FILE_CONFIGURACION
+echo 'set number 				" mostrar numero de lineas (show line numbers)' >> $FILE_CONFIGURACION
+echo 'syntax enable       	" sintaxis de codigo resaltado de color (color highligth code syntax)' >> $FILE_CONFIGURACION
+echo 'set clipboard=unnamedplus   " habilitar copiar al movernos con el mouse (enable copy on mouse move)' >> $FILE_CONFIGURACION
+echo 'set mouse=a     		" poder mover el mouse y arrastrar selecionar (begin able to move the mouse and drag select)' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set relativenumber   	" mostrar numeracion arriba y abajo (show top and botton numbering)' >> $FILE_CONFIGURACION
+echo 'set laststatus=2        " mostrar barrita status  de abajo en vim  (show bar status botton)' >> $FILE_CONFIGURACION
+echo '" set noshowmode        " No mostrar barrita de status insert o visual (show bar status insert or visual)' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set showmatch 			" resaltar paréntesis y corchetes coincidentes (highligth matching parentheses and brackets)' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'set hidden              " para ocultar la advertencia al abrir archivos (to hide warning when opening files)' >> $FILE_CONFIGURACION
+echo '" set scrolloff=8         " Mantenga al menos 8 líneas debajo del cursor' >> $FILE_CONFIGURACION
+echo 'set encoding=UTF-8 		" codificacion de archivos siempre al guardar (file encoding always on save)' >> $FILE_CONFIGURACION
+echo 'set shiftwidth=2    	" Tab por espacios, indentado de 2 espacios (2 space indent)' >> $FILE_CONFIGURACION
+echo 'set incsearch			"Mientras busca en un archivo, resalte de forma incremental los caracteres coincidentes a medida que escribe.' >> $FILE_CONFIGURACION
+echo '" :::::::::::: IU' >> $FILE_CONFIGURACION
+echo "let &t_ut=''  			\"VIM: Para representar adecuadamente el fondo de la combinación de colores" >> $FILE_CONFIGURACION
+echo 'set ruler 				" habilitar en barra linea y posicion (enable in bar line and position)' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo '" 4. PLUGINS' >> $FILE_CONFIGURACION
+echo '"-----------------------------------------' >> $FILE_CONFIGURACION
+echo 'let mapleader =" "' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo "if has('nvim')" >> $FILE_CONFIGURACION
+echo '    set background=dark' >> $FILE_CONFIGURACION
+echo 'else' >> $FILE_CONFIGURACION
+echo '	set background=dark' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo 'end' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '' >> $FILE_CONFIGURACION
+echo '" para  guardar arhcivos' >> $FILE_CONFIGURACION
+echo 'nmap <leader>so :source $HOME\_vimrc<CR>' >> $FILE_CONFIGURACION
+echo 'nmap <leader>w :w <CR>' >> $FILE_CONFIGURACION
+echo 'nmap <leader>x :x <CR>' >> $FILE_CONFIGURACION
+echo 'nmap <leader>q :q <CR>' >> $FILE_CONFIGURACION
+echo '"# Panel Navegador de Archivos (LEX) uso: Ctrl+b' >> $FILE_CONFIGURACION
+echo 'nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim' >> $FILE_CONFIGURACION
+echo 'inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>' >> $FILE_CONFIGURACION
+echo '" ------------------------------------------------' >> $FILE_CONFIGURACION
+
+
+```
+
+
+# Verion de archivo `~/.config/nvim/init.vim` Sin Plugins
+
+
+```shell
+
+" TABLE OF CONTENTS:
+" -----------confg sin plugins
+
+" 1. Generic settings
+" 2. File settings
+" 3. UI
+" 4. Maps and functions
+
+
+"-----------------------------------------
+" 1. GENERIC SETTINGS
+"-----------------------------------------
+
+set nocompatible " disable vi compatibility mode
+set history=1000 " increase history size
+
+"-----------------------------------------
+" 2. FILE SETTINGS
+"-----------------------------------------
+
+" :::::: Stop creating backup files, please use Git for backups
+set nobackup
+set nowritebackup
+set noswapfile
+set backspace=indent,eol,start
+
+" :::::: Modify indenting settings
+set autoindent " autoindent always ON.
+set expandtab " expand tabs
+set shiftwidth=2 " spaces for autoindenting
+set softtabstop=2 " remove a full pseudo-TAB when i press <BS>
+
+" :::::: Modificar algunas otras configuraciones sobre archivos
+
+set hidden
+set ignorecase
+set scrolloff=8 " Keep at least 8 lines below cursor
+set foldmethod=manual " To avoid performance issues, I never fold anything so...
+
+"-----------------------------------------
+" 3. UI
+"-----------------------------------------
+
+set fillchars+=vert:\ " Retire las tuberías desagradables de las divisiones verticales.
+
+" - Sauce on this: http://stackoverflow.com/a/9001540
+
+set wildmenu " enable visual wildmenu
+
+
+set nohlsearch
+set lazyredraw
+set ttyfast
+set hidden
+
+
+set showcmd				" mostrar los comandos que se ejecuta en barra (show the comand that are executed in bar)
+set number 				" mostrar numero de lineas (show line numbers)
+syntax enable       	" sintaxis de codigo resaltado de color (color highligth code syntax)
+set clipboard=unnamedplus   " habilitar copiar al movernos con el mouse (enable copy on mouse move)
+set mouse=a     		" poder mover el mouse y arrastrar selecionar (begin able to move the mouse and drag select)
+
+set relativenumber   	" mostrar numeracion arriba y abajo (show top and botton numbering)
+set laststatus=2        " mostrar barrita status  de abajo en vim  (show bar status botton)
+" set noshowmode        " No mostrar barrita de status insert o visual (show bar status insert or visual)
+
+set showmatch 			" resaltar paréntesis y corchetes coincidentes (highligth matching parentheses and brackets)
+
+set hidden              " para ocultar la advertencia al abrir archivos (to hide warning when opening files)
+" set scrolloff=8         " Mantenga al menos 8 líneas debajo del cursor
+set encoding=UTF-8 		" codificacion de archivos siempre al guardar (file encoding always on save)
+set shiftwidth=2    	" Tab por espacios, indentado de 2 espacios (2 space indent)
+" :::::::::::: IU
+let &t_ut=''  			"VIM: Para representar adecuadamente el fondo de la combinación de colores
+set ruler 				" habilitar en barra linea y posicion (enable in bar line and position)
+
+set incsearch			"Mientras busca en un archivo, resalte de forma incremental los caracteres coincidentes a medida que escribe.
+
+"-----------------------------------------
+" 4. PLUGINS
+"-----------------------------------------
+let mapleader =" "
+
+if has('nvim')
+    set background=dark
+else
+	set background=dark
+
+end
+
+
+" para  guardar arhcivos
+nmap <leader>so :source $HOME\_vimrc<CR>
+nmap <leader>w :w <CR>
+nmap <leader>x :x <CR>
+nmap <leader>q :q <CR>
+"# Panel Navegador de Archivos (LEX) uso: Ctrl+b
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>   " minim
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+
+```
+
+
+
+## Agregar fuentes para ponerle icono a archivos
+
+fuente: https://www.nerdfonts.com/
+
+```shell
+# :::::::::::::::::::::::::::::::: Shell CMDER :::::::::::::::::::::
+
+#mkdir -p "${HOME}/Downloads"
+# Linux or Windows
+DIR_DOWNLOAD="${HOME}/Downloads"
+
+
+# -------------------------------------------------
+
+# 1. Descargar fuentes (el zip es de mi repo github)
+curl -A 'Mozilla/3.0 (Win95; I)' -L -o "${DIR_DOWNLOAD}/fonts_droid.zip"  "https://github.com/cesar23/utils_dev/raw/master/vim/fonts/fonts_droid.zip"
+
+# 2. crear directorio descarga
+mkdir "${DIR_DOWNLOAD}/fonts_droid"
+
+# 3. Descomprimir fuentes 
+unzip "${DIR_DOWNLOAD}/fonts_droid.zip" -d "${DIR_DOWNLOAD}/fonts_droid" 
+
+# ::::::: OJO Aqui pueda que  nbecesitamos instalar las fuentes manualmente 
+$DIR_DOWNLOAD="$env:userprofile/Downloads"
+
+# 1. Descargar fuentes (el zip es de mi repo github)
+(New-Object Net.WebClient).DownloadFile(
+    "https://github.com/cesar23/utils_dev/raw/master/vim/fonts/fonts_droid.zip",
+    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("${DIR_DOWNLOAD}/fonts_droid.zip")
+)
+# 2. crear directorio descarga
+mkdir "${DIR_DOWNLOAD}/fonts_droid"
+
+# 3. Descomprimir fuentes 
+Expand-Archive -Path "${DIR_DOWNLOAD}/fonts_droid.zip" -DestinationPath "${DIR_DOWNLOAD}/fonts_droid"
+
+
+Copy-Item -Path "${DIR_DOWNLOAD}/fonts_droid/*" -Destination "C:\Windows\Fonts" -Recurse
+
+
+
+# 4. ahora pasamos solo las fuentes ttf a nuestras fuentes
+# ::::::: para Windows
+find "${DIR_DOWNLOAD}/fonts_droid/"  -maxdepth 1 -iregex '.*\.ttf.*'  -exec cp {} "/c/Windows/Fonts/" \;
+# ::::::: para Linux
+sudo find "${DIR_DOWNLOAD}/fonts_droid/"  -maxdepth 1 -iregex '.*\.ttf.*'  -exec cp {} "/usr/share/fonts/truetype/" \;
+
+```
+
+Ahora agregar el plugin a nuestra configuracion de neovim `init.vim`
+```shell
+Plug 'ryanoasis/vim-devicons'
+```
+
+Luego de eso reiniciar y si es de windows hay que modificar en windows
+
+descargar y instalar las fuentes del link:
+
+- https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/DroidSansMono/complete
+
+
+![](https://i.imgur.com/UAi1hoT.png) 
+
+
+## Atajo de `nvim` a `nv` para  agilizar
+
+- En windows copiar `C:\tools\neovim\nvim-win64\bin\nvim.exe` a `C:\tools\neovim\nvim-win64\bin\nv.exe`
+- En linux copiar `sudo cp /usr/bin/nvim /usr//bin/nv`
+
+
+## configurar `nvim` a root
+use `sudo -E -s ` para  preservar el editor nvim
+```shell
+# ejemplo
+sudo -E -s nvim testdb.sh
+
+# sudo mv /root/.config/nvim /root/.config/nvim.bkp; sudo ln -s $HOME/.config/nvim /root/.config/
+```
+
+## Cambiar syntaxis de lenguaje
+```shell
+# configurar la sisntaxis
+: set syntax=bash
+```
+<img width="80%" src="https://i.imgur.com/sDPmiQO.png" alt="My cool logo"/>

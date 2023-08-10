@@ -7,8 +7,17 @@ $my_url = home_url( '/' ); //http://www.example.com/
 $url_amigable='www.'.preg_replace('/(http|https):\/\/(\S+)(\/)/i', '${2}',$my_url );//www.example.com
 
 
-define ('VERSION', '2023-07-30-05');
+define ('VERSION', '2023-07-30-06');
+//escribe en el fichero: ABSPATH.'/log_debug.log'
+define('SOLU_MODE_DEBUG', true);
 
+
+add_action('admin_notices','my_custom_warning');
+function my_custom_warning() {
+    if( true == true ) {
+        echo '<div id="my-custom-warning" class="error fade"><p>This is a test</p></div>';
+    }
+}
 
 function version_id() {
     //return time();
@@ -22,7 +31,7 @@ function dmc_add_svg_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-// ---------------------------- end Crear ROl Gestor-------------------------------------------------
+// ---------------------------- end Crear ROl Gestor-------------------------------------------------font-awesome
 
 
 
@@ -58,7 +67,7 @@ function add_custom_body_open_code() {
                    href="https://api.whatsapp.com/send?phone=51970789567&text=Hola FERRECHINCHA, tengo una consulta">
                     <i class="btn-icon fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"> </i>
                     <div style="float: left">
-                        <strong>Central</strong><br>970789567
+                        <strong>Central v2</strong><br>970789567
                     </div>
                 </a>
             </div>
@@ -342,7 +351,7 @@ function CamposPersonalizados_GrupoAdicionalSeo(){
 
 
     ?>
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <?php
 
 }
@@ -529,9 +538,9 @@ $config_child_cesar = [
             //----- Otros plugins
             // aqui removemso los items sel submenu de wordpress
             'woocommerce' => array(
-                    $my_url.'wp-admin/admin.php?page=wc-settings&tab=qlwcdc',
-                    $my_url.'wp-admin/admin.php?page=wc-settings&tab=wooccm',
-                    $my_url.'wp-admin/admin.php?page=wc-settings&tab=wc_remove_all_products_page',
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=qlwcdc',
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=wooccm',
+                $my_url.'wp-admin/admin.php?page=wc-settings&tab=wc_remove_all_products_page',
                 'wc-settings','wc_remove_all_products_page','wc-addons','pcfme_plugin_options','dgwt_wcas_settings','checkout_form_designer','wc-status','wooccm'),
 
         ),
@@ -621,7 +630,144 @@ $config_child_cesar = [
 add_filter( 'auto_update_plugin', '__return_false' );
 add_filter( 'auto_update_theme', '__return_false' );
 
-require(dirname(__FILE__) . '/classSoluciones/template_backend.php');
+//require(dirname(__FILE__) . '/classSoluciones/template_backend.php');
+
+
+
+
+if (!function_exists('save_my_log_db')) {
+    /**
+     * funcion que guardara la data en una tabla de log  (wp_my_log)
+     *
+     * @since    1.0.1
+     * @access   private
+     *
+     * Example usage:
+     *  save_my_log_db($label_log,$logdata);
+     *
+     *
+     * @param  string  $label  etiqueta con al que se guardara en al tabla
+     * @param  mixed  $data  data para guardarlaen la db
+     *
+     * @author  Cesar Auris
+     * @return void
+     */
+    function save_my_log_db(string $label,mixed $data)
+    {
+        global $wpdb;
+        $tablename = $wpdb->prefix . "my_log";
+
+
+        $create_table_query = "
+            CREATE TABLE IF NOT EXISTS `{$tablename}` (
+              `id` bigint(20)  NOT NULL AUTO_INCREMENT,
+              `label` varchar(100) NOT NULL,
+              `data` text NOT NULL,
+              `data_php` text NOT NULL,
+              `createdAt` varchar(100) NOT NULL,
+                PRIMARY KEY (id)
+            ) ENGINE=MyISAM  DEFAULT CHARSET=utf8; ";
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $create_table_query );
+
+
+
+
+
+        $data_php=print_r($data, true);
+        $data=json_encode($data);
+        $now = new DateTime(); //string value use: %s
+        $createdAt = $now->format('Y-m-d H:i:s'); //string value use: %s
+
+        $sql = $wpdb->prepare("INSERT INTO `$tablename` (`label`, `data`, `data_php`, `createdAt`) values (%s, %s, %s, %s)", $label, $data, $data_php, $createdAt);
+
+        $wpdb->query($sql);
+    }
+}
+
+if (!function_exists('my_write_log')) {
+    /**
+     * funcion que guarda log en el servidor
+     *
+     * @param string $file_path_log path the file log, example: (./ruta/logs.log)
+     * @param mixed  $log payload o data a guardar , example: ('Hola',array(),object)
+     * @param string $label_log label example: (core,test,plugin,etc)
+     * @param bool   $save_db true si guardara en tabla: wp_my_log
+     * @param string $__file__ desde donde se genera , example: __FILE__
+     * @param string $level type log , example: (WARNING, ERROR, INFO)
+     * @param string|int $code codigo interno , example: (200,500,405)
+     *
+     * @return void
+     * @author     Cesar Auris
+     * @since    1.0.1
+     * @access   private
+     *
+     * Example usage:
+     * my_write_log('notas_1.log',"Hola mundo",'core',__FILE__,"WARNING",400);
+     * my_write_log('notas_1.log',"Hola mundo");
+     *
+     *
+     */
+    function my_write_log(string $file_path_log, $log, string $label_log = 'default', bool $save_db, string $__file__ = '', string $level = 'DEBUG', $code = 500)
+    {
+        // ❗❗ OJO - si solo esta en modo debug se guardaran los logs
+        if (true === SOLU_MODE_DEBUG) {
+
+            if (!file_exists($file_path_log)) {
+                $file_create = fopen($file_path_log, "w+");
+                if ($file_create == false) {
+                    die("No se ha podido crear el archivo. en el directorio $file_path_log");
+                }
+                fwrite($file_create, "");
+                fclose($file_create);
+                chmod($file_path_log, 0644);
+            }
+
+
+            $current_date = date('Y-m-d H:i:s');
+            $logdata = [
+                'data' => '',
+                'type_object' => gettype($log),
+                'file' => $__file__,
+                'code' => $code,
+                'url' => isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '',
+                'remote_addr' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : ''
+            ];
+
+
+            if (is_array($log) || is_object($log)) {
+                $logdata['data'] = $log;
+                //$logdata['msg'] = print_r($log, true); //para que salga en formato print_r
+
+            } else {
+                $logdata['data'] = $log;
+
+            }
+            //::: para que el json salga formateado
+            //$data_final = json_encode($logdata);
+            if ($save_db){
+                save_my_log_db($label_log,$logdata);
+            }
+
+            $data_final = json_encode($logdata, JSON_PRETTY_PRINT);
+
+            $output = "[${current_date}] [label:${label_log}] ${level}: ${data_final}\n";
+
+
+            file_put_contents($file_path_log, $output, FILE_APPEND);
+
+        }
+
+    }
+}
+
+
+my_write_log(ABSPATH.'/log_debug.log',"hola mundo",'info',true);
+
+
+
+
+
 
 //--para  limitar subida  archivos y productos
 define('LIMIT_FILTER_POST',1);
@@ -690,43 +836,43 @@ add_action( 'before_delete_post', function ( $id ) {
         $res = wp_delete_attachment( $post_id, true );
         wp_reset_query();
         sleep(2);
-		if ( $res !== false ) {
+        if ( $res !== false ) {
 
 
-			$query = "select meta_value from wp_postmeta where meta_key='_wp_attachment_metadata' and post_id=" . $post_id;
-			global $wpdb;
-			$matches = $wpdb->get_results( $query );
+            $query = "select meta_value from wp_postmeta where meta_key='_wp_attachment_metadata' and post_id=" . $post_id;
+            global $wpdb;
+            $matches = $wpdb->get_results( $query );
 
-			$imagen_portada  = null;
-			$imagen_galerias = array();
-			$dir_base_upload = null;
+            $imagen_portada  = null;
+            $imagen_galerias = array();
+            $dir_base_upload = null;
 
-			$dataSeriales = [];
-			foreach ( $matches as $result ) {
-				$dataSeriales[] = unserialize( $result->meta_value );
-			}
-
-
-			$log->insert( $dataSeriales, false, true, true );
-			foreach ( $dataSeriales as $row ) {
-				$imagen_portada  = $row['file'];
-				$dir_base_upload = dirname( $imagen_portada );
-				$sizes_media     = $row['sizes'];
+            $dataSeriales = [];
+            foreach ( $matches as $result ) {
+                $dataSeriales[] = unserialize( $result->meta_value );
+            }
 
 
-				foreach ( $sizes_media as $k_media => $val_media ) {
-					$del_media = $sizes_media[ $k_media ]['file'];
-					deleteFilemedia( $dir_base_upload . "/" . $del_media );
-					//$data_save['file']['child'][]=$del_media;
-					array_push( $imagen_galerias, $del_media );
-					$dd = 1;
-				}
+            $log->insert( $dataSeriales, false, true, true );
+            foreach ( $dataSeriales as $row ) {
+                $imagen_portada  = $row['file'];
+                $dir_base_upload = dirname( $imagen_portada );
+                $sizes_media     = $row['sizes'];
 
 
-			}
+                foreach ( $sizes_media as $k_media => $val_media ) {
+                    $del_media = $sizes_media[ $k_media ]['file'];
+                    deleteFilemedia( $dir_base_upload . "/" . $del_media );
+                    //$data_save['file']['child'][]=$del_media;
+                    array_push( $imagen_galerias, $del_media );
+                    $dd = 1;
+                }
 
 
-		}
+            }
+
+
+        }
 
 
     }
@@ -761,9 +907,9 @@ function dcms_show_stock_list_products() {
 //--------------- busqueda por  sku
 function search_by_sku( $search, $query_vars ) {
     global $wpdb;
-     if(empty($search)) {
-       return $search; // skip processing - no search term in query
-     }
+    if(empty($search)) {
+        return $search; // skip processing - no search term in query
+    }
 
 
 
@@ -855,3 +1001,6 @@ function wpa104537_featured_products_admin_filter_query( $query ) {
 add_filter( 'parse_query', 'wpa104537_featured_products_admin_filter_query' );
 
 
+
+//i can log data like objects
+// write_log($config_child_cesar);

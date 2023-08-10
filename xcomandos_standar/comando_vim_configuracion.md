@@ -28,12 +28,14 @@ Instalar Plugin
 md ~\AppData\Local\nvim\autoload
 
 # 2. Desccargamos el plug.vim
-$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-(New-Object Net.WebClient).DownloadFile(
-    $uri,
-    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\AppData\Local\nvim\autoload\plug.vim")
-)
+#$uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#(New-Object Net.WebClient).DownloadFile(
+#    $uri,
+#    $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\AppData\Local\nvim\autoload\plug.vim")
+#)
+#
 
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |` ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 
 # -------------------------------------------------------
 
