@@ -17,3 +17,7 @@ sed -E -i 's/^(max_input_time[[:space:]]=[[:space:]])[0-9]+/\13600/g' ./php.demo
 
 
 ```
+```shell
+SALIDA="'direct'"
+sed -E  's/^(define\([[:space:]][[:punct:]]FS_METHOD[[:punct:]])+/\1'$SALIDA'/g' ./demo_1.php
+```
