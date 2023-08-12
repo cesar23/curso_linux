@@ -128,11 +128,13 @@ neofetch
 
 
 ### 2. Para  agregar a Git Bash
-ruta `C:\Program Files\Git\etc\bash.bashrc`
 
+1. creamos el fichero `bash.bashrc`
+```shell
+echo ""> $HOME/bash.bashrc
+```
+2. pegamos el siguienete contenido
 
-
-aqui  agregamos la carpeta `libs_shell` al home `C:\Users\cesar`
 ```shell
 # To the extent possible under law, the author(s) have dedicated all 
 # copyright and related and neighboring rights to this software to the 
@@ -213,7 +215,7 @@ fi
 
 
 ```
-
+3. aqui  agregamos la carpeta `libs_shell` al home `C:\Users\cesar`
 ### 3. para  linux
 
 editar el archivo `vim ~/.bashrc` o `nvim ~/.bashrc`
