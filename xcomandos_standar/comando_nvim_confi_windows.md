@@ -64,13 +64,16 @@ Para confirmar su instalacion, basta con ir a la ruta :`%USERPROFILE%\AppData\Lo
 
 
 # 3. Instalacion de Plugins
-Primero vamos a dirigirnos a `%USERPROFILE%\AppData\Local` 
-creamos una carpeta llamada nvim y dentro otra llamada `plugged`
+
+1. Primero vamos a dirigirnos a `%USERPROFILE%\AppData\Local`
+2. creamos una carpeta llamada 📁 `nvim` 
+3. dentro la carpeta otra llamada `plugged`
 
 
 
 
-Dentro de nvim creamos un archivo llamado `init.vim` o descargamos el siguiente archivo.
+Dentro de nvim creamos un archivo llamado `init.vim` 
+o descargamos el siguiente archivo.
 
 <img src="https://i.imgur.com/UEKxYcz.png" >
 -- --------------------------

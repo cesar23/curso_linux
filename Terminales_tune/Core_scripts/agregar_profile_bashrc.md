@@ -130,6 +130,8 @@ neofetch
 ### 2. Para  agregar a Git Bash
 ruta `C:\Program Files\Git\etc\bash.bashrc`
 
+
+
 aqui  agregamos la carpeta `libs_shell` al home `C:\Users\cesar`
 ```shell
 # To the extent possible under law, the author(s) have dedicated all 
