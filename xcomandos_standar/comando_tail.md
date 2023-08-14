@@ -16,3 +16,16 @@ buscar dentro de un ficheor y filtrar
 tail -f log_access.log | grep GET
 ```
 
+
+## En windows (PowerShell)
+
+```powershell
+Get-Content '.\colores.txt'
+```
+
+```powershell
+PS C:\Scripts\Carpeta> Get-Content '.\Bienvenido a sobrebits.txt' -Tail 10
+PS C:\Scripts\Carpeta> Get-Content '.\Bienvenido a sobrebits.txt' -TotalCount 10
+```
+
+
