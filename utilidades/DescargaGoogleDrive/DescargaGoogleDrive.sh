@@ -10,9 +10,9 @@ CURRENT_DIR=$(pwd)
 
 cd $SCRIPT_DIR
 
-#https://drive.google.com/file/d/1eu4WN6SBPJz2GpLZbbIkYLTLZG9XsxML
-fileid="1AqeH0zW0bYwxD09XmcqqhGLsFDphj5SE"
-filename="Office_Professional_Plus_2016_64Bits_Español.rar"
+#https://drive.google.com/file/d/1FOZZhMVZjNrdYClEV2N9uoawp-Cxwo5F/view?usp=drive_link
+fileid="1FOZZhMVZjNrdYClEV2N9uoawp-Cxwo5F"
+filename="des.iso"
 
 
 echo "-------------------------------------------------------------------------------"
