@@ -144,8 +144,6 @@ jQuery(document).ready(function() {
 
 
     });
-
-
-
+    //-------------- ventana
 
 });
