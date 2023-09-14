@@ -26,7 +26,7 @@ como se  muestra en al imagen
 ahora  solo pulsamos  enter y  ya  estara creada
 Aqui le  decimos 😎 permiso para crear y leer
 
-<img width="100%" src="https://i.imgur.com/ENlPZ9t.png" alt="My cool logo"/>
+<img width="100%" src="https://i.imgur.com/NX592UZ.png" alt="My cool logo"/>
 
 ## Como esta estructurado
 
@@ -49,14 +49,22 @@ export { handler };
 ```
 fichero `function.json` esto
 
-```json
+```json5
 {
   "bindings": [
     {
       "name": "mySbMsg",
       "type": "serviceBusTrigger",
       "direction": "in",
+      /*
+      queueName (es el nombre de la cola 💨)
+      */
       "queueName": "send-availability-country-sku",
+
+      /*
+       connection (es la cadena de conexion a la cola 💨)
+      "connection": "Endpoint=sb://ixc-ecom-fema-crocs-180-uat-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=3hjccITIhuTrLqwcBwamjDdvVfGVYbXWecAisrk0w6o="
+      */
       "connection": "AZURE_SERVICEBUS_LOCALQUEUE_CONNECTION_STRING"
     }
   ],
@@ -93,3 +101,7 @@ export const handler: any = async (context: any, item: any) => {
 };
 
 ```
+
+
+## Comprobar el Localmente
+
