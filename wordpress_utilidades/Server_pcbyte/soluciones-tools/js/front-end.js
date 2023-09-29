@@ -157,7 +157,9 @@ function ocultarBotonCompra() {
 
 const ocultarImagenesProductosCategorias = () => {
   if (document.querySelectorAll('.product-category').length > 0) {
-
+    var elementoStyle = document.createElement("div");
+    elementoStyle.id = "assets_toask"; //aqui le asignamos el ID
+    document.body.appendChild(elementoStyle);
 
     let elements=[]
     document.querySelectorAll('.product-category').forEach(e => {
@@ -181,9 +183,11 @@ ${tituloCategoria} - ${cantidadCategoria}
 
       e.remove()
     })
+    elementoStyle.insertAdjacentHTML("afterbegin", elements.join(''));
+    document.querySelector('.shop-container .products.row').appendChild(elementoStyle)
  // document.querySelector('.shop-container').innerHTML=elements.join('')
  // document.querySelector('.shop-container .shop-container').insertAdjacentHTML(elements.join(''))
-    document.querySelector('.shop-container .products.row').insertAdjacentHTML("afterbegin", elements.join(''));
+    //document.querySelector('.shop-container .products.row').insertAdjacentHTML("afterbegin", elements.join(''));
 
 
   }
