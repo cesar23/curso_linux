@@ -12,6 +12,15 @@ echo "${message//[0-9]/X}"
 
 
 echo "---------------------------------------------"
+echo "------------ ejemplo : 001-------------------"
+echo ""
+search="font-family:'Adobe Garamond Pro'"
+replace="font-family: 'EB Garamond'"
+echo "${search//[0-9]/X}"
+
+
+
+echo "---------------------------------------------"
 echo "------------ ejemplo : 002-------------------"
 echo ""
 REPO="D:\repos\curso_mongodb"

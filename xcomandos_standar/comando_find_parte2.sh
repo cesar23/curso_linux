@@ -14,8 +14,6 @@ find . -size +2M -size -10M -print
 find /var/log -size +15000k -name "*.jpg" 
 
 
-
-
 find . -type f -name "*.js" -exec grep -i 'jQuery=Jt' {} + ;
 #buscar texto en los  archivos
  find /var/www/geosupply.com.pe/public_html  -type f -name "*.php" -exec grep -i 'jvarela@geosupply.com.pe' {} + ;

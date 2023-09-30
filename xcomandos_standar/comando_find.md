@@ -663,3 +663,14 @@ Usando el paquete confvertitr a formato linux
 ```shell
 find ${HOME}/libs_shell -name "*.*" -exec dos2unix {} +
 ```
+
+Ejemplo ultimo
+
+```shell
+find .  -type f  \
+  -not -path '*/\node_modules/*' \
+  -not -path '*/\babel-webpack/*' \
+  -not -path '*/\wp-content\/plugins/*' \
+  -regex ".*\.\(json\|yaml\|sh\)" \
+  -exec grep -i 'localhost:5000' {} + ;
+```

@@ -21,3 +21,11 @@ sed -E -i 's/^(max_input_time[[:space:]]=[[:space:]])[0-9]+/\13600/g' ./php.demo
 SALIDA="'direct'"
 sed -E  's/^(define\([[:space:]][[:punct:]]FS_METHOD[[:punct:]])+/\1'$SALIDA'/g' ./demo_1.php
 ```
+
+```shell
+Search="font-family:'Roboto Condensed';"
+Replace="font-family: 'EB Garamond';"
+
+
+sed -E -i  "s/${Search}/${Replace}/g" /C/Users/cesar/Desktop/convert/html/test.html
+```
