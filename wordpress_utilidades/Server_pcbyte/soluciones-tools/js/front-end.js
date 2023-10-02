@@ -1,8 +1,17 @@
-function htmlUpdatePrecios(soles, dolar) {
+// pcbyte : v1
+function htmlUpdatePrecios(soles, dolar,dolarAnt) {
 
 
   dolar = dolar.replace('$', '').replace(',', '');
   soles = soles.replace('S/.', '').replace(',', '');
+  if(dolarAnt && dolarAnt!==null){
+    dolarAnt = dolarAnt.replace('$', '').replace(',', '');
+    dolarAnt = number_format_js(dolarAnt, 2);
+    dolarAnt=`<div className="tabla_monedas_info" style="text-decoration: line-through;font-size: 1em;">Precio anterior $${dolarAnt}</div>`
+  }else{
+    dolarAnt=''
+  }
+
   //-----------------------------------------------
   //----------------------dolar--------------------
   //-----------------------------------------------
@@ -35,6 +44,7 @@ function htmlUpdatePrecios(soles, dolar) {
 
   var html = `
             <div class="tabla_monedas">
+            ${dolarAnt}
                 <ul class="tabla_monedas_list">
                     <li class="moneda_dolares_m">$ ${dolar_add_porcentaje}</li>
                     <li class="li_space_x2"> </li>
@@ -86,19 +96,45 @@ function changeMountStyleListProduct() {
 
 
 function changeMountStyleProduct() {
-  var productPrices = document.querySelector('.price-wrapper');
-  var priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>span');
-  var priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
-  if (!priceDolar || !priceSoles) {
+  let productPrices = document.querySelector('.price-wrapper');
+  let priceDolarAnt=null;
+  let priceDolar=null;
+  let priceSoles=null;
+  // Verificar si Tiene Descuento
+  const typePrice= productPrices.querySelector('.price.product-page-price>.woocs_price_code>span') ? 'withoutDiscount' :'withDiscount'
+  switch (typePrice) {
+    case 'withoutDiscount':
+      priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>span');
+      priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
+      priceDolar = priceDolar.textContent;
+      priceSoles = priceSoles.textContent;
+      break;
+    case 'withDiscount':
+      priceDolarAnt = productPrices.querySelector('.price.product-page-price>.woocs_price_code>del');
+      priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>ins');
+      priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
+      priceDolar = priceDolar.textContent;
+      priceDolarAnt = priceDolarAnt.textContent;
+      priceSoles = priceSoles.textContent;
+      break;
+    default:
+
+
+  }
+
+  if(!priceDolar || !priceSoles){
     return false;
   }
 
-  priceDolar = priceDolar.textContent;
-  priceSoles = priceSoles.textContent;
 
 
-  let htmlnewPrecios = htmlUpdatePrecios(priceSoles, priceDolar);
+
+
+  let htmlnewPrecios = htmlUpdatePrecios(priceSoles, priceDolar,priceDolarAnt);
   productPrices.innerHTML = htmlnewPrecios;
+
+
+
 
 
 //----------- Productos del pie de pagina
@@ -142,7 +178,6 @@ function changeMountStyleProduct() {
 
 
   }
-
 
 }
 
@@ -201,17 +236,18 @@ ${tituloCategoria} - ${cantidadCategoria}
 // paso 1 esperamos que  acrgue la  pagina
   setTimeout(function () {
     ocultarBotonCompra();
-    ocultarImagenesProductosCategorias()
+    //ocultarImagenesProductosCategorias()
+    console.log('load script frontend v1.0.1');
 
     // si estamos en la pagina del producto
     if (document.querySelector('.product-main')) {
       changeMountStyleProduct();
-      console.log('Mostrar precio al mostrar producto');
+      console.log('pagina Producto');
 
     } else {
       // si estamso en el listado de productos
       changeMountStyleListProduct();
-      console.log('Mostrar precio al listar producto');
+      console.log('pagina listado productos');
     }
 
 
