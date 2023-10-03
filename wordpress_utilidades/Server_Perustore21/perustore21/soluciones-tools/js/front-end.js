@@ -78,7 +78,10 @@ function changeNameSkuList() {
     if (document.querySelector('.list-prod-sku')) {
 
         document.querySelectorAll(".list-prod-sku").forEach(element => {
+
+            //element.style=`background-color:#d33`
             let elementHtml=element.innerHTML
+
 
             // ----------------------------------------------------
             // --------- Opcion 1 reemplazo con regex -------------
@@ -94,7 +97,7 @@ function changeNameSkuList() {
             // ----------------------------------------------------
             // --------- Opcion 2 reemplazo simple -------------
             // ----------------------------------------------------
-            element.innerHTML=`<strong>Comprar</strong> `
+            element.innerHTML=`<strong>COTIZAR</strong> `
 
         });
 
@@ -109,6 +112,7 @@ function changeStockList() {
     if (document.querySelector('.list-prod-stock')) {
 
         document.querySelectorAll(".list-prod-stock").forEach(element => {
+            element.style=`background-color:#d33`
             let elementHtml=element.innerHTML
 
             // ----------------------------------------------------
@@ -125,7 +129,7 @@ function changeStockList() {
             // ----------------------------------------------------
             // --------- Opcion 2 reemplazo simple -------------
             // ----------------------------------------------------
-            element.innerHTML=`<strong>Disponible</strong> `
+            element.innerHTML=`<a href=""></a><strong>COMPRAR</strong> `
 
         });
 
@@ -263,6 +267,7 @@ function ocultarBotonCompra() {
 // paso 1 esperamos que  acrgue la  pagina
     setTimeout(function () {
         ocultarBotonCompra();
+        console.log('load script frontend v1.0.1');
 
         // si estamos en la pagina del producto
         if (document.querySelector('.product-main')) {
