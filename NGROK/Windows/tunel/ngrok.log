@@ -7844,3 +7844,9 @@ t=2023-10-13T23:51:03-0500 lvl=warn msg="failed to open private leg" id=f55484be
 t=2023-10-13T23:51:31-0500 lvl=warn msg="failed to open private leg" id=9db3152e7e19 privaddr=localhost:7172 err="dial tcp [::1]:7172: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
 t=2023-10-13T23:51:33-0500 lvl=warn msg="failed to open private leg" id=0f9568df5526 privaddr=localhost:7172 err="dial tcp [::1]:7172: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
 t=2023-10-13T23:51:35-0500 lvl=warn msg="failed to open private leg" id=2c1b9e1f7f49 privaddr=localhost:7172 err="dial tcp [::1]:7172: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-10-18T17:36:57-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-10-18T17:36:57-0500 lvl=info msg="update available" obj=updater
+t=2023-10-18T17:36:58-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=548cb23e2517
+t=2023-10-18T17:36:58-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-10-18T17:36:58-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7172 url=https://332c-179-6-168-248.ngrok-free.app
+t=2023-10-18T23:36:58-0500 lvl=info msg="update available" obj=updater
