@@ -54,7 +54,7 @@ wget  \
   --convert-links \
   --restrict-file-names=windows \
   --domains dmx.enventer.com --no-parent \
-  https://test.solucionessystem.com/
+  https://grupoagama.com/
 
 
 wget  \

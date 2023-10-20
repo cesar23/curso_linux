@@ -68,7 +68,9 @@ rg "fecha" /D/repos/curso_nodejs_mongo -g '*.js'  -g '!{utils,sequelize*}'
 rg "fecha" /D/repos/curso_nodejs_mongo -g '{*.js,*.json}'  -g '!{utils,sequelize*}'
 ```
 
-
+```shell
+rg "wget" /D/repos -g '*.sh'  -g '!{utils,node_modules*}'
+```
 
 
 ```shell
