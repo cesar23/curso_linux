@@ -1,93 +1,102 @@
-JQMIGRATE: Migrate is installed, version 3.4.1
-WEB-GRUPO-AGAMA-servicio-motor-marinos.jpg:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-WEB-GRUPO-AGAMA-servicio-maquinaria-pesada.jpg:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-WEB-GRUPO-AGAMA-main-sobre-la-empresa-3.jpg:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-WEB-GRUPO-AGAMA-logo-color.png:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-regular-400.woff2:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-solid-900.woff2:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-brands-400.woff2:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-solid-900.woff:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-regular-400.woff:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-brands-400.woff:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.ttf' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-solid-900.ttf:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.ttf' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-regular-400.ttf:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.ttf' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-fa-brands-400.ttf:1
-
-
-       Failed to load resource: net::ERR_FAILED
-grupoagama.com/wp-content/uploads/2022/07/WEB-GRUPO-AGAMA-icon-150x150.png:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-grupoagama.com/wp-content/uploads/2022/07/WEB-GRUPO-AGAMA-icon-300x300.png:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-WEB-GRUPO-AGAMA-servicio-grupo-electrogeno.jpg:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-WEB-GRUPO-AGAMA-logo-white.png:1
-
-
-       Failed to load resource: the server responded with a status of 403 ()
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.23.0' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-eicons.woff2:1
-
-
-       Failed to load resource: net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.23.0' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-elementor-icons.min.css:1
-
-
-       GET https://grupoagama.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.23.0 net::ERR_FAILED
-index.html:1 Access to font at 'https://grupoagama.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.23.0' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-elementor-icons.min.css:1
-
-
-       GET https://grupoagama.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.23.0 net::ERR_FAILED
+css:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+jquery-migrate.min.js@ver=3.4.1:2 JQMIGRATE: Migrate is installed, version 3.4.1
+api.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+WEB-GRUPO-AGAMA-main-img-background-2.jpg:1 
+        
+        
+       Failed to load resource: the server responded with a status of 404 (Not Found)
+index.html:676 Live reload enabled.
+WEB-GRUPO-AGAMA-main-img-background-3.jpg:1 
+        
+        
+       Failed to load resource: the server responded with a status of 404 (Not Found)
+wp-emoji-release.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+nav-menu.70d63d6d093f3a45a0c6.bundle.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+animated-headline.ffb4bb4ce1b16b11446d.bundle.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+text-editor.2c35aafbe5bf0e127950.bundle.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+form.72b77b99d67b130634d2.bundle.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+popup.483b906ddaa1af17ff14.bundle.min.js:1 
+        
+        
+       Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+webpack-pro.runtime.min.js@ver=3.16.2:2 Uncaught (in promise) ChunkLoadError: Loading chunk 42 failed.
+(error: https://grupoagama.com/wp-content/plugins/elementor-pro/assets/js/nav-menu.70d63d6d093f3a45a0c6.bundle.min.js)
+    at __webpack_require__.f.j (webpack-pro.runtime.min.js@ver=3.16.2:2:4868)
+    at webpack-pro.runtime.min.js@ver=3.16.2:2:752
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (webpack-pro.runtime.min.js@ver=3.16.2:2:712)
+    at elements-handlers.min.js@ver=3.16.2:2:12100
+    at frontend.min.js@ver=3.16.6:2:3105
+    at _runHook (frontend.min.js@ver=3.16.6:2:35407)
+    at Object.doAction (frontend.min.js@ver=3.16.6:2:36009)
+    at e.exports.runReadyTrigger (frontend.min.js@ver=3.16.6:2:3966)
+    at frontend-modules.min.js@ver=3.16.6:2:1107
+webpack-pro.runtime.min.js@ver=3.16.2:2 Uncaught (in promise) ChunkLoadError: Loading chunk 26 failed.
+(error: https://grupoagama.com/wp-content/plugins/elementor-pro/assets/js/animated-headline.ffb4bb4ce1b16b11446d.bundle.min.js)
+    at __webpack_require__.f.j (webpack-pro.runtime.min.js@ver=3.16.2:2:4868)
+    at webpack-pro.runtime.min.js@ver=3.16.2:2:752
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (webpack-pro.runtime.min.js@ver=3.16.2:2:712)
+    at elements-handlers.min.js@ver=3.16.2:2:3431
+    at frontend.min.js@ver=3.16.6:2:3105
+    at _runHook (frontend.min.js@ver=3.16.6:2:35407)
+    at Object.doAction (frontend.min.js@ver=3.16.6:2:36009)
+    at e.exports.runReadyTrigger (frontend.min.js@ver=3.16.6:2:3966)
+    at frontend-modules.min.js@ver=3.16.6:2:1107
+4webpack.runtime.min.js@ver=3.16.6:2 Uncaught (in promise) ChunkLoadError: Loading chunk 357 failed.
+(error: https://grupoagama.com/wp-content/plugins/elementor/assets/js/text-editor.2c35aafbe5bf0e127950.bundle.min.js)
+    at __webpack_require__.f.j (webpack.runtime.min.js@ver=3.16.6:2:4137)
+    at webpack.runtime.min.js@ver=3.16.6:2:1406
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (webpack.runtime.min.js@ver=3.16.6:2:1366)
+    at text-editor.default (frontend.min.js@ver=3.16.6:2:1639)
+    at frontend.min.js@ver=3.16.6:2:3105
+    at _runHook (frontend.min.js@ver=3.16.6:2:35407)
+    at Object.doAction (frontend.min.js@ver=3.16.6:2:36009)
+    at e.exports.runReadyTrigger (frontend.min.js@ver=3.16.6:2:3966)
+    at frontend-modules.min.js@ver=3.16.6:2:1107
+6webpack-pro.runtime.min.js@ver=3.16.2:2 Uncaught (in promise) ChunkLoadError: Loading chunk 680 failed.
+(error: https://grupoagama.com/wp-content/plugins/elementor-pro/assets/js/form.72b77b99d67b130634d2.bundle.min.js)
+    at __webpack_require__.f.j (webpack-pro.runtime.min.js@ver=3.16.2:2:4868)
+    at webpack-pro.runtime.min.js@ver=3.16.2:2:752
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (webpack-pro.runtime.min.js@ver=3.16.2:2:712)
+    at elements-handlers.min.js@ver=3.16.2:2:4436
+    at frontend.min.js@ver=3.16.6:2:3105
+    at _runHook (frontend.min.js@ver=3.16.6:2:35407)
+    at Object.doAction (frontend.min.js@ver=3.16.6:2:36009)
+    at e.exports.runReadyTrigger (frontend.min.js@ver=3.16.6:2:3966)
+    at frontend-modules.min.js@ver=3.16.6:2:1107
+webpack-pro.runtime.min.js@ver=3.16.2:2 Uncaught (in promise) ChunkLoadError: Loading chunk 50 failed.
+(error: https://grupoagama.com/wp-content/plugins/elementor-pro/assets/js/popup.483b906ddaa1af17ff14.bundle.min.js)
+    at __webpack_require__.f.j (webpack-pro.runtime.min.js@ver=3.16.2:2:4868)
+    at webpack-pro.runtime.min.js@ver=3.16.2:2:752
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (webpack-pro.runtime.min.js@ver=3.16.2:2:712)
+    at elements-handlers.min.js@ver=3.16.2:2:17906
+    at frontend.min.js@ver=3.16.6:2:3105
+    at _runHook (frontend.min.js@ver=3.16.6:2:35407)
+    at Object.doAction (frontend.min.js@ver=3.16.6:2:36009)
+    at e.exports.runReadyTrigger (frontend.min.js@ver=3.16.6:2:3966)
+    at frontend-modules.min.js@ver=3.16.6:2:1107
