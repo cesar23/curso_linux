@@ -7850,3 +7850,15 @@ t=2023-10-18T17:36:58-0500 lvl=info msg="client session established" obj=tunnels
 t=2023-10-18T17:36:58-0500 lvl=info msg="tunnel session started" obj=tunnels.session
 t=2023-10-18T17:36:58-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7172 url=https://332c-179-6-168-248.ngrok-free.app
 t=2023-10-18T23:36:58-0500 lvl=info msg="update available" obj=updater
+t=2023-10-20T16:39:05-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-10-20T16:39:06-0500 lvl=info msg="update available" obj=updater
+t=2023-10-20T16:39:06-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=fad69b59201f
+t=2023-10-20T16:39:06-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-10-20T16:39:06-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7172 url=https://cabb-179-6-168-248.ngrok-free.app
+t=2023-10-20T22:39:07-0500 lvl=info msg="update available" obj=updater
+t=2023-10-24T09:11:02-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-10-24T09:11:02-0500 lvl=info msg="update available" obj=updater
+t=2023-10-24T09:11:03-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=820008b3f694
+t=2023-10-24T09:11:03-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-10-24T09:11:03-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7172 url=https://6be8-179-6-168-248.ngrok-free.app
+t=2023-10-24T09:20:59-0500 lvl=info msg="join connections" obj=join id=0351a41bd68c l=127.0.0.1:7172 r=3.230.89.127:65192
