@@ -7945,3 +7945,248 @@ t=2023-11-16T17:32:58-0500 lvl=info msg="join connections" obj=join id=e6a7f5dce
 t=2023-11-16T17:34:39-0500 lvl=info msg="join connections" obj=join id=3c4fb0759849 l=127.0.0.1:7071 r=54.144.213.24:48271
 t=2023-11-16T17:34:45-0500 lvl=info msg="join connections" obj=join id=40870e6873a2 l=127.0.0.1:7071 r=54.162.110.104:51850
 t=2023-11-16T17:35:45-0500 lvl=info msg="join connections" obj=join id=ee9a5daa415b l=127.0.0.1:7071 r=52.73.230.96:29290
+t=2023-11-17T10:00:41-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-11-17T10:00:42-0500 lvl=info msg="update available" obj=updater
+t=2023-11-17T10:00:42-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=77aa1e224386
+t=2023-11-17T10:00:42-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-11-17T10:00:42-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://0b89-179-6-168-248.ngrok-free.app
+t=2023-11-17T10:03:09-0500 lvl=info msg="join connections" obj=join id=61ffc7f4063d l=127.0.0.1:7071 r=3.230.89.127:24245
+t=2023-11-17T11:20:38-0500 lvl=info msg="join connections" obj=join id=d9636315fa5d l=127.0.0.1:7071 r=54.162.110.104:29976
+t=2023-11-17T11:20:41-0500 lvl=info msg="join connections" obj=join id=6492c9d6d17d l=127.0.0.1:7071 r=52.73.230.96:34542
+t=2023-11-17T11:21:39-0500 lvl=info msg="join connections" obj=join id=cba28c65be66 l=127.0.0.1:7071 r=54.162.110.104:41263
+t=2023-11-17T11:21:42-0500 lvl=info msg="join connections" obj=join id=8dd01c9e71f8 l=127.0.0.1:7071 r=54.144.213.24:65035
+t=2023-11-17T11:21:42-0500 lvl=info msg="join connections" obj=join id=ae09934e1df1 l=127.0.0.1:7071 r=54.162.110.104:42493
+t=2023-11-17T11:22:42-0500 lvl=info msg="join connections" obj=join id=1024a9a0bdf1 l=127.0.0.1:7071 r=52.73.230.96:34542
+t=2023-11-17T11:22:43-0500 lvl=info msg="join connections" obj=join id=501768468159 l=127.0.0.1:7071 r=54.162.110.104:2221
+t=2023-11-17T11:22:45-0500 lvl=info msg="join connections" obj=join id=3f05b8418a80 l=127.0.0.1:7071 r=52.73.230.96:32434
+t=2023-11-17T11:23:46-0500 lvl=info msg="join connections" obj=join id=f229332af844 l=127.0.0.1:7071 r=54.162.110.104:42493
+t=2023-11-17T11:23:47-0500 lvl=info msg="join connections" obj=join id=6405590bc4d3 l=127.0.0.1:7071 r=54.162.110.104:58936
+t=2023-11-17T11:23:50-0500 lvl=info msg="join connections" obj=join id=3c712757344d l=127.0.0.1:7071 r=54.175.55.75:35390
+t=2023-11-17T11:26:03-0500 lvl=info msg="join connections" obj=join id=682f9a33b191 l=127.0.0.1:7071 r=54.175.55.75:37533
+t=2023-11-17T11:26:10-0500 lvl=info msg="join connections" obj=join id=1ad49df255d6 l=127.0.0.1:7071 r=52.73.230.96:8875
+t=2023-11-17T11:27:14-0500 lvl=info msg="join connections" obj=join id=f635b7c9488a l=127.0.0.1:7071 r=54.175.55.75:21908
+t=2023-11-17T11:27:23-0500 lvl=info msg="join connections" obj=join id=d7b55393260d l=127.0.0.1:7071 r=3.230.89.127:13423
+t=2023-11-17T11:27:30-0500 lvl=info msg="join connections" obj=join id=fe9d9bee4b74 l=127.0.0.1:7071 r=54.162.110.104:31424
+t=2023-11-17T11:28:27-0500 lvl=info msg="join connections" obj=join id=f21b05e1c742 l=127.0.0.1:7071 r=54.144.213.24:52476
+t=2023-11-17T11:28:39-0500 lvl=info msg="join connections" obj=join id=4c4a44265bdd l=127.0.0.1:7071 r=54.144.213.24:42499
+t=2023-11-17T11:29:43-0500 lvl=info msg="join connections" obj=join id=a93cfb4f440d l=127.0.0.1:7071 r=54.162.110.104:36061
+t=2023-11-17T11:29:58-0500 lvl=info msg="join connections" obj=join id=2ea9ff3c22cf l=127.0.0.1:7071 r=54.144.213.24:37406
+t=2023-11-17T11:30:04-0500 lvl=info msg="join connections" obj=join id=614ddb186cb4 l=127.0.0.1:7071 r=54.162.110.104:61032
+t=2023-11-17T11:32:29-0500 lvl=info msg="join connections" obj=join id=ef23eae2b8fd l=127.0.0.1:7071 r=54.197.21.180:49561
+t=2023-11-17T11:32:51-0500 lvl=info msg="join connections" obj=join id=3cb7218e910c l=127.0.0.1:7071 r=54.162.110.104:8956
+t=2023-11-17T11:32:57-0500 lvl=info msg="join connections" obj=join id=31f7929337e4 l=127.0.0.1:7071 r=54.162.110.104:19324
+t=2023-11-17T11:33:55-0500 lvl=info msg="join connections" obj=join id=4e791b370ad8 l=127.0.0.1:7071 r=54.144.213.24:9336
+t=2023-11-17T11:34:20-0500 lvl=info msg="join connections" obj=join id=a9151d2214c4 l=127.0.0.1:7071 r=54.175.55.75:43624
+t=2023-11-17T11:35:24-0500 lvl=info msg="join connections" obj=join id=78a8605ac153 l=127.0.0.1:7071 r=54.162.110.104:33730
+t=2023-11-17T11:35:53-0500 lvl=info msg="join connections" obj=join id=944c4d6d9f53 l=127.0.0.1:7071 r=54.197.21.180:50201
+t=2023-11-17T11:35:59-0500 lvl=info msg="join connections" obj=join id=54b297d285bd l=127.0.0.1:7071 r=54.197.21.180:64986
+t=2023-11-17T11:36:57-0500 lvl=info msg="join connections" obj=join id=e4ab59c40d35 l=127.0.0.1:7071 r=54.175.55.75:49966
+t=2023-11-17T11:37:36-0500 lvl=info msg="join connections" obj=join id=ee7a2d23e8e1 l=127.0.0.1:7071 r=54.175.55.75:11031
+t=2023-11-17T11:38:34-0500 lvl=info msg="join connections" obj=join id=144c9bd8bab9 l=127.0.0.1:7071 r=54.162.110.104:14467
+t=2023-11-17T11:39:14-0500 lvl=info msg="join connections" obj=join id=305e1b12b666 l=127.0.0.1:7071 r=52.73.230.96:56590
+t=2023-11-17T11:39:16-0500 lvl=info msg="join connections" obj=join id=a4dda1be534e l=127.0.0.1:7071 r=52.73.230.96:23165
+t=2023-11-17T11:41:25-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-11-17T11:41:25-0500 lvl=info msg="update available" obj=updater
+t=2023-11-17T11:41:26-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=ac72c9d64776
+t=2023-11-17T11:41:26-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-11-17T11:41:26-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://7d4f-179-6-168-248.ngrok-free.app
+t=2023-11-17T11:42:41-0500 lvl=info msg="join connections" obj=join id=f9b39a65b053 l=127.0.0.1:7071 r=3.230.248.18:8195
+t=2023-11-17T11:47:02-0500 lvl=info msg="starting web service" obj=web addr=localhost:4046 allow_hosts=[]
+t=2023-11-17T11:47:03-0500 lvl=info msg="update available" obj=updater
+t=2023-11-17T11:47:03-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=be8578ca0324
+t=2023-11-17T11:47:03-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-11-17T11:47:03-0500 lvl=info msg="started tunnel" obj=tunnels name=remoto addr=http://localhost:7071 url=https://38e0-179-6-168-248.ngrok-free.app
+t=2023-11-17T11:48:02-0500 lvl=info msg="join connections" obj=join id=2b9d6fcfd9bb l=127.0.0.1:7071 r=3.230.248.18:38093
+t=2023-11-17T14:44:25-0500 lvl=info msg="join connections" obj=join id=1a439285dc64 l=127.0.0.1:7071 r=54.162.110.104:63353
+t=2023-11-17T14:44:27-0500 lvl=info msg="join connections" obj=join id=04f0f06b4ae0 l=127.0.0.1:7071 r=54.175.55.75:11005
+t=2023-11-17T14:45:26-0500 lvl=info msg="join connections" obj=join id=f9b4791a5d6d l=127.0.0.1:7071 r=54.175.55.75:58628
+t=2023-11-17T14:45:27-0500 lvl=info msg="join connections" obj=join id=39c30f156b91 l=127.0.0.1:7071 r=54.175.55.75:64517
+t=2023-11-17T14:46:28-0500 lvl=info msg="join connections" obj=join id=2abda37ed97a l=127.0.0.1:7071 r=3.230.89.127:62999
+t=2023-11-17T14:46:29-0500 lvl=info msg="join connections" obj=join id=8559a2e174b3 l=127.0.0.1:7071 r=54.162.110.104:63353
+t=2023-11-17T14:47:31-0500 lvl=info msg="join connections" obj=join id=4d674c7de394 l=127.0.0.1:7071 r=54.144.213.24:50104
+t=2023-11-17T14:47:34-0500 lvl=info msg="join connections" obj=join id=ebb0dcc5f045 l=127.0.0.1:7071 r=54.162.110.104:19174
+t=2023-11-17T14:47:35-0500 lvl=info msg="join connections" obj=join id=ca24f88d23c5 l=127.0.0.1:7071 r=54.197.21.180:45026
+t=2023-11-17T14:48:42-0500 lvl=info msg="join connections" obj=join id=df908ec28bd6 l=127.0.0.1:7071 r=3.230.89.127:33526
+t=2023-11-17T14:49:53-0500 lvl=info msg="join connections" obj=join id=741bba7b7fa5 l=127.0.0.1:7071 r=52.73.230.96:10225
+t=2023-11-17T14:49:58-0500 lvl=info msg="join connections" obj=join id=7f9f40f09318 l=127.0.0.1:7071 r=54.175.55.75:26308
+t=2023-11-17T14:51:03-0500 lvl=info msg="join connections" obj=join id=0604f0656714 l=127.0.0.1:7071 r=54.197.21.180:20533
+t=2023-11-17T14:51:06-0500 lvl=info msg="join connections" obj=join id=d0d8e73730e9 l=127.0.0.1:7071 r=54.162.110.104:48828
+t=2023-11-17T14:51:11-0500 lvl=info msg="join connections" obj=join id=b9e60b8d72b1 l=127.0.0.1:7071 r=54.175.55.75:5531
+t=2023-11-17T14:52:16-0500 lvl=info msg="join connections" obj=join id=695689f16d99 l=127.0.0.1:7071 r=54.175.55.75:43607
+t=2023-11-17T14:52:22-0500 lvl=info msg="join connections" obj=join id=f279caf5d7a2 l=127.0.0.1:7071 r=54.175.55.75:62893
+t=2023-11-17T14:52:27-0500 lvl=info msg="join connections" obj=join id=17f1f60f8664 l=127.0.0.1:7071 r=54.175.55.75:32726
+t=2023-11-17T14:53:32-0500 lvl=info msg="join connections" obj=join id=1c4b8f06aea2 l=127.0.0.1:7071 r=54.162.110.104:5618
+t=2023-11-17T14:53:41-0500 lvl=info msg="join connections" obj=join id=cb34f1bee991 l=127.0.0.1:7071 r=54.144.213.24:25228
+t=2023-11-17T14:53:46-0500 lvl=info msg="join connections" obj=join id=9a6253c1272e l=127.0.0.1:7071 r=54.162.110.104:48735
+t=2023-11-17T14:55:09-0500 lvl=info msg="join connections" obj=join id=605e706d9c65 l=127.0.0.1:7071 r=54.175.55.75:53785
+t=2023-11-17T14:56:18-0500 lvl=info msg="join connections" obj=join id=2a7e77e58dac l=127.0.0.1:7071 r=54.197.21.180:11792
+t=2023-11-17T14:56:34-0500 lvl=info msg="join connections" obj=join id=a872dafd4a2f l=127.0.0.1:7071 r=54.175.55.75:48169
+t=2023-11-17T14:56:35-0500 lvl=info msg="join connections" obj=join id=efe03691c889 l=127.0.0.1:7071 r=3.230.89.127:16353
+t=2023-11-17T14:57:44-0500 lvl=info msg="join connections" obj=join id=4dbbe7bc6279 l=127.0.0.1:7071 r=54.144.213.24:18042
+t=2023-11-17T14:58:03-0500 lvl=info msg="join connections" obj=join id=5cce85139b60 l=127.0.0.1:7071 r=52.73.230.96:1210
+t=2023-11-17T14:58:04-0500 lvl=info msg="join connections" obj=join id=1a7de8723727 l=127.0.0.1:7071 r=54.144.213.24:6190
+t=2023-11-17T14:59:13-0500 lvl=info msg="join connections" obj=join id=a05ee00e773f l=127.0.0.1:7071 r=54.144.213.24:2034
+t=2023-11-17T14:59:36-0500 lvl=info msg="join connections" obj=join id=04a5a2d39b1f l=127.0.0.1:7071 r=52.73.230.96:48941
+t=2023-11-17T14:59:37-0500 lvl=info msg="join connections" obj=join id=d1fdce6b2b3f l=127.0.0.1:7071 r=54.175.55.75:55886
+t=2023-11-17T15:01:14-0500 lvl=info msg="join connections" obj=join id=c7ba51371e2c l=127.0.0.1:7071 r=52.73.230.96:38617
+t=2023-11-17T15:02:27-0500 lvl=info msg="join connections" obj=join id=d6bbcb946044 l=127.0.0.1:7071 r=54.175.55.75:7302
+t=2023-11-17T15:02:54-0500 lvl=info msg="join connections" obj=join id=09aae53dcc6f l=127.0.0.1:7071 r=54.197.21.180:29862
+t=2023-11-17T15:02:57-0500 lvl=info msg="join connections" obj=join id=2211a483c71e l=127.0.0.1:7071 r=54.175.55.75:57120
+t=2023-11-17T15:04:08-0500 lvl=info msg="join connections" obj=join id=31cf8c2409b1 l=127.0.0.1:7071 r=54.144.213.24:51812
+t=2023-11-17T15:04:38-0500 lvl=info msg="join connections" obj=join id=c1b91f2d334e l=127.0.0.1:7071 r=3.230.89.127:61027
+t=2023-11-17T15:04:41-0500 lvl=info msg="join connections" obj=join id=7b7a39d66da5 l=127.0.0.1:7071 r=3.230.89.127:20710
+t=2023-11-17T15:05:52-0500 lvl=info msg="join connections" obj=join id=0091a9eb4fa0 l=127.0.0.1:7071 r=3.230.89.127:3138
+t=2023-11-17T15:06:30-0500 lvl=info msg="join connections" obj=join id=01d37d7a0470 l=127.0.0.1:7071 r=54.175.55.75:53107
+t=2023-11-17T15:08:23-0500 lvl=info msg="join connections" obj=join id=bf54212ee339 l=127.0.0.1:7071 r=3.230.89.127:54823
+t=2023-11-17T15:08:24-0500 lvl=info msg="join connections" obj=join id=74e5162a27c2 l=127.0.0.1:7071 r=54.197.21.180:57399
+t=2023-11-17T15:09:38-0500 lvl=info msg="join connections" obj=join id=c569a13a7fb4 l=127.0.0.1:7071 r=54.162.110.104:22588
+t=2023-11-17T15:10:20-0500 lvl=info msg="join connections" obj=join id=f0e931e195f1 l=127.0.0.1:7071 r=3.230.89.127:35716
+t=2023-11-17T15:10:21-0500 lvl=info msg="join connections" obj=join id=02442bc16406 l=127.0.0.1:7071 r=3.230.89.127:37738
+t=2023-11-17T15:11:35-0500 lvl=info msg="join connections" obj=join id=9d008fb5c3d5 l=127.0.0.1:7071 r=54.162.110.104:15554
+t=2023-11-17T15:12:23-0500 lvl=info msg="join connections" obj=join id=5eb727c623ec l=127.0.0.1:7071 r=54.175.55.75:40743
+t=2023-11-17T15:14:30-0500 lvl=info msg="join connections" obj=join id=b04bc25d2791 l=127.0.0.1:7071 r=52.73.230.96:22048
+t=2023-11-17T15:14:33-0500 lvl=info msg="join connections" obj=join id=758a1b3aef45 l=127.0.0.1:7071 r=54.144.213.24:62276
+t=2023-11-17T15:15:48-0500 lvl=info msg="join connections" obj=join id=023219d68410 l=127.0.0.1:7071 r=52.73.230.96:59993
+t=2023-11-17T15:16:43-0500 lvl=info msg="join connections" obj=join id=11b5c495fd36 l=127.0.0.1:7071 r=54.175.55.75:40922
+t=2023-11-17T15:16:45-0500 lvl=info msg="join connections" obj=join id=a8c8c6b3f7f4 l=127.0.0.1:7071 r=54.197.21.180:65446
+t=2023-11-17T15:20:16-0500 lvl=info msg="join connections" obj=join id=ea48a9bd1c9d l=127.0.0.1:7071 r=54.175.55.75:5047
+t=2023-11-17T15:21:27-0500 lvl=info msg="join connections" obj=join id=3732c81a0b8f l=127.0.0.1:7071 r=54.197.21.180:48455
+t=2023-11-17T15:21:29-0500 lvl=info msg="join connections" obj=join id=d9f620357e24 l=127.0.0.1:7071 r=3.230.89.127:57565
+t=2023-11-17T15:22:39-0500 lvl=info msg="join connections" obj=join id=0f8fead83429 l=127.0.0.1:7071 r=54.175.55.75:53270
+t=2023-11-17T15:23:55-0500 lvl=info msg="join connections" obj=join id=d4b3eecdc7bd l=127.0.0.1:7071 r=54.144.213.24:17347
+t=2023-11-17T15:26:29-0500 lvl=info msg="join connections" obj=join id=6826e9977c9a l=127.0.0.1:7071 r=54.162.110.104:34405
+t=2023-11-17T15:26:31-0500 lvl=info msg="join connections" obj=join id=3fe35ac34c4f l=127.0.0.1:7071 r=54.144.213.24:12178
+t=2023-11-17T15:27:45-0500 lvl=info msg="join connections" obj=join id=10767394bebc l=127.0.0.1:7071 r=54.197.21.180:4305
+t=2023-11-17T15:29:13-0500 lvl=info msg="join connections" obj=join id=137b8e87821e l=127.0.0.1:7071 r=52.73.230.96:47694
+t=2023-11-17T15:29:15-0500 lvl=info msg="join connections" obj=join id=12f22e93309c l=127.0.0.1:7071 r=54.162.110.104:53363
+t=2023-11-17T15:30:29-0500 lvl=info msg="join connections" obj=join id=f8f7ace58882 l=127.0.0.1:7071 r=54.175.55.75:13460
+t=2023-11-17T15:32:04-0500 lvl=info msg="join connections" obj=join id=1142b4e6b72d l=127.0.0.1:7071 r=54.144.213.24:42560
+t=2023-11-17T15:33:20-0500 lvl=info msg="join connections" obj=join id=dda4150154eb l=127.0.0.1:7071 r=54.162.110.104:23619
+t=2023-11-17T15:35:02-0500 lvl=info msg="join connections" obj=join id=91dffb6fb7ed l=127.0.0.1:7071 r=54.144.213.24:23334
+t=2023-11-17T15:35:04-0500 lvl=info msg="join connections" obj=join id=82d132259096 l=127.0.0.1:7071 r=54.144.213.24:58913
+t=2023-11-17T15:38:06-0500 lvl=info msg="join connections" obj=join id=c4210f657967 l=127.0.0.1:7071 r=52.73.230.96:35057
+t=2023-11-17T15:38:08-0500 lvl=info msg="join connections" obj=join id=79bcf69752ac l=127.0.0.1:7071 r=54.144.213.24:13844
+t=2023-11-17T15:39:22-0500 lvl=info msg="join connections" obj=join id=5801f57c79fe l=127.0.0.1:7071 r=54.175.55.75:13716
+t=2023-11-17T15:41:18-0500 lvl=info msg="join connections" obj=join id=0ff890783534 l=127.0.0.1:7071 r=54.197.21.180:19125
+t=2023-11-17T15:41:20-0500 lvl=info msg="join connections" obj=join id=e24e2d29c843 l=127.0.0.1:7071 r=52.73.230.96:41974
+t=2023-11-17T15:44:37-0500 lvl=info msg="join connections" obj=join id=36d48e70c49b l=127.0.0.1:7071 r=54.197.21.180:13554
+t=2023-11-17T15:44:39-0500 lvl=info msg="join connections" obj=join id=debdd053b970 l=127.0.0.1:7071 r=54.197.21.180:37947
+t=2023-11-17T15:45:53-0500 lvl=info msg="join connections" obj=join id=257a0a0e7da7 l=127.0.0.1:7071 r=54.144.213.24:40944
+t=2023-11-17T15:48:06-0500 lvl=info msg="join connections" obj=join id=0fa3c86445a2 l=127.0.0.1:7071 r=54.175.55.75:28878
+t=2023-11-17T15:49:19-0500 lvl=info msg="join connections" obj=join id=c84bc6d7fd86 l=127.0.0.1:7071 r=52.73.230.96:5869
+t=2023-11-17T15:51:39-0500 lvl=info msg="join connections" obj=join id=b315860c7c81 l=127.0.0.1:7071 r=54.175.55.75:22028
+t=2023-11-17T15:51:40-0500 lvl=info msg="join connections" obj=join id=89ad77350b80 l=127.0.0.1:7071 r=52.73.230.96:62948
+t=2023-11-17T15:52:54-0500 lvl=info msg="join connections" obj=join id=def66ae12b7c l=127.0.0.1:7071 r=54.162.110.104:24925
+t=2023-11-17T15:56:35-0500 lvl=info msg="join connections" obj=join id=82ca9e0a0c3d l=127.0.0.1:7071 r=54.162.110.104:38390
+t=2023-11-17T15:59:14-0500 lvl=info msg="join connections" obj=join id=cb55b7a698cc l=127.0.0.1:7071 r=54.162.110.104:43118
+t=2023-11-17T15:59:15-0500 lvl=info msg="join connections" obj=join id=3ae95d5944c3 l=127.0.0.1:7071 r=52.73.230.96:32585
+t=2023-11-17T16:03:13-0500 lvl=info msg="join connections" obj=join id=488c50e8ae5e l=127.0.0.1:7071 r=54.162.110.104:17777
+t=2023-11-17T16:03:14-0500 lvl=info msg="join connections" obj=join id=7a93ee01690b l=127.0.0.1:7071 r=52.73.230.96:32643
+t=2023-11-17T16:04:27-0500 lvl=info msg="join connections" obj=join id=42c06290b086 l=127.0.0.1:7071 r=54.144.213.24:64613
+t=2023-11-17T16:07:25-0500 lvl=warn msg="failed to open private leg" id=5d375be9fcab privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:08:40-0500 lvl=warn msg="failed to open private leg" id=20a0a11d664b privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:11:42-0500 lvl=info msg="join connections" obj=join id=57d96b706f4f l=127.0.0.1:7071 r=54.144.213.24:35420
+t=2023-11-17T16:11:44-0500 lvl=info msg="join connections" obj=join id=d143eefafc39 l=127.0.0.1:7071 r=54.162.110.104:45662
+t=2023-11-17T16:16:13-0500 lvl=info msg="join connections" obj=join id=b227ad90a0bc l=127.0.0.1:7071 r=3.230.89.127:16048
+t=2023-11-17T16:16:15-0500 lvl=info msg="join connections" obj=join id=3f057a74cc6c l=127.0.0.1:7071 r=54.197.21.180:21061
+t=2023-11-17T16:17:28-0500 lvl=info msg="join connections" obj=join id=b34455334d62 l=127.0.0.1:7071 r=3.230.89.127:46299
+t=2023-11-17T16:20:56-0500 lvl=warn msg="failed to open private leg" id=cbddbc52d2e7 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:20:58-0500 lvl=warn msg="failed to open private leg" id=a8e1620b2cca privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:22:11-0500 lvl=warn msg="failed to open private leg" id=3136beb18bd7 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:25:45-0500 lvl=info msg="join connections" obj=join id=5733a3a2dcaf l=127.0.0.1:7071 r=54.175.55.75:39753
+t=2023-11-17T16:27:00-0500 lvl=info msg="join connections" obj=join id=435a36e400f8 l=127.0.0.1:7071 r=54.144.213.24:41015
+t=2023-11-17T16:36:07-0500 lvl=info msg="join connections" obj=join id=e59df0935e56 l=127.0.0.1:7071 r=54.144.213.24:41020
+t=2023-11-17T16:41:35-0500 lvl=info msg="join connections" obj=join id=52b7e25f2e3e l=127.0.0.1:7071 r=54.144.213.24:18900
+t=2023-11-17T16:41:36-0500 lvl=info msg="join connections" obj=join id=b31ea034835e l=127.0.0.1:7071 r=54.144.213.24:3423
+t=2023-11-17T16:42:49-0500 lvl=info msg="join connections" obj=join id=dcd3c7a4e847 l=127.0.0.1:7071 r=3.230.89.127:4775
+t=2023-11-17T16:47:16-0500 lvl=info msg="join connections" obj=join id=5b1a3599f364 l=127.0.0.1:7071 r=3.230.89.127:58853
+t=2023-11-17T16:47:17-0500 lvl=info msg="join connections" obj=join id=8008f201d503 l=127.0.0.1:7071 r=54.162.110.104:22962
+t=2023-11-17T16:48:30-0500 lvl=info msg="join connections" obj=join id=88d659ded29d l=127.0.0.1:7071 r=3.230.89.127:48960
+t=2023-11-17T16:53:13-0500 lvl=warn msg="failed to open private leg" id=902d61942f92 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:53:14-0500 lvl=warn msg="failed to open private leg" id=2cab3464fc09 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T16:59:18-0500 lvl=info msg="join connections" obj=join id=d7cae2763657 l=127.0.0.1:7071 r=52.73.230.96:9964
+t=2023-11-17T16:59:19-0500 lvl=info msg="join connections" obj=join id=41330788651a l=127.0.0.1:7071 r=54.162.110.104:43437
+t=2023-11-17T17:05:42-0500 lvl=info msg="join connections" obj=join id=7ab341788615 l=127.0.0.1:7071 r=54.197.21.180:45105
+t=2023-11-17T17:05:43-0500 lvl=info msg="join connections" obj=join id=bce3c661c53b l=127.0.0.1:7071 r=52.73.230.96:29953
+t=2023-11-17T17:06:59-0500 lvl=info msg="join connections" obj=join id=6830d4e52768 l=127.0.0.1:7071 r=54.197.21.180:63606
+t=2023-11-17T17:19:19-0500 lvl=warn msg="failed to open private leg" id=b1f27c28a282 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:20:35-0500 lvl=warn msg="failed to open private leg" id=5f66d8d1686a privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:26:26-0500 lvl=info msg="join connections" obj=join id=af3eee21f456 l=127.0.0.1:7071 r=3.230.89.127:53802
+t=2023-11-17T17:26:27-0500 lvl=info msg="join connections" obj=join id=f9e08fc05deb l=127.0.0.1:7071 r=3.230.89.127:28704
+t=2023-11-17T17:27:42-0500 lvl=info msg="join connections" obj=join id=ec605d67d0bc l=127.0.0.1:7071 r=52.73.230.96:6513
+t=2023-11-17T17:33:56-0500 lvl=warn msg="failed to open private leg" id=79683ccf6aa5 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:33:57-0500 lvl=warn msg="failed to open private leg" id=f01189c9a7f2 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:35:10-0500 lvl=info msg="join connections" obj=join id=851d37277c6b l=127.0.0.1:7071 r=3.230.89.127:29624
+t=2023-11-17T17:41:38-0500 lvl=info msg="join connections" obj=join id=79e6bff19fa1 l=127.0.0.1:7071 r=54.162.110.104:25838
+t=2023-11-17T17:41:39-0500 lvl=info msg="join connections" obj=join id=f9a594364858 l=127.0.0.1:7071 r=54.144.213.24:46732
+t=2023-11-17T17:47:04-0500 lvl=info msg="update available" obj=updater
+t=2023-11-17T17:50:59-0500 lvl=info msg="join connections" obj=join id=96400025f7a4 l=127.0.0.1:7071 r=3.230.89.127:24496
+t=2023-11-17T17:58:06-0500 lvl=warn msg="failed to open private leg" id=61b2527ac757 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:58:06-0500 lvl=warn msg="failed to open private leg" id=dab01ef1c056 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T17:59:23-0500 lvl=warn msg="failed to open private leg" id=4da55b3cb22f privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:08:04-0500 lvl=warn msg="failed to open private leg" id=42f7ff5c6c13 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:15:51-0500 lvl=warn msg="failed to open private leg" id=f553248855fe privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:15:51-0500 lvl=warn msg="failed to open private leg" id=f710f5645ecc privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:17:06-0500 lvl=warn msg="failed to open private leg" id=fbb9f40b4fb1 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:25:15-0500 lvl=warn msg="failed to open private leg" id=66b34df509a1 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:26:30-0500 lvl=warn msg="failed to open private leg" id=e0e6b214a675 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:35:01-0500 lvl=warn msg="failed to open private leg" id=297dba424238 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:35:03-0500 lvl=warn msg="failed to open private leg" id=d0b275fc00ad privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:45:10-0500 lvl=warn msg="failed to open private leg" id=1307dc892710 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:45:12-0500 lvl=warn msg="failed to open private leg" id=e73ebb155e5e privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:46:27-0500 lvl=warn msg="failed to open private leg" id=ac974ac01c51 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:55:44-0500 lvl=warn msg="failed to open private leg" id=f60e3c6316a6 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:55:46-0500 lvl=warn msg="failed to open private leg" id=5c1c0f2dc0f2 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T18:57:01-0500 lvl=warn msg="failed to open private leg" id=f5fbea5cf9cf privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T19:08:00-0500 lvl=warn msg="failed to open private leg" id=28c451cd1b45 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T19:18:10-0500 lvl=warn msg="failed to open private leg" id=707bde4784fc privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T19:18:12-0500 lvl=warn msg="failed to open private leg" id=f790a4ba0711 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T19:42:25-0500 lvl=warn msg="failed to open private leg" id=b2214410e863 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:09:41-0500 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=20c74df733b5 clientid=161b5da6d70fb21c8e012f7f437c0c52
+t=2023-11-17T22:09:41-0500 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=be8578ca0324 err="session closed"
+t=2023-11-17T22:09:41-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:09:42-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:09:43-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:09:45-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:09:49-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to send authentication request: read tcp 192.168.0.3:37554->18.229.186.234:443: wsarecv: Se ha anulado una conexión establecida por el software en su equipo host.."
+t=2023-11-17T22:09:57-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:10:14-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=be8578ca0324
+t=2023-11-17T22:10:14-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-11-17T22:21:55-0500 lvl=warn msg="failed to open private leg" id=dcd836e9e878 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:22:01-0500 lvl=warn msg="failed to open private leg" id=023a37b847df privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:23:10-0500 lvl=warn msg="failed to open private leg" id=458e2cce74d9 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:28:19-0500 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=f93ed1cf6802 clientid=161b5da6d70fb21c8e012f7f437c0c52
+t=2023-11-17T22:28:19-0500 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=be8578ca0324 err="session closed"
+t=2023-11-17T22:28:29-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: i/o timeout"
+t=2023-11-17T22:28:30-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:28:31-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:28:33-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:28:37-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:28:45-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:29:01-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:29:31-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:30:11-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: i/o timeout"
+t=2023-11-17T22:30:41-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:31:11-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:31:41-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: no such host"
+t=2023-11-17T22:32:21-0500 lvl=eror msg="failed to reconnect session" obj=tunnels.session obj=csess id=be8578ca0324 err="failed to dial ngrok server with address \"tunnel.sa.ngrok.com:443\": dial tcp: lookup tunnel.sa.ngrok.com: i/o timeout"
+t=2023-11-17T22:32:52-0500 lvl=info msg="client session established" obj=tunnels.session obj=csess id=be8578ca0324
+t=2023-11-17T22:32:52-0500 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-11-17T22:36:59-0500 lvl=warn msg="failed to open private leg" id=024876af38ee privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:37:04-0500 lvl=warn msg="failed to open private leg" id=d511bef72e09 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:52:03-0500 lvl=warn msg="failed to open private leg" id=e8baa59c7bfa privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:52:08-0500 lvl=warn msg="failed to open private leg" id=f23ff16624b6 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T22:53:18-0500 lvl=warn msg="failed to open private leg" id=b0f308754381 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:07:07-0500 lvl=warn msg="failed to open private leg" id=f3116e14fbf2 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:07:12-0500 lvl=warn msg="failed to open private leg" id=9f64d7a632eb privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:08:22-0500 lvl=warn msg="failed to open private leg" id=2bdd0d896b5e privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:22:11-0500 lvl=warn msg="failed to open private leg" id=26158a61b767 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:22:15-0500 lvl=warn msg="failed to open private leg" id=8afbf3710556 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:23:26-0500 lvl=warn msg="failed to open private leg" id=a7d287966227 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:37:14-0500 lvl=warn msg="failed to open private leg" id=262f823fcf4c privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:37:19-0500 lvl=warn msg="failed to open private leg" id=c8d796af2335 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:38:30-0500 lvl=warn msg="failed to open private leg" id=ba14190eecff privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:47:05-0500 lvl=info msg="update available" obj=updater
+t=2023-11-17T23:52:18-0500 lvl=warn msg="failed to open private leg" id=10f8272baafb privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:52:23-0500 lvl=warn msg="failed to open private leg" id=18531ab5b948 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
+t=2023-11-17T23:53:33-0500 lvl=warn msg="failed to open private leg" id=2cf6fb29eb64 privaddr=localhost:7071 err="dial tcp [::1]:7071: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión."
