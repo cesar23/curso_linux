@@ -2,11 +2,19 @@
 tienda: perustore21.com
 version: 1.0.1
  */
-function htmlUpdatePrecios(soles, dolar) {
+function htmlUpdatePrecios(soles, dolar,dolarAnt) {
 
 
     dolar = dolar.replace('$', '').replace(',', '');
     soles = soles.replace('S/.', '').replace(',', '');
+    if(dolarAnt && dolarAnt!==null){
+        dolarAnt = dolarAnt.replace('$', '').replace(',', '');
+        dolarAnt = number_format_js(dolarAnt, 2);
+        dolarAnt=`<div className="tabla_monedas_info" style="text-decoration: line-through;font-size: 1em;">Precio anterior $${dolarAnt}</div>`
+    }else{
+        dolarAnt=''
+    }
+
     //-----------------------------------------------
     //----------------------dolar--------------------
     //-----------------------------------------------
@@ -39,6 +47,7 @@ function htmlUpdatePrecios(soles, dolar) {
 
     var html = `
             <div class="tabla_monedas">
+            ${dolarAnt}
                 <ul class="tabla_monedas_list">
                     <li class="moneda_dolares_m">$ ${dolar_add_porcentaje}</li>
                     <li class="li_space_x2"> </li>
@@ -62,20 +71,65 @@ function htmlUpdatePrecios(soles, dolar) {
     return html;
 }
 
+
+
 function changeNameSkuList() {
 
     if (document.querySelector('.list-prod-sku')) {
 
         document.querySelectorAll(".list-prod-sku").forEach(element => {
 
+            //element.style=`background-color:#d33`
+            let elementHtml=element.innerHTML
 
-            //var data = element.getAttribute("data-id");
 
-            //let elemnto_amount=element.querySelector('.woocs_price_info_list');
-            let sku = element.querySelector('strong')
+            // ----------------------------------------------------
+            // --------- Opcion 1 reemplazo con regex -------------
+            // ----------------------------------------------------
+            /*
+            aqui haremos un regex para remplazar el contenido
+            tenemos esto: <strong>SKU:</strong> P127177</div>
+            $1=SKU: y $2= P127177
+            con esto ya  podemso hacer el remplazo del contenido
+             */
+            // aqui obtenemos de (<strong>SKU:</strong> P127177) = SKU:  y P127177
+            // element.innerHTML=elementHtml.replaceAll(/<strong>([\s\w:]+)<\/strong>+([\s\w]+)/gi, `<strong>Codigo:</strong>$2</div>`)
+            // ----------------------------------------------------
+            // --------- Opcion 2 reemplazo simple -------------
+            // ----------------------------------------------------
+            element.innerHTML=`<strong>COTIZAR</strong> `
 
-            sku.innerText = `CODIGO:`;
+        });
 
+
+    }
+
+
+}
+
+function changeStockList() {
+
+    if (document.querySelector('.list-prod-stock')) {
+
+        document.querySelectorAll(".list-prod-stock").forEach(element => {
+            element.style=`background-color:#d33`
+            let elementHtml=element.innerHTML
+
+            // ----------------------------------------------------
+            // --------- Opcion 1 reemplazo con regex -------------
+            // ----------------------------------------------------
+            /*
+            aqui haremos un regex para remplazar el contenido
+            tenemos esto: <strong>STOCK:</strong> 1</div>
+            $1=STOCK: y $2= 1
+            con esto ya  podemso hacer el remplazo del contenido
+             */
+            // aqui obtenemos de (<strong>STOCK:</strong> 1) = STOCK:  y 1
+            // element.innerHTML=elementHtml.replaceAll(/<strong>([\s\w:]+)<\/strong>+([\s\w]+)/gi, `<strong>Codigo:</strong>$2</div>`)
+            // ----------------------------------------------------
+            // --------- Opcion 2 reemplazo simple -------------
+            // ----------------------------------------------------
+            element.innerHTML=`<a href=""></a><strong>COMPRAR</strong> `
 
         });
 
@@ -112,19 +166,41 @@ function changeMountStyleListProduct() {
 
 
 function changeMountStyleProduct() {
-    var productPrices = document.querySelector('.price-wrapper');
-    var priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>span');
-    var priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
+    let productPrices = document.querySelector('.price-wrapper');
+    let priceDolarAnt=null;
+    let priceDolar=null;
+    let priceSoles=null;
+    // Verificar si Tiene Descuento
+    const typePrice= productPrices.querySelector('.price.product-page-price>.woocs_price_code>span') ? 'withoutDiscount' :'withDiscount'
+    switch (typePrice) {
+        case 'withoutDiscount':
+            priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>span');
+            priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
+            priceDolar = priceDolar.textContent;
+            priceSoles = priceSoles.textContent;
+            break;
+        case 'withDiscount':
+            priceDolarAnt = productPrices.querySelector('.price.product-page-price>.woocs_price_code>del');
+            priceDolar = productPrices.querySelector('.price.product-page-price>.woocs_price_code>ins');
+            priceSoles = productPrices.querySelector('.woocs_price_info>.woocs_price_info_list>li>span.woocs_amount');
+            priceDolar = priceDolar.textContent;
+            priceDolarAnt = priceDolarAnt.textContent;
+            priceSoles = priceSoles.textContent;
+            break;
+        default:
+
+
+    }
+
     if(!priceDolar || !priceSoles){
         return false;
     }
 
-    priceDolar = priceDolar.textContent;
-    priceSoles = priceSoles.textContent;
 
 
 
-    var htmlnewPrecios = htmlUpdatePrecios(priceSoles, priceDolar);
+
+    let htmlnewPrecios = htmlUpdatePrecios(priceSoles, priceDolar,priceDolarAnt);
     productPrices.innerHTML = htmlnewPrecios;
 
 
@@ -191,17 +267,22 @@ function ocultarBotonCompra() {
 // paso 1 esperamos que  acrgue la  pagina
     setTimeout(function () {
         ocultarBotonCompra();
+        console.log('load script frontend v1.0.1');
 
         // si estamos en la pagina del producto
         if (document.querySelector('.product-main')) {
             changeMountStyleProduct();
-            console.log('Mostrar precio al mostrar producto');
+            changeNameSkuList();
+            changeStockList();
+            console.log('Pagina Producto');
 
         } else {
-            // si estamso en el listado de productos
+            //------ si estamso en el listado de productos ----------
+            // 1.cambiar el icono [informacion del plugin money]
             changeMountStyleListProduct();
             changeNameSkuList();
-            console.log('Mostrar precio al listar producto');
+            changeStockList();
+            console.log('Pagina Listados');
         }
 
 

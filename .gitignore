@@ -22,7 +22,8 @@
 *node_modules
 
 
-
+# log de ngrok
+*ngrok*.log
 
 # Ignora los ficheros *.o y *.a *.zip
 *.iso

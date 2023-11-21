@@ -663,3 +663,19 @@ Usando el paquete confvertitr a formato linux
 ```shell
 find ${HOME}/libs_shell -name "*.*" -exec dos2unix {} +
 ```
+
+### Ejemplo ultimo
+aqui buscamos todo los ficheros la palabra `localhost:5000` 
+
+- `-not -path '*/\node_modules/*'` : excluir carpetas
+- `-regex ".*\.\(json\|yaml\|sh\)"` : buscar los ficheros (*.json, *.yaml, *.sh)
+- `-exec grep -i 'localhost:5000' {} +` : buscar este string
+
+```shell
+find .  -type f  \
+  -not -path '*/\node_modules/*' \
+  -not -path '*/\babel-webpack/*' \
+  -not -path '*/\wp-content\/plugins/*' \
+  -regex ".*\.\(json\|yaml\|sh\)" \
+  -exec grep -i 'localhost:5000' {} + ;
+```
