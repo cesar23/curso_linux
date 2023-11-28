@@ -26,4 +26,4 @@ tunnels:
   #---------------------- exponer para escritorio remoto
   remoto:
     proto: http
-    addr: 7172
+    addr: 7071
