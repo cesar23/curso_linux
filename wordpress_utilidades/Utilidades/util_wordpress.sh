@@ -33,7 +33,8 @@ source ./libs_shell/read_env.sh
 PATH_ENV="${ROOT_PATH}/.env"
 
 DB_HOST=$( find_env 'MYSQL_HOST' $PATH_ENV )
-DB_PORT=$( find_env 'MYSQL_PORT' $PATH_ENV )
+#DB_PORT=$( find_env 'MYSQL_PORT' $PATH_ENV )
+DB_PORT=$( find_env 'MYSQL_PORT_LOCAL' $PATH_ENV )
 DB_USER=$( find_env 'MYSQL_USER_ROOT' $PATH_ENV )
 DB_PASSWORD=$( find_env 'MYSQL_ROOT_PASSWORD' $PATH_ENV )
 DB_NAME=$( find_env 'MYSQL_DATABASE' $PATH_ENV )
@@ -48,8 +49,9 @@ DB_NAME=$( find_env 'MYSQL_DATABASE' $PATH_ENV )
 
 PATH_CONFIG_MYSQL="${scriptPathDir}/config_mysql.cnf"
 PATH_FILE_SQL="${scriptPathDir}/backup.sql"
-PATH_MYSQL="C:/laragon/bin/mysql/mysql-5.7.24-winx64/bin/mysql.exe"
-PATH_MYSQL_DUMP="C:/laragon/bin/mysql/mysql-5.7.24-winx64/bin/mysqldump.exe"
+PATH_MYSQL="C:/laragon/bin/mysql/mysql-8.0.30-winx64/bin/mysql.exe"
+PATH_MYSQL_DUMP="C:/laragon/bin/mysql/mysql-8.0.30-winx64/bin/mysqldump.exe"
+PATH_SCRIPT_PHP="C:/laragon/bin/php/php-7.4.16-Win32-vc15-x64/php.exe"
 
 #colores
 RED='\033[0;31m'
@@ -101,7 +103,7 @@ function fn_download_wp_cli() {
   curl -O "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
   echo ""
   echo "Version de Wordpress instalada:"
-  php wp-cli.phar core version
+  $PATH_SCRIPT_PHP wp-cli.phar core version
 }
 function fn_download_wordpress() {
   #----paranmetros
@@ -131,6 +133,47 @@ function fn_download_wordpress() {
   generate_config_wp
 
 }
+
+function fn_download_wordpress_update() {
+  #----paranmetros
+  PARAM_1=$1
+  # limpiamos la instalacion de wordpres anterior
+  cd $PATH_TEMP
+  # limpiamos directorio temporal
+  rm -rf ./*.*
+  # guardamos wp-content en temporal
+  mkdir -p "${PATH_TEMP}/wp-content" && cp -R $PATH_DOMAIN/wp-content "${PATH_TEMP}"
+  # limpiamos la instalacion anterior
+  rm -rf $PATH_DOMAIN/*
+
+  echo "Limpiandos files de wordpress..."
+#  rm -rf ./wordpress/*
+#  rm -rf ./wp-admin/*
+#  rm -rf ./wp-content.*
+#  rm -rf ./wp-includes.*
+
+  sleep 3
+  # ::: descargamos y ponemos la ultima version de wordpress
+  echo "Descargando wordpress..."
+  curl -O "https://es.wordpress.org/latest-es_ES.tar.gz"
+  tar -xzvf latest-es_ES.tar.gz && cp -R ./wordpress/* "${PATH_DOMAIN}/"
+  # ::: limpiar basuras
+  rm -rf ./wordpress
+  rm -rf ./latest-es_ES.tar.gz
+  #  descargar wp-cli
+  cd $PATH_DOMAIN
+  fn_download_wp_cli
+  # limpiamos
+  rm -rf $PATH_DOMAIN/wp-content/*
+  cp -R $PATH_TEMP/wp-content/* "${PATH_DOMAIN}/wp-content"
+
+  # generaremos el wp-config.php con los accesos a la  DB
+  generate_config_wp
+  # creando la DB
+  fn_create_db
+
+}
+
 
 function fn_backup_wordpress() {
   #----paranmetros
@@ -170,6 +213,20 @@ function fn_restore_wordpress_db() {
 
 }
 
+function fn_create_db() {
+  clear
+  echo "Reseteando y creando DB [${DB_NAME}]"
+  sleep 2
+
+  (printf "[client]\nuser=\"%s\"\npassword=\"%s\"\nhost=\"%s\"\nport=%s" $DB_USER $DB_PASSWORD $DB_HOST $DB_PORT) | tee $PATH_CONFIG_MYSQL > null
+  sleep 1
+  #echo "${PATH_MYSQL} --defaults-file=\"${PATH_CONFIG_MYSQL}\" --ssl-mode=DISABLED -h $DB_HOST -u $DB_USER $DB_NAME --port=$DB_PORT -e \"DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME};\" "
+  "${PATH_MYSQL}" --defaults-file="${PATH_CONFIG_MYSQL}" --ssl-mode=DISABLED -h $DB_HOST -u $DB_USER  --port=$DB_PORT -e "DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME};"
+
+}
+
+
+
 function fn_backup_completo_wordpress() {
 
    #----Proceso backup files
@@ -200,10 +257,13 @@ function fn_backup_completo_wordpress() {
 function fn_update_wordpres_version() {
   cd $PATH_DOMAIN
   pwd
-  php wp-cli.phar core update
+  $PATH_SCRIPT_PHP wp-cli.phar core update
 }
 
 function generate_config_wp(){
+  clear
+  echo "Generando configuracion de php"
+  sleep 3
   path_file="${PATH_DOMAIN}/wp-config-sample.php"
   path_file_new="${PATH_DOMAIN}/wp-config.php"
   cp $path_file $path_file_new
@@ -225,16 +285,17 @@ show_menu(){
     fgred=`echo "\033[31m"`
     printf "\n${menu}*********************************************${normal}\n"
     printf "${menu}**${number} 1)${menu} Nueva instalacion nueva de Wordpres es_ES (Elimina completo la actual) ${normal}\n"
-    printf "${menu}**${number} 2)${menu} Descargar  wp-cli ${normal}\n"
-    printf "${menu}**${number} 3)${menu} Backup de ficheros wordpress actual ${normal}\n"
-    printf "${menu}**${number} 4)${menu} Backup de DB wordpress DB actual ${normal}\n"
-    printf "${menu}**${number} 5)${menu} Restaurar Backup DB wordpress ${normal}\n"
-    printf "${menu}**${number} 6)${menu} Backup DB y Files Wordpress (Completo) ${normal}\n"
-    printf "${menu}**${number} 7)${menu} Actualizar Version wordpress ${normal}\n"
-    printf "${menu}**${number} 8)${menu} SSH Frost TomCat Server ${normal}\n"
-    printf "${menu}**${number} 9)${menu} Some other commands${normal}\n"
+    printf "${menu}**${number} 2)${menu} Nueva instalacion nueva de Wordpres es_ES (No elimina wp-content) ${normal}\n"
+    printf "${menu}**${number} 3)${menu} Descargar  wp-cli ${normal}\n"
+    printf "${menu}**${number} 4)${menu} Backup de ficheros wordpress actual ${normal}\n"
+    printf "${menu}**${number} 5)${menu} Backup de DB wordpress DB actual ${normal}\n"
+    printf "${menu}**${number} 6)${menu} Restaurar Backup DB wordpress ${normal}\n"
+    printf "${menu}**${number} 7)${menu} Backup DB y Files Wordpress (Completo) ${normal}\n"
+    printf "${menu}**${number} 8)${menu} Actualizar Version wordpress ${normal}\n"
+    printf "${menu}**${number} 9)${menu} Actualizar wp-config.php Windows ${normal}\n"
+    printf "${menu}**${number} 10)${menu} Crear DB${normal}\n"
     printf "${menu}*********************************************${normal}\n"
-    printf "Ingrese una opción de menú e ingrese o ${fgred}x para  salir: ${normal}"
+    printf "Ingrese una opción de menú e ingrese [x] o [ENTER]  ${fgred} para  salir: ${normal}"
     read opt
 }
 
@@ -258,7 +319,7 @@ while true
     else
       case $opt in
         1) clear;
-            option_picked "Descargar wordpress";
+            option_picked "Nueva instalacion nueva de Wordpres es_ES (Elimina completo la actual) \n Descargar wordpress";
             # nos ubicamos en la raiz del proyecto
             cd .. && cd ..
             fn_download_wordpress
@@ -268,6 +329,16 @@ while true
 
         ;;
         2) clear;
+            option_picked "Nueva instalacion nueva de Wordpres es_ES (No elimina wp-content) \n Descargar wordpress";
+            # nos ubicamos en la raiz del proyecto
+            cd .. && cd ..
+            fn_download_wordpress_update
+          #            printf "sudo mount /dev/sdh1 /mnt/DropBox/; #The 3 terabyte";
+            sleep 3
+            show_menu;
+
+        ;;
+        3) clear;
            option_picked "Instalacion de wp-cli";
            # nos ubicamos en la raiz del proyecto
            cd .. && cd ..
@@ -276,52 +347,52 @@ while true
            sleep 3
            show_menu;
         ;;
-        3) clear;
+        4) clear;
             option_picked "Backup Files wordpress";
             # nos ubicamos en la raiz del proyecto
             cd .. && cd ..
             fn_backup_wordpress
             show_menu;
         ;;
-        4) clear;
+        5) clear;
             option_picked "Backup DB de Wordpress";
             # nos ubicamos en la raiz del proyecto
             cd .. && cd ..
             fn_backup_wordpress_db
             show_menu;
         ;;
-       5) clear;
+       6) clear;
             option_picked "Restaurar Backup DB Wordpress";
             fn_restore_wordpress_db
             show_menu;
         ;;
-       6) clear;
+       7) clear;
             option_picked "Backup DB y Files Wordpress (Completo)";
             fn_backup_completo_wordpress
             show_menu;
         ;;
-      7) clear;
+      8) clear;
              option_picked "Update Version Wordpress";
              fn_update_wordpres_version
               show_menu;
               ;;
-       8) clear;
-            option_picked "Option 4 escogida";
-            printf "ssh lmesser@ -p 2010";
-            show_menu;
-              ;;
        9) clear;
-            option_picked "Option 4 escogida";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Actualizar wp-config.php";
+            generate_config_wp
             show_menu;
               ;;
-        \n)exit;
+       10) clear;
+            option_picked "Crear la DB";
+            fn_create_db
+            show_menu;
+              ;;
+        \n) exit;
         ;;
         x)exit;
               ;;
         *)clear;
-            option_picked "Elige una opción del menú" "error";
-            show_menu;
+            option_picked "Presione [Enter] para salir...";
+            exit
         ;;
       esac
     fi
