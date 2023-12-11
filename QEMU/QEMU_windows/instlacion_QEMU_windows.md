@@ -14,12 +14,24 @@ C:\Program Files\qemu
 
 <img src="https://i.imgur.com/EyCVBTc.png" >
 
+
+##### Activar Hypervisor de Windows
+
+<img src="assets_img/activar_window_paltaform.png" >
+
+
+
 -- --------------------------
 ## comando para crear 
 
 ```shell
 qemu-system-x86_64 -m 2G -boot d -cdrom D:\windows\isos\ubuntu-22.04.1-live-server-amd64.iso
 ```
+
+
+
+-- --------------------------
+
 
 # Creacion de Maquina Virtual
 
@@ -122,9 +134,17 @@ qemu-system-x86_64 \
 ```
 
 ```powershell
+qemu-system-x86_64 -m 4G -smp 2 -L "C:\Program Files\qemu" -boot menu=on -hda "F:\virtuales_Qemu\ubuntu\disco-ubuntu.qcow2" -cdrom "D:\windows\isos\ubuntu-20.04.1-desktop-amd64.iso"
+qemu-system-x86_64 -m 4G -smp 2 -L "C:\Program Files\qemu" -boot menu=on -hda "F:\virtuales_Qemu\ubuntu\disco-ubuntu.qcow2" 
+
+
+
 qemu-system-x86_64 -m 4G -smp 2 -hda F:\virtuales_Qemu\ubuntu\disco-ubuntu.qcow2 -boot d -cdrom D:\windows\isos\ubuntu-22.04.1-live-server-amd64.iso -netdev user,id=net0,net=192.168.0.0/24,dhcpstart=192.168.0.19 -device virtio-net-pci,netdev=net0 -vga qxl -device AC97
 ```
 
+```powershell
+qemu-system-x86_64 -m 4G -smp 2 -hda F:\virtuales_Qemu\ubuntu\disco-ubuntu.qcow2 -vga qxl -device AC97
+```
 
 
 

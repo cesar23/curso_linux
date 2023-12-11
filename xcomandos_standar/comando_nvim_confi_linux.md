@@ -10,7 +10,10 @@ fuente:
 ---
 ## Para Linux: <img width="30" src="https://seeklogo.com/images/L/Linux_Tux-logo-DA252F3C21-seeklogo.com.png" alt="My cool logo"/>
 
-
+# instalar 
+```shell
+sudo apt-get -y install neovim
+```
 
 Descargar el `plug.vim` desde:
 ![](https://i.imgur.com/kvxMP5S.png) 
@@ -300,6 +303,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 <a href="#indice" class="btn btn-sm btn-default"> 👆👆 ( Indice )</a>
 <h2  id="script_init">Agregar conf `sin plugins` desde consola - NVIM</h2>
 
+ejecutar todo esto desde la `terminal`
 
 ```shell
 
