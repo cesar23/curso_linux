@@ -179,14 +179,14 @@ On_IWhite_full=`echo -en "\e[0;107m"`   # White
 
 
 # ------------------------------- ver colores en vivo
-#echo " ----------- # Regular Colors ------------"
-#echo -en "${Red} color Red ${Color_Off} \n"
-#echo -en "${Green} color Green ${Color_Off} \n"
-#echo -en "${Yellow} color Yellow ${Color_Off} \n"
-#echo -en "${Blue} color Blue ${Color_Off} \n"
-#echo -en "${Purple} color Purple ${Color_Off} \n"
-#echo -en "${Cyan} color Cyan ${Color_Off} \n"
-#echo -en "${White} color White ${Color_Off} \n"
+echo " ----------- # Regular Colors ------------"
+echo -en "${Red} color Red ${Color_Off} \n"
+echo -en "${Green} color Green ${Color_Off} \n"
+echo -en "${Yellow} color Yellow ${Color_Off} \n"
+echo -en "${Blue} color Blue ${Color_Off} \n"
+echo -en "${Purple} color Purple ${Color_Off} \n"
+echo -en "${Cyan} color Cyan ${Color_Off} \n"
+echo -en "${White} color White ${Color_Off} \n"
 
 #
 #echo " ----------- # Bold ------------"
