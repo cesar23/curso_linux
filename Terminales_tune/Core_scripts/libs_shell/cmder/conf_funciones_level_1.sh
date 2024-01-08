@@ -67,6 +67,10 @@ function path_shell_to_path_windows (){
 function path_windows_to_path_shell (){
     PATH_REPO=$1
     # PATH_REPO='/c/Desktop/proyecto-tracking/NonFood'
+
+    # si pasan (D:/repos/otro)  salida (D:\repos\otro)
+    PATH_REPO=$(echo "${PATH_REPO}"  | sed -e 's/\//\\/g')
+
     #\c\Desktop\proyecto-tracking\NonFood
     REGEX='s/^([a-zA-Z])+:\\(.*)$/\/\1\/\2/'
     if [ "$CURRENT_TERMINAL" == "mobax" ]
