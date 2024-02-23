@@ -10,11 +10,12 @@ NAME_DIR=$(basename $CURRENT_DIR) # nombre del Directorio actual
 
 scriptPathDir=$(dirname $0)
 scriptPathFile=$(realpath $0)
-scriptPathFileTemp=$(echo "$scriptPathFile" | sed 's/.sh/.tmp/g')
+scriptPathFileTemp=$(echo "$scriptPathFile" | sed 's/.sh/.tmp.sh/g')
 scriptPathFileName="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
 
 # ::::::::::::::::::::::::::::::::: Configuraciones::::::::::::::::::::::::::::::
-
+scriptPathFileName=$(echo "$scriptPathFileName" | sed 's/.sh//g') # sin extension
+scriptPathFileTemp="${scriptPathDir}/${scriptPathFileName}.tmp.sh"
 #colores
 RED='\033[0;31m'
 VERDE='\033[0;32m'
@@ -81,14 +82,11 @@ _DIR_FILTER=''
 _CMD=''
 # ----- valores por default de arriba
 _BUSQUEDA_default="localhost"
-echo "${CURRENT_DIR}"
+CURRENT_DIR=$(pwd)
+#echo "${CURRENT_DIR}"
 _DIR_SEARCH_default=$(path_windows_to_path_shell "${CURRENT_DIR}")
-#PATH_WINDOWS=$(path_windows_to_path_shell  "${dir}")
-echo $_DIR_SEARCH_default
-echo "find"
-exit
 #_DIR_SEARCH_default=$CURRENT_DIR
-_EXTENSION_FILTER_default='{*.js,*.json,*.html}'
+_EXTENSION_FILTER_default='{*.sh,*.ts}'
 _DIR_FILTER_default='!{node_modules,babel-webpack,plugins}'
 
 
@@ -101,6 +99,7 @@ function fn_add_dir_search() {
   printf "${LIGHT_GRAY}\n examples: . , '/D/repos' ${normal}\n"
   read -e -i "$_DIR_SEARCH_default" -p "Ingresar dir buscar: " input
   _DIR_SEARCH="${input:-$_DIR_SEARCH_default}"
+  _DIR_SEARCH=$(path_windows_to_path_shell "${_DIR_SEARCH}")
   _DIR_SEARCH_default=$_BUSQUEDA
 
 }
@@ -123,13 +122,23 @@ function fn_view_command() {
   printf "${PUPURE}\n :::::::: Preview Command :::::::: ${normal}\n"
   CMD="rg \"${_BUSQUEDA}\" '${_DIR_SEARCH}' -g '${_EXTENSION_FILTER}'  -g '${_DIR_FILTER}'"
   echo $CMD
+  echo ""
+  read -e -i "y" -p "Deseas ejecutar el codigo ahora pesionar [y/n]: " input
+  if [ "${input}" == "y" ]
+     then
+        fn_command_run
+  fi
 }
 function fn_command_run() {
   cls
   printf "${VERDE}\n :::::::: RUN Command :::::::: ${normal}\n"
   CMD="rg \"${_BUSQUEDA}\" '${_DIR_SEARCH}' -g '${_EXTENSION_FILTER}'  -g '${_DIR_FILTER}'"
+  echo $CMD
+
+#  exec $CMD
+  echo $CMD>$scriptPathFileTemp
   sleep 2
-  $CMD
+  sh $scriptPathFileTemp
 
 }
 
@@ -235,8 +244,8 @@ while true
             fn_create_db
             show_menu;
               ;;
-        \n) exit;
-        ;;
+#        \n) exit;
+#        ;;
         x)exit;
               ;;
         *)clear;
